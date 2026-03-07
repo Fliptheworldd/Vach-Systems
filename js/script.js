@@ -41,52 +41,52 @@ document.addEventListener('DOMContentLoaded', function() {
     // === CONTACT FORM HANDLING ===
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
             
-            // Get form data
-            const formData = {
-                name: this.querySelector('[name="name"]').value,
-                email: this.querySelector('[name="email"]').value,
-                company: this.querySelector('[name="company"]').value,
-                message: this.querySelector('[name="message"]').value
-            };
-            
-            // Validate
-            if (!formData.name || !formData.email || !formData.message) {
-                showNotification('Bitte füllen Sie alle Pflichtfelder aus.', 'error');
-                return;
-            }
-            
             // Show loading state
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Wird vorbereitet...';
+            submitBtn.textContent = 'Wird gesendet...';
             submitBtn.style.opacity = '0.7';
             
-            // Create mailto link
-            const subject = `Kontaktanfrage von ${formData.name}${formData.company ? ' (' + formData.company + ')' : ''}`;
-            const body = `Name: ${formData.name}\nE-Mail: ${formData.email}\nUnternehmen: ${formData.company || 'Nicht angegeben'}\n\nNachricht:\n${formData.message}`;
-            
-            const mailtoLink = `mailto:contact@vachsystems.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            
-            // Show success message and open email client
-            showNotification('✓ Ihr E-Mail-Client wird geöffnet. Bitte senden Sie die vorausgefüllte E-Mail ab.', 'success');
-            
-            // Open email client after short delay
-            setTimeout(() => {
-                window.location.href = mailtoLink;
+            try {
+                // Get form data
+                const formData = new FormData(this);
                 
-                // Reset form after opening email client
-                setTimeout(() => {
+                // Send to Formspree
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Success!
+                    showNotification('✓ Nachricht erfolgreich gesendet! Wir melden uns innerhalb von 24 Stunden bei Ihnen.', 'success');
                     this.reset();
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = originalText;
-                    submitBtn.style.opacity = '1';
-                }, 1000);
-            }, 500);
+                } else {
+                    // Error from Formspree
+                    const data = await response.json();
+                    if (data.errors) {
+                        showNotification('❌ ' + data.errors.map(err => err.message).join(', '), 'error');
+                    } else {
+                        throw new Error('Submission failed');
+                    }
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                showNotification('❌ Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt: contact@vachsystems.de', 'error');
+            } finally {
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+                submitBtn.style.opacity = '1';
+            }
         });
     }
     
