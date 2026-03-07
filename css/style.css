@@ -1010,7 +1010,13 @@ section {
     .nav-links { display: none; }
     .hamburger { display: flex; }
     .mobile-menu { display: block; }
-    .menu-overlay { display: block; }
+    .menu-overlay { 
+        display: none !important; 
+    }
+    
+    .menu-overlay.active {
+        display: block !important;
+    }
     
     .hero-title { font-size: 3rem; }
     .content-half { padding: 4rem 2rem; }
@@ -1036,6 +1042,21 @@ section {
 
 /* === ENHANCED MOBILE OPTIMIZATION === */
 @media (max-width: 640px) {
+    /* CRITICAL: Make ALL interactive elements clickable on mobile */
+    a, button, .btn-hero-primary, .btn-cta-large, .nav-cta, 
+    .section-cta-bold a, .hero-actions a {
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+        cursor: pointer !important;
+        position: relative !important;
+        z-index: 10 !important;
+        -webkit-tap-highlight-color: rgba(0,0,0,0.1) !important;
+    }
+    
+    /* Ensure sections don't block clicks */
+    section {
+        position: relative !important;
+    }
     /* CRITICAL: Kill ALL horizontal scroll */
     html, body {
         overflow-x: hidden !important;
