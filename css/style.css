@@ -70,6 +70,11 @@ section {
     overflow-x: hidden;
 }
 
+/* Mobile email CTA - hidden by default, shown on mobile */
+.mobile-email-cta {
+    display: none;
+}
+
 /* === NAVIGATION === */
 .nav-minimal {
     position: fixed;
@@ -906,6 +911,13 @@ section {
 
 /* === ENHANCED MOBILE OPTIMIZATION === */
 @media (max-width: 640px) {
+    /* CRITICAL: Kill ALL horizontal scroll */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+    }
+    
     /* Typography */
     .hero-title { font-size: 2.25rem !important; line-height: 1.1 !important; }
     .hero-subtitle { font-size: 1rem !important; line-height: 1.5 !important; }
@@ -1023,7 +1035,26 @@ section {
         overflow-x: hidden !important;
     }
     
+    /* Kill ALL gaps that are too wide */
+    [style*="gap: 6rem"],
+    [style*="gap: 5rem"],
+    [style*="gap: 4rem"],
+    [style*="gap: 3rem"] {
+        gap: 1.5rem !important;
+    }
+    
+    /* Force ALL grids to single column */
+    [style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+    }
+    
     /* Ensure inline-styled elements don't overflow */
+    [style*="padding: 6rem"],
+    [style*="padding: 5rem"],
+    [style*="padding: 4rem"] {
+        padding: 2rem 1.25rem !important;
+    }
+    
     [style*="padding"] {
         padding-left: 1.25rem !important;
         padding-right: 1.25rem !important;
@@ -1039,6 +1070,16 @@ section {
     img, video, iframe {
         max-width: 100% !important;
         height: auto !important;
+    }
+    
+    /* Contact Form: Hide on mobile */
+    #contactForm {
+        display: none !important;
+    }
+    
+    /* Show mobile email button instead */
+    .mobile-email-cta {
+        display: block !important;
     }
 }
 

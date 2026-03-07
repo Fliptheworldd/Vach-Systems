@@ -39,6 +39,19 @@
             <!-- Form -->
             <div>
                 <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem;">Nachricht senden</h2>
+                
+                <!-- Mobile: Direct Email Button (hidden on desktop) -->
+                <div class="mobile-email-cta" style="display: none;">
+                    <a href="mailto:contact@vachsystems.de?subject=Kontaktanfrage%20von%20Website&body=Hallo%20Vach%20Systems%20Team%2C%0A%0AIch%20interessiere%20mich%20f%C3%BCr%20Ihre%20Dienstleistungen.%0A%0AMein%20Name%3A%20%0AMein%20Unternehmen%3A%20%0A%0AMeine%20Nachricht%3A%0A" 
+                       style="display: block; width: 100%; padding: 1.5rem; background: black; color: white; text-align: center; text-decoration: none; border-radius: 12px; font-size: 1.125rem; font-weight: 700; margin-bottom: 2rem;">
+                        📧 E-Mail senden
+                    </a>
+                    <p style="text-align: center; color: var(--gray-600); font-size: 0.875rem; line-height: 1.5;">
+                        Klicken Sie hier, um Ihr E-Mail-Programm mit vorausgefüllter Nachricht zu öffnen.
+                    </p>
+                </div>
+                
+                <!-- Desktop: Full Form -->
                 <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
                     <div>
                         <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--gray-700);">Name *</label>
