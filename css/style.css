@@ -1020,6 +1020,23 @@ section {
     .hero-title { font-size: 2.25rem !important; line-height: 1.1 !important; }
     .hero-subtitle { font-size: 1rem !important; line-height: 1.5 !important; }
     
+    /* Section titles */
+    h1 { font-size: 2rem !important; line-height: 1.1 !important; }
+    h2 { font-size: 1.75rem !important; line-height: 1.2 !important; }
+    h3 { font-size: 1.25rem !important; }
+    
+    /* Reduce all inline font sizes */
+    [style*="font-size: 4rem"],
+    [style*="font-size: 3.5rem"],
+    [style*="font-size: 3rem"] {
+        font-size: 1.75rem !important;
+    }
+    
+    [style*="font-size: 2.5rem"],
+    [style*="font-size: 2rem"] {
+        font-size: 1.5rem !important;
+    }
+    
     /* Hero Stats */
     .hero-stats { 
         flex-direction: column !important; 
@@ -1146,16 +1163,48 @@ section {
         grid-template-columns: 1fr !important;
     }
     
-    /* Ensure inline-styled elements don't overflow */
+    /* Fix ALL excessive padding on mobile */
+    [style*="padding: 10rem"],
+    [style*="padding: 8rem"],
     [style*="padding: 6rem"],
     [style*="padding: 5rem"],
     [style*="padding: 4rem"] {
-        padding: 2rem 1.25rem !important;
+        padding: 3rem 1.25rem !important;
     }
     
     [style*="padding"] {
         padding-left: 1.25rem !important;
         padding-right: 1.25rem !important;
+    }
+    
+    /* Fix min-height on hero sections */
+    .hero-fullscreen,
+    [style*="min-height: 100vh"] {
+        min-height: auto !important;
+        padding: 6rem 1.25rem 3rem !important;
+    }
+    
+    /* Fix all section classes */
+    section,
+    .section-product-showcase,
+    .section-case-study,
+    .section-process,
+    .section-tech,
+    .section-cta-bold {
+        padding: 3rem 1.25rem !important;
+    }
+    
+    /* Reduce massive vertical spacing */
+    [style*="margin-bottom: 5rem"],
+    [style*="margin-bottom: 6rem"],
+    [style*="margin-bottom: 4rem"] {
+        margin-bottom: 2rem !important;
+    }
+    
+    [style*="margin-top: 5rem"],
+    [style*="margin-top: 6rem"],
+    [style*="margin-top: 4rem"] {
+        margin-top: 2rem !important;
     }
     
     /* Fix any wide margins */
@@ -1178,6 +1227,48 @@ section {
     /* Show mobile email button instead */
     .mobile-email-cta {
         display: block !important;
+    }
+    
+    /* Case study fixes */
+    .case-visual {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+    
+    .case-before,
+    .case-after,
+    .case-arrow {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .case-arrow {
+        transform: rotate(90deg) !important;
+        margin: 1rem 0 !important;
+    }
+    
+    .case-stats-bad,
+    .case-stats-good {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
+    
+    .case-stat {
+        font-size: 0.875rem !important;
+    }
+    
+    /* Results metrics */
+    .case-metrics {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+    }
+    
+    .result-item {
+        padding: 1.5rem !important;
+        text-align: center !important;
     }
 }
 
