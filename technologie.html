@@ -1,305 +1,158 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <meta name="description" content="Technologie-Stack von Vach Systems: Modern, sicher, skalierbar. Von KI-Frameworks bis Cloud-native Architekturen.">
-    <title>Technologie – Vach Systems</title>
+    <title>Technologie – Vach Systems</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body, p, h1, h2, h3, div { hyphens: none !important; word-break: normal !important; }
+    </style>
 </head>
 <body>
-        <!-- Minimal Nav -->
-        <!-- Minimal Nav -->
     <nav class="nav-minimal">
         <div class="nav-container">
-            <a href="index.html" class="logo-minimal">
-                <div class="logo-mark"></div>
-                <span>Vach Systems</span>
-            </a>
+            <a href="index.html" class="logo-minimal"><div class="logo-mark"></div><span>Vach Systems</span></a>
             <div class="nav-links">
                 <a href="leistungen.html">Leistungen</a>
                 <a href="loesungen.html">Lösungen</a>
                 <a href="ueber-uns.html">Über uns</a>
-                <a href="kontakt.html" class="nav-cta">Gespräch starten</a></div>
+                <a href="kontakt.html" class="nav-cta">Gespräch starten</a>
+            </div>
             <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
     </nav>
     <div class="menu-overlay" id="menuOverlay"></div>
     <div class="mobile-menu" id="mobileMenu"><a href="index.html">Home</a><a href="leistungen.html">Leistungen</a><a href="loesungen.html">Lösungen</a><a href="technologie.html">Technologie</a><a href="projekte.html">Projekte</a><a href="ueber-uns.html">Über uns</a><a href="philosophie.html">Philosophie</a><a href="kontakt.html" class="nav-cta">Gespräch starten</a></div>
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content fade-in">
-                <h1>Technologie</h1>
-                <p class="hero-subtitle">Wir arbeiten mit modernen, bewährten Technologien. Kein Hype-Driven Development. Nur Tools, die sich in produktiven Umgebungen bewährt haben.</p>
+    <section class="hero-fullscreen" style="background: linear-gradient(135deg, #000 0%, #1F2937 100%);">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.15; background: url('https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80') center/cover;"></div>
+        <div class="container" style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 8rem 2rem;">
+            <div class="fade-in" style="max-width: 1000px;">
+                <div style="font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); margin-bottom: 2rem;">Tech Stack</div>
+                <h1 style="font-size: 5rem; font-weight: 900; line-height: 1.1; margin-bottom: 2rem; color: white;">Moderne Technologien<br/>für zukunftssichere Systeme</h1>
+                <p style="font-size: 1.75rem; line-height: 1.6; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto;">Bewährte Frameworks. Skalierbare Architekturen. Open-Source-Ökosysteme.</p>
             </div>
         </div>
     </section>
 
-    <section>
+    <section style="background: var(--gray-50); padding: 10rem 0;">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Tech Stack</span>
-                <h2>Unsere Werkzeuge</h2>
+            <div style="text-align: center; margin-bottom: 6rem;">
+                <h2 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 1.5rem;">Backend & APIs</h2>
+                <p style="font-size: 1.375rem; color: var(--gray-600);">Stabile, performante Server-Infrastruktur</p>
             </div>
-
-            <div style="display: grid; gap: 3rem;">
-                <!-- AI & ML -->
-                <div class="service-card slide-in">
-                    <h3>Künstliche Intelligenz & Machine Learning</h3>
-                    <p>Wir arbeiten mit den führenden KI-Frameworks und entwickeln sowohl mit proprietären als auch Open-Source-Modellen.</p>
-                    
-                    <h4 style="margin-top: 2rem; color: var(--color-primary);">Frameworks & Modelle</h4>
-                    <div class="tech-tags" style="margin-bottom: 2rem;">
-                        <span>TensorFlow</span>
-                        <span>PyTorch</span>
-                        <span>Scikit-learn</span>
-                        <span>Hugging Face Transformers</span>
-                        <span>OpenAI GPT-4</span>
-                        <span>Anthropic Claude</span>
-                        <span>Llama 2/3</span>
-                        <span>Mistral</span>
-                    </div>
-                    
-                    <h4 style="color: var(--color-primary);">Spezialisierungen</h4>
-                    <ul style="margin-left: 2rem;">
-                        <li>Natural Language Processing (NLP)</li>
-                        <li>Computer Vision & Image Recognition</li>
-                        <li>Predictive Analytics & Forecasting</li>
-                        <li>Recommendation Systems</li>
-                        <li>Anomaly Detection</li>
-                        <li>Time Series Analysis</li>
-                        <li>Reinforcement Learning</li>
-                    </ul>
-                    
-                    <p style="margin-top: 2rem;"><strong>Unser Ansatz:</strong> Wir nutzen vortrainierte Modelle wo möglich und trainieren Custom Models nur wenn nötig. Fine-Tuning und Transfer Learning ermöglichen uns schnelle, kosteneffiziente Lösungen.</p>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; max-width: 1200px; margin: 0 auto;">
+                <div style="padding: 3rem; background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 1rem;">Python</h3>
+                    <p style="font-size: 1.125rem; line-height: 1.6; color: var(--gray-700);">FastAPI, Django, Flask für APIs und Backend-Logik</p>
                 </div>
-
-                <!-- Backend -->
-                <div class="service-card slide-in">
-                    <h3>–ï¸ Backend & Infrastructure</h3>
-                    <p>Robuste, skalierbare Backend-Systeme bilden das Fundament unserer Lösungen.</p>
-                    
-                    <h4 style="margin-top: 2rem; color: var(--color-primary);">Programmiersprachen</h4>
-                    <div class="tech-tags" style="margin-bottom: 2rem;">
-                        <span>Python</span>
-                        <span>Node.js</span>
-                        <span>TypeScript</span>
-                        <span>Go</span>
-                        <span>Rust</span>
-                    </div>
-                    
-                    <h4 style="color: var(--color-primary);">Frameworks & Tools</h4>
-                    <div class="tech-tags" style="margin-bottom: 2rem;">
-                        <span>FastAPI</span>
-                        <span>Django</span>
-                        <span>Express.js</span>
-                        <span>NestJS</span>
-                        <span>GraphQL</span>
-                        <span>REST APIs</span>
-                    </div>
-                    
-                    <h4 style="color: var(--color-primary);">Datenbanken</h4>
-                    <div class="tech-tags" style="margin-bottom: 2rem;">
-                        <span>PostgreSQL</span>
-                        <span>MongoDB</span>
-                        <span>Redis</span>
-                        <span>Elasticsearch</span>
-                        <span>Vector DBs (Pinecone, Weaviate)</span>
-                    </div>
-                    
-                    <p style="margin-top: 2rem;"><strong>Architektur:</strong> Microservices, Event-Driven Architecture, CQRS, Message Queues (RabbitMQ, Kafka), gRPC für interne Services.</p>
+                <div style="padding: 3rem; background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 1rem;">Node.js</h3>
+                    <p style="font-size: 1.125rem; line-height: 1.6; color: var(--gray-700);">Express, NestJS für performante Services</p>
                 </div>
-
-                <!-- Frontend -->
-                <div class="service-card slide-in">
-                    <h3>👍¨ Frontend & User Interface</h3>
-                    <p>Moderne, responsive Interfaces mit exzellenter User Experience.</p>
-                    
-                    <div class="tech-tags" style="margin-bottom: 2rem;">
-                        <span>React</span>
-                        <span>Next.js</span>
-                        <span>TypeScript</span>
-                        <span>TailwindCSS</span>
-                        <span>Svelte</span>
-                        <span>Vue.js</span>
-                        <span>shadcn/ui</span>
-                        <span>Radix UI</span>
-                    </div>
-                    
-                    <p><strong>Performance:</strong> Server-Side Rendering, Static Site Generation, Progressive Web Apps, optimierte Bundle Sizes, Lazy Loading.</p>
-                    
-                    <p><strong>Design System:</strong> Wir entwickeln konsistente Design Systems mit Storybook, wiederverwendbaren Komponenten und umfassender Dokumentation.</p>
-                </div>
-
-                <!-- Cloud & DevOps -->
-                <div class="service-card slide-in">
-                    <h3>–ï¸ Cloud & DevOps</h3>
-                    <p>Cloud-native Architekturen und moderne DevOps-Praktiken für zuverlässige, skalierbare Systeme.</p>
-                    
-                    <h4 style="margin-top: 2rem; color: var(--color-primary);">Cloud Platforms</h4>
-                    <div class="tech-tags" style="margin-bottom: 2rem;">
-                        <span>AWS</span>
-                        <span>Google Cloud</span>
-                        <span>Azure</span>
-                        <span>Hetzner Cloud</span>
-                    </div>
-                    
-                    <h4 style="color: var(--color-primary);">Container & Orchestration</h4>
-                    <div class="tech-tags" style="margin-bottom: 2rem;">
-                        <span>Docker</span>
-                        <span>Kubernetes</span>
-                        <span>Docker Compose</span>
-                    </div>
-                    
-                    <h4 style="color: var(--color-primary);">CI/CD & Monitoring</h4>
-                    <div class="tech-tags" style="margin-bottom: 2rem;">
-                        <span>GitHub Actions</span>
-                        <span>GitLab CI</span>
-                        <span>Prometheus</span>
-                        <span>Grafana</span>
-                        <span>Sentry</span>
-                        <span>DataDog</span>
-                    </div>
-                    
-                    <p style="margin-top: 2rem;"><strong>Infrastructure as Code:</strong> Terraform, Ansible, CloudFormation für reproduzierbare, versionierte Infrastruktur.</p>
-                </div>
-
-                <!-- Security -->
-                <div class="service-card slide-in">
-                    <h3>👍 Sicherheit & Compliance</h3>
-                    <p>Sicherheit ist kein Nachgedanke, sondern von Anfang an integriert.</p>
-                    
-                    <h4 style="margin-top: 2rem; color: var(--color-primary);">Security Practices</h4>
-                    <ul style="margin-left: 2rem;">
-                        <li>End-to-End Verschlüsselung</li>
-                        <li>Zero Trust Architecture</li>
-                        <li>OAuth 2.0 / OpenID Connect</li>
-                        <li>Role-Based Access Control (RBAC)</li>
-                        <li>Security Auditing & Penetration Testing</li>
-                        <li>OWASP Best Practices</li>
-                        <li>Dependency Scanning (Snyk, Dependabot)</li>
-                    </ul>
-                    
-                    <h4 style="margin-top: 2rem; color: var(--color-primary);">Compliance</h4>
-                    <ul style="margin-left: 2rem;">
-                        <li>DSGVO-konforme Datenverarbeitung</li>
-                        <li>ISO 27001 Alignment</li>
-                        <li>SOC 2 Compliance Support</li>
-                        <li>Audit Logs für alle kritischen Operationen</li>
-                    </ul>
-                    
-                    <p style="margin-top: 2rem;"><strong>On-Premise Solutions:</strong> Für Unternehmen mit strengen Datenschutzanforderungen entwickeln wir vollständig on-premise lauffähige Systeme ohne externe Dependencies.</p>
-                </div>
-
-                <!-- Data Engineering -->
-                <div class="service-card slide-in">
-                    <h3>👍 Data Engineering & Analytics</h3>
-                    <p>Robuste Daten-Pipelines und intelligente Analytics-Lösungen.</p>
-                    
-                    <h4 style="margin-top: 2rem; color: var(--color-primary);">ETL & Data Pipelines</h4>
-                    <div class="tech-tags" style="margin-bottom: 2rem;">
-                        <span>Apache Airflow</span>
-                        <span>Prefect</span>
-                        <span>dbt</span>
-                        <span>Apache Spark</span>
-                    </div>
-                    
-                    <h4 style="color: var(--color-primary);">Analytics & Visualization</h4>
-                    <div class="tech-tags" style="margin-bottom: 2rem;">
-                        <span>Pandas</span>
-                        <span>NumPy</span>
-                        <span>Metabase</span>
-                        <span>Superset</span>
-                        <span>Plotly</span>
-                        <span>D3.js</span>
-                    </div>
-                    
-                    <p style="margin-top: 2rem;"><strong>Real-Time Analytics:</strong> Stream Processing mit Kafka, Flink für Echtzeit-Datenverarbeitung und Live Dashboards.</p>
+                <div style="padding: 3rem; background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 1rem;">PostgreSQL</h3>
+                    <p style="font-size: 1.125rem; line-height: 1.6; color: var(--gray-700);">Relationale Datenbank für komplexe Datenmodelle</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section style="background: var(--color-dark); color: var(--color-white);">
+    <section style="background: white; padding: 10rem 0;">
         <div class="container">
-            <div class="section-header">
-                <h2 style="color: var(--color-white);">Unsere technischen Prinzipien</h2>
+            <div style="text-align: center; margin-bottom: 6rem;">
+                <h2 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 1.5rem;">Frontend & UX</h2>
+                <p style="font-size: 1.375rem; color: var(--gray-600);">Intuitive Interfaces für komplexe Daten</p>
             </div>
-            <div class="why-grid">
-                <div class="why-card fade-in">
-                    <h3>Pragmatismus über Perfektion</h3>
-                    <p style="color: rgba(255,255,255,0.8);">Wir nutzen die einfachste Lösung, die funktioniert. Ãber-Engineering hilft niemandem.</p>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; max-width: 1200px; margin: 0 auto;">
+                <div style="padding: 3rem; background: var(--gray-50); border-radius: 16px; border: 2px solid var(--gray-200);">
+                    <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 1rem;">React</h3>
+                    <p style="font-size: 1.125rem; line-height: 1.6; color: var(--gray-700);">Moderne Web-Apps mit komponentenbasierter Architektur</p>
                 </div>
-                <div class="why-card fade-in">
-                    <h3>Open Standards</h3>
-                    <p style="color: rgba(255,255,255,0.8);">Keine proprietären Lock-ins. Offene Standards, dokumentierte APIs, portabler Code.</p>
+                <div style="padding: 3rem; background: var(--gray-50); border-radius: 16px; border: 2px solid var(--gray-200);">
+                    <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 1rem;">TailwindCSS</h3>
+                    <p style="font-size: 1.125rem; line-height: 1.6; color: var(--gray-700);">Utility-first CSS für konsistentes Design</p>
                 </div>
-                <div class="why-card fade-in">
-                    <h3>Wartbarkeit</h3>
-                    <p style="color: rgba(255,255,255,0.8);">Code muss lesbar und verständlich sein. Ihre Teams müssen ihn übernehmen können.</p>
-                </div>
-                <div class="why-card fade-in">
-                    <h3>Security by Design</h3>
-                    <p style="color: rgba(255,255,255,0.8);">Sicherheit ist nicht optional. Sie wird von Anfang an eingebaut, nicht nachträglich hinzugefügt.</p>
-                </div>
-                <div class="why-card fade-in">
-                    <h3>Performance Matters</h3>
-                    <p style="color: rgba(255,255,255,0.8);">Schnelle Systeme sind bessere Systeme. Wir optimieren systematisch.</p>
-                </div>
-                <div class="why-card fade-in">
-                    <h3>Continuous Learning</h3>
-                    <p style="color: rgba(255,255,255,0.8);">Technologie entwickelt sich. Wir bleiben am Puls der Zeit und evaluieren kontinuierlich neue Tools.</p>
+                <div style="padding: 3rem; background: var(--gray-50); border-radius: 16px; border: 2px solid var(--gray-200);">
+                    <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 1rem;">TypeScript</h3>
+                    <p style="font-size: 1.125rem; line-height: 1.6; color: var(--gray-700);">Typsicherer Code für robuste Anwendungen</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section">
+    <section style="background: var(--black); color: white; padding: 10rem 0;">
         <div class="container">
-            <div class="cta-content fade-in">
-                <h2>Technische FragenÜ</h2>
-                <p>Lassen Sie uns über Ihre technischen Anforderungen sprechen. Von Architektur-Entscheidungen bis zu Stack-Auswahl.</p>
-                <a href="kontakt.html" class="btn-large btn-primary">Gespräch vereinbaren</a>
+            <div style="text-align: center; margin-bottom: 6rem;">
+                <h2 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 1.5rem;">AI & Machine Learning</h2>
+                <p style="font-size: 1.375rem; opacity: 0.7;">Intelligente Systeme mit ML-Integration</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; max-width: 1200px; margin: 0 auto;">
+                <div style="text-align: center;">
+                    <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 1rem;">TensorFlow / PyTorch</h3>
+                    <p style="font-size: 1.125rem; line-height: 1.6; opacity: 0.8;">Deep Learning für Klassifikation & Prediction</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 1rem;">OpenAI API</h3>
+                    <p style="font-size: 1.125rem; line-height: 1.6; opacity: 0.8;">LLM-Integration für natürliche Sprachverarbeitung</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 1rem;">Vector DBs</h3>
+                    <p style="font-size: 1.125rem; line-height: 1.6; opacity: 0.8;">Semantische Suche mit Embedding-Modellen</p>
+                </div>
             </div>
         </div>
     </section>
 
-        <!-- Minimal Footer -->
-        <!-- Minimal Footer -->
+    <section style="background: var(--gray-50); padding: 10rem 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 6rem;">
+                <h2 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 1.5rem;">Infrastructure & DevOps</h2>
+                <p style="font-size: 1.375rem; color: var(--gray-600);">Skalierbar, sicher, wartbar</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+                <div style="padding: 2rem; background: white; border-radius: 12px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <div style="font-weight: 700; font-size: 1.125rem; color: var(--black);">Docker</div>
+                    <div style="color: var(--gray-600); margin-top: 0.5rem;">Containerisierung</div>
+                </div>
+                <div style="padding: 2rem; background: white; border-radius: 12px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <div style="font-weight: 700; font-size: 1.125rem; color: var(--black);">AWS / GCP</div>
+                    <div style="color: var(--gray-600); margin-top: 0.5rem;">Cloud Hosting</div>
+                </div>
+                <div style="padding: 2rem; background: white; border-radius: 12px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <div style="font-weight: 700; font-size: 1.125rem; color: var(--black);">GitHub Actions</div>
+                    <div style="color: var(--gray-600); margin-top: 0.5rem;">CI/CD Pipelines</div>
+                </div>
+                <div style="padding: 2rem; background: white; border-radius: 12px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <div style="font-weight: 700; font-size: 1.125rem; color: var(--black);">Nginx</div>
+                    <div style="color: var(--gray-600); margin-top: 0.5rem;">Load Balancing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-cta-bold">
+        <div class="cta-container">
+            <h2>Interesse an einer technischen Lösung?</h2>
+            <p>Wir besprechen Ihre Anforderungen und schlagen den passenden Stack vor.</p>
+            <a href="kontakt.html" class="btn-cta-large">Gespräch vereinbaren →</a>
+        </div>
+    </section>
+
     <footer class="footer-minimal">
         <div class="footer-container">
             <div class="footer-main">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <div class="logo-mark"></div>
-                        <span>Vach Systems</span>
-                    </div>
-                    <p>Intelligente Softwaresysteme für moderne Unternehmen</p>
-                </div>
-                <div class="footer-links">
-                    <a href="leistungen.html">Leistungen</a>
-                    <a href="loesungen.html">Lösungen</a>
-                    <a href="ueber-uns.html">Über uns</a>
-                    <a href="kontakt.html">Kontakt</a>
-                </div>
-                <div class="footer-contact">
-                    <a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a>
-                    <a href="https://www.linkedin.com/in/patrick-vach-833b421a0/" target="_blank" rel="noopener">LinkedIn</a>
-                </div>
+                <div class="footer-brand"><div class="footer-logo"><div class="logo-mark"></div><span>Vach Systems</span></div><p>Intelligente Softwaresysteme für moderne Unternehmen</p></div>
+                <div class="footer-links"><a href="leistungen.html">Leistungen</a><a href="loesungen.html">Lösungen</a><a href="ueber-uns.html">Über uns</a><a href="kontakt.html">Kontakt</a></div>
+                <div class="footer-contact"><a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a><a href="https://www.linkedin.com/in/patrick-vach-833b421a0/" target="_blank" rel="noopener">LinkedIn</a></div>
             </div>
-            <div class="footer-legal">
-                <span>© 2026 Vach Systems</span>
-                <a href="impressum.html">Impressum</a>
-                <a href="datenschutz.html">Datenschutz</a>
-            </div>
+            <div class="footer-legal"><span>© 2026 Vach Systems</span><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
         </div>
     </footer>
-
     <script src="js/script.js"></script>
 </body>
 </html>
