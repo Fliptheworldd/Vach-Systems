@@ -1230,9 +1230,28 @@ section {
         text-align: center !important;
     }
     
-    /* Visual Sections */
+    /* Visual Sections - Mobile optimized */
     .visual-half { 
-        min-height: 300px !important; 
+        min-height: 250px !important;
+        max-height: 350px !important;
+        background: var(--black) !important;
+    }
+    
+    .visual-half img {
+        object-fit: cover !important;
+        object-position: center !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    /* Hero background - better mobile fit */
+    .hero-bg {
+        min-height: 100vh !important;
+    }
+    
+    .hero-bg img {
+        object-fit: cover !important;
+        object-position: center !important;
     }
     
     /* Split Screen Layouts */
