@@ -3,6 +3,18 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
+    // === MOBILE CTA BUTTONS - Convert to mailto on mobile ===
+    if (window.innerWidth <= 640) {
+        const ctaButtons = document.querySelectorAll('.btn-cta-large[href="kontakt.html"], .btn-large.btn-primary[href="kontakt.html"]');
+        ctaButtons.forEach(btn => {
+            btn.href = 'mailto:contact@vachsystems.de?subject=Gespräch vereinbaren - Website Anfrage&body=Hallo Vach Systems Team,%0D%0A%0D%0AIch interessiere mich für ein unverbindliches Erstgespräch.%0D%0A%0D%0AMein Name: %0D%0AMein Unternehmen: %0D%0ATelefon: %0D%0A%0D%0AMeine Nachricht:%0D%0A';
+            btn.addEventListener('click', function(e) {
+                // Let the mailto: link work naturally
+                return true;
+            });
+        });
+    }
+    
     // === HAMBURGER MENU ===
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
