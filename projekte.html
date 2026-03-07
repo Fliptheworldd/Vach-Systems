@@ -9,6 +9,31 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>body, p, h1, h2, h3, div { hyphens: none !important; word-break: normal !important; }</style>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZZ7BX7SB0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        // Default: Analytics disabled until consent
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied'
+        });
+        
+        gtag('js', new Date());
+        gtag('config', 'G-6ZZ7BX7SB0', {
+            'anonymize_ip': true
+        });
+        
+        // Enable analytics if cookie consent given
+        if(localStorage.getItem('cookieConsent') === 'accepted') {
+            gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+            });
+        }
+    </script>
+
 </head>
 <body>
     <nav class="nav-minimal">
@@ -96,5 +121,6 @@
         </div>
     </footer>
     <script src="js/script.js"></script>
+    <script src="js/cookie-banner.js"></script>
 </body>
 </html>

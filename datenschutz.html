@@ -8,6 +8,31 @@
     <title>Datenschutzerklärung – Vach Systems</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZZ7BX7SB0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        // Default: Analytics disabled until consent
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied'
+        });
+        
+        gtag('js', new Date());
+        gtag('config', 'G-6ZZ7BX7SB0', {
+            'anonymize_ip': true
+        });
+        
+        // Enable analytics if cookie consent given
+        if(localStorage.getItem('cookieConsent') === 'accepted') {
+            gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+            });
+        }
+    </script>
+
 </head>
 <body>
     <!-- Minimal Nav -->
@@ -100,9 +125,24 @@
                 </div>
 
                 <div>
-                    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">5. Cookies</h2>
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">5. Cookies & Google Analytics</h2>
+                    <p style="line-height: 1.8; color: var(--gray-700); margin-bottom: 1rem;">
+                        Diese Website nutzt Google Analytics, einen Webanalysedienst der Google LLC („Google"). Google Analytics verwendet Cookies, um die Nutzung der Website zu analysieren.
+                    </p>
+                    <p style="line-height: 1.8; color: var(--gray-700); margin-bottom: 1rem;">
+                        <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung via Cookie-Banner)
+                    </p>
+                    <p style="line-height: 1.8; color: var(--gray-700); margin-bottom: 1rem;">
+                        <strong>Datenverarbeitung:</strong> Google Analytics erfasst Informationen über Ihre Nutzung der Website (besuchte Seiten, Verweildauer, verwendeter Browser, etc.). Diese Daten werden an Server von Google in den USA übertragen.
+                    </p>
+                    <p style="line-height: 1.8; color: var(--gray-700); margin-bottom: 1rem;">
+                        <strong>IP-Anonymisierung:</strong> Wir haben die IP-Anonymisierung aktiviert. Ihre IP-Adresse wird von Google innerhalb der EU vor der Übertragung gekürzt.
+                    </p>
                     <p style="line-height: 1.8; color: var(--gray-700);">
-                        Diese Website verwendet keine Cookies. Wir setzen keine Tracking-Tools oder Analyse-Software ein.
+                        <strong>Widerspruch:</strong> Sie können die Nutzung von Google Analytics jederzeit durch Klick auf den Cookie-Banner ablehnen oder Ihre gespeicherte Einwilligung in den Browser-Einstellungen (LocalStorage) löschen.
+                    </p>
+                    <p style="line-height: 1.8; color: var(--gray-700); margin-top: 1rem;">
+                        Mehr Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">Google Privacy Policy</a>
                     </p>
                 </div>
 
@@ -199,5 +239,6 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/cookie-banner.js"></script>
 </body>
 </html>
