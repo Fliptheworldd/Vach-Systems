@@ -1057,6 +1057,54 @@ section {
     section {
         position: relative !important;
     }
+    
+    /* HERO MOBILE OPTIMIZATION */
+    .hero-bg {
+        background: linear-gradient(135deg, #000 0%, #1F2937 100%) !important;
+    }
+    
+    .hero-bg img {
+        opacity: 0.2 !important;
+        filter: brightness(0.3) !important;
+    }
+    
+    .hero-overlay {
+        background: rgba(0,0,0,0.5) !important;
+    }
+    
+    .hero-badge {
+        background: rgba(255,255,255,0.15) !important;
+        border: 1px solid rgba(255,255,255,0.3) !important;
+        font-size: 0.75rem !important;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem !important;
+        text-shadow: 0 2px 20px rgba(0,0,0,0.8) !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem !important;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.8) !important;
+    }
+    
+    /* STATS SECTION - White background for readability */
+    .hero-stats {
+        background: rgba(255,255,255,0.95) !important;
+        padding: 1.5rem 1rem !important;
+        border-radius: 12px !important;
+        margin-top: 2rem !important;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3) !important;
+    }
+    
+    .stat-big {
+        color: var(--black) !important;
+        font-size: 2rem !important;
+    }
+    
+    .stat-label {
+        color: var(--gray-700) !important;
+    }
     /* CRITICAL: Kill ALL horizontal scroll */
     html, body {
         overflow-x: hidden !important;
