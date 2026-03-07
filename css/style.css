@@ -1186,12 +1186,20 @@ section {
     
     /* Fix all section classes */
     section,
+    .hero,
     .section-product-showcase,
     .section-case-study,
     .section-process,
     .section-tech,
     .section-cta-bold {
         padding: 3rem 1.25rem !important;
+        min-height: auto !important;
+    }
+    
+    /* Specific hero fixes */
+    .hero .container,
+    .hero-content {
+        padding: 2rem 0 !important;
     }
     
     /* Reduce massive vertical spacing */
