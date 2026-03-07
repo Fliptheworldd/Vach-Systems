@@ -1077,6 +1077,11 @@ section {
         font-size: 1rem !important;
         cursor: pointer !important;
         -webkit-tap-highlight-color: rgba(0,0,0,0.1) !important;
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+        position: relative !important;
+        z-index: 9999 !important;
+        background: transparent !important;
     }
     
     /* Extra space around footer links for easier tapping */
