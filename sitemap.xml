@@ -55,6 +55,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://vachsystems.de/blog/ki-im-mittelstand-praktische-einsatzmoeglichkeiten.html</loc>
+    <lastmod>2025-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vachsystems.de/blog/die-5-haeufigsten-fehler-bei-ki-projekten.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vachsystems.de/blog/warum-lokale-ki-systeme-wichtiger-werden.html</loc>
+    <lastmod>2025-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://vachsystems.de/impressum.html</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>yearly</changefreq>
