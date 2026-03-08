@@ -37,14 +37,20 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vachsystems.de/blog/welche-unternehmensprozesse-lassen-sich-mit-ki-automatisieren.html</loc>
+    <loc>https://vachsystems.de/blog/eu-ai-act-was-unternehmen-jetzt-wissen-muessen.html</loc>
     <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vachsystems.de/blog/dokumentenanalyse-mit-ki-praktische-anwendung.html</loc>
+    <lastmod>2026-02-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vachsystems.de/blog/dokumentenanalyse-mit-ki-praktische-anwendung.html</loc>
-    <lastmod>2026-03-08</lastmod>
+    <loc>https://vachsystems.de/blog/welche-unternehmensprozesse-lassen-sich-mit-ki-automatisieren.html</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
