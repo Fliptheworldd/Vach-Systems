@@ -300,6 +300,44 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     document.body.insertBefore(skipLink, document.body.firstChild);
     
+    // === TECH LOGO TOOLTIPS (Mobile Touch Support) ===
+    const techLogos = document.querySelectorAll('.tech-logo');
+    
+    if (techLogos.length > 0) {
+        // Detect touch device
+        const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+        
+        if (isTouchDevice) {
+            techLogos.forEach(logo => {
+                logo.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active from all others
+                    techLogos.forEach(l => {
+                        if (l !== this) l.classList.remove('active');
+                    });
+                    
+                    // Toggle active on this one
+                    this.classList.toggle('active');
+                    
+                    // Auto-hide after 4 seconds
+                    if (this.classList.contains('active')) {
+                        setTimeout(() => {
+                            this.classList.remove('active');
+                        }, 4000);
+                    }
+                });
+            });
+            
+            // Close tooltip when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.tech-logo')) {
+                    techLogos.forEach(logo => logo.classList.remove('active'));
+                }
+            });
+        }
+    }
+    
     // === CONSOLE BRANDING ===
     console.log(
         '%cVach Systems',

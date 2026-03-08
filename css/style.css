@@ -853,14 +853,16 @@ section {
 }
 
 .tech-logos {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .tech-logo {
-    padding: 1.25rem 2.5rem;
+    position: relative;
+    padding: 1.25rem 2rem;
     background: rgba(255,255,255,0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.2);
@@ -868,6 +870,68 @@ section {
     color: var(--white);
     font-weight: 600;
     font-size: 1.125rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tech-logo:hover {
+    background: rgba(255,255,255,0.2);
+    border-color: rgba(255,255,255,0.4);
+    transform: translateY(-4px);
+}
+
+.tech-logo:active {
+    transform: translateY(-2px);
+}
+
+/* Tooltip */
+.tech-logo::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background: rgba(0,0,0,0.95);
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.4;
+    white-space: normal;
+    width: max-content;
+    max-width: 280px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.tech-logo:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-15px);
+}
+
+/* Arrow für Tooltip */
+.tech-logo::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-2px);
+    border: 6px solid transparent;
+    border-top-color: rgba(0,0,0,0.95);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.tech-logo:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-7px);
 }
 
 /* === CTA BOLD === */
@@ -1493,6 +1557,48 @@ section {
 }
 
 /* === TOUCH IMPROVEMENTS === */
+/* Tech Logos Mobile - CRITICAL FIX */
+@media (max-width: 768px) {
+    .tech-logos {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+        padding: 0 !important;
+    }
+    
+    .tech-logo {
+        padding: 1rem 0.5rem !important;
+        font-size: 0.95rem !important;
+        min-height: 60px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    /* Tooltips auf Mobile: Click to show */
+    .tech-logo::after {
+        display: none;
+    }
+    
+    .tech-logo::before {
+        display: none;
+    }
+    
+    .tech-logo.active::after {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: calc(100vw - 40px);
+        width: auto;
+        white-space: normal;
+        text-align: center;
+        font-size: 0.875rem;
+        padding: 1rem 1.5rem;
+        z-index: 10000;
+    }
+}
+
 @media (hover: none) and (pointer: coarse) {
     /* Larger touch targets */
     .nav-links a,
