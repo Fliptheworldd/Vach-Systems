@@ -24,6 +24,17 @@
             .hero-title { font-size: 2.5rem !important; }
             .hero-subtitle { font-size: 1.125rem !important; }
             .stat-big { font-size: 2rem !important; }
+            
+            /* Mobile: Frosted Glass Effect */
+            .hero-bg img {
+                filter: blur(30px) brightness(0.4);
+                transform: scale(1.1);
+            }
+            .hero-overlay {
+                background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(20,20,40,0.8) 100%);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
         }
     </style>
 
@@ -76,7 +87,7 @@
     <!-- Hero -->
     <section class="hero-fullscreen">
         <div class="hero-bg">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=90" alt="Moderne Datenanalyse">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=90" alt="Tech Hintergrund">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-container">
