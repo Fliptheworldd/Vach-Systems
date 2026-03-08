@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unsere Leistungen: Prozessanalyse, Softwareentwicklung, System-Integration und Wartung. Maßgeschneiderte KI-Systeme für Ihr Unternehmen.">
+    <meta name="keywords" content="Softwareentwicklung, Prozessanalyse, System-Integration, KI-Entwicklung, API-Integration, Workflow-Automatisierung">
     <meta name="theme-color" content="#000000">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <title>Leistungen – Vach Systems</title>
+    <title>Leistungen – Prozessanalyse, Entwicklung, Integration | Vach Systems</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
@@ -17,25 +19,13 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        
-        // Default: Analytics disabled until consent
-        gtag('consent', 'default', {
-            'analytics_storage': 'denied'
-        });
-        
+        gtag('consent', 'default', {'analytics_storage': 'denied'});
         gtag('js', new Date());
-        gtag('config', 'G-6ZZ7BX7SB0', {
-            'anonymize_ip': true
-        });
-        
-        // Enable analytics if cookie consent given
+        gtag('config', 'G-6ZZ7BX7SB0', {'anonymize_ip': true});
         if(localStorage.getItem('cookieConsent') === 'accepted') {
-            gtag('consent', 'update', {
-                'analytics_storage': 'granted'
-            });
+            gtag('consent', 'update', {'analytics_storage': 'granted'});
         }
     </script>
-
 </head>
 <body>
     <nav class="nav-minimal">
@@ -54,7 +44,7 @@
         </div>
     </nav>
     <div class="menu-overlay" id="menuOverlay"></div>
-        <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu" id="mobileMenu">
         <a href="index.html">Home</a>
         <a href="leistungen.html">Leistungen</a>
         <a href="loesungen.html">Lösungen</a>
@@ -64,52 +54,89 @@
 
     <section class="hero-fullscreen" style="min-height: 80vh;">
         <div class="hero-bg">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=90" alt="Strategy Meeting">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=90" alt="Strategiemeeting">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-container">
             <span class="hero-badge">Was wir tun</span>
             <h1 class="hero-title" style="font-size: 5rem;">Unsere Leistungen</h1>
-            <p class="hero-subtitle" style="max-width: 800px;">Von der Analyse bis zur Implementierung.<br/>Entwicklung, Integration, Optimierung.</p>
+            <p class="hero-subtitle" style="max-width: 800px;">
+                Von der Analyse bis zur Implementierung.<br/>
+                Entwicklung, Integration, Optimierung.
+            </p>
         </div>
     </section>
 
     <section class="section-visual-split">
         <div class="visual-half">
-            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80" alt="Analysis">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80" alt="Strategieanalyse">
         </div>
         <div class="content-half">
-            <span class="section-label">Analyse</span>
-            <h2 style="font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 2rem;">Prozessanalyse & Strategieberatung</h2>
-            <p style="font-size: 1.5rem; line-height: 1.6; color: var(--gray-600); margin-bottom: 3rem;">Bevor wir eine Lösung entwickeln, verstehen wir Ihr Problem. Wir analysieren Ihre bestehenden Prozesse, identifizieren Ineffizienzen und entwickeln eine technische Strategie.</p>
+            <span class="section-label">01 — Analyse</span>
+            <h2 style="font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 2rem;">Prozessanalyse &<br/>Strategieberatung</h2>
+            <p style="font-size: 1.5rem; line-height: 1.6; color: var(--gray-600); margin-bottom: 3rem;">
+                Bevor wir eine Lösung entwickeln, verstehen wir Ihr Problem. Wir analysieren Ihre bestehenden Prozesse, identifizieren Ineffizienzen und entwickeln eine technische Strategie.
+            </p>
             <div style="display: grid; gap: 2rem;">
-                <div><div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Workshop & Prozessanalyse</div><div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">2-3 Tage intensive Analyse Ihrer Workflows</div></div>
-                <div><div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Technische Machbarkeit</div><div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">Bewertung von Lösungsansätzen und Technologien</div></div>
-                <div><div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">ROI-Kalkulation</div><div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">Konkrete Zahlen: Kosten, Zeitersparnis, erwarteter Nutzen</div></div>
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Workshop & Prozessanalyse</div>
+                    <div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">
+                        2-3 Tage intensive Analyse Ihrer Arbeitsabläufe. Wo wird Zeit verschwendet? Welche Prozesse lassen sich automatisieren?
+                    </div>
+                </div>
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Technische Machbarkeit</div>
+                    <div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">
+                        Bewertung von Lösungsansätzen und Technologien. Welche Systeme können Sie nutzen? Was muss neu gebaut werden?
+                    </div>
+                </div>
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Nutzen-Kalkulation</div>
+                    <div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">
+                        Konkrete Zahlen: Kosten, erwartete Zeitersparnis, Return on Investment (also wie schnell sich die Investition auszahlt).
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="section-visual-split">
         <div class="content-half">
-            <span class="section-label">Entwicklung</span>
-            <h2 style="font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 2rem;">Maßgeschneiderte Softwareentwicklung</h2>
-            <p style="font-size: 1.5rem; line-height: 1.6; color: var(--gray-600); margin-bottom: 3rem;">Keine Standard-Software. Wir entwickeln Systeme, die exakt zu Ihren Anforderungen passen.</p>
+            <span class="section-label">02 — Entwicklung</span>
+            <h2 style="font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 2rem;">Maßgeschneiderte<br/>Softwareentwicklung</h2>
+            <p style="font-size: 1.5rem; line-height: 1.6; color: var(--gray-600); margin-bottom: 3rem;">
+                Keine Standard-Software von der Stange. Wir entwickeln Systeme, die exakt zu Ihren Anforderungen passen.
+            </p>
             <div style="display: grid; gap: 2rem;">
-                <div><div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Full-Stack Development</div><div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">Von der Datenbank bis zum Frontend</div></div>
-                <div><div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">API-Entwicklung & Integration</div><div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">Verbindung Ihrer bestehenden Tools</div></div>
-                <div><div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">KI & Machine Learning</div><div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">Intelligente Automatisierung mit ML-Modellen</div></div>
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Full-Stack Entwicklung</div>
+                    <div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">
+                        Vom Backend (Datenbank, Server) bis zum Frontend (Benutzeroberfläche). Alles aus einer Hand.
+                    </div>
+                </div>
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Schnittstellen-Entwicklung</div>
+                    <div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">
+                        Verbindung Ihrer bestehenden Tools (CRM, ERP, Analytics). Daten fließen automatisch zwischen Systemen.
+                    </div>
+                </div>
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">KI & Automatisierung</div>
+                    <div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">
+                        Intelligente Automatisierung durch Machine Learning (also Systeme, die aus Daten lernen und sich verbessern).
+                    </div>
+                </div>
             </div>
         </div>
         <div class="visual-half" style="order: 2;">
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80" alt="Development">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80" alt="Softwareentwicklung">
         </div>
     </section>
 
     <section style="background: var(--black); color: white; padding: 10rem 0;">
         <div class="container">
             <div style="text-align: center; margin-bottom: 5rem;">
-                <h2 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 1rem;">Tech Stack</h2>
+                <h2 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 1rem;">Technologie-Stack</h2>
                 <p style="font-size: 1.375rem; opacity: 0.7;">Moderne Technologien für zukunftssichere Lösungen</p>
             </div>
             <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto;">
@@ -125,33 +152,67 @@
 
     <section class="section-visual-split">
         <div class="visual-half">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80" alt="Integration">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80" alt="System-Integration">
         </div>
         <div class="content-half">
-            <span class="section-label">Integration</span>
-            <h2 style="font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 2rem;">System-Integration & Automatisierung</h2>
-            <p style="font-size: 1.5rem; line-height: 1.6; color: var(--gray-600); margin-bottom: 3rem;">Ihre Tools arbeiten zusammen. Daten fließen automatisch. Manuelle Prozesse werden obsolet.</p>
+            <span class="section-label">03 — Integration</span>
+            <h2 style="font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 2rem;">System-Integration &<br/>Automatisierung</h2>
+            <p style="font-size: 1.5rem; line-height: 1.6; color: var(--gray-600); margin-bottom: 3rem;">
+                Ihre Tools arbeiten zusammen. Daten fließen automatisch. Manuelle Prozesse werden überflüssig.
+            </p>
             <div style="display: grid; gap: 2rem;">
-                <div><div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">API-Integrationen</div><div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">CRM, ERP, Analytics Tools verbinden</div></div>
-                <div><div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Workflow-Automatisierung</div><div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">Repetitive Aufgaben eliminieren</div></div>
-                <div><div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Daten-Pipelines</div><div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">Automatischer Datentransfer zwischen Systemen</div></div>
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Tool-Integrationen</div>
+                    <div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">
+                        Verbindung zwischen CRM (Kundenmanagement), ERP (Ressourcenplanung) und Analytics Tools.
+                    </div>
+                </div>
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Workflow-Automatisierung</div>
+                    <div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">
+                        Repetitive Aufgaben eliminieren. Zum Beispiel: Daten automatisch zwischen Systemen synchronisieren.
+                    </div>
+                </div>
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Daten-Pipelines</div>
+                    <div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">
+                        Automatischer Datentransfer zwischen Systemen. Keine manuellen Exporte mehr.
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="section-visual-split">
         <div class="content-half">
-            <span class="section-label">Support</span>
-            <h2 style="font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 2rem;">Wartung & Weiterentwicklung</h2>
-            <p style="font-size: 1.5rem; line-height: 1.6; color: var(--gray-600); margin-bottom: 3rem;">Entwicklung endet nicht mit dem Go-Live. Wir begleiten Sie langfristig.</p>
+            <span class="section-label">04 — Support</span>
+            <h2 style="font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 2rem;">Wartung &<br/>Weiterentwicklung</h2>
+            <p style="font-size: 1.5rem; line-height: 1.6; color: var(--gray-600); margin-bottom: 3rem;">
+                Entwicklung endet nicht mit dem Go-Live. Wir begleiten Sie langfristig und entwickeln Ihr System kontinuierlich weiter.
+            </p>
             <div style="display: grid; gap: 2rem;">
-                <div><div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Technischer Support</div><div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">Schnelle Hilfe bei Problemen</div></div>
-                <div><div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Updates & Bugfixes</div><div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">Kontinuierliche Verbesserung</div></div>
-                <div><div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Feature-Erweiterungen</div><div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">System wächst mit Ihren Anforderungen</div></div>
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Technischer Support</div>
+                    <div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">
+                        Schnelle Hilfe bei Problemen. Garantierte Reaktionszeiten.
+                    </div>
+                </div>
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Updates & Fehlerbehebung</div>
+                    <div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">
+                        Kontinuierliche Verbesserung und Behebung von Bugs.
+                    </div>
+                </div>
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Feature-Erweiterungen</div>
+                    <div style="font-size: 1.125rem; color: var(--gray-600); line-height: 1.6;">
+                        System wächst mit Ihren Anforderungen. Neue Features auf Basis Ihrer Wünsche.
+                    </div>
+                </div>
             </div>
         </div>
         <div class="visual-half" style="order: 2;">
-            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80" alt="Support">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80" alt="Support und Wartung">
         </div>
     </section>
 
@@ -159,10 +220,10 @@
         <div class="cta-container">
             <h2>Bereit für den nächsten Schritt?</h2>
             <p>Unverbindliches Erstgespräch. Konkrete Einschätzung. Transparente Kosten.</p>
-            <a href="mailto:contact@vachsystems.de?subject=Kontaktanfrage%20von%20Website&body=Hallo%20Vach%20Systems%20Team%2C%0A%0AIch%20interessiere%20mich%20f%C3%BCr%20Ihre%20Dienstleistungen.%0A%0AMein%20Name%3A%20%0AMein%20Unternehmen%3A%20%0ATelefon%3A%20%0A%0AMeine%20Nachricht%3A%0A" class="btn-cta-large">Kontakt aufnehmen →</a>
+            <a href="kontakt.html" class="btn-cta-large">Kontakt aufnehmen →</a>
             <div class="cta-trust">
-                <span>✓ Keine Setup-Fee</span>
-                <span>✓ Fixe Deadlines</span>
+                <span>✓ Keine Setup-Gebühr</span>
+                <span>✓ Feste Deadlines</span>
                 <span>✓ Messbare Ergebnisse</span>
             </div>
         </div>
@@ -183,7 +244,6 @@
                 </div>
                 <div class="footer-contact">
                     <a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a>
-                    
                 </div>
             </div>
             <div class="footer-legal">

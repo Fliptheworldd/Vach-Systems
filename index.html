@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vach Systems entwickelt intelligente Software für Prozessautomatisierung und KI-Integration. Maßgeschneidert für moderne Unternehmen.">
+    <meta name="description" content="Vach Systems entwickelt KI-Systeme und Software zur Prozessautomatisierung. Mehr Effizienz, bessere Entscheidungen, messbare Zeitersparnis für Unternehmen.">
+    <meta name="keywords" content="KI Automatisierung Unternehmen, Prozessautomatisierung Software, KI Systeme B2B, Geschäftsprozesse automatisieren, Dokumentenanalyse KI">
     <meta name="theme-color" content="#000000">
-    <title>Vach Systems – Intelligente Softwaresysteme</title>
+    <title>Vach Systems – KI-Systeme für Prozessautomatisierung | Software für Unternehmen</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* Prevent word breaking everywhere */
         * { 
             hyphens: none !important; 
             -webkit-hyphens: none !important;
             word-break: normal !important;
         }
-        /* Optimize hero for readability */
         .hero-subtitle {
             font-size: 1.25rem !important;
             line-height: 1.7 !important;
@@ -33,28 +32,16 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        
-        // Default: Analytics disabled until consent
-        gtag('consent', 'default', {
-            'analytics_storage': 'denied'
-        });
-        
+        gtag('consent', 'default', {'analytics_storage': 'denied'});
         gtag('js', new Date());
-        gtag('config', 'G-6ZZ7BX7SB0', {
-            'anonymize_ip': true
-        });
-        
-        // Enable analytics if cookie consent given
+        gtag('config', 'G-6ZZ7BX7SB0', {'anonymize_ip': true});
         if(localStorage.getItem('cookieConsent') === 'accepted') {
-            gtag('consent', 'update', {
-                'analytics_storage': 'granted'
-            });
+            gtag('consent', 'update', {'analytics_storage': 'granted'});
         }
     </script>
-
 </head>
 <body>
-    <!-- Minimal Nav -->
+    <!-- Navigation -->
     <nav class="nav-minimal">
         <div class="nav-container">
             <a href="index.html" class="logo-minimal">
@@ -67,7 +54,6 @@
                 <a href="ueber-uns.html">Über uns</a>
                 <a href="kontakt.html" class="nav-cta">Beratungsgespräch</a>
             </div>
-            <!-- Hamburger Menu (Mobile) -->
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -76,10 +62,7 @@
         </div>
     </nav>
     
-    <!-- Mobile Menu Overlay -->
     <div class="menu-overlay" id="menuOverlay"></div>
-    
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <a href="index.html">Home</a>
         <a href="leistungen.html">Leistungen</a>
@@ -88,21 +71,24 @@
         <a href="kontakt.html" class="nav-cta">Beratungsgespräch</a>
     </div>
 
-    <!-- Hero - Full Screen mit großem Bild -->
+    <!-- Hero -->
     <section class="hero-fullscreen">
         <div class="hero-bg">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=90" alt="Data Dashboard">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=90" alt="Moderne Datenanalyse">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-container">
-            <div class="hero-badge">KI-gestützte Systeme</div>
+            <div class="hero-badge">KI-Systeme für Unternehmen</div>
             <h1 class="hero-title">
                 Software, die<br/>
                 <span class="gradient-text">Prozesse automatisiert</span>
             </h1>
-            <p class="hero-subtitle" style="max-width: 700px; margin: 0 auto 3rem;">Intelligente Lösungen für operative Prozesse.<br/>Daten nutzbar machen. Schneller entscheiden.</p>
+            <p class="hero-subtitle" style="max-width: 700px; margin: 0 auto 3rem;">
+                Wir entwickeln intelligente Systeme, die Ihre Geschäftsprozesse verstehen und automatisieren.<br/>
+                Messbare Zeitersparnis. Bessere Entscheidungen. Mehr Struktur.
+            </p>
             <div class="hero-actions">
-                <a href="mailto:contact@vachsystems.de?subject=Kontaktanfrage%20von%20Website&body=Hallo%20Vach%20Systems%20Team%2C%0A%0AIch%20interessiere%20mich%20f%C3%BCr%20Ihre%20Dienstleistungen.%0A%0AMein%20Name%3A%20%0AMein%20Unternehmen%3A%20%0ATelefon%3A%20%0A%0AMeine%20Nachricht%3A%0A" class="btn-hero-primary">Projekt starten</a>
+                <a href="kontakt.html" class="btn-hero-primary">Kostenlose Prozessanalyse</a>
             </div>
             <div class="hero-stats">
                 <div class="stat"><span class="stat-big">~40%</span><span class="stat-label">Zeitersparnis</span></div>
@@ -113,31 +99,33 @@
         <div class="scroll-indicator">↓</div>
     </section>
 
-    <!-- Problem Section - Split Screen -->
+    <!-- Problem -->
     <section class="section-visual-split">
         <div class="visual-half">
-            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80" alt="Laptop with code" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80" alt="Manuelle Arbeitsprozesse">
         </div>
         <div class="content-half">
             <div style="font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 2rem;">Das Problem</div>
-            <h2 style="font-size: 3rem; font-weight: 900; line-height: 1.1; margin-bottom: 2rem;">Ineffiziente Prozesse<br/>kosten Wachstum</h2>
+            <h2 style="font-size: 3rem; font-weight: 900; line-height: 1.1; margin-bottom: 2rem;">
+                Manuelle Prozesse<br/>verschwenden Zeit
+            </h2>
             
             <p style="font-size: 1.125rem; line-height: 1.6; color: var(--gray-700); margin-bottom: 2.5rem;">
-                Täglich entstehen tausende Aufgaben und Datenflüsse. Die Systeme, die diese unterstützen sollen, sind oft fragmentiert und manuell.
+                Täglich entstehen tausende Aufgaben und Datenflüsse in Ihrem Unternehmen. Die Systeme, die diese unterstützen sollen, sind oft fragmentiert — und vieles wird manuell erledigt.
             </p>
             
             <div style="display: grid; gap: 2rem; margin-bottom: 2.5rem;">
                 <div>
-                    <div style="font-size: 1.25rem; font-weight: 800; color: var(--black); margin-bottom: 0.5rem;">Manuelle Prozesse</div>
-                    <div style="font-size: 1rem; color: var(--gray-600); line-height: 1.6;">Datentransfer erfolgt manuell. Zeit, die produktiver genutzt werden könnte.</div>
+                    <div style="font-size: 1.25rem; font-weight: 800; color: var(--black); margin-bottom: 0.5rem;">Daten manuell übertragen</div>
+                    <div style="font-size: 1rem; color: var(--gray-600); line-height: 1.6;">Informationen werden zwischen Systemen hin- und herkopiert. Zeit, die produktiver genutzt werden könnte.</div>
                 </div>
                 <div>
-                    <div style="font-size: 1.25rem; font-weight: 800; color: var(--black); margin-bottom: 0.5rem;">Fehlende Insights</div>
-                    <div style="font-size: 1rem; color: var(--gray-600); line-height: 1.6;">Daten liegen überall, aber niemand sieht das große Bild.</div>
+                    <div style="font-size: 1.25rem; font-weight: 800; color: var(--black); margin-bottom: 0.5rem;">Keine Übersicht</div>
+                    <div style="font-size: 1rem; color: var(--gray-600); line-height: 1.6;">Daten liegen in verschiedenen Tools, aber niemand sieht das große Bild. Entscheidungen werden auf Bauchgefühl getroffen.</div>
                 </div>
                 <div>
-                    <div style="font-size: 1.25rem; font-weight: 800; color: var(--black); margin-bottom: 0.5rem;">Reaktive Prozesse</div>
-                    <div style="font-size: 1rem; color: var(--gray-600); line-height: 1.6;">Probleme werden erkannt, wenn es zu spät ist.</div>
+                    <div style="font-size: 1.25rem; font-weight: 800; color: var(--black); margin-bottom: 0.5rem;">Probleme zu spät erkannt</div>
+                    <div style="font-size: 1rem; color: var(--gray-600); line-height: 1.6;">Fehler, unzufriedene Kunden oder Engpässe werden erst erkannt, wenn es zu spät ist.</div>
                 </div>
             </div>
 
@@ -151,25 +139,31 @@
         </div>
     </section>
 
-    <!-- Solution - Product Showcase -->
+    <!-- Lösung -->
     <section class="section-product-showcase">
         <div class="showcase-container">
             <span class="section-label-center">Unsere Lösung</span>
-            <h2 class="section-title-center">Intelligente Systeme,<br/>die Ihre Arbeit verstehen</h2>
-            <p class="section-subtitle-center">KI-gestützte Plattformen, die Prozesse analysieren, automatisieren und kontinuierlich optimieren.</p>
+            <h2 class="section-title-center">
+                Intelligente Systeme,<br/>
+                die Ihre Arbeit verstehen
+            </h2>
+            <p class="section-subtitle-center">
+                Wir entwickeln Software, die Prozesse analysiert, automatisiert und kontinuierlich optimiert.<br/>
+                Keine Standard-Software — maßgeschneiderte Lösungen für Ihre Anforderungen.
+            </p>
             
             <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.15); margin-bottom: 5rem; background: var(--gray-100);">
-                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1400&q=80" alt="Modern Dashboard" style="width: 100%; display: block; height: auto;">
+                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1400&q=80" alt="Modernes Software-Dashboard" style="width: 100%; display: block; height: auto;">
             </div>
 
             <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto;">
                 <div style="text-align: center; padding: 2rem 1.5rem;">
-                    <h4 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--black);">AI-Powered</h4>
+                    <h4 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--black);">KI-gestützt</h4>
                     <p style="font-size: 1rem; color: var(--gray-600); margin: 0;">Lernt aus Ihren Daten</p>
                 </div>
                 <div style="text-align: center; padding: 2rem 1.5rem;">
                     <h4 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--black);">Echtzeit</h4>
-                    <p style="font-size: 1rem; color: var(--gray-600); margin: 0;">Sofortige Insights</p>
+                    <p style="font-size: 1rem; color: var(--gray-600); margin: 0;">Sofortige Einblicke</p>
                 </div>
                 <div style="text-align: center; padding: 2rem 1.5rem;">
                     <h4 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--black);">Integriert</h4>
@@ -177,25 +171,25 @@
                 </div>
                 <div style="text-align: center; padding: 2rem 1.5rem;">
                     <h4 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--black);">Sicher</h4>
-                    <p style="font-size: 1rem; color: var(--gray-600); margin: 0;">On-Premise möglich</p>
+                    <p style="font-size: 1rem; color: var(--gray-600); margin: 0;">Auf Ihren Servern</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Case Study - Visual -->
+    <!-- Beispiel -->
     <section class="section-case-study">
         <div class="case-container">
             <div class="case-header">
-                <span class="section-label">Case Study</span>
-                <h2>Wie wir einem B2B-SaaS<br/>Millionen sparten</h2>
+                <span class="section-label">Beispiel</span>
+                <h2>Wie ein B2B-Unternehmen<br/>die Kundenabwanderung halbierte</h2>
             </div>
             <div class="case-visual">
                 <div class="case-before">
                     <div class="case-label">Vorher</div>
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" alt="Before">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" alt="Vor der Automatisierung">
                     <div class="case-stats-bad">
-                        <div class="case-stat">25% Churn</div>
+                        <div class="case-stat">25% Kündigungen/Jahr</div>
                         <div class="case-stat">2h/Tag manuell</div>
                         <div class="case-stat">12 Tools</div>
                     </div>
@@ -203,9 +197,9 @@
                 <div class="case-arrow">→</div>
                 <div class="case-after">
                     <div class="case-label success">Nachher</div>
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80" alt="After">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80" alt="Nach der Automatisierung">
                     <div class="case-stats-good">
-                        <div class="case-stat">9% Churn</div>
+                        <div class="case-stat">9% Kündigungen/Jahr</div>
                         <div class="case-stat">15min/Tag</div>
                         <div class="case-stat">1 System</div>
                     </div>
@@ -214,7 +208,7 @@
             <div class="case-result">
                 <div class="result-item">
                     <div class="result-number">-64%</div>
-                    <div class="result-text">Churn-Rate</div>
+                    <div class="result-text">Weniger Kündigungen</div>
                 </div>
                 <div class="result-item">
                     <div class="result-number">87%</div>
@@ -228,46 +222,46 @@
         </div>
     </section>
 
-    <!-- Process - Visual Timeline -->
+    <!-- Prozess -->
     <section class="section-process" id="prozess">
         <div class="process-container">
-            <span class="section-label-center">Unser Prozess</span>
+            <span class="section-label-center">Unser Vorgehen</span>
             <h2 class="section-title-center">Von Analyse bis Go-Live<br/>in 8-16 Wochen</h2>
             
             <div class="process-timeline">
                 <div class="process-step">
                     <div class="step-image">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80" alt="Discovery">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80" alt="Analyse-Phase">
                     </div>
                     <div class="step-number">01</div>
-                    <h4>Discovery</h4>
+                    <h4>Analyse</h4>
                     <p>Prozessanalyse & Strategie</p>
                     <div class="step-duration">Woche 1-2</div>
                 </div>
                 <div class="process-step">
                     <div class="step-image">
-                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&q=80" alt="Design">
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&q=80" alt="Konzept-Phase">
                     </div>
                     <div class="step-number">02</div>
-                    <h4>Design</h4>
-                    <p>Technisches Konzept</p>
+                    <h4>Konzept</h4>
+                    <p>Technisches Design</p>
                     <div class="step-duration">Woche 3-4</div>
                 </div>
                 <div class="process-step">
                     <div class="step-image">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=80" alt="Build">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=80" alt="Entwicklung">
                     </div>
                     <div class="step-number">03</div>
-                    <h4>Build</h4>
+                    <h4>Entwicklung</h4>
                     <p>Entwicklung & Testing</p>
                     <div class="step-duration">Woche 5-12</div>
                 </div>
                 <div class="process-step">
                     <div class="step-image">
-                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&q=80" alt="Launch">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&q=80" alt="Go-Live">
                     </div>
                     <div class="step-number">04</div>
-                    <h4>Launch</h4>
+                    <h4>Go-Live</h4>
                     <p>Integration & Rollout</p>
                     <div class="step-duration">Woche 13-16</div>
                 </div>
@@ -275,10 +269,10 @@
         </div>
     </section>
 
-    <!-- Tech - Dark mit Background -->
+    <!-- Technologie -->
     <section class="section-tech" id="technologie">
         <div class="tech-bg">
-            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80" alt="Tech">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80" alt="Moderne Technologie">
         </div>
         <div class="tech-container">
             <span class="section-label-light">Technologie</span>
@@ -294,21 +288,21 @@
         </div>
     </section>
 
-    <!-- CTA - Bold -->
+    <!-- CTA -->
     <section class="section-cta-bold">
         <div class="cta-container">
             <h2>Bereit für intelligentere Prozesse?</h2>
-            <p>Unverbindliches Erstgespräch. Konkrete Einschätzung.</p>
-            <a href="kontakt.html" class="btn-cta-large">Projekt starten →</a>
+            <p>Unverbindliches Erstgespräch. Konkrete Einschätzung. Keine Verkaufsshow.</p>
+            <a href="kontakt.html" class="btn-cta-large">Kostenlose Prozessanalyse →</a>
             <div class="cta-trust">
-                <span>✓ Keine Setup-Fee</span>
-                <span>✓ Fixe Deadlines</span>
+                <span>✓ Keine Setup-Gebühr</span>
+                <span>✓ Feste Deadlines</span>
                 <span>✓ ROI-Garantie</span>
             </div>
         </div>
     </section>
 
-    <!-- Minimal Footer -->
+    <!-- Footer -->
     <footer class="footer-minimal">
         <div class="footer-container">
             <div class="footer-main">
@@ -327,7 +321,6 @@
                 </div>
                 <div class="footer-contact">
                     <a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a>
-                    
                 </div>
             </div>
             <div class="footer-legal">

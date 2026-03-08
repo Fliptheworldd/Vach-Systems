@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
+    <meta name="description" content="Kontaktieren Sie Vach Systems für eine kostenlose Prozessanalyse. Wir besprechen Ihr Projekt und zeigen konkrete Lösungswege auf.">
+    <meta name="keywords" content="Vach Systems Kontakt, Prozessanalyse Termin, KI Beratung, Softwareentwicklung anfragen, Berlin">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <title>Kontakt – Vach Systems</title>
+    <title>Kontakt – Kostenlose Prozessanalyse | Vach Systems</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
@@ -14,25 +16,13 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        
-        // Default: Analytics disabled until consent
-        gtag('consent', 'default', {
-            'analytics_storage': 'denied'
-        });
-        
+        gtag('consent', 'default', {'analytics_storage': 'denied'});
         gtag('js', new Date());
-        gtag('config', 'G-6ZZ7BX7SB0', {
-            'anonymize_ip': true
-        });
-        
-        // Enable analytics if cookie consent given
+        gtag('config', 'G-6ZZ7BX7SB0', {'anonymize_ip': true});
         if(localStorage.getItem('cookieConsent') === 'accepted') {
-            gtag('consent', 'update', {
-                'analytics_storage': 'granted'
-            });
+            gtag('consent', 'update', {'analytics_storage': 'granted'});
         }
     </script>
-
 </head>
 <body>
     <nav class="nav-minimal">
@@ -56,8 +46,7 @@
     </nav>
     
     <div class="menu-overlay" id="menuOverlay"></div>
-    
-        <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu" id="mobileMenu">
         <a href="index.html">Home</a>
         <a href="leistungen.html">Leistungen</a>
         <a href="loesungen.html">Lösungen</a>
@@ -70,7 +59,10 @@
         <div style="max-width: 800px; margin: 0 auto;">
             <span style="display: inline-block; padding: 0.5rem 1.25rem; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; color: white; font-size: 0.9rem; font-weight: 600; margin-bottom: 2rem;">Erstgespräch</span>
             <h1 style="font-size: 4rem; font-weight: 900; color: white; margin-bottom: 1.5rem; letter-spacing: -0.03em;">Lassen Sie uns sprechen</h1>
-            <p style="font-size: 1.375rem; color: rgba(255,255,255,0.8); margin: 0;">Wir besprechen Ihr Projekt und zeigen konkrete Lösungswege auf.</p>
+            <p style="font-size: 1.375rem; color: rgba(255,255,255,0.8); margin: 0;">
+                Wir besprechen Ihr Projekt und zeigen konkrete Lösungswege auf.<br/>
+                Kostenlose Prozessanalyse. Keine Verkaufsshow.
+            </p>
         </div>
     </section>
 
@@ -82,65 +74,97 @@
             <div>
                 <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem;">Nachricht senden</h2>
                 
-                <!-- Mobile: Direct Email Button (hidden on desktop) -->
+                <!-- Mobile: Direct Email Button -->
                 <div class="mobile-email-cta" style="display: none;">
                     <a href="mailto:contact@vachsystems.de?subject=Kontaktanfrage%20von%20Website&body=Hallo%20Vach%20Systems%20Team%2C%0A%0AIch%20interessiere%20mich%20f%C3%BCr%20Ihre%20Dienstleistungen.%0A%0AMein%20Name%3A%20%0AMein%20Unternehmen%3A%20%0ATelefon%3A%20%0A%0AMeine%20Nachricht%3A%0A" 
                        style="display: block; width: 100%; padding: 1.5rem; background: black; color: white; text-align: center; text-decoration: none; border-radius: 12px; font-size: 1.125rem; font-weight: 700; margin-bottom: 2rem;">
                         📧 E-Mail senden
                     </a>
                     <p style="text-align: center; color: var(--gray-600); font-size: 0.875rem; line-height: 1.5;">
-                        Klicken Sie hier, um Ihr E-Mail-Programm mit vorausgefüllter Nachricht zu öffnen.
+                        Klicken Sie hier, um Ihr E-Mail-Programm zu öffnen.
                     </p>
                 </div>
                 
-                <!-- Desktop: Full Form with Backend -->
+                <!-- Desktop: Form -->
                 <form id="contactForm" action="https://formspree.io/f/mdawknwo" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem;">
                     <div>
                         <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--gray-700);">Name *</label>
                         <input type="text" name="name" required style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--gray-200); border-radius: 8px; font-size: 1rem; font-family: inherit;" placeholder="Max Mustermann">
                     </div>
                     <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--gray-700);">Unternehmen</label>
+                        <input type="text" name="company" style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--gray-200); border-radius: 8px; font-size: 1rem; font-family: inherit;" placeholder="Firma GmbH">
+                    </div>
+                    <div>
                         <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--gray-700);">E-Mail *</label>
-                        <input type="email" name="_replyto" required style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--gray-200); border-radius: 8px; font-size: 1rem; font-family: inherit;" placeholder="max@unternehmen.de">
+                        <input type="email" name="email" required style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--gray-200); border-radius: 8px; font-size: 1rem; font-family: inherit;" placeholder="max@firma.de">
                     </div>
                     <div>
                         <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--gray-700);">Telefon</label>
-                        <input type="tel" name="phone" style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--gray-200); border-radius: 8px; font-size: 1rem; font-family: inherit;" placeholder="+49 123 456789">
-                    </div>
-                    <div>
-                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--gray-700);">Unternehmen</label>
-                        <input type="text" name="company" style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--gray-200); border-radius: 8px; font-size: 1rem; font-family: inherit;" placeholder="Ihr Unternehmen">
+                        <input type="tel" name="phone" style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--gray-200); border-radius: 8px; font-size: 1rem; font-family: inherit;" placeholder="+49 30 12345678">
                     </div>
                     <div>
                         <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--gray-700);">Nachricht *</label>
-                        <textarea name="message" required style="width: 100%; min-height: 150px; padding: 0.875rem 1rem; border: 2px solid var(--gray-200); border-radius: 8px; font-size: 1rem; font-family: inherit; resize: vertical;" placeholder="Beschreiben Sie kurz Ihr Projekt..."></textarea>
+                        <textarea name="message" required rows="6" style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--gray-200); border-radius: 8px; font-size: 1rem; font-family: inherit; resize: vertical;" placeholder="Beschreiben Sie kurz Ihr Projekt oder Ihre Anforderungen..."></textarea>
                     </div>
-                    <button type="submit" class="btn-hero-primary" style="width: 100%; padding: 1.125rem; background: black; color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer;">Nachricht senden</button>
+                    <div id="formStatus" style="display: none; padding: 1rem; border-radius: 8px; font-weight: 600;"></div>
+                    <button type="submit" style="padding: 1.125rem 2rem; background: black; color: white; border: none; border-radius: 8px; font-size: 1.125rem; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.2s;">
+                        Nachricht senden →
+                    </button>
                 </form>
             </div>
 
             <!-- Info -->
-            <div style="display: flex; flex-direction: column; gap: 3rem;">
-                
-                    <p style="margin: 0;"><a href="https://www.linkedin.com/in/patrick-vach-833b421a0/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 600;">Patrick Vach auf LinkedIn</a></p>
+            <div>
+                <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem;">Kontaktinformationen</h2>
+                <div style="display: grid; gap: 2.5rem;">
+                    <div>
+                        <div style="font-weight: 700; font-size: 1.125rem; margin-bottom: 0.5rem;">E-Mail</div>
+                        <a href="mailto:contact@vachsystems.de" style="color: var(--gray-700); font-size: 1.125rem; text-decoration: none;">
+                            contact@vachsystems.de
+                        </a>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 1.125rem; margin-bottom: 0.5rem;">Standort</div>
+                        <p style="color: var(--gray-700); font-size: 1.125rem; margin: 0; line-height: 1.6;">
+                            Berlin, Deutschland<br/>
+                            Glienicker Str. 4A<br/>
+                            14109 Berlin
+                        </p>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 1.125rem; margin-bottom: 0.5rem;">Reaktionszeit</div>
+                        <p style="color: var(--gray-700); font-size: 1.125rem; margin: 0;">
+                            In der Regel innerhalb von 24 Stunden
+                        </p>
+                    </div>
                 </div>
 
-                <div style="background: var(--gray-50); padding: 2rem; border-radius: 12px; border: 2px solid var(--gray-200);">
-                    <h4 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem;">Was passiert danach?</h4>
-                    <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <div style="display: flex; gap: 1rem;">
-                            <span style="font-weight: 700; color: var(--accent);">1.</span>
-                            <span style="color: var(--gray-700);">Wir antworten innerhalb von 24h</span>
-                        </div>
-                        <div style="display: flex; gap: 1rem;">
-                            <span style="font-weight: 700; color: var(--accent);">2.</span>
-                            <span style="color: var(--gray-700);">30min Erstgespräch (unverbindlich)</span>
-                        </div>
-                        <div style="display: flex; gap: 1rem;">
-                            <span style="font-weight: 700; color: var(--accent);">3.</span>
-                            <span style="color: var(--gray-700);">Bei Interesse: Analyse & Angebot</span>
-                        </div>
-                    </div>
+                <div style="margin-top: 4rem; padding: 2rem; background: var(--gray-50); border-radius: 12px;">
+                    <h3 style="font-weight: 700; font-size: 1.25rem; margin-bottom: 1rem;">Was passiert als Nächstes?</h3>
+                    <ol style="list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem;">
+                        <li style="display: flex; gap: 1rem;">
+                            <span style="flex-shrink: 0; width: 32px; height: 32px; background: black; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem;">1</span>
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 0.25rem;">Rückmeldung</div>
+                                <div style="color: var(--gray-600); font-size: 0.9rem;">Wir melden uns innerhalb von 24h</div>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 1rem;">
+                            <span style="flex-shrink: 0; width: 32px; height: 32px; background: black; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem;">2</span>
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 0.25rem;">Erstgespräch</div>
+                                <div style="color: var(--gray-600); font-size: 0.9rem;">30-45 Min Videocall oder Telefon</div>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 1rem;">
+                            <span style="flex-shrink: 0; width: 32px; height: 32px; background: black; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem;">3</span>
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 0.25rem;">Angebot</div>
+                                <div style="color: var(--gray-600); font-size: 0.9rem;">Konkrete Einschätzung & Kostenrahmen</div>
+                            </div>
+                        </li>
+                    </ol>
                 </div>
             </div>
         </div>
@@ -150,10 +174,7 @@
         <div class="footer-container">
             <div class="footer-main">
                 <div class="footer-brand">
-                    <div class="footer-logo">
-                        <div class="logo-mark"></div>
-                        <span>Vach Systems</span>
-                    </div>
+                    <div class="footer-logo"><div class="logo-mark"></div><span>Vach Systems</span></div>
                     <p>Intelligente Softwaresysteme für moderne Unternehmen</p>
                 </div>
                 <div class="footer-links">
@@ -164,7 +185,6 @@
                 </div>
                 <div class="footer-contact">
                     <a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a>
-                    
                 </div>
             </div>
             <div class="footer-legal">
@@ -177,5 +197,54 @@
 
     <script src="js/script.js"></script>
     <script src="js/cookie-banner.js"></script>
+    <script>
+        // Mobile detection
+        if (window.matchMedia('(max-width: 768px)').matches) {
+            document.querySelector('.mobile-email-cta').style.display = 'block';
+            document.querySelector('#contactForm').style.display = 'none';
+        }
+
+        // Form handling
+        const form = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            const submitButton = form.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Wird gesendet...';
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    formStatus.style.display = 'block';
+                    formStatus.style.background = '#D1FAE5';
+                    formStatus.style.color = '#065F46';
+                    formStatus.textContent = '✓ Nachricht gesendet! Wir melden uns innerhalb von 24h.';
+                    form.reset();
+                } else {
+                    throw new Error('Fehler beim Senden');
+                }
+            })
+            .catch(error => {
+                formStatus.style.display = 'block';
+                formStatus.style.background = '#FEE2E2';
+                formStatus.style.color = '#991B1B';
+                formStatus.textContent = '✗ Fehler beim Senden. Bitte versuchen Sie es erneut oder senden Sie eine E-Mail direkt.';
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Nachricht senden →';
+            });
+        });
+    </script>
 </body>
 </html>
