@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OG Image Generator - Vach Systems</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: #f5f5f5;
+            font-family: Inter, Arial, sans-serif;
+        }
+        #canvas {
+            border: 2px solid #ccc;
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+        }
+        .controls {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 16px;
+            background: #000;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background: #333;
+        }
+        .info {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .status {
+            font-size: 18px;
+            margin: 20px 0;
+            padding: 15px;
+            background: #e8f4f8;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <h1>Open Graph Image Generator</h1>
+        <p>Erstellt automatisch ein 1200x630px Bild für WhatsApp/Social Media</p>
+        
+        <div class="status" id="status">Lade Logo...</div>
+        
+        <canvas id="canvas" width="1200" height="630"></canvas>
+        
+        <button onclick="downloadImage()" id="downloadBtn" disabled>⬇️ Als og-image.jpg herunterladen</button>
+        
+        <div class="info">
+            <h3>✅ Automatische Generierung</h3>
+            <p>Das Logo wurde geladen und auf 1200x630px optimiert.</p>
+            <ol style="text-align: left;">
+                <li>Klick auf "Als og-image.jpg herunterladen"</li>
+                <li>Speichere die Datei als <code>og-image.jpg</code> im vach-systems/ Ordner</li>
+                <li>Git: <code>git add og-image.jpg && git commit -m "Add OG-Image" && git push</code></li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const status = document.getElementById('status');
+        const downloadBtn = document.getElementById('downloadBtn');
+
+        // Logo laden
+        const img = new Image();
+        img.onload = function() {
+            status.textContent = '✅ Logo geladen! Generiere OG-Image...';
+            
+            // Schwarzer Hintergrund mit Gradient
+            const gradient = ctx.createLinearGradient(0, 0, 1200, 630);
+            gradient.addColorStop(0, '#000000');
+            gradient.addColorStop(1, '#1a1a2e');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 1200, 630);
+
+            // Logo zentriert platzieren (etwas nach links)
+            const logoMaxWidth = 400;
+            const logoMaxHeight = 400;
+            
+            let logoWidth = img.width;
+            let logoHeight = img.height;
+            
+            // Proportional skalieren
+            const scale = Math.min(logoMaxWidth / logoWidth, logoMaxHeight / logoHeight);
+            logoWidth *= scale;
+            logoHeight *= scale;
+            
+            const logoX = 150; // Etwas nach links
+            const logoY = (630 - logoHeight) / 2;
+            
+            ctx.drawImage(img, logoX, logoY, logoWidth, logoHeight);
+
+            // Text rechts vom Logo
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 64px Inter, Arial, sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText('Vach Systems', logoX + logoWidth + 60, 230);
+
+            ctx.fillStyle = '#999999';
+            ctx.font = '32px Inter, Arial, sans-serif';
+            ctx.fillText('KI-Systeme für Prozessautomatisierung', logoX + logoWidth + 60, 290);
+
+            ctx.fillStyle = '#666666';
+            ctx.font = '24px Inter, Arial, sans-serif';
+            ctx.fillText('Software, die Geschäftsprozesse automatisiert', logoX + logoWidth + 60, 340);
+
+            status.textContent = '✅ Fertig! Klick auf Download um zu speichern.';
+            downloadBtn.disabled = false;
+        };
+
+        img.onerror = function() {
+            status.textContent = '❌ Fehler beim Laden des Logos. Bitte logo-original.png prüfen.';
+            status.style.background = '#ffe8e8';
+        };
+
+        img.src = 'logo-original.png';
+
+        function downloadImage() {
+            const link = document.createElement('a');
+            link.download = 'og-image.jpg';
+            link.href = canvas.toDataURL('image/jpeg', 0.95);
+            link.click();
+            status.textContent = '✅ Download gestartet! Speichere als og-image.jpg im vach-systems/ Ordner.';
+        }
+    </script>
+</body>
+</html>
