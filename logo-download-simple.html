@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Vach Systems Logo - PNG Download</title>
+    <style>
+        body {
+            margin: 40px;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin-top: 0;
+            color: #111;
+        }
+        .instruction {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .instruction h2 {
+            margin-top: 0;
+            color: #1976d2;
+            font-size: 18px;
+        }
+        .instruction ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .instruction li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        .logo-box {
+            background: #fafafa;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        canvas {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: white;
+        }
+        button {
+            background: #000;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background: #333;
+        }
+        .size-info {
+            color: #666;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Vach Systems Logo - PNG Export</h1>
+        
+        <div class="instruction">
+            <h2>📥 So funktioniert's:</h2>
+            <ol>
+                <li><strong>Wähle eine Größe</strong> mit den Buttons unten</li>
+                <li><strong>Rechtsklick auf das Logo</strong> → "Bild speichern unter..."</li>
+                <li>Fertig! PNG ist gespeichert ✅</li>
+            </ol>
+        </div>
+        
+        <div class="logo-box">
+            <canvas id="logoCanvas"></canvas>
+            <div class="size-info" id="sizeInfo">Größe: 1024×1024 (empfohlen)</div>
+            <div style="margin-top: 20px;">
+                <button onclick="drawLogo(512)">512×512</button>
+                <button onclick="drawLogo(1024)">1024×1024 (Standard)</button>
+                <button onclick="drawLogo(2048)">2048×2048 (Groß)</button>
+            </div>
+        </div>
+        
+        <div class="instruction">
+            <h2>💡 Tipp:</h2>
+            <p><strong>1024×1024</strong> ist für die meisten Zwecke perfekt (Website, Social Media, Print).</p>
+            <p><strong>2048×2048</strong> nur für sehr hochauflösende Druckproduktion.</p>
+        </div>
+    </div>
+    
+    <script>
+        function drawLogo(size) {
+            const canvas = document.getElementById('logoCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas size
+            canvas.width = size;
+            canvas.height = size;
+            
+            // Draw gradient background
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#000000');
+            gradient.addColorStop(1, '#1F2937');
+            
+            // Rounded rectangle (manual implementation for compatibility)
+            const radius = size * 0.125; // 12.5% border radius
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.moveTo(radius, 0);
+            ctx.lineTo(size - radius, 0);
+            ctx.quadraticCurveTo(size, 0, size, radius);
+            ctx.lineTo(size, size - radius);
+            ctx.quadraticCurveTo(size, size, size - radius, size);
+            ctx.lineTo(radius, size);
+            ctx.quadraticCurveTo(0, size, 0, size - radius);
+            ctx.lineTo(0, radius);
+            ctx.quadraticCurveTo(0, 0, radius, 0);
+            ctx.closePath();
+            ctx.fill();
+            
+            // Draw white V
+            ctx.fillStyle = '#FFFFFF';
+            ctx.strokeStyle = '#FFFFFF';
+            ctx.lineWidth = size * 0.008;
+            ctx.lineJoin = 'round';
+            
+            const scale = size / 512; // Scale factor
+            ctx.beginPath();
+            ctx.moveTo(256 * scale, 380 * scale); // Bottom point
+            ctx.lineTo(140 * scale, 120 * scale); // Left top
+            ctx.lineTo(200 * scale, 120 * scale); // Left inner
+            ctx.lineTo(256 * scale, 260 * scale); // Center
+            ctx.lineTo(312 * scale, 120 * scale); // Right inner
+            ctx.lineTo(372 * scale, 120 * scale); // Right top
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+            
+            // Draw cyan bar at bottom
+            ctx.fillStyle = '#00D9FF';
+            const barY = 420 * scale;
+            const barX = 140 * scale;
+            const barWidth = 232 * scale;
+            const barHeight = 24 * scale;
+            const barRadius = 12 * scale;
+            
+            ctx.beginPath();
+            ctx.moveTo(barX + barRadius, barY);
+            ctx.lineTo(barX + barWidth - barRadius, barY);
+            ctx.quadraticCurveTo(barX + barWidth, barY, barX + barWidth, barY + barRadius);
+            ctx.lineTo(barX + barWidth, barY + barHeight - barRadius);
+            ctx.quadraticCurveTo(barX + barWidth, barY + barHeight, barX + barWidth - barRadius, barY + barHeight);
+            ctx.lineTo(barX + barRadius, barY + barHeight);
+            ctx.quadraticCurveTo(barX, barY + barHeight, barX, barY + barHeight - barRadius);
+            ctx.lineTo(barX, barY + barRadius);
+            ctx.quadraticCurveTo(barX, barY, barX + barRadius, barY);
+            ctx.closePath();
+            ctx.fill();
+            
+            // Update size info
+            document.getElementById('sizeInfo').textContent = `Größe: ${size}×${size}px`;
+        }
+        
+        // Draw default size on load
+        drawLogo(1024);
+    </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vach Systems Logo Export</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: #f0f0f0;
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            margin-bottom: 30px;
+            color: #111;
+        }
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .logo-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .logo-box h3 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 18px;
+        }
+        .logo-box p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .logo-display {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .logo-display.dark {
+            background: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .instruction {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: left;
+        }
+        .instruction h2 {
+            margin-top: 0;
+            color: #1976d2;
+        }
+        .instruction ol {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        button {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vach Systems Logo - Export als PNG</h1>
+        
+        <div class="logo-grid">
+            <!-- 512x512 Version -->
+            <div class="logo-box">
+                <h3>Standard (512×512)</h3>
+                <p>Für Website, Social Media, Print</p>
+                <div class="logo-display">
+                    <img id="logo512" src="logo-large.svg" width="512" height="512" alt="Vach Systems Logo 512">
+                </div>
+                <button onclick="downloadPNG('logo512', 512, 'vach-systems-logo-512.png')">Als PNG herunterladen</button>
+            </div>
+            
+            <!-- 1024x1024 Version -->
+            <div class="logo-box">
+                <h3>Groß (1024×1024)</h3>
+                <p>Für hochauflösenden Print, Banner</p>
+                <div class="logo-display">
+                    <img id="logo1024" src="logo-large.svg" width="512" height="512" alt="Vach Systems Logo 1024">
+                </div>
+                <button onclick="downloadPNG('logo1024', 1024, 'vach-systems-logo-1024.png')">Als PNG herunterladen</button>
+            </div>
+            
+            <!-- 2048x2048 Version -->
+            <div class="logo-box">
+                <h3>Extra Groß (2048×2048)</h3>
+                <p>Für maximale Qualität, Druckproduktion</p>
+                <div class="logo-display">
+                    <img id="logo2048" src="logo-large.svg" width="512" height="512" alt="Vach Systems Logo 2048">
+                </div>
+                <button onclick="downloadPNG('logo2048', 2048, 'vach-systems-logo-2048.png')">Als PNG herunterladen</button>
+            </div>
+            
+            <!-- Dark Background Preview -->
+            <div class="logo-box">
+                <h3>Vorschau auf Dunkel</h3>
+                <p>So sieht es auf dunklem Hintergrund aus</p>
+                <div class="logo-display dark">
+                    <img src="logo-large.svg" width="512" height="512" alt="Vach Systems Logo Dark">
+                </div>
+            </div>
+        </div>
+        
+        <div class="instruction">
+            <h2>📥 So speicherst du als PNG:</h2>
+            <ol>
+                <li><strong>Klicke auf einen Button oben</strong> → PNG wird automatisch heruntergeladen</li>
+                <li><strong>Alternative:</strong> Rechtsklick auf Logo → "Bild speichern unter..."</li>
+                <li><strong>Empfehlung:</strong> 1024×1024 für die meisten Anwendungen</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        function downloadPNG(imgId, size, filename) {
+            // Create canvas
+            const canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+            
+            // Load SVG as image
+            const img = document.getElementById(imgId);
+            const svgUrl = img.src;
+            
+            const downloadImg = new Image();
+            downloadImg.onload = function() {
+                // Draw on canvas
+                ctx.drawImage(downloadImg, 0, 0, size, size);
+                
+                // Convert to PNG and download
+                canvas.toBlob(function(blob) {
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                }, 'image/png');
+            };
+            
+            downloadImg.src = svgUrl;
+        }
+    </script>
+</body>
+</html>
