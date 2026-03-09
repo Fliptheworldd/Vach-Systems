@@ -25,6 +25,8 @@
             body { margin: 0; }
             .page-break { page-break-before: always; }
             .no-print { display: none; }
+            .question-block { page-break-inside: avoid; }
+            .intro-box { page-break-inside: avoid; }
         }
         
         body {
@@ -327,7 +329,7 @@
         </div>
 
         <!-- Block 4: Automations- und KI-Erfahrung -->
-        <div class="question-block">
+        <div class="question-block page-break">
             <h2><span class="block-number">4</span>Automations- und KI-Erfahrung</h2>
             <p class="intro">Hier wollen wir verstehen, wie weit Sie bereits sind und welche Erwartungen Sie haben.</p>
             <ul class="questions">
@@ -363,7 +365,7 @@
         </div>
 
         <!-- Next Steps -->
-        <div class="intro-box">
+        <div class="intro-box page-break">
             <h2>Ziel des Gesprächs</h2>
             <p>Am Ende unseres Gesprächs sollten wir drei zentrale Punkte geklärt haben:</p>
             <p><strong>1.</strong> Wo liegt das größte Problem oder Potenzial in Ihrem Unternehmen?</p>
