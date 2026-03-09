@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrick Vach - Lebenslauf</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 1.5cm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20mm;
+        }
+        
+        h1 {
+            font-size: 28pt;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            font-size: 13pt;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .contact {
+            margin-bottom: 30px;
+            font-size: 10pt;
+            line-height: 1.8;
+        }
+        
+        .contact a {
+            color: #0066FF;
+            text-decoration: none;
+        }
+        
+        h2 {
+            font-size: 16pt;
+            font-weight: 700;
+            color: #000;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #000;
+        }
+        
+        h3 {
+            font-size: 13pt;
+            font-weight: 600;
+            color: #000;
+            margin-top: 15px;
+            margin-bottom: 4px;
+        }
+        
+        .job-meta {
+            font-size: 10pt;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 6px;
+        }
+        
+        .skills {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .skill-category {
+            background: #f5f5f5;
+            padding: 12px;
+            border-radius: 6px;
+        }
+        
+        .skill-category h4 {
+            font-size: 11pt;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #000;
+        }
+        
+        .skill-category p {
+            font-size: 10pt;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .highlight {
+            background: #fffbea;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        
+        .section {
+            page-break-inside: avoid;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                font-size: 10pt;
+            }
+            
+            h1 { font-size: 24pt; }
+            h2 { font-size: 14pt; }
+            h3 { font-size: 12pt; }
+            
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Patrick Vach</h1>
+    <div class="subtitle">Software-Entwickler | KI & Automatisierung | Python, React, TensorFlow</div>
+    
+    <div class="contact">
+        📍 Berlin, Deutschland<br>
+        📧 <a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a><br>
+        🔗 <a href="https://www.linkedin.com/in/patrick-vach-833b421a0/">LinkedIn</a> | <a href="https://vachsystems.de">vachsystems.de</a><br>
+        💼 Freelancer | 100% Remote verfügbar
+    </div>
+    
+    <div class="section">
+        <h2>🎯 Profil</h2>
+        <p>
+            Softwareentwickler mit Fokus auf <strong>KI-Systeme, Prozessautomatisierung und Web-Entwicklung</strong>. 
+            Spezialisiert auf die Entwicklung maßgeschneiderter Lösungen, die reale Geschäftsprobleme lösen. 
+            Erfahrung in Full-Stack-Development, Machine Learning und Cloud-Infrastruktur.
+        </p>
+        <p style="margin-top: 10px;">
+            <strong>Kernkompetenzen:</strong> KI-Integration, Workflow-Automatisierung, React/Python-Development, 
+            API-Design, Cloud-Deployment (AWS/Docker)
+        </p>
+    </div>
+    
+    <div class="section">
+        <h2>💻 Technologie-Stack</h2>
+        <div class="skills">
+            <div class="skill-category">
+                <h4>Backend & KI</h4>
+                <p>Python (NumPy, Pandas, scikit-learn), TensorFlow/PyTorch, Node.js, PostgreSQL, MongoDB</p>
+            </div>
+            <div class="skill-category">
+                <h4>Frontend</h4>
+                <p>React (Hooks, Context), TypeScript/JavaScript, HTML5/CSS3, TailwindCSS</p>
+            </div>
+            <div class="skill-category">
+                <h4>DevOps & Cloud</h4>
+                <p>Docker, AWS (EC2, S3, Lambda), Git, Linux, CI/CD</p>
+            </div>
+            <div class="skill-category">
+                <h4>Weitere</h4>
+                <p>REST APIs, WebSockets, OAuth2, SEO, Agile/Scrum</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>🚀 Berufserfahrung</h2>
+        
+        <h3>Software-Entwickler & Gründer | Vach Systems</h3>
+        <div class="job-meta">März 2024 – heute | Berlin (Remote)</div>
+        <p>Entwicklung intelligenter Softwaresysteme für B2B-Unternehmen mit Fokus auf Prozessautomatisierung und KI-Integration.</p>
+        <ul>
+            <li><span class="highlight">Unternehmenswebsite</span>: High-Performance-Website mit SEO, Blog-System, responsive Design (Pure HTML/CSS/JS)</li>
+            <li><span class="highlight">KI-Dokumentenanalyse</span>: Automatisierte Verarbeitung von Geschäftsdokumenten mit NLP (Python, TensorFlow)</li>
+            <li><span class="highlight">Trading-Automation</span>: Desktop-App für algorithmisches Trading mit KI-Marktanalyse (Electron, React, Binance API)</li>
+            <li><span class="highlight">Workflow-Automatisierung</span>: Integration von CRM/ERP-Systemen via REST APIs</li>
+            <li><span class="highlight">ERP-Prototypen</span>: Branchenlösungen (Fenster/Aufzug-ERP) mit React, PostgreSQL, AWS</li>
+        </ul>
+        <p><strong>Technologien:</strong> Python, React, TensorFlow, Node.js, PostgreSQL, Docker, AWS, REST APIs</p>
+        
+        <h3>Freelance Software-Entwickler</h3>
+        <div class="job-meta">2018 – 2024 | Remote</div>
+        <p>Verschiedene Projekte im Bereich Web-Development, Automation und Datenanalyse für nationale und internationale Kunden.</p>
+        <ul>
+            <li>Web-Applikationen mit React & Node.js</li>
+            <li>Python-Skripte zur Datenverarbeitung & -analyse</li>
+            <li>API-Integrationen (Stripe, Telegram, WhatsApp, Discord)</li>
+            <li>Deployment & Server-Administration (Linux, Docker, AWS)</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h2>🎓 Ausbildung & Zertifikate</h2>
+        <h3>Informatik & Software-Engineering</h3>
+        <div class="job-meta">Autodidakt | Schwerpunkt: KI, Web-Development, Cloud-Infrastruktur</div>
+        <p><strong>Relevante Weiterbildungen:</strong></p>
+        <ul>
+            <li>Machine Learning & Deep Learning (Online-Kurse)</li>
+            <li>React & Modern JavaScript (Advanced Patterns)</li>
+            <li>AWS Cloud Practitioner</li>
+            <li>DevOps & Container-Technologien</li>
+            <li><strong>TryHackMe</strong> – Cybersecurity & Penetration Testing (Web Security, Network Security, Linux Privilege Escalation)</li>
+            <li><strong>Secure Coding Practices</strong> (OWASP Top 10, SQL Injection Prevention, XSS Mitigation)</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h2>📂 Referenzprojekte</h2>
+        
+        <h3>vachsystems.de</h3>
+        <p><strong>Tech-Stack:</strong> HTML5, CSS3, JavaScript, GitHub Pages</p>
+        <p>Professionelle Marketing-Website mit Blog-System, SEO-Optimierung und responsivem Design. 
+        100% Lighthouse Score, &lt;1s Ladezeit, accessibility-optimiert.</p>
+        <p>🔗 <a href="https://vachsystems.de">vachsystems.de</a></p>
+        
+        <h3>CryptoEdge Pro (Desktop Trading App)</h3>
+        <p><strong>Tech-Stack:</strong> Electron, React, Node.js, SQLite, Binance API</p>
+        <p>KI-gestützte Trading-Plattform mit Smart Executor, Gamification und Multi-Exchange-Support. 
+        Auto-Update-System, AES-256 Verschlüsselung, 7 Sprachen.</p>
+    </div>
+    
+    <div class="section">
+        <h2>💼 Freelancer-Details</h2>
+        <ul>
+            <li><strong>Verfügbarkeit:</strong> Sofort | 100% Remote</li>
+            <li><strong>Projektdauer:</strong> Bevorzugt 3-12 Monate</li>
+            <li><strong>Vertragsart:</strong> Freiberuflich (Kleinunternehmer §19 UStG)</li>
+            <li><strong>Arbeitsweise:</strong> Agil, selbstständig, transparente Kommunikation</li>
+        </ul>
+        <p><strong>Bevorzugte Projekte:</strong> KI/ML-Integration, Prozessautomatisierung, Full-Stack Web-Dev (React), API-Development, Cloud-Migration</p>
+    </div>
+    
+    <div class="section">
+        <h2>🌐 Sprachen</h2>
+        <p><strong>Deutsch:</strong> Muttersprache | <strong>Englisch:</strong> Fließend (Verhandlungssicher)</p>
+    </div>
+    
+    <div class="no-print" style="margin-top: 30px; text-align: center; color: #999; font-size: 9pt;">
+        <p>Letzte Aktualisierung: März 2026</p>
+        <p style="margin-top: 10px;">
+            <button onclick="window.print()" style="padding: 10px 20px; background: #000; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 11pt;">
+                📄 Als PDF drucken
+            </button>
+        </p>
+    </div>
+</body>
+</html>

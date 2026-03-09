@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KI-Bedarfsanalyse: Gesprächsleitfaden | Vach Systems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #000;
+            --accent: #00d9ff;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-600: #6c757d;
+            --gray-900: #212529;
+        }
+        
+        @media print {
+            body { margin: 0; }
+            .page-break { page-break-before: always; }
+            .no-print { display: none; }
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: white;
+            position: relative;
+        }
+        
+        /* Background Image - subtil */
+        body::before {
+            content: '';
+            position: fixed;
+            right: -10%;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=90') center/cover;
+            opacity: 0.03;
+            z-index: -1;
+            transform: skewX(-5deg);
+        }
+        
+        .container {
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 2cm;
+            background: white;
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid var(--primary);
+            margin-bottom: 3rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+        
+        .logo-mark {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-mark::before {
+            content: 'V';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 28px;
+            font-weight: 900;
+            color: white;
+        }
+        
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent);
+        }
+        
+        .contact-info {
+            text-align: right;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        .contact-info strong {
+            display: block;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* Title Section */
+        .title-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .title-section h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .title-section .subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            margin-bottom: 0.5rem;
+        }
+        
+        .title-section .version {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        /* Intro Box */
+        .intro-box {
+            background: var(--gray-100);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .intro-box h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .intro-box p {
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+        }
+        
+        /* Question Blocks */
+        .question-block {
+            margin-bottom: 3rem;
+            break-inside: avoid;
+        }
+        
+        .question-block h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gray-200);
+        }
+        
+        .block-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: 900;
+            margin-right: 0.5rem;
+        }
+        
+        .question-block .intro {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--gray-200);
+        }
+        
+        .questions {
+            list-style: none;
+            counter-reset: question-counter;
+        }
+        
+        .questions li {
+            counter-increment: question-counter;
+            margin-bottom: 1.25rem;
+            padding-left: 2rem;
+            position: relative;
+            line-height: 1.8;
+        }
+        
+        .questions li::before {
+            content: counter(question-counter) ".";
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--gray-200);
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        /* Print Button */
+        .print-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 217, 255, 0.3);
+            transition: all 0.2s;
+            z-index: 1000;
+        }
+        
+        .print-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 217, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <div class="logo-mark"></div>
+                <span>Vach Systems</span>
+            </div>
+            <div class="contact-info">
+                <strong>Patrick Vach</strong>
+                Berlin, Deutschland<br>
+                contact@vachsystems.de<br>
+                vachsystems.de
+            </div>
+        </div>
+
+        <!-- Title -->
+        <div class="title-section">
+            <h1>KI-Bedarfsanalyse</h1>
+            <p class="subtitle">Gesprächsleitfaden für unser Erstgespräch</p>
+            <p class="version">Version 1.0 · März 2026</p>
+        </div>
+
+        <!-- Intro -->
+        <div class="intro-box">
+            <h2>Vorbereitung (optional)</h2>
+            <p>Um unser Gespräch möglichst effizient zu gestalten, hilft es, wenn Sie vorab kurz über folgende Themen nachdenken.</p>
+            <p><strong>Dauer des Gesprächs: ca. 30 Minuten.</strong></p>
+            <p>Am Ende wissen Sie, wo KI-Automatisierung in Ihrem Unternehmen konkret helfen kann und wie ein erstes Pilotprojekt aussehen könnte.</p>
+        </div>
+
+        <!-- Block 1 -->
+        <div class="question-block">
+            <h2><span class="block-number">1</span>Ihre größten Zeitfresser</h2>
+            <p class="intro">Wo verbringt Ihr Team aktuell am meisten Zeit?</p>
+            <ul class="questions">
+                <li>Welche Prozesse kosten Ihre Mitarbeiter besonders viel Zeit?</li>
+                <li>Wo gibt es regelmäßig manuelle oder repetitive Arbeit?</li>
+                <li>Was empfinden Ihre Teams als besonders nervig?</li>
+            </ul>
+        </div>
+
+        <!-- Block 2 -->
+        <div class="question-block">
+            <h2><span class="block-number">2</span>Ihre Software-Landschaft</h2>
+            <p class="intro">Mit welchen Systemen arbeitet Ihr Unternehmen?</p>
+            <ul class="questions">
+                <li>Welche zentralen Systeme nutzen Sie? (ERP, CRM, etc.)</li>
+                <li>Welche Tools nutzen Ihre Teams täglich?</li>
+                <li>Haben Sie eine interne IT-Abteilung?</li>
+            </ul>
+        </div>
+
+        <!-- Block 3 -->
+        <div class="question-block">
+            <h2><span class="block-number">3</span>Ihre Daten</h2>
+            <p class="intro">Wie sind Ihre Unternehmensdaten organisiert?</p>
+            <ul class="questions">
+                <li>Wo liegen die wichtigsten Daten? (Datenbanken, PDFs, E-Mails?)</li>
+                <li>Werden Prozesse digital protokolliert?</li>
+                <li>Wie funktioniert die Dokumentensuche aktuell?</li>
+            </ul>
+        </div>
+
+        <!-- Block 4 -->
+        <div class="question-block">
+            <h2><span class="block-number">4</span>Ihr Ziel</h2>
+            <p class="intro">Was möchten Sie mit KI-Automatisierung erreichen?</p>
+            <ul class="questions">
+                <li>Zeitersparnis, Kostenreduktion oder Skalierung?</li>
+                <li>Welcher Bereich wäre für ein Pilotprojekt interessant?</li>
+                <li>Welches Problem würden Sie gerne als Erstes lösen?</li>
+            </ul>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="intro-box">
+            <h2>Was Sie nach dem Gespräch erhalten</h2>
+            <p><strong>1.</strong> Eine Einschätzung, wo Automatisierung in Ihrem Unternehmen den größten Mehrwert bringt.</p>
+            <p><strong>2.</strong> Einen konkreten Vorschlag für ein erstes Pilotprojekt (Zeitrahmen + Kosten).</p>
+            <p><strong>3.</strong> Eine klare Empfehlung für die nächsten Schritte.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Vach Systems</strong> · Intelligente Softwaresysteme für moderne Unternehmen</p>
+            <p>Berlin, Deutschland · contact@vachsystems.de · vachsystems.de</p>
+            <p style="margin-top: 1rem; font-size: 0.75rem;">© 2026 Vach Systems · Version 1.0 · März 2026</p>
+        </div>
+    </div>
+
+    <!-- Print Button (not printed) -->
+    <button class="print-button no-print" onclick="window.print()">📄 Als PDF speichern</button>
+</body>
+</html>

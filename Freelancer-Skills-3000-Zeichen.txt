@@ -1,0 +1,65 @@
+WEBSITE-ENTWICKLUNG & WEB-APPLIKATIONEN
+
+Professionelle Websites und Web-Applikationen von Grund auf – handcodiert, performant, SEO-optimiert. Von der Konzeption über das Design bis zum Live-Deployment.
+
+Technologien: React (Hooks, Context API), HTML5/CSS3, JavaScript/TypeScript, responsive Design, TailwindCSS, Node.js, Python (Flask/FastAPI), REST APIs
+
+Beispiele: Marketing-Websites mit Blog-System, interaktive Web-Apps mit Echtzeit-Features, Landing Pages mit Conversion-Fokus
+
+
+PROZESSAUTOMATISIERUNG & API-INTEGRATION
+
+Verbindung verschiedener Systeme und Automatisierung wiederkehrender Aufgaben. Ihre Tools sprechen miteinander, Daten fließen automatisch.
+
+Umsetzung: Integration von CRM/ERP-Systemen via REST APIs, automatisierte Workflows, Custom API-Entwicklung, Datenimport/-export, E-Mail-Automation, Benachrichtigungen, Reports
+
+Unterstützte APIs: Stripe, PayPal, Telegram, WhatsApp, Discord, Google Workspace, Microsoft 365, Slack, HubSpot, Salesforce u.v.m.
+
+
+KI-INTEGRATION & DOKUMENTENVERARBEITUNG
+
+Integration bestehender KI-Dienste in Ihre Anwendungen. Automatisierte Textanalyse, Kategorisierung, Informationsextraktion.
+
+Technologien: OpenAI API, Claude, Sprachmodelle für Textverarbeitung, PDF-Parsing, OCR-Integration, automatische Kategorisierung, Pandas/NumPy für Datenverarbeitung
+
+Use Cases: Automatische E-Mail-Kategorisierung, Dokumenten-Extraktion, Content-Generierung
+
+Hinweis: Integration vorhandener KI-Services und Workflow-Entwicklung – kein Custom-Training von ML-Modellen.
+
+
+FULL-STACK DEVELOPMENT
+
+Backend: Python (Flask, FastAPI, Django), Node.js (Express, NestJS), RESTful API-Design, PostgreSQL, MongoDB, SQLite, Authentication (JWT, OAuth2), WebSockets
+
+Frontend: React (moderne Patterns, Hooks, State Management), Single-Page Applications, TypeScript, Performance-Optimierung, Barrierefreiheit (WCAG)
+
+
+DEVOPS & DEPLOYMENT
+
+Deployment-Pipeline von der Entwicklung bis zur Produktion. Containerisierung, automatische Updates, Monitoring.
+
+Technologien: Docker (Multi-Stage Builds, Compose), CI/CD (GitHub Actions, GitLab CI), Linux Server-Administration, Cloud-Deployment (AWS EC2, S3, RDS, Lambda), SSL/TLS-Konfiguration, Monitoring & Logging
+
+
+SECURITY BEST PRACTICES
+
+Sicherheitsbewusste Entwicklung nach Industrie-Standards: OWASP Top 10 Compliance, SQL Injection Prevention, XSS/CSRF Protection, Secure Authentication & Authorization, Encrypted Data Storage, Security Headers & CSP
+
+Hinweis: Entwicklung nach Security-Standards – kein aktives Penetration Testing.
+
+
+DATENVERARBEITUNG & REPORTING
+
+Python (Pandas, NumPy) für Datenanalyse, automatisierte Reports (PDF-Generierung), Datenvisualisierung (Charts, Dashboards), Excel/CSV-Import/-Export, Database-Queries & Optimierung
+
+
+ARBEITSWEISE
+
+100% Remote | Agile Entwicklung mit kurzen Iterationen | Clean Code nach Best Practices | Transparente Kommunikation | Git, GitHub, Slack, Jira, Notion
+
+Verfügbar ab sofort für Projekte von 3-12 Monaten.
+
+
+IDEAL FÜR
+
+Unternehmenswebsites & Landing Pages | Web-Applikationen (React + Backend) | API-Integration & Workflow-Automation | Dokumentenverarbeitung mit KI | CRM/ERP-System-Anbindung | Cloud-Deployment & DevOps-Setup
