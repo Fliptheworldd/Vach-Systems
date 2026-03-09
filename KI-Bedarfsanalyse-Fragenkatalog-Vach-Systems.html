@@ -161,6 +161,10 @@
             line-height: 1.8;
         }
         
+        .intro-box p:last-child {
+            margin-bottom: 0;
+        }
+        
         /* Question Blocks */
         .question-block {
             margin-bottom: 3rem;
@@ -190,33 +194,32 @@
         }
         
         .question-block .intro {
-            font-size: 0.875rem;
+            font-size: 0.95rem;
             color: var(--gray-600);
-            font-style: italic;
             margin-bottom: 1.5rem;
             padding-left: 1rem;
             border-left: 3px solid var(--gray-200);
+            line-height: 1.7;
         }
         
         .questions {
             list-style: none;
-            counter-reset: question-counter;
         }
         
         .questions li {
-            counter-increment: question-counter;
-            margin-bottom: 1.25rem;
-            padding-left: 2rem;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
             position: relative;
             line-height: 1.8;
         }
         
         .questions li::before {
-            content: counter(question-counter) ".";
+            content: "•";
             position: absolute;
             left: 0;
             font-weight: 700;
             color: var(--accent);
+            font-size: 1.5rem;
         }
         
         /* Footer */
@@ -278,62 +281,107 @@
 
         <!-- Intro -->
         <div class="intro-box">
-            <h2>Vorbereitung (optional)</h2>
+            <h2>Vorbereitung auf unser Gespräch</h2>
             <p>Um unser Gespräch möglichst effizient zu gestalten, hilft es, wenn Sie vorab kurz über folgende Themen nachdenken.</p>
-            <p><strong>Dauer des Gesprächs: ca. 30 Minuten.</strong></p>
-            <p>Am Ende wissen Sie, wo KI-Automatisierung in Ihrem Unternehmen konkret helfen kann und wie ein erstes Pilotprojekt aussehen könnte.</p>
+            <p><strong>Gesprächsdauer: ca. 20-30 Minuten.</strong></p>
+            <p>Am Ende wissen Sie genau, wo KI-Automatisierung in Ihrem Unternehmen den größten Mehrwert bringt und wie ein erstes Pilotprojekt konkret aussehen könnte.</p>
         </div>
 
-        <!-- Block 1 -->
+        <!-- Block 1: Geschäftsprozesse -->
         <div class="question-block">
-            <h2><span class="block-number">1</span>Ihre größten Zeitfresser</h2>
-            <p class="intro">Wo verbringt Ihr Team aktuell am meisten Zeit?</p>
+            <h2><span class="block-number">1</span>Geschäftsprozesse verstehen</h2>
+            <p class="intro">Dies ist der wichtigste Teil. Hier identifizieren wir gemeinsam, wo Automatisierung den größten Hebel hat.</p>
             <ul class="questions">
-                <li>Welche Prozesse kosten Ihre Mitarbeiter besonders viel Zeit?</li>
-                <li>Wo gibt es regelmäßig manuelle oder repetitive Arbeit?</li>
-                <li>Was empfinden Ihre Teams als besonders nervig?</li>
+                <li>Welche Prozesse kosten Ihre Mitarbeiter aktuell am meisten Zeit?</li>
+                <li>Wo gibt es regelmäßig manuelle Arbeit oder Doppelarbeit?</li>
+                <li>Welche Aufgaben werden heute noch stark über E-Mail abgewickelt?</li>
+                <li>Welche Prozesse sind fehleranfällig oder verursachen oft Rückfragen?</li>
+                <li>Gibt es Aufgaben, die Ihre Mitarbeiter als besonders nervig oder repetitiv empfinden?</li>
             </ul>
         </div>
 
-        <!-- Block 2 -->
+        <!-- Block 2: Systeme und Softwarelandschaft -->
         <div class="question-block">
-            <h2><span class="block-number">2</span>Ihre Software-Landschaft</h2>
-            <p class="intro">Mit welchen Systemen arbeitet Ihr Unternehmen?</p>
+            <h2><span class="block-number">2</span>Systeme und Softwarelandschaft</h2>
+            <p class="intro">Um KI sinnvoll zu integrieren, müssen wir verstehen, womit Sie arbeiten.</p>
             <ul class="questions">
-                <li>Welche zentralen Systeme nutzen Sie? (ERP, CRM, etc.)</li>
-                <li>Welche Tools nutzen Ihre Teams täglich?</li>
-                <li>Haben Sie eine interne IT-Abteilung?</li>
+                <li>Welche zentralen Systeme nutzen Sie aktuell? (ERP, CRM, Dokumentenmanagement etc.)</li>
+                <li>Gibt es ein zentrales ERP-System? (z.B. SAP, Microsoft Dynamics, odoo)</li>
+                <li>Welche Tools nutzen Ihre Teams täglich im Arbeitsalltag?</li>
+                <li>Gibt es bereits Integrationen zwischen den Systemen oder läuft vieles manuell?</li>
+                <li>Haben Sie interne Entwickler oder eine IT-Abteilung für solche Themen?</li>
             </ul>
         </div>
 
-        <!-- Block 3 -->
+        <!-- Block 3: Datenstruktur -->
         <div class="question-block">
-            <h2><span class="block-number">3</span>Ihre Daten</h2>
-            <p class="intro">Wie sind Ihre Unternehmensdaten organisiert?</p>
+            <h2><span class="block-number">3</span>Datenstruktur</h2>
+            <p class="intro">KI-Systeme funktionieren nur mit brauchbaren Daten. Hier schauen wir, wie Ihre Daten organisiert sind.</p>
             <ul class="questions">
-                <li>Wo liegen die wichtigsten Daten? (Datenbanken, PDFs, E-Mails?)</li>
-                <li>Werden Prozesse digital protokolliert?</li>
-                <li>Wie funktioniert die Dokumentensuche aktuell?</li>
+                <li>Wo liegen Ihre wichtigsten Unternehmensdaten?</li>
+                <li>Sind Dokumente strukturiert oder eher viele PDFs, E-Mails und lose Dateien?</li>
+                <li>Gibt es bereits zentrale Datenbanken oder Data Warehouses?</li>
+                <li>Werden Prozesse oder Maschinen bereits digital protokolliert?</li>
+                <li>Wie gehen Sie aktuell mit Dokumentensuche oder Wissensmanagement um?</li>
             </ul>
         </div>
 
-        <!-- Block 4 -->
+        <!-- Block 4: Automations- und KI-Erfahrung -->
         <div class="question-block">
-            <h2><span class="block-number">4</span>Ihr Ziel</h2>
-            <p class="intro">Was möchten Sie mit KI-Automatisierung erreichen?</p>
+            <h2><span class="block-number">4</span>Automations- und KI-Erfahrung</h2>
+            <p class="intro">Hier wollen wir verstehen, wie weit Sie bereits sind und welche Erwartungen Sie haben.</p>
             <ul class="questions">
-                <li>Zeitersparnis, Kostenreduktion oder Skalierung?</li>
-                <li>Welcher Bereich wäre für ein Pilotprojekt interessant?</li>
-                <li>Welches Problem würden Sie gerne als Erstes lösen?</li>
+                <li>Haben Sie bereits Automatisierungen im Unternehmen?</li>
+                <li>Nutzen Ihre Teams schon KI-Tools im Alltag? (z.B. ChatGPT, Copilot)</li>
+                <li>Gibt es bereits interne KI-Initiativen oder Pilotprojekte?</li>
+                <li>Welche konkreten Erwartungen haben Sie an KI im Unternehmen?</li>
+            </ul>
+        </div>
+
+        <!-- Block 5: Prioritäten und Ziele -->
+        <div class="question-block">
+            <h2><span class="block-number">5</span>Prioritäten und Ziele</h2>
+            <p class="intro">Wir müssen verstehen, warum Sie KI einsetzen möchten und was Erfolg für Sie bedeutet.</p>
+            <ul class="questions">
+                <li>Geht es Ihnen eher um Zeitersparnis, Kostenreduktion oder Skalierung?</li>
+                <li>Welche Bereiche wären für ein erstes Pilotprojekt am interessantesten?</li>
+                <li>Wie schnell müsste ein erstes Ergebnis sichtbar sein?</li>
+                <li>Gibt es bereits ein konkretes Problem, das Sie gerne als Erstes lösen würden?</li>
+            </ul>
+        </div>
+
+        <!-- Block 6: Entscheidungsstruktur -->
+        <div class="question-block">
+            <h2><span class="block-number">6</span>Entscheidungsstruktur</h2>
+            <p class="intro">Um realistische Vorschläge zu machen, müssen wir die Entscheidungswege in Ihrem Unternehmen verstehen.</p>
+            <ul class="questions">
+                <li>Wer entscheidet über solche Projekte in Ihrem Unternehmen?</li>
+                <li>Gibt es ein Budget für Innovation, Digitalisierung oder Prozessoptimierung?</li>
+                <li>Welche Abteilungen müssten bei einem KI-Projekt involviert werden?</li>
+                <li>Wie laufen Investitionsentscheidungen bei Ihnen typischerweise ab?</li>
+            </ul>
+        </div>
+
+        <!-- Block 7: Umsetzungsfähigkeit -->
+        <div class="question-block">
+            <h2><span class="block-number">7</span>Umsetzungsfähigkeit</h2>
+            <p class="intro">Hier prüfen wir, ob die technischen Voraussetzungen für eine erfolgreiche Umsetzung gegeben sind.</p>
+            <ul class="questions">
+                <li>Gibt es interne IT-Ressourcen für Integration und Wartung?</li>
+                <li>Arbeiten Sie mit externen IT-Dienstleistern zusammen?</li>
+                <li>Wie offen sind Ihre Systeme für Schnittstellen oder APIs?</li>
+                <li>Gibt es Datenschutz- oder Compliance-Anforderungen, die wir beachten müssen?</li>
             </ul>
         </div>
 
         <!-- Next Steps -->
         <div class="intro-box">
-            <h2>Was Sie nach dem Gespräch erhalten</h2>
-            <p><strong>1.</strong> Eine Einschätzung, wo Automatisierung in Ihrem Unternehmen den größten Mehrwert bringt.</p>
-            <p><strong>2.</strong> Einen konkreten Vorschlag für ein erstes Pilotprojekt (Zeitrahmen + Kosten).</p>
-            <p><strong>3.</strong> Eine klare Empfehlung für die nächsten Schritte.</p>
+            <h2>Ziel des Gesprächs</h2>
+            <p>Am Ende unseres Gesprächs sollten wir drei zentrale Punkte geklärt haben:</p>
+            <p><strong>1.</strong> Wo liegt das größte Problem oder Potenzial in Ihrem Unternehmen?</p>
+            <p><strong>2.</strong> Kann KI hier wirklich messbaren Mehrwert liefern?</p>
+            <p><strong>3.</strong> Ist Ihr Unternehmen bereit, ein Pilotprojekt umzusetzen?</p>
+            <p style="margin-top: 1.5rem;">Wenn alle drei Punkte positiv beantwortet werden können, erstelle ich Ihnen im Anschluss ein konkretes Angebot für ein erstes Pilotprojekt.</p>
         </div>
 
         <!-- Footer -->
