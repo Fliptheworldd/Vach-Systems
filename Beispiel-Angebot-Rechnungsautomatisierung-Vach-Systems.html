@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angebot: KI-gestützte Rechnungsverarbeitung | Vach Systems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #000;
+            --accent: #00d9ff;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-600: #6c757d;
+            --gray-900: #212529;
+            --success: #10b981;
+        }
+        
+        @media print {
+            body { margin: 0; }
+            .page-break { page-break-before: always; }
+            .no-print { display: none; }
+            .section { page-break-inside: avoid; }
+            @page { margin: 1.5cm; }
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: white;
+        }
+        
+        .container {
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 2cm;
+            background: white;
+        }
+        
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid var(--primary);
+            margin-bottom: 3rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+        
+        .logo-mark {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-mark::before {
+            content: 'V';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 28px;
+            font-weight: 900;
+            color: white;
+        }
+        
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent);
+        }
+        
+        .header-info {
+            text-align: right;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        .header-info strong {
+            display: block;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        /* Title */
+        .title-section {
+            margin-bottom: 3rem;
+        }
+        
+        .title-section h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .title-section .subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            margin-bottom: 1rem;
+        }
+        
+        .meta-info {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            padding-top: 1rem;
+            border-top: 1px solid var(--gray-200);
+        }
+        
+        .meta-info div strong {
+            color: var(--gray-900);
+        }
+        
+        /* Sections */
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gray-200);
+        }
+        
+        .section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .section ul, .section ol {
+            margin: 1rem 0 1rem 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background: var(--gray-100);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .highlight-box p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Success Box */
+        .success-box {
+            background: #f0fdf4;
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        
+        .success-box strong {
+            color: var(--success);
+        }
+        
+        /* Timeline */
+        .timeline {
+            margin: 1.5rem 0;
+        }
+        
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .timeline-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .timeline-phase {
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        .timeline-content h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-content p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        /* Price Table */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        .price-table th {
+            background: var(--gray-100);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 700;
+            border-bottom: 2px solid var(--gray-200);
+        }
+        
+        .price-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .price-table tr:last-child td {
+            border-bottom: 2px solid var(--primary);
+            font-weight: 700;
+        }
+        
+        .price-table .amount {
+            text-align: right;
+            font-weight: 600;
+        }
+        
+        .total-row {
+            background: var(--gray-100);
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--gray-200);
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        
+        /* Print Button */
+        .print-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 217, 255, 0.3);
+            transition: all 0.2s;
+            z-index: 1000;
+        }
+        
+        .print-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 217, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <div class="logo-mark"></div>
+                <span>Vach Systems</span>
+            </div>
+            <div class="header-info">
+                <strong>ANGEBOT</strong>
+                Angebots-Nr.: VS-2026-001<br>
+                Datum: 9. März 2026<br>
+                Gültig bis: 8. April 2026
+            </div>
+        </div>
+
+        <!-- Title -->
+        <div class="title-section">
+            <h1>KI-gestützte Rechnungsverarbeitung</h1>
+            <p class="subtitle">Automatische Erfassung, Prüfung und Verbuchung eingehender Rechnungen</p>
+            <div class="meta-info">
+                <div><strong>Kunde:</strong> Musterfirma GmbH</div>
+                <div><strong>Ansprechpartner:</strong> Max Mustermann</div>
+                <div><strong>Projekt-Typ:</strong> Pilotprojekt</div>
+            </div>
+        </div>
+
+        <!-- Situation -->
+        <div class="section">
+            <h2>Ausgangssituation</h2>
+            <p>Ihre Buchhaltung verarbeitet derzeit <strong>ca. 150 Rechnungen pro Monat</strong> manuell. Jede Rechnung erfordert durchschnittlich 15 Minuten Bearbeitungszeit:</p>
+            <ul>
+                <li>PDF öffnen und Daten ablesen</li>
+                <li>Manuelle Eingabe in das ERP-System</li>
+                <li>Abgleich mit Bestellungen</li>
+                <li>Prüfung und Freigabe</li>
+                <li>Ablage und Archivierung</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <p><strong>Aktueller Zeitaufwand:</strong></p>
+                <p>150 Rechnungen × 15 Min. = <strong>37,5 Stunden pro Monat</strong></p>
+                <p>Bei einem Stundensatz von 45€ = <strong>1.690€ monatliche Kosten</strong></p>
+            </div>
+        </div>
+
+        <!-- Lösung -->
+        <div class="section">
+            <h2>Unsere Lösung</h2>
+            <p>Ein KI-System, das den gesamten Rechnungsprozess automatisiert:</p>
+            
+            <ol>
+                <li><strong>Automatischer Eingang:</strong> Rechnungen per E-Mail oder Upload</li>
+                <li><strong>KI-Extraktion:</strong> Lieferant, Rechnungsnummer, Betrag, Positionen werden automatisch erkannt</li>
+                <li><strong>Intelligente Prüfung:</strong> Abgleich mit Bestellungen und Lieferungen</li>
+                <li><strong>Freigabe-Workflow:</strong> Bei Unstimmigkeiten automatische Benachrichtigung</li>
+                <li><strong>ERP-Integration:</strong> Direkte Übertragung in Ihr bestehendes System</li>
+                <li><strong>Archivierung:</strong> Revisionssichere Ablage</li>
+            </ol>
+            
+            <div class="success-box">
+                <p><strong>Erwartete Zeitersparnis: 80-90%</strong></p>
+                <p>Nur noch 2-3 Minuten Prüfzeit pro Rechnung statt 15 Minuten</p>
+                <p><strong>Einsparung: ca. 1.350€ pro Monat</strong></p>
+            </div>
+        </div>
+
+        <!-- Leistungsumfang -->
+        <div class="section">
+            <h2>Leistungsumfang</h2>
+            
+            <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Phase 1: Analyse & Konzept (2 Wochen)</h3>
+            <ul>
+                <li>Detailanalyse Ihres bestehenden Rechnungsprozesses</li>
+                <li>Anbindung an Ihr ERP-System (Schnittstellen-Konzept)</li>
+                <li>Freigabe-Workflow-Design</li>
+                <li>Technisches Konzept und Architektur</li>
+            </ul>
+            
+            <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Phase 2: Entwicklung (4 Wochen)</h3>
+            <ul>
+                <li>Entwicklung der KI-Extraktions-Engine</li>
+                <li>ERP-Integration (API-Anbindung)</li>
+                <li>Freigabe-Dashboard für Ihre Buchhaltung</li>
+                <li>E-Mail-Integration (automatischer Import)</li>
+                <li>Training der KI mit Ihren Beispiel-Rechnungen</li>
+            </ul>
+            
+            <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Phase 3: Pilotbetrieb (4 Wochen)</h3>
+            <ul>
+                <li>Testlauf mit echten Rechnungen (parallel zum alten Prozess)</li>
+                <li>Feintuning und Optimierung</li>
+                <li>Schulung Ihrer Mitarbeiter (2 Sessions à 2 Stunden)</li>
+                <li>Dokumentation und Handbuch</li>
+            </ul>
+            
+            <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Phase 4: Rollout & Support (2 Wochen)</h3>
+            <ul>
+                <li>Go-Live und Überwachung</li>
+                <li>30 Tage Support nach Go-Live (E-Mail + Video-Call)</li>
+                <li>Monatliches Review-Meeting (erste 3 Monate)</li>
+            </ul>
+        </div>
+
+        <!-- Zeitplan -->
+        <div class="section">
+            <h2>Zeitplan</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-phase">Woche 1-2</div>
+                    <div class="timeline-content">
+                        <h3>Analyse & Konzept</h3>
+                        <p>Kick-off Meeting, Prozessanalyse, Technisches Konzept</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-phase">Woche 3-6</div>
+                    <div class="timeline-content">
+                        <h3>Entwicklung</h3>
+                        <p>KI-Engine, ERP-Integration, Dashboard, KI-Training</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-phase">Woche 7-10</div>
+                    <div class="timeline-content">
+                        <h3>Pilotbetrieb</h3>
+                        <p>Testlauf, Optimierung, Schulung, Dokumentation</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-phase">Woche 11-12</div>
+                    <div class="timeline-content">
+                        <h3>Go-Live</h3>
+                        <p>Produktivstart, Monitoring, Support</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p><strong>Gesamtdauer: ca. 12 Wochen</strong> (inkl. Puffer für Abstimmungen)</p>
+        </div>
+
+        <!-- Investition -->
+        <div class="section page-break">
+            <h2>Investition</h2>
+            
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Leistung</th>
+                        <th style="width: 120px;">Aufwand</th>
+                        <th style="width: 140px;" class="amount">Betrag</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Phase 1: Analyse & Konzept</td>
+                        <td>3 Tage</td>
+                        <td class="amount">2.400€</td>
+                    </tr>
+                    <tr>
+                        <td>Phase 2: Entwicklung (KI-Engine, ERP-Integration, Dashboard)</td>
+                        <td>15 Tage</td>
+                        <td class="amount">12.000€</td>
+                    </tr>
+                    <tr>
+                        <td>Phase 3: Pilotbetrieb, Training, Optimierung</td>
+                        <td>6 Tage</td>
+                        <td class="amount">4.800€</td>
+                    </tr>
+                    <tr>
+                        <td>Phase 4: Rollout, Dokumentation, Support</td>
+                        <td>3 Tage</td>
+                        <td class="amount">2.400€</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><strong>Infrastruktur & KI-API-Kosten (erste 6 Monate inkl.)</strong></td>
+                        <td class="amount">1.200€</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="2"><strong>Gesamtinvestition (einmalig)</strong></td>
+                        <td class="amount" style="font-size: 1.25rem;">22.800€</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="highlight-box">
+                <p><strong>ROI-Berechnung:</strong></p>
+                <p>Monatliche Einsparung: 1.350€</p>
+                <p>Break-Even nach: <strong>17 Monaten</strong></p>
+                <p>Einsparung Jahr 1: 16.200€ (bei Start nach 3 Monaten: 10.800€ - 22.800€ = -12.000€)</p>
+                <p>Einsparung Jahr 2: <strong>+16.200€ (ROI erreicht)</strong></p>
+            </div>
+        </div>
+
+        <!-- Laufende Kosten -->
+        <div class="section">
+            <h2>Laufende Kosten (ab Monat 7)</h2>
+            <ul>
+                <li><strong>Server-Hosting:</strong> 50€/Monat</li>
+                <li><strong>KI-API-Calls:</strong> ca. 80-120€/Monat (abhängig von Rechnungsvolumen)</li>
+                <li><strong>Wartung & Updates:</strong> Optional 200€/Monat (SLA mit 24h Response-Zeit)</li>
+            </ul>
+            <p><strong>Gesamtkosten ab Monat 7: ca. 130-170€/Monat</strong> (ohne Wartungsvertrag)</p>
+        </div>
+
+        <!-- Nächste Schritte -->
+        <div class="section">
+            <h2>Nächste Schritte</h2>
+            <ol>
+                <li><strong>Angebot prüfen</strong> – Rückfragen gerne per E-Mail oder Telefonat</li>
+                <li><strong>Kick-off-Termin vereinbaren</strong> – Wir starten innerhalb von 2 Wochen</li>
+                <li><strong>Vertrag & Anzahlung</strong> – 30% bei Projektstart, 40% nach Phase 2, 30% bei Go-Live</li>
+            </ol>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Vach Systems</strong></p>
+            <p>Patrick Vach · Berlin, Deutschland</p>
+            <p>E-Mail: contact@vachsystems.de · Web: vachsystems.de</p>
+            <p style="margin-top: 1rem; font-size: 0.75rem;">Kleinunternehmer gemäß §19 UStG · Ust-IdNr. auf Anfrage</p>
+        </div>
+    </div>
+
+    <!-- Print Button -->
+    <button class="print-button no-print" onclick="window.print()">📄 Als PDF speichern</button>
+</body>
+</html>

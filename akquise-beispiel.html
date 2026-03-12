@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praxisbeispiel: Automatisierte Dokumentenverarbeitung | Vach Systems</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: white;
+            color: #000;
+            line-height: 1.6;
+        }
+        
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        @media print {
+            body {
+                width: 210mm;
+                height: 297mm;
+            }
+        }
+        
+        .page {
+            width: 210mm;
+            height: 297mm;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header {
+            padding: 22px 40px 15px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo-icon {
+            width: 34px;
+            height: 34px;
+            background: #000;
+            position: relative;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        
+        .logo-icon::before {
+            content: 'V';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 20px;
+            font-weight: 900;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            bottom: 6px;
+            left: 6px;
+            right: 6px;
+            height: 2px;
+            background: #00d9ff;
+        }
+        
+        .logo-text {
+            font-size: 16px;
+            font-weight: 800;
+            color: #000;
+            letter-spacing: -0.5px;
+        }
+        
+        .header-contact {
+            text-align: right;
+            font-size: 10px;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        .hero {
+            padding: 30px 40px 22px;
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0,217,255,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 29px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 8px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+        
+        .hero-highlight {
+            color: #00d9ff;
+        }
+        
+        .hero-subtitle {
+            font-size: 13px;
+            color: #b0b0b0;
+            max-width: 600px;
+            font-weight: 400;
+        }
+        
+        .content {
+            padding: 26px 40px 20px;
+        }
+        
+        .case-study {
+            background: #fafafa;
+            padding: 18px;
+            border-radius: 8px;
+            border-left: 4px solid #00d9ff;
+            margin-bottom: 14px;
+        }
+        
+        .case-study-header {
+            font-size: 11px;
+            color: #00d9ff;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 11px;
+        }
+        
+        .case-section {
+            margin-bottom: 11px;
+        }
+        
+        .case-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .case-section h3 {
+            font-size: 14px;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .case-section h3::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            background: #00d9ff;
+            border-radius: 50%;
+        }
+        
+        .case-section p {
+            font-size: 12px;
+            color: #444;
+            line-height: 1.5;
+            margin-left: 13px;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 11px;
+        }
+        
+        .result-card {
+            background: white;
+            padding: 13px;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .result-icon {
+            font-size: 21px;
+            margin-bottom: 5px;
+        }
+        
+        .result-card h4 {
+            font-size: 11px;
+            font-weight: 700;
+            color: #666;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .result-card .value {
+            font-size: 19px;
+            font-weight: 900;
+            color: #000;
+        }
+        
+        .roi-box {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            color: white;
+            padding: 14px;
+            border-radius: 6px;
+            margin-top: 11px;
+        }
+        
+        .roi-box h4 {
+            font-size: 11px;
+            color: #00d9ff;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 7px;
+        }
+        
+        .roi-calc {
+            font-size: 11px;
+            line-height: 1.5;
+            color: #b0b0b0;
+            margin-bottom: 7px;
+        }
+        
+        .roi-calc strong {
+            color: white;
+        }
+        
+        .roi-result {
+            background: rgba(0, 217, 255, 0.1);
+            padding: 11px;
+            border-radius: 4px;
+            border-left: 3px solid #00d9ff;
+        }
+        
+        .roi-result-text {
+            font-size: 11px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 3px;
+        }
+        
+        .roi-result-amount {
+            font-size: 22px;
+            font-weight: 900;
+            color: #00d9ff;
+        }
+        
+        .transferability {
+            background: white;
+            padding: 16px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            margin-top: 14px;
+        }
+        
+        .transferability h4 {
+            font-size: 11px;
+            font-weight: 700;
+            color: #00d9ff;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .transferability p {
+            font-size: 11px;
+            color: #444;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+        
+        .transferability ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+        }
+        
+        .transferability li {
+            font-size: 11px;
+            color: #444;
+            padding-left: 16px;
+            position: relative;
+        }
+        
+        .transferability li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00d9ff;
+            font-weight: 700;
+        }
+        
+        .process-flow {
+            background: white;
+            padding: 14px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            margin-top: 12px;
+        }
+        
+        .process-flow h4 {
+            font-size: 11px;
+            font-weight: 700;
+            color: #00d9ff;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .flow-steps {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .flow-step {
+            flex: 1;
+            text-align: center;
+            padding: 8px 6px;
+            background: #fafafa;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #444;
+            line-height: 1.3;
+        }
+        
+        .flow-arrow {
+            font-size: 14px;
+            color: #00d9ff;
+        }
+        
+        .cta {
+            background: #f5f5f5;
+            padding: 15px 17px;
+            border-radius: 6px;
+            text-align: center;
+            margin-top: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .cta h3 {
+            font-size: 15px;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 7px;
+        }
+        
+        .cta p {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 9px;
+            line-height: 1.5;
+        }
+        
+        .cta-contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 11px;
+            color: #000;
+            font-weight: 600;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .cta-contact span {
+            padding: 6px 12px;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 12px 40px;
+            background: #000;
+            color: #999;
+            font-size: 9px;
+            text-align: center;
+        }
+        
+        .footer a {
+            color: #00d9ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <div class="logo-text">VACH SYSTEMS</div>
+            </div>
+            <div class="header-contact">
+                Patrick Vach<br>
+                Glienicker Str. 4A, 12203 Berlin<br>
+                contact@vachsystems.de
+            </div>
+        </div>
+        
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Praxisbeispiel:<br><span class="hero-highlight">Automatisierte Dokumentenverarbeitung</span></h1>
+                <p class="hero-subtitle">Wie ein mittelständisches Unternehmen durch KI-Automatisierung 70 % der manuellen Dateneingabe eliminieren konnte.</p>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="case-study">
+                <div class="case-study-header">Case Study · Dokumentenautomatisierung</div>
+                
+                <div class="case-section">
+                    <h3>Problem</h3>
+                    <p>Mitarbeiter mussten täglich Daten aus PDF-Dokumenten (Rechnungen, Bestellungen, Lieferscheine) manuell ins ERP übertragen.<br><br><strong>Zeitaufwand:</strong> ca. 12h/Woche<br><strong>Hohe Fehlerquote</strong> durch manuelle Eingabe.</p>
+                </div>
+                
+                <div class="case-section">
+                    <h3>Lösung</h3>
+                    <p>Eine KI-basierte Dokumentenverarbeitung extrahiert relevante Informationen automatisch und überträgt sie direkt ins ERP-System.<br><br><em>Dokument → KI extrahiert Daten → Validierung → ERP aktualisiert</em></p>
+                </div>
+                
+                <div class="case-section">
+                    <h3>Ergebnis</h3>
+                    <p>Nach 4 Wochen Implementierung:</p>
+                </div>
+                
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-icon">⚡</div>
+                        <h4>Zeitersparnis</h4>
+                        <div class="value">70%</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-icon">📊</div>
+                        <h4>Weniger Fehler</h4>
+                        <div class="value">85%</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-icon">🚀</div>
+                        <h4>Bearbeitung</h4>
+                        <div class="value" style="font-size: 18px;">3x schneller</div>
+                    </div>
+                </div>
+                
+                <div class="roi-box">
+                    <h4>Wirtschaftliche Wirkung</h4>
+                    <div class="roi-calc">
+                        <strong>12h/Woche</strong> → ca. 600h/Jahr<br>
+                        600h × <strong>40 €/h</strong> → ca. <strong>24.000 € jährlicher Aufwand</strong>
+                    </div>
+                    <div class="roi-result">
+                        <div class="roi-result-text">Potenzielle Einsparung durch Automatisierung:</div>
+                        <div class="roi-result-amount">~17.000 € pro Jahr</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta">
+                <h3>Gibt es ähnliche manuelle Prozesse in Ihrem Unternehmen?</h3>
+                <p>In einem kurzen Gespräch (ca. 20 Minuten) analysieren wir gemeinsam, welche Prozesse sich für KI-Automatisierung eignen.</p>
+                <div class="cta-contact">
+                    <span>📧 contact@vachsystems.de</span>
+                    <span>🔗 vachsystems.de</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Vach Systems · Berlin · <a href="https://vachsystems.de">vachsystems.de</a> · Professionelle KI-Lösungen für Unternehmen
+        </div>
+    </div>
+</body>
+</html>

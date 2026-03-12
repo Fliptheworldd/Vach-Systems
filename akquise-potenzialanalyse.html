@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So läuft eine KI-Potenzialanalyse ab | Vach Systems</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: white;
+            color: #000;
+            line-height: 1.6;
+        }
+        
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        @media print {
+            body {
+                width: 210mm;
+                height: 297mm;
+            }
+        }
+        
+        .page {
+            width: 210mm;
+            height: 297mm;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header {
+            padding: 24px 40px 16px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo-icon {
+            width: 34px;
+            height: 34px;
+            background: #000;
+            position: relative;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        
+        .logo-icon::before {
+            content: 'V';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 20px;
+            font-weight: 900;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            bottom: 6px;
+            left: 6px;
+            right: 6px;
+            height: 2px;
+            background: #00d9ff;
+        }
+        
+        .logo-text {
+            font-size: 16px;
+            font-weight: 800;
+            color: #000;
+            letter-spacing: -0.5px;
+        }
+        
+        .header-contact {
+            text-align: right;
+            font-size: 10px;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        .hero {
+            padding: 32px 40px 24px;
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0,217,255,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 30px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 9px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+        
+        .hero-highlight {
+            color: #00d9ff;
+        }
+        
+        .hero-subtitle {
+            font-size: 14px;
+            color: #b0b0b0;
+            max-width: 600px;
+            font-weight: 400;
+        }
+        
+        .content {
+            padding: 28px 40px 20px;
+        }
+        
+        .section-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #00d9ff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 22px;
+        }
+        
+        .process-step {
+            display: flex;
+            gap: 19px;
+            margin-bottom: 18px;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            width: 47px;
+            height: 47px;
+            background: #000;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 21px;
+            font-weight: 900;
+            flex-shrink: 0;
+            position: relative;
+        }
+        
+        .step-number::after {
+            content: '';
+            position: absolute;
+            bottom: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 18px;
+            background: #e0e0e0;
+        }
+        
+        .process-step:last-child .step-number::after {
+            display: none;
+        }
+        
+        .step-content {
+            flex: 1;
+            padding-top: 3px;
+        }
+        
+        .step-content h3 {
+            font-size: 17px;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 6px;
+        }
+        
+        .step-duration {
+            font-size: 12px;
+            color: #00d9ff;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .step-content p {
+            font-size: 13px;
+            color: #444;
+            line-height: 1.5;
+        }
+        
+        .cta {
+            background: #f5f5f5;
+            padding: 16px 18px;
+            border-radius: 6px;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .cta h3 {
+            font-size: 16px;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 8px;
+        }
+        
+        .cta p {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        .cta-contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 11px;
+            color: #000;
+            font-weight: 600;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .cta-contact span {
+            padding: 6px 12px;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 12px 40px;
+            background: #000;
+            color: #999;
+            font-size: 9px;
+            text-align: center;
+        }
+        
+        .footer a {
+            color: #00d9ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <div class="logo-text">VACH SYSTEMS</div>
+            </div>
+            <div class="header-contact">
+                Patrick Vach<br>
+                Glienicker Str. 4A, 12203 Berlin<br>
+                contact@vachsystems.de
+            </div>
+        </div>
+        
+        <div class="hero">
+            <div class="hero-content">
+                <h1>So läuft eine<br><span class="hero-highlight">KI-Potenzialanalyse ab</span></h1>
+                <p class="hero-subtitle">Ziel der Analyse ist es, innerhalb weniger Tage konkrete Automationsmöglichkeiten zu identifizieren und ein realistisches Pilotprojekt zu definieren.</p>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">5 Schritte zum Ergebnis</div>
+            
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Erstgespräch</h3>
+                    <div class="step-duration">20–30 Minuten</div>
+                    <p>Verständnis Ihrer Prozesse, bestehenden Systeme und aktuellen Herausforderungen. Identifikation der Bereiche mit dem höchsten Optimierungspotenzial.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Analysephase</h3>
+                    <div class="step-duration">3–5 Tage</div>
+                    <p>Identifikation möglicher KI-Automationen und Anwendungsfälle. Prüfung der technischen Machbarkeit und Integration in bestehende Systeme.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Priorisierung</h3>
+                    <div class="step-duration">1–2 Tage</div>
+                    <p>Bewertung der identifizierten Automationen nach Nutzen, Aufwand und Implementierbarkeit. Fokus auf Quick Wins und langfristige Potenziale.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Maßnahmenübersicht</h3>
+                    <div class="step-duration">Präsentation</div>
+                    <p>Konkrete Vorschläge für mögliche KI-Automationen inklusive geschätztem Implementierungsaufwand, erwarteter Zeitersparnis und ROI-Bewertung.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>Pilotprojekt</h3>
+                    <div class="step-duration">2–6 Wochen</div>
+                    <p>Umsetzung eines ersten Automatisierungsprojekts zur Validierung der Ergebnisse und Vorbereitung weiterer Maßnahmen.</p>
+                </div>
+            </div>
+            
+            <div class="cta">
+                <h3>Interesse an einer KI-Potenzialanalyse?</h3>
+                <p>In einem unverbindlichen Erstgespräch analysieren wir gemeinsam, welche Prozesse in Ihrem Unternehmen das größte Automatisierungspotenzial haben.</p>
+                <div class="cta-contact">
+                    <span>📧 contact@vachsystems.de</span>
+                    <span>🔗 vachsystems.de</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Vach Systems · Berlin · <a href="https://vachsystems.de">vachsystems.de</a> · Professionelle KI-Lösungen für Unternehmen
+        </div>
+    </div>
+</body>
+</html>
