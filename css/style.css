@@ -465,7 +465,7 @@ section {
 }
 
 .content-half {
-    padding: 6rem 5rem;
+    padding: 6rem 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
