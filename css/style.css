@@ -810,7 +810,7 @@ section {
 .section-tech {
     position: relative;
     padding: 10rem 3rem;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .tech-bg {
@@ -1435,11 +1435,12 @@ section {
     
     .section-tech {
         overflow: visible !important;
-        padding-bottom: 4rem !important;
+        padding-bottom: 6rem !important;
+        min-height: 700px !important;
     }
     
     .tech-container {
-        padding-bottom: 2rem !important;
+        padding-bottom: 3rem !important;
     }
     
     /* Specific hero fixes */
