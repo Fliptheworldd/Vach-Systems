@@ -1450,7 +1450,8 @@ section {
     .tech-container {
         position: static !important;
         background: var(--white) !important;
-        padding: 3rem 1.25rem !important;
+        padding: 1.5rem 1.25rem !important;
+        padding-bottom: 3rem !important;
         z-index: 1 !important;
     }
     
@@ -1610,6 +1611,7 @@ section {
         gap: 1rem !important;
         padding: 0 !important;
         margin: 0 auto !important;
+        margin-top: 0.5rem !important;
         margin-bottom: 0 !important;
         width: 100% !important;
         max-width: 500px !important;
@@ -1635,13 +1637,26 @@ section {
         font-weight: 700 !important;
     }
     
-    /* Tooltips auf Mobile: Click to show */
-    .tech-logo::after {
-        display: none;
+    /* Tooltips auf Mobile: KOMPLETT DEAKTIVIERT */
+    .tech-logo::after,
+    .tech-logo::before {
+        display: none !important;
+        content: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
     }
     
-    .tech-logo::before {
-        display: none;
+    .tech-logo:hover::after,
+    .tech-logo:hover::before,
+    .tech-logo:active::after,
+    .tech-logo:active::before,
+    .tech-logo:focus::after,
+    .tech-logo:focus::before {
+        display: none !important;
+        content: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
     }
     
     .tech-logo.active::after {
