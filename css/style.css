@@ -1433,22 +1433,46 @@ section {
         min-height: auto !important;
     }
     
+    /* Mobile: Split in two sections */
     .section-tech {
+        padding: 0 !important;
         overflow: visible !important;
-        padding: 4rem 1.25rem !important;
-        padding-bottom: 8rem !important;
-        min-height: 850px !important;
-        height: auto !important;
+    }
+    
+    .tech-bg {
+        position: relative !important;
+        height: 350px !important;
+        width: 100% !important;
+        bottom: auto !important;
+        margin-bottom: 0 !important;
     }
     
     .tech-container {
-        padding-bottom: 4rem !important;
-        min-height: 600px !important;
-        height: auto !important;
+        position: static !important;
+        background: var(--white) !important;
+        padding: 3rem 1.25rem !important;
+        z-index: 1 !important;
+    }
+    
+    .section-label-light,
+    .section-title-light {
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 90% !important;
+        max-width: 500px !important;
+        z-index: 3 !important;
+        pointer-events: none !important;
+    }
+    
+    .section-label-light {
+        top: 60px !important;
     }
     
     .section-title-light {
-        margin-bottom: 3rem !important;
+        top: 100px !important;
+        font-size: 2rem !important;
+        margin-bottom: 0 !important;
     }
     
     /* Specific hero fixes */
@@ -1584,9 +1608,11 @@ section {
     .tech-logos {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 1rem !important;
-        padding: 0 1rem !important;
-        margin-bottom: 3rem !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+        margin-bottom: 0 !important;
         width: 100% !important;
+        max-width: 500px !important;
     }
     
     .tech-logo {
@@ -1597,16 +1623,16 @@ section {
         align-items: center !important;
         justify-content: center !important;
         width: 100% !important;
-        background: rgba(0, 0, 0, 0.6) !important;
-        backdrop-filter: blur(20px) !important;
-        -webkit-backdrop-filter: blur(20px) !important;
-        color: #ffffff !important;
-        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        background: var(--gray-100) !important;
+        color: var(--black) !important;
+        border: 2px solid var(--gray-300) !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
     }
     
     .tech-name {
-        color: #ffffff !important;
-        font-weight: 600 !important;
+        color: var(--black) !important;
+        font-weight: 700 !important;
     }
     
     /* Tooltips auf Mobile: Click to show */
