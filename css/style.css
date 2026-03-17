@@ -858,9 +858,9 @@ section {
 
 .tech-logos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(6, 1fr);
     gap: 1.5rem;
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -1068,6 +1068,12 @@ section {
     .visual-half { min-height: 400px; }
     .features-grid { grid-template-columns: repeat(2, 1fr); }
     .case-visual { grid-template-columns: 1fr; }
+    
+    /* Tablet: 3x2 Grid für Tech-Skills */
+    .tech-logos {
+        grid-template-columns: repeat(3, 1fr) !important;
+        max-width: 800px !important;
+    }
     .case-arrow { transform: rotate(90deg); }
     .process-timeline { grid-template-columns: repeat(2, 1fr); }
     .footer-main { grid-template-columns: 1fr; }
