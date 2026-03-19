@@ -4,7 +4,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // === MOBILE CTA BUTTONS - Convert to mailto on mobile ===
-    if (window.innerWidth <= 640) {
+    // Use matchMedia instead of window.innerWidth to avoid forced reflow
+    const isMobile = window.matchMedia('(max-width: 640px)').matches;
+    if (isMobile) {
         const ctaButtons = document.querySelectorAll('.btn-cta-large[href="kontakt.html"], .btn-large.btn-primary[href="kontakt.html"]');
         ctaButtons.forEach(btn => {
             btn.href = 'mailto:contact@vachsystems.de?subject=Gespräch vereinbaren - Website Anfrage&body=Hallo Vach Systems Team,%0D%0A%0D%0AIch interessiere mich für ein unverbindliches Erstgespräch.%0D%0A%0D%0AMein Name: %0D%0AMein Unternehmen: %0D%0ATelefon: %0D%0A%0D%0AMeine Nachricht:%0D%0A';
@@ -164,20 +166,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.nav-minimal');
     if (navbar) {
         let lastScroll = 0;
+        let ticking = false;
         
+        // Use requestAnimationFrame to throttle scroll events
         window.addEventListener('scroll', function() {
-            const currentScroll = window.pageYOffset;
+            lastScroll = window.pageYOffset;
             
-            if (currentScroll > 50) {
-                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
-                navbar.style.backdropFilter = 'blur(30px)';
-            } else {
-                navbar.style.boxShadow = 'none';
-                navbar.style.backdropFilter = 'blur(20px)';
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    if (lastScroll > 50) {
+                        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+                        navbar.style.backdropFilter = 'blur(30px)';
+                    } else {
+                        navbar.style.boxShadow = 'none';
+                        navbar.style.backdropFilter = 'blur(20px)';
+                    }
+                    ticking = false;
+                });
+                ticking = true;
             }
-            
-            lastScroll = currentScroll;
-        });
+        }, { passive: true }); // Add passive flag for better scroll performance
     }
     
     // === INTERSECTION OBSERVER FOR FADE-IN ANIMATIONS ===
