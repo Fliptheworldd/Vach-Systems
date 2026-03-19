@@ -16,7 +16,7 @@
     
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <title>Kontakt – Kostenlose Prozessanalyse | Vach Systems</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { 
@@ -26,18 +26,7 @@
         }
     </style>
 
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZZ7BX7SB0"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('consent', 'default', {'analytics_storage': 'denied'});
-        gtag('js', new Date());
-        gtag('config', 'G-6ZZ7BX7SB0', {'anonymize_ip': true});
-        if(localStorage.getItem('cookieConsent') === 'accepted') {
-            gtag('consent', 'update', {'analytics_storage': 'granted'});
-        }
-    </script>
+    
 </head>
 <body>
     <nav class="nav-minimal">
@@ -212,7 +201,7 @@
         </div>
     </footer>
 
-    <script src="js/script.js" defer></script>
+    <script src="js/script.min.js" defer></script>
     <script>
         // Mobile detection
         if (window.matchMedia('(max-width: 768px)').matches) {
