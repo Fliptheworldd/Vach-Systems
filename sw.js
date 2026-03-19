@@ -1,15 +1,23 @@
 // SERVICE WORKER - VACH SYSTEMS
 // Aggressive caching for static assets
 
-const CACHE_VERSION = 'v2026-03-19-2';
+const CACHE_VERSION = 'v2026-03-19-3';
 const CACHE_NAME = `vachsystems-${CACHE_VERSION}`;
 
-// Assets to cache immediately on install
+// Assets to cache immediately on install (critical assets)
 const PRECACHE_URLS = [
   '/',
-  '/css/style.css',
-  '/js/script.js',
-  '/favicon.svg'
+  '/css/style.min.css',
+  '/js/script.min.js',
+  '/register-sw.js',
+  '/favicon.svg',
+  // Critical images for index.html
+  '/images/hero-tech-600w.webp',
+  '/images/hero-tech-1024w.webp',
+  '/images/problem-section-650w.webp',
+  '/images/problem-section-1024w.webp',
+  '/images/solution-section-650w.webp',
+  '/images/solution-section-1024w.webp'
 ];
 
 // Cache duration by file type
