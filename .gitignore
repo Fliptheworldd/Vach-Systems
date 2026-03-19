@@ -1,14 +1,6 @@
-# System Files
-.DS_Store
-Thumbs.db
+node_modules/
 *.log
-
-# Editor
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Temporary
-*.tmp
-*.bak
+.DS_Store
+.env
+dist/
+build/
