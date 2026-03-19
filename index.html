@@ -171,13 +171,15 @@
     <!-- Hero -->
     <section class="hero-fullscreen">
         <div class="hero-bg">
-            <img srcset="images/hero-tech-mobile.webp 600w, images/hero-tech.webp 1920w"
-                 sizes="(max-width: 768px) 600px, 1920px"
-                 src="images/hero-tech.webp" 
-                 width="1920"
-                 height="1280"
-                 fetchpriority="high"
-                 alt="Tech Hintergrund">
+            <img srcset="images/hero-tech-600w.webp 600w, 
+                     images/hero-tech-1024w.webp 1024w, 
+                     images/hero-tech.webp 1920w"
+             sizes="(max-width: 768px) 600px, (max-width: 1024px) 1024px, 1920px"
+             src="images/hero-tech.webp" 
+             width="1920"
+             height="1280"
+             fetchpriority="high"
+             alt="Tech Hintergrund">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-container">
@@ -205,10 +207,16 @@
     <!-- Problem -->
     <section class="section-visual-split">
         <div class="visual-half">
-            <img src="images/problem-section.webp" 
-                 width="700"
-                 height="467"
-                 alt="Manuelle Arbeitsprozesse">
+            <img srcset="images/problem-section-400w.webp 400w, 
+                     images/problem-section-650w.webp 650w, 
+                     images/problem-section-1024w.webp 1024w, 
+                     images/problem-section.webp 1536w"
+             sizes="(max-width: 640px) 400px, (max-width: 1024px) 650px, 700px"
+             src="images/problem-section.webp"
+             width="1536"
+             height="1024"
+             alt="Manuelle Arbeitsprozesse"
+             loading="lazy">
         </div>
         <div class="content-half">
             <div style="font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 2rem;">Das Problem</div>
@@ -259,10 +267,17 @@
             </p>
             
             <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.15); margin-bottom: 5rem; background: var(--gray-100);">
-                <img src="images/solution-section.webp" 
-                     width="700"
-                     height="467"
-                     alt="Modernes Software-Dashboard" style="width: 100%; display: block; height: auto;">
+                <img srcset="images/solution-section-400w.webp 400w, 
+                     images/solution-section-650w.webp 650w, 
+                     images/solution-section-1024w.webp 1024w, 
+                     images/solution-section.webp 1536w"
+             sizes="(max-width: 640px) 400px, (max-width: 1024px) 650px, 700px"
+             src="images/solution-section.webp"
+             width="1536"
+             height="1024"
+             alt="Modernes Software-Dashboard"
+             loading="lazy"
+             style="width: 100%; display: block; height: auto;">
             </div>
 
             <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto;">
@@ -296,7 +311,16 @@
             <div class="case-visual">
                 <div class="case-before">
                     <div class="case-label">Vorher</div>
-                    <img src="images/case-before.webp" alt="Vor der Automatisierung">
+                    <img srcset="images/case-before-400w.webp 400w, 
+                     images/case-before-650w.webp 650w, 
+                     images/case-before-1024w.webp 1024w, 
+                     images/case-before.webp 1536w"
+             sizes="(max-width: 640px) 400px, (max-width: 1024px) 650px, 1024px"
+             src="images/case-before.webp" 
+             alt="Vor der Automatisierung"
+             loading="lazy"
+             width="1536"
+             height="1024">
                     <div class="case-stats-bad">
                         <div class="case-stat">25% Kündigungen/Jahr</div>
                         <div class="case-stat">2h/Tag manuell</div>
@@ -306,7 +330,16 @@
                 <div class="case-arrow">→</div>
                 <div class="case-after">
                     <div class="case-label success">Nachher</div>
-                    <img src="images/case-after.webp" alt="Nach der Automatisierung">
+                    <img srcset="images/case-after-400w.webp 400w, 
+                     images/case-after-650w.webp 650w, 
+                     images/case-after-1024w.webp 1024w, 
+                     images/case-after.webp 1536w"
+             sizes="(max-width: 640px) 400px, (max-width: 1024px) 650px, 1024px"
+             src="images/case-after.webp" 
+             alt="Nach der Automatisierung"
+             loading="lazy"
+             width="1536"
+             height="1024">
                     <div class="case-stats-good">
                         <div class="case-stat">9% Kündigungen/Jahr</div>
                         <div class="case-stat">15min/Tag</div>
@@ -381,10 +414,16 @@
     <!-- Technologie -->
     <section class="section-tech" id="technologie">
         <div class="tech-bg">
-            <img src="images/tech-bg.webp" 
-                 width="1920"
-                 height="1280"
-                 alt="Moderne Technologie">
+            <img srcset="images/tech-bg-400w.webp 400w, 
+                         images/tech-bg-650w.webp 650w, 
+                         images/tech-bg-1024w.webp 1024w, 
+                         images/tech-bg.webp 1536w"
+                 sizes="(max-width: 640px) 400px, (max-width: 1024px) 650px, 1536px"
+                 src="images/tech-bg.webp" 
+                 width="1536"
+                 height="1024"
+                 alt="Moderne Technologie"
+                 loading="lazy">
         </div>
         <div class="tech-container">
             <span class="section-label-light">Technologie</span>
