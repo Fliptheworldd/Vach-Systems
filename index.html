@@ -24,11 +24,7 @@
     
     <title>KI Prozessautomatisierung für Unternehmen | Vach Systems</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="css/style.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
     <style>
         * { 
             hyphens: none !important; 
@@ -605,24 +601,16 @@
 
     
 
-    <!-- Cookie Consent (Performance-optimized) -->
-    <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#000;color:#fff;padding:1rem;z-index:9999;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
-        <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
-            <p style="margin:0;font-size:0.9rem;flex:1;min-width:250px;">
-                Wir nutzen Google Analytics zur Optimierung. <a href="datenschutz" style="color:#fff;text-decoration:underline;">Datenschutz</a>
-            </p>
-            <div style="display:flex;gap:0.75rem;flex-shrink:0;">
-                <button onclick="acceptCookies()" style="padding:0.6rem 1.5rem;background:#fff;color:#000;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:0.9rem;">OK</button>
-                <button onclick="declineCookies()" style="padding:0.6rem 1.5rem;background:transparent;color:#fff;border:2px solid #fff;border-radius:6px;font-weight:600;cursor:pointer;font-size:0.9rem;">Ablehnen</button>
+    <!-- Cookie Consent -->
+    <div id="cb" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#000;color:#fff;padding:1rem;z-index:9999">
+        <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+            <p style="margin:0;font-size:.9rem;flex:1;min-width:250px">Wir nutzen Google Analytics. <a href="datenschutz" style="color:#fff;text-decoration:underline">Datenschutz</a></p>
+            <div style="display:flex;gap:.75rem">
+                <button onclick="ac()" style="padding:.6rem 1.5rem;background:#fff;color:#000;border:none;border-radius:6px;font-weight:600;cursor:pointer">OK</button>
+                <button onclick="dc()" style="padding:.6rem 1.5rem;background:transparent;color:#fff;border:2px solid #fff;border-radius:6px;font-weight:600;cursor:pointer">Ablehnen</button>
             </div>
         </div>
     </div>
-    <script>
-    function loadGA(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-6ZZ7BX7SB0';document.head.appendChild(s);s.onload=function(){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-6ZZ7BX7SB0',{'anonymize_ip':true});}}
-    function acceptCookies(){localStorage.setItem('cookieConsent','accepted');document.getElementById('cookie-banner').style.display='none';loadGA();}
-    function declineCookies(){localStorage.setItem('cookieConsent','declined');document.getElementById('cookie-banner').style.display='none';}
-    if(!localStorage.getItem('cookieConsent')){document.getElementById('cookie-banner').style.display='block';}
-    else if(localStorage.getItem('cookieConsent')==='accepted'){loadGA();}
-    </script>
+    <script>function lg(){var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-6ZZ7BX7SB0';document.head.appendChild(s);s.onload=function(){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6ZZ7BX7SB0',{anonymize_ip:!0})}}function ac(){localStorage.cookieConsent='accepted';cb.style.display='none';lg()}function dc(){localStorage.cookieConsent='declined';cb.style.display='none'}localStorage.cookieConsent?localStorage.cookieConsent==='accepted'&&lg():cb.style.display='block'</script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 // SERVICE WORKER - VACH SYSTEMS
 // Aggressive caching for static assets
 
-const CACHE_VERSION = 'v2026-03-19-3';
+const CACHE_VERSION = 'v2026-03-19-9089';
 const CACHE_NAME = `vachsystems-${CACHE_VERSION}`;
 
 // Assets to cache immediately on install (critical assets)
