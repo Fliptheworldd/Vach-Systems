@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anthropic hat Claude Sonnet 4.6 mit 1M Token Kontext vorgestellt. Wann bringt das im Unternehmen echten Nutzen – und wann ist es nur Marketing?">
+    <meta name="keywords" content="claude sonnet 4.6 unternehmen, 1m kontextfenster unternehmen, große dokumente ki, verträge pdf tabellen ki, dokumentenanalyse">
+    <title>Claude Sonnet 4.6 im Unternehmen: Wann 1M Kontext wirklich relevant ist | Vach Systems</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../css/style.min.css">
+    
+    <style>
+        * { hyphens: none; -webkit-hyphens: none; word-break: normal; }
+        .article { max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem; }
+        .article-header { margin-bottom: 3rem; }
+        .article-meta { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; }
+        .article-title { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
+        .article-excerpt { font-size: 1.25rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem; }
+        .article-image { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 3rem; }
+        .article-content { font-size: 1.125rem; line-height: 1.8; color: var(--gray-900); }
+        .article-content h2 { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; line-height: 1.3; }
+        .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content ul, .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
+        .article-content li { margin-bottom: 0.75rem; }
+        .article-content strong { font-weight: 700; color: var(--gray-900); }
+        .highlight-box { background: #f8f9fa; border-left: 4px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
+        .blog-cta{margin:4rem 0;padding:3rem;background:linear-gradient(135deg,#000 0%,#1F2937 100%);border-radius:16px;text-align:center;color:#fff}.blog-cta h3{font-size:2rem;font-weight:800;margin-bottom:1rem;color:#fff}.blog-cta>p{font-size:1.125rem;margin-bottom:2rem;color:#fff;opacity:.95}.blog-cta a{display:inline-block;padding:1rem 2.5rem;background:#fff;color:var(--black);text-decoration:none;border-radius:8px;font-weight:700;margin-bottom:1rem}.blog-cta .email-alt{font-size:.9rem;color:rgba(255,255,255,.9);margin:0}.blog-cta .email-alt a{display:inline;padding:0;background:0 0;color:#fff;text-decoration:underline;font-size:.9rem;margin:0}
+        .faq { margin: 4rem 0; }
+        .faq-item { margin-bottom: 2rem; }
+        .faq-question { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .faq-answer { font-size: 1.125rem; line-height: 1.7; color: var(--gray-700); }
+        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--accent); font-weight: 600; text-decoration: none; }
+        @media (max-width: 768px) {
+            .article { padding: 4rem 1.5rem 3rem; }
+            .article-title { font-size: 2.25rem; }
+            .article-image { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-minimal">
+        <div class="nav-container">
+            <a href="../" class="logo-minimal"><div class="logo-mark"></div><span>Vach Systems</span></a>
+            <div class="nav-links">
+                <a href="../leistungen">Leistungen</a>
+                <a href="../loesungen">Lösungen</a>
+                <a href="../blog/">Blog</a>
+                <a href="../ueber-uns">Über uns</a>
+                <a href="https://wa.me/491636683867" target="_blank" rel="noopener">Gespräch starten →</a>
+            </div>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="../">Home</a>
+        <a href="../leistungen">Leistungen</a>
+        <a href="../loesungen">Lösungen</a>
+        <a href="../blog/">Blog</a>
+        <a href="../ueber-uns">Über uns</a>
+        <a href="https://wa.me/491636683867" target="_blank" rel="noopener">Gespräch starten →</a>
+    </div>
+
+    <article class="article">
+        <a href="./" class="back-link">← Zurück zum Blog</a>
+        
+        <header class="article-header">
+            <div class="article-meta">26. März 2026 · 13 Min. Lesezeit</div>
+            <h1 class="article-title">Claude Sonnet 4.6 im Unternehmen: Wann 1M Kontextfenster wirklich einen Unterschied macht</h1>
+            <p class="article-excerpt">Anthropic hat Claude Sonnet 4.6 mit 1 Million Token Kontext vorgestellt. Was bringt das große Kontextfenster im Unternehmensalltag wirklich – und wann ist es nur unnötig teuer?</p>
+        </header>
+
+        <img src="../images/blog/claude-sonnet-context-window.webp" alt="Claude Sonnet 4.6 Kontextfenster Unternehmen" class="article-image" loading="lazy" width="1400" height="933">
+
+        <div class="article-content">
+            
+            <p>Anthropic beschreibt Claude Sonnet 4.6 als verbessertes Modell für Coding, Agent Planning und Dokumentenverständnis – mit <strong>1 Million Token Kontext im Beta-Zustand</strong>.</p>
+
+            <p>Das klingt beeindruckend. Aber was bedeutet das konkret für Unternehmen? Und vor allem: <strong>Wann lohnt sich ein so großes Kontextfenster wirklich?</strong></p>
+
+            <h2>Was Sonnet 4.6 neu macht</h2>
+
+            <p>Claude Sonnet 4.6 bringt drei wesentliche Verbesserungen:</p>
+
+            <ul>
+                <li><strong>1M Token Kontext (Beta):</strong> Verarbeitet ca. 700.000 Wörter auf einmal – etwa 2-3 Fachbücher oder 500 Seiten technische Dokumentation.</li>
+                <li><strong>Besseres Code-Verständnis:</strong> Kann komplexe Codebases analysieren, Bugs finden, Refactoring vorschlagen.</li>
+                <li><strong>Verbesserte Dokumentenverarbeitung:</strong> Präzisere Extraktion aus PDFs, Tabellen, Verträgen.</li>
+            </ul>
+
+            <p class="highlight-box"><strong>Wichtig:</strong> 1M Token ist noch Beta. In der Praxis sind 200.000 Token (ca. 150.000 Wörter) derzeit die stabile Obergrenze.</p>
+
+            <h2>Was ein 1M-Kontextfenster im Alltag wirklich bedeutet</h2>
+
+            <p>Stellen Sie sich vor, Sie müssen 50 Kundenverträge durchgehen und prüfen, ob eine bestimmte Klausel darin vorkommt.</p>
+
+            <p><strong>Ohne großes Kontextfenster:</strong> Sie müssen jeden Vertrag einzeln hochladen, analysieren lassen, Ergebnisse zusammenführen. Das dauert.</p>
+
+            <p><strong>Mit 1M Token Kontext:</strong> Sie laden alle 50 Verträge gleichzeitig hoch. Claude liest sie alle, vergleicht sie und liefert eine Übersicht. Eine Anfrage statt 50.</p>
+
+            <p>Das spart nicht nur Zeit – es ermöglicht auch <strong>Quervergleiche</strong>, die vorher unmöglich waren.</p>
+
+            <h2>Für welche Unternehmen das relevant ist</h2>
+
+            <p>Große Kontextfenster sind <strong>nicht für jeden</strong> sinnvoll. Sie lohnen sich vor allem in diesen Fällen:</p>
+
+            <ul>
+                <li><strong>Unternehmen mit viel technischer Dokumentation:</strong> Ingenieure, Architekten, Produktentwicklung</li>
+                <li><strong>Rechtsabteilungen:</strong> Vertragsanalyse, Compliance-Prüfung, Due Diligence</li>
+                <li><strong>Software-Entwicklung:</strong> Code-Reviews, Legacy-Code-Analyse, Refactoring</li>
+                <li><strong>Projektmanagement:</strong> Große Projektdokumentationen, Meeting-Protokolle, Anforderungsdokumente</li>
+            </ul>
+
+            <p>Wenn Sie dagegen hauptsächlich kurze E-Mails, einfache Anfragen oder Standard-Chatbot-Antworten verarbeiten, bringt ein großes Kontextfenster <strong>keinen Mehrwert</strong> – nur höhere Kosten.</p>
+
+            <h2>4 sinnvolle Anwendungsfälle</h2>
+
+            <h3>1. Vertragsanalyse und Compliance-Prüfung</h3>
+            <p><strong>Aufgabe:</strong> 100 Kundenverträge prüfen, ob DSGVO-konforme Datenschutzklauseln enthalten sind.</p>
+            <p><strong>Mit 1M Kontext:</strong> Alle Verträge auf einmal hochladen, automatisch analysieren lassen, Übersicht bekommen welche Verträge nachgebessert werden müssen.</p>
+
+            <h3>2. Technische Dokumentation durchsuchen</h3>
+            <p><strong>Aufgabe:</strong> In 300 Seiten Maschinendokumentation herausfinden, wie eine bestimmte Wartung durchgeführt wird.</p>
+            <p><strong>Mit 1M Kontext:</strong> Komplette Dokumentation hochladen, konkrete Frage stellen, präzise Antwort mit Seitenzahlen bekommen.</p>
+
+            <h3>3. Code-Review über mehrere Dateien</h3>
+            <p><strong>Aufgabe:</strong> Legacy-Code verstehen, der über 50 Dateien verteilt ist.</p>
+            <p><strong>Mit 1M Kontext:</strong> Gesamte Codebase hochladen, Zusammenhänge verstehen, Refactoring-Vorschläge bekommen.</p>
+
+            <h3>4. Projektdokumentation zusammenfassen</h3>
+            <p><strong>Aufgabe:</strong> 6 Monate Meeting-Protokolle, E-Mails und Berichte in eine Executive Summary verwandeln.</p>
+            <p><strong>Mit 1M Kontext:</strong> Alle Dokumente hochladen, automatisch Zusammenfassung erstellen lassen.</p>
+
+            <h2>Wo große Kontexte unnötig teuer sind</h2>
+
+            <p>Große Kontextfenster kosten mehr. <strong>Pro Million Token zahlen Sie ca. 3-5x mehr als für Standard-Anfragen.</strong></p>
+
+            <p>Wann lohnt sich das <strong>nicht</strong>?</p>
+
+            <ul>
+                <li><strong>Einfache Chatbot-Antworten:</strong> "Wo ist meine Bestellung?" braucht keine 1M Token.</li>
+                <li><strong>E-Mail-Klassifizierung:</strong> Auch hier reichen 4.000 Token völlig.</li>
+                <li><strong>Kurze Dokumente:</strong> Wenn Sie nur 5-Seiten-PDFs verarbeiten, ist ein großes Kontextfenster Verschwendung.</li>
+            </ul>
+
+            <p class="highlight-box"><strong>Faustregel:</strong> Nutzen Sie große Kontextfenster nur, wenn Sie wirklich 50+ Seiten oder mehrere Dokumente gleichzeitig verarbeiten müssen.</p>
+
+            <h2>Handlungsempfehlung für Mittelstand und Serviceunternehmen</h2>
+
+            <p><strong>1. Prüfen Sie Ihre Use Cases:</strong> Haben Sie regelmäßig große Dokumentenmengen zu verarbeiten? Oder sind es meist kurze Anfragen?</p>
+
+            <p><strong>2. Testen Sie erst klein:</strong> Starten Sie mit Standard-Kontextfenstern (8.000-32.000 Token). Upgrade nur, wenn Sie messbar gegen Limits stoßen.</p>
+
+            <p><strong>3. Messen Sie ROI:</strong> Ist die Zeitersparnis größer als die Mehrkosten? Bei <a href="dokumentenanalyse-mit-ki-praktische-anwendung.html" style="color: var(--accent);">Dokumentenanalyse</a> oft ja, bei einfachen Chatbot-Antworten meist nein.</p>
+
+            <p><strong>4. Kombinieren Sie Modelle:</strong> Nutzen Sie große Kontexte nur dort, wo es Sinn macht. Für den Rest: <a href="gpt-5-4-mini-nano-unternehmen.html" style="color: var(--accent);">kleinere, günstigere Modelle</a>.</p>
+
+            <div class="blog-cta">
+                <h3>Wir prüfen, ob bei Ihnen ein großes Kontextfenster echten ROI bringt oder nur Rechenkosten</h3>
+                <p>Nicht jede KI-Innovation lohnt sich für jedes Unternehmen. Wir analysieren Ihre Prozesse und zeigen, welche Modelle und Kontextgrößen wirtschaftlich Sinn machen.</p>
+                <a href="https://wa.me/491636683867?text=Hallo%2C%20ich%20m%C3%B6chte%20mehr%20%C3%BCber%20KI-Modellauswahl%20erfahren." target="_blank" rel="noopener">Kostenlose Prozessanalyse</a>
+                <p class="email-alt">Oder per <a href="../kontakt">E-Mail</a></p>
+            </div>
+
+            <div class="faq">
+                <h2>Häufig gestellte Fragen</h2>
+                <div class="faq-item">
+                    <div class="faq-question">Ist 1M Token wirklich nutzbar oder nur Marketing?</div>
+                    <div class="faq-answer">Es ist Beta. Praktisch funktionieren 200.000 Token stabil. 1M ist möglich, aber noch nicht für Produktiveinsatz empfohlen.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Wie viel kostet das mehr?</div>
+                    <div class="faq-answer">Ca. 3-5x teurer als Standard-Anfragen. Lohnt sich nur, wenn Sie dadurch 10+ separate Anfragen sparen.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Brauche ich das für Rechnungsverarbeitung?</div>
+                    <div class="faq-answer">Meist nicht. Eine Rechnung hat 1-3 Seiten. Dafür reichen 8.000 Token völlig.</div>
+                </div>
+            </div>
+
+            <p style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #eee; color: #666; font-size: 0.95rem;">
+                <strong>Lesenswert:</strong> <a href="dokumentenanalyse-mit-ki-praktische-anwendung.html" style="color: var(--accent);">Dokumentenanalyse mit KI</a> | <a href="rechnungsverarbeitung-automatisieren.html" style="color: var(--accent);">Rechnungsverarbeitung automatisieren</a> | <a href="warum-95-prozent-der-ki-projekte-scheitern.html" style="color: var(--accent);">Warum 95% der KI-Projekte scheitern</a>
+            </p>
+            
+        </div>
+    </article>
+
+    <script src="../js/menu.js"></script>
+</body>
+</html>
