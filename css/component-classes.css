@@ -1,0 +1,159 @@
+/* ============================================
+   COMPONENT CLASSES
+   Replaces inline styles from HTML
+   ============================================ */
+
+/* Section Labels */
+.section-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    display: block;
+}
+
+/* Split Section Typography */
+.split-title {
+    font-size: clamp(2.2rem, 3.4vw, 4.4rem);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 2rem;
+}
+
+.split-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--gray-700);
+    margin-bottom: 2.5rem;
+}
+
+/* Problem Items Grid */
+.problem-grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.problem-item-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+}
+
+.problem-item-text {
+    font-size: 1rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+/* Impact Card */
+.impact-card {
+    padding: 2rem;
+    background: white;
+    border: 2px solid var(--gray-200);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.impact-number {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--black);
+}
+
+.impact-unit {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    margin-left: 0.75rem;
+}
+
+.impact-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-700);
+    margin-top: 0.5rem;
+}
+
+/* Solution Features Grid */
+.solution-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.solution-feature {
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+.solution-feature h4 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--black);
+}
+
+.solution-feature p {
+    font-size: 1rem;
+    color: var(--gray-600);
+    margin: 0;
+}
+
+/* Product Screen Box */
+.product-screen-box {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.15);
+    margin-bottom: 5rem;
+    background: var(--gray-100);
+}
+
+.product-screen-box img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* Accent Links */
+.accent-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.accent-link:hover {
+    text-decoration: underline;
+}
+
+/* Flex Baseline */
+.flex-baseline {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+}
+
+/* Hero Subtitle Max */
+.hero-subtitle-max {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1100px) {
+    .solution-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .solution-features {
+        grid-template-columns: 1fr;
+    }
+}
