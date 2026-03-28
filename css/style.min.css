@@ -348,6 +348,10 @@ section {
     margin-right: auto;
 }
 
+.hero-subtitle-max {
+    max-width: 800px;
+}
+
 .hero-actions {
     display: flex;
     gap: 1.5rem;
@@ -469,6 +473,68 @@ section {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 1.5rem;
+}
+
+.split-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 2rem;
+    color: var(--black);
+}
+
+.split-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--gray-700);
+    margin-bottom: 2.5rem;
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.problem-item-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+}
+
+.problem-item-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--gray-600);
+}
+
+.impact-card {
+    background: var(--gray-50);
+    border: 2px solid var(--gray-200);
+    border-radius: 16px;
+    padding: 2rem;
+}
+
+.impact-number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--black);
+    line-height: 1;
+}
+
+.impact-unit {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--gray-600);
+}
+
+.impact-label {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--gray-600);
 }
 
 .content-half h2 {
@@ -1293,6 +1359,18 @@ section {
         padding: 4rem 2rem;
     }
     
+    .split-title {
+        font-size: 2.25rem;
+    }
+    
+    .split-subtitle {
+        font-size: 1.05rem;
+    }
+    
+    .impact-number {
+        font-size: 3rem;
+    }
+    
     .section-title-center {
         font-size: 2.5rem;
     }
@@ -1403,6 +1481,29 @@ section {
         touch-action: manipulation;
         cursor: pointer;
         -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+    }
+    
+    .split-title {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+    
+    .split-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .impact-card {
+        padding: 1.5rem;
+    }
+    
+    .impact-number {
+        font-size: 2.5rem;
+    }
+    
+    .impact-unit {
+        font-size: 1rem;
     }
     
     .hero-fullscreen {
