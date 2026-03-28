@@ -144,3 +144,82 @@ img {
         padding: 48px 32px;
     }
 }
+
+/* Reusable Component Classes (no more inline styles) */
+.section-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.split-title {
+    font-size: clamp(2.2rem, 3.4vw, 4.4rem);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 2rem;
+}
+
+.split-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--gray-700);
+    margin-bottom: 2.5rem;
+}
+
+.problem-grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.problem-item-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+}
+
+.problem-item-text {
+    font-size: 1rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+.impact-card {
+    padding: 2rem;
+    background: white;
+    border: 2px solid var(--gray-200);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.impact-number {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+}
+
+.impact-unit {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    margin-left: 0.75rem;
+}
+
+.impact-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+/* Hero specific */
+.hero-subtitle-max {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
