@@ -225,11 +225,11 @@ img {
 }
 
 .hero-badge {
-    margin-top: 80px;
+    margin-top: 30px;
 }
 
 @media (min-width: 1024px) {
     .hero-fullscreen {
-        padding-top: 100px;
+        padding-top: 40px;
     }
 }
