@@ -1894,3 +1894,47 @@ section {
         padding: 1.5rem;
     }
 }
+
+/* Large Screen Optimization (TV/4K) */
+@media (min-width: 1920px) {
+    body .hero-container,
+    body .showcase-container,
+    body .case-container,
+    body .process-container,
+    body .tech-container,
+    body .cta-container {
+        max-width: 1400px;
+    }
+    
+    body .nav-container {
+        max-width: 1600px;
+    }
+    
+    body .hero-title {
+        font-size: 5.5rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    body .hero-subtitle {
+        font-size: 1.375rem;
+    }
+    
+    body .stat-big {
+        font-size: 3rem;
+    }
+    
+    body .content-half h2 {
+        font-size: 3.5rem;
+    }
+    
+    body .section-title-center,
+    body .section-title-light {
+        font-size: 4rem;
+    }
+    
+    body .result-number {
+        font-size: 4rem;
+    }
+}
