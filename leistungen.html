@@ -17,11 +17,6 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <title>Leistungen – Prozessanalyse, Entwicklung, Integration | Vach Systems</title>
     <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="css/tv-override.css">
-    
-    <style>
-        body, p, h1, h2, h3, div { hyphens: none !important; word-break: normal !important; }
-    </style>
 
     
 
@@ -56,7 +51,16 @@
 
     <section class="hero-fullscreen" style="min-height: 80vh;">
         <div class="hero-bg">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=90" alt="Strategiemeeting">
+            <img srcset="images/services-hero-600w.webp 600w, 
+                     images/services-hero-1024w.webp 1024w, 
+                     images/services-hero.webp 1920w"
+             sizes="(max-width: 768px) 600px, (max-width: 1024px) 1024px, 1920px"
+             src="images/services-hero.webp" 
+             width="1920"
+             height="1280"
+             fetchpriority="high"
+             alt="Team Zusammenarbeit Strategie"
+             loading="eager">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-container">
