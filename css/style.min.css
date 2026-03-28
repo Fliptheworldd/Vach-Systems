@@ -1402,6 +1402,12 @@ section {
         font-size: 2.5rem;
     }
     
+    .case-header h2 {
+        font-size: 2.25rem;
+        line-height: 1.2;
+        max-width: 100%;
+    }
+    
     .features-grid,
     .solution-features,
     .process-timeline,
@@ -1654,6 +1660,13 @@ section {
     .section-title-center {
         font-size: 1.875rem;
         line-height: 1.2;
+    }
+    
+    .case-header h2 {
+        font-size: 1.875rem;
+        line-height: 1.2;
+        max-width: 100%;
+        word-break: normal;
     }
     
     .cta-trust {
