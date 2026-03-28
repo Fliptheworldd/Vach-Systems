@@ -223,3 +223,13 @@ img {
     max-width: 700px;
     margin: 0 auto 3rem;
 }
+
+.hero-badge {
+    margin-top: 80px;
+}
+
+@media (min-width: 1024px) {
+    .hero-fullscreen {
+        padding-top: 100px;
+    }
+}
