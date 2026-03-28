@@ -688,6 +688,32 @@ section {
     margin: 0;
 }
 
+.solution-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.solution-features > div {
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+.solution-features h4 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--black);
+}
+
+.solution-features p {
+    font-size: 1rem;
+    color: var(--gray-600);
+    margin: 0;
+}
+
 /* === CASE STUDY === */
 .section-case-study {
     padding: 10rem 3rem;
@@ -1303,7 +1329,8 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .features-grid {
+    .features-grid,
+    .solution-features {
         grid-template-columns: repeat(2, 1fr);
     }
     
@@ -1375,9 +1402,19 @@ section {
         font-size: 2.5rem;
     }
     
+    .features-grid,
+    .solution-features,
     .process-timeline,
     .case-result {
         grid-template-columns: 1fr;
+    }
+    
+    .solution-features {
+        gap: 1.5rem;
+    }
+    
+    .solution-features > div {
+        padding: 1.5rem 1rem;
     }
     
     .result-item {
@@ -1682,9 +1719,22 @@ section {
         line-height: 1.4;
     }
     
-    [style*="grid-template-columns: repeat(4, 1fr)"] {
-        grid-template-columns: repeat(2, 1fr);
+    .features-grid,
+    .solution-features {
+        grid-template-columns: 1fr;
         gap: 1rem;
+    }
+    
+    .solution-features > div {
+        padding: 1.25rem 1rem;
+    }
+    
+    .solution-features h4 {
+        font-size: 1.125rem;
+    }
+    
+    .solution-features p {
+        font-size: 0.95rem;
     }
     
     * {
