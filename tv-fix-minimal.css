@@ -1,0 +1,59 @@
+/* ============================================
+   TV/LARGE SCREEN FIX (MINIMAL & SAFE)
+   Problem: Unbegrenzte vw/vh Skalierung auf 4K/TV
+   Solution: clamp() für kontrolliertes Wachstum
+   NO !important flags to avoid conflicts
+   ============================================ */
+
+@media (min-width: 1600px) {
+    /* Hero Titel - begrenzt auf max 6rem */
+    .hero-title {
+        font-size: clamp(4rem, 5vw, 6rem);
+    }
+    
+    /* Hero Subtitle - begrenzt auf max 1.75rem */
+    .hero-subtitle {
+        font-size: clamp(1.25rem, 1.5vw, 1.75rem);
+    }
+    
+    /* Stats - begrenzt auf max 4rem */
+    .stat-big {
+        font-size: clamp(2.5rem, 3vw, 4rem);
+    }
+    
+    /* Section Titles - begrenzt auf max 5rem */
+    .content-half h2,
+    .section-title-center,
+    .section-title-light {
+        font-size: clamp(3rem, 4vw, 5rem);
+    }
+    
+    /* Result Numbers - begrenzt auf max 5rem */
+    .result-number {
+        font-size: clamp(3rem, 4vw, 5rem);
+    }
+    
+    /* Container - max 1400px */
+    .hero-container,
+    .nav-container,
+    .showcase-container,
+    .case-container,
+    .process-container,
+    .tech-container,
+    .cta-container {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ULTRA-WIDE: Absolute caps at 2000px+ */
+@media (min-width: 2000px) {
+    .hero-title { font-size: 6rem; }
+    .hero-subtitle { font-size: 1.75rem; }
+    .stat-big { font-size: 4rem; }
+    .content-half h2,
+    .section-title-center,
+    .section-title-light { font-size: 5rem; }
+    .result-number { font-size: 5rem; }
+}
