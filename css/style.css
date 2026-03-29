@@ -491,6 +491,30 @@ section {
     margin-bottom: 2.5rem;
 }
 
+.split-subtitle-large {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: var(--gray-600);
+    margin-bottom: 3rem;
+}
+
+.service-list {
+    display: grid;
+    gap: 2rem;
+}
+
+.service-item-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.service-item-text {
+    font-size: 1.125rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
 .problem-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -1404,6 +1428,18 @@ section {
     
     .split-subtitle {
         font-size: 1.05rem;
+    }
+    
+    .split-subtitle-large {
+        font-size: 1.125rem;
+    }
+    
+    .service-item-title {
+        font-size: 1.125rem;
+    }
+    
+    .service-item-text {
+        font-size: 1rem;
     }
     
     .impact-number {
