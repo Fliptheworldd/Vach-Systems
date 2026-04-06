@@ -1,197 +1,238 @@
-# Workshop Booking System – Setup Guide
+# Workshop Booking System – Calendly Integration
 
 ## Was wurde erstellt?
 
-Ein vollständiges Buchungssystem für den KI-Workshop mit:
+Ein professionelles Buchungssystem mit **Calendly** – besser als custom Lösung!
 
-1. **Kalenderauswahl** (`workshop-buchen.html`)
-   - Feste Termine: Dienstag & Donnerstag, 08:00 Uhr
-   - Alle 2 Wochen verfügbar
-   - 6 Slots gleichzeitig sichtbar
+### Vorteile von Calendly
 
-2. **Fragebogen** (7 Fragen)
-   - Unternehmensname, Branche, Mitarbeiteranzahl
-   - KI-Nutzung, Tools, Zeitfresser
+✅ **Automatische Bestätigungs-E-Mails** (an Kunde & dich)  
+✅ **Kalender-Integration** (Google Calendar, Outlook, iCal)  
+✅ **Automatische Reminder** (24h vorher, 1h vorher)  
+✅ **Reschedule & Cancel** (Kunde kann selbst umbuchen)  
+✅ **Zeitzonenhandling** (automatisch)  
+✅ **Professionell & bewährt** (Millionen Nutzer)  
+✅ **Fragebogen integriert** (Custom Questions)  
+✅ **DSGVO-konform**  
+
+## Setup: Calendly (bereits fertig!)
+
+Dein Calendly-Link ist bereits eingebunden:
+```
+https://calendly.com/vachsystems/ki-workshop
+```
+
+### Was du in Calendly konfigurieren kannst:
+
+1. **Verfügbarkeit:**
+   - Dienstag & Donnerstag, 08:00 Uhr
+   - Dauer: 4-6 Stunden
+   - Buffer: 1-2 Tage Vorlauf
+
+2. **Custom Questions** (Fragebogen):
+   ```
+   - Unternehmensname
+   - Branche
+   - Mitarbeiteranzahl
+   - Aktuelle KI-Nutzung
+   - Genutzte Tools
+   - Größte Zeitfresser
    - Konkretes Ziel
-
-3. **E-Mail-System**
-   - Sendet Buchungen an deine E-Mail
-   - Strukturierte Zusammenfassung aller Daten
-   - Bestätigungsseite für Kunden
-
-## Setup: Formspree Integration (5 Minuten)
-
-### Schritt 1: Formspree Account erstellen
-
-1. Gehe zu: https://formspree.io/
-2. Klicke **"Sign Up"** (kostenlos)
-3. Registriere dich mit deiner E-Mail (contact@vachsystems.de)
-
-### Schritt 2: Neues Formular erstellen
-
-1. Nach Login: Klicke **"+ New Form"**
-2. Name: "Workshop Buchungen"
-3. Email Address: Deine E-Mail (wo Buchungen ankommen sollen)
-4. Klicke **"Create Form"**
-
-### Schritt 3: Endpoint kopieren
-
-1. Nach Erstellung siehst du einen **Endpoint** wie:
    ```
-   https://formspree.io/f/xyzabc123
-   ```
-2. **Kopiere diesen Link!**
 
-### Schritt 4: Endpoint in JavaScript eintragen
+3. **E-Mail-Benachrichtigungen:**
+   - Bestätigung an Kunde
+   - Benachrichtigung an dich
+   - Reminder (24h + 1h vorher)
 
-1. Öffne: `js/workshop-booking.js`
-2. Finde Zeile 11:
-   ```javascript
-   formspreeEndpoint: 'YOUR_FORMSPREE_ENDPOINT_HERE',
-   ```
-3. Ersetze durch deinen Endpoint:
-   ```javascript
-   formspreeEndpoint: 'https://formspree.io/f/xyzabc123',
-   ```
-4. Speichern!
+4. **Kalender-Sync:**
+   - Google Calendar verbinden
+   - Automatische Blockierung
+   - Keine Doppelbuchungen
 
-### Schritt 5: Testen
+## Calendly Einstellungen optimieren
 
-1. Öffne: `workshop-buchen.html` im Browser
-2. Wähle einen Termin
-3. Fülle Fragebogen aus
-4. Klicke "Workshop anfragen"
-5. Du solltest eine E-Mail erhalten!
+### 1. Event Type bearbeiten
 
-## E-Mail-Benachrichtigung Beispiel
+Gehe zu: https://calendly.com/event_types
 
-Nach einer Buchung erhältst du eine E-Mail wie:
+**Was einstellen:**
+- **Name:** "KI Workshop für Unternehmen"
+- **Location:** "Bei Ihnen vor Ort" oder "Wird nach Buchung geklärt"
+- **Duration:** 4-6 Stunden (wähle 4h, erkläre im Text)
+- **Minimum notice:** 3 Tage
+- **Buffer:** 1 Tag zwischen Terminen
 
-```
-Betreff: Workshop-Buchung: Müller GmbH
+### 2. Custom Questions hinzufügen
 
-NEUE WORKSHOP-BUCHUNG
-=====================
+**Questions & Answers → Add Custom Questions:**
 
-TERMIN
-------
-Dienstag, 15. April 2026, 08:00 Uhr
+1. **Unternehmensname** (Text, Required)
+2. **Branche** (Multiple Choice, Required)
+   - Handwerk
+   - Dienstleistung
+   - Handel
+   - Produktion
+   - IT
+   - Gesundheit
+   - Sonstiges
 
-UNTERNEHMEN
------------
-Name: Müller GmbH
-Branche: Handwerk (Elektrik, Sanitär, Heizung, etc.)
-Mitarbeiter: 6-10 Mitarbeiter
+3. **Mitarbeiteranzahl** (Multiple Choice, Required)
+   - 1-5
+   - 6-10
+   - 11-25
+   - 26-50
+   - 51+
 
-KI-NUTZUNG
-----------
-Status: Erste Versuche – einzelne Mitarbeiter probieren
-Tools: ChatGPT
+4. **Aktuelle KI-Nutzung** (Multiple Choice, Required)
+   - Keine – wir nutzen noch keine KI
+   - Erste Versuche – einzelne Mitarbeiter probieren
+   - Regelmäßig – aber nicht effizient
 
-ZEITFRESSER
------------
-Angebote erstellen, E-Mails beantworten
+5. **Genutzte Tools** (Text, Optional)
+   - Placeholder: "z.B. Microsoft Copilot, ChatGPT, Claude..."
 
-ZIEL
-----
-Angebote schneller erstellen und E-Mails automatisieren
+6. **Größte Zeitfresser** (Multiple Choice, Required, Allow Multiple)
+   - Angebote erstellen
+   - E-Mails beantworten
+   - Informationen suchen
+   - Rechnungen / Buchhaltung
+   - Kundenservice / Support
+   - Projektplanung
+   - Sonstiges
 
-KONTAKT
--------
-E-Mail: info@mueller-gmbh.de
-Telefon: 030 12345678
+7. **Konkretes Ziel** (Text Area, Required)
+   - Placeholder: "z.B. Angebote schneller erstellen, E-Mails automatisieren..."
 
-Anfrage gesendet am: 06.04.2026, 20:32
-```
+8. **Telefon** (Text, Optional)
 
-## Bestätigung/Ablehnung per E-Mail
+### 3. Notifications anpassen
 
-**Manueller Prozess:**
+**Notifications & Workflows:**
 
-1. Du erhältst Buchungsanfrage per E-Mail
-2. Du antwortest dem Kunden direkt:
-
-**Bestätigung:**
+**E-Mail an Kunde (Confirmation):**
 ```
 Betreff: Workshop-Termin bestätigt
 
-Hallo [Name],
+Hallo {{invitee_name}},
 
-vielen Dank für Ihre Buchung! 
+vielen Dank für Ihre Buchung!
 
-Ihr Workshop-Termin ist bestätigt:
-📅 Dienstag, 15. April 2026
-🕐 08:00 Uhr (4-6 Stunden)
+Ihr Workshop-Termin:
+📅 {{event_date}}
+🕐 {{event_time}} (4-6 Stunden)
 📍 Bei Ihnen vor Ort
 
-Wir melden uns 2-3 Tage vorher für die finale Abstimmung.
+In den nächsten Tagen senden wir Ihnen:
+- Vorbereitungs-Fragebogen (5 Minuten)
+- Anfahrtsplanung
+- Kontaktdaten für Rückfragen
 
 Beste Grüße,
-[Dein Name]
+Patrick Vach
 Vach Systems
 ```
 
-**Ablehnung/Alternative:**
+**E-Mail an dich (Event Scheduled):**
 ```
-Betreff: Workshop-Termin – Alternative
+Neue Workshop-Buchung!
 
-Hallo [Name],
+Unternehmen: {{question_1_answer}}
+Branche: {{question_2_answer}}
+Mitarbeiter: {{question_3_answer}}
 
-leider ist der gewählte Termin bereits vergeben.
+KI-Nutzung: {{question_4_answer}}
+Tools: {{question_5_answer}}
+Zeitfresser: {{question_6_answer}}
+Ziel: {{question_7_answer}}
 
-Alternativen:
-📅 Donnerstag, 17. April 2026, 08:00 Uhr
-📅 Dienstag, 22. April 2026, 08:00 Uhr
-
-Welcher Termin passt besser?
-
-Beste Grüße,
-[Dein Name]
-Vach Systems
+Kontakt:
+E-Mail: {{invitee_email}}
+Telefon: {{question_8_answer}}
 ```
 
-## Features
+### 4. Reminder aktivieren
 
-✅ **Automatische Terminberechnung** (immer 3+ Tage Vorlauf)  
-✅ **Mobile responsive** (funktioniert auf allen Geräten)  
-✅ **Formular-Validierung** (Pflichtfelder + E-Mail-Check)  
-✅ **Strukturierte E-Mails** (alle Daten übersichtlich)  
-✅ **Bestätigungsseite** (Kunde sieht Erfolg)  
-✅ **Professionelles Design** (passt zur Website)
+**Reminders → Enable:**
+- 24 Stunden vorher
+- 1 Stunde vorher
+
+## Integration auf Website
+
+✅ **Bereits fertig!** Die Seite `workshop-buchen.html` bindet Calendly ein.
+
+**Verlinkt auf:**
+- Homepage → Hero CTA
+- Workshop-Seite → Alle CTAs
+- Navigation → "Termin buchen"
 
 ## Kosten
 
-**Formspree Free Tier:**
-- 50 Submissions/Monat
+**Calendly Free Tier:**
+- 1 Event Type
+- Unlimited Bookings
 - E-Mail-Benachrichtigungen
-- Spam-Schutz
-- DSGVO-konform
+- Kalender-Integration
+- Custom Questions (3 Fragen)
 
-→ Perfekt für Workshops (erwarte ~5-10 Buchungen/Monat)
+**Calendly Essentials (8€/Monat):**
+- Unlimited Event Types
+- Unlimited Custom Questions
+- Workflows (automatisierte Follow-ups)
+- Custom Branding (Logo)
+- Zapier Integration
+
+→ **Free reicht für Workshops!** (3 Custom Questions + Standard-Felder)
+
+## E-Mail nach Buchung (Beispiel)
+
+**Du erhältst:**
+```
+Neue Buchung: KI Workshop
+
+Termin: Dienstag, 15. April 2026, 08:00 Uhr
+
+Name: Max Müller
+E-Mail: max@mueller-gmbh.de
+Telefon: 030 12345678
+
+Unternehmen: Müller GmbH
+Branche: Handwerk
+Mitarbeiter: 6-10
+KI-Nutzung: Erste Versuche
+Tools: ChatGPT
+Zeitfresser: Angebote, E-Mails
+Ziel: Angebote schneller erstellen
+```
+
+**Kunde erhält:**
+```
+Ihr Workshop-Termin ist bestätigt!
+
+Dienstag, 15. April 2026
+08:00 Uhr (4-6 Stunden)
+
++ Kalender-Einladung (ICS-Datei)
++ Google Calendar / Outlook Link
++ Reminder (24h + 1h vorher)
+```
 
 ## Nächste Schritte
 
-1. ✅ Formspree einrichten
-2. ✅ Endpoint in `workshop-booking.js` eintragen
-3. ✅ Testbuchung durchführen
-4. ✅ Link auf Workshop-Seite setzen
-5. ✅ Auf GitHub pushen
-
-## Integration auf ki-workshop-unternehmen.html
-
-Ändere alle "Workshop anfragen" Links zu:
-
-```html
-<a href="workshop-buchen" class="btn-cta-large">Workshop buchen →</a>
-```
+1. ✅ Calendly-Link eingebunden (bereits live)
+2. ⏳ Calendly Custom Questions hinzufügen (5 Minuten)
+3. ⏳ E-Mail-Templates anpassen
+4. ⏳ Kalender verbinden (Google/Outlook)
+5. ⏳ Testbuchung durchführen
+6. ✅ **Fertig!**
 
 ## Support
 
-Falls Formspree nicht funktioniert:
-- Alternative: EmailJS (ähnlicher Service)
-- Alternative: Eigener Server mit PHP/Node.js
-- Alternative: Google Forms (weniger professionell)
+Falls du Hilfe bei Calendly-Setup brauchst:
+- Calendly Help Center: https://help.calendly.com/
+- Video-Tutorials: https://www.youtube.com/calendly
 
 ---
 
-**Status:** ✅ Bereit für Produktion (nach Formspree-Setup)
+**Status:** ✅ Bereit für Produktion (Calendly optimieren empfohlen)  
+**Vorteil vs. Custom:** Keine Wartung, professioneller, automatisiert
