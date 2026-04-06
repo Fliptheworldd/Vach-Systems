@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Angebote automatisch erstellen: Von 30 Minuten auf 2 Minuten. Software für Handwerk, Bau, Service. Keine Excel-Tabellen mehr. Fertiges PDF in Ihrer CI.">
+    <meta name="keywords" content="Angebote automatisieren, Angebotserstellung Software, Handwerk Angebote, Bau Angebote Software">
+    <title>Angebote in 2 statt 30 Minuten | Automatisierung für Handwerk & Bau</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-minimal">
+        <div class="nav-container">
+            <a href="/" class="logo-minimal">
+                <div class="logo-mark"></div>
+                <span>Vach Systems</span>
+            </a>
+            <div class="nav-links">
+                <a href="leistungen">Leistungen</a>
+                <a href="/#use-cases">Beispiele</a>
+                <a href="ki-workshop-unternehmen">KI-Workshop</a>
+                <a href="blog/">Blog</a>
+                <a href="kontakt" class="nav-cta">Kostenlose Analyse</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/">Home</a>
+        <a href="leistungen">Leistungen</a>
+        <a href="/#use-cases">Beispiele</a>
+        <a href="ki-workshop-unternehmen">KI-Workshop</a>
+        <a href="blog/">Blog</a>
+        <a href="kontakt" class="nav-cta">Kostenlose Analyse</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero-fullscreen" style="min-height: 80vh;">
+        <div class="hero-bg">
+            <img srcset="images/services-hero-600w.webp 600w, 
+                     images/services-hero-1024w.webp 1024w, 
+                     images/services-hero.webp 1920w"
+             sizes="(max-width: 768px) 600px, (max-width: 1024px) 1024px, 1920px"
+             src="images/services-hero.webp" 
+             width="1920"
+             height="1280"
+             fetchpriority="high"
+             alt="Angebote automatisch erstellen"
+             loading="eager">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-container">
+            <span class="hero-badge">Angebotserstellung automatisieren</span>
+            <h1 class="hero-title">
+                <span class="gradient-text">30 Minuten pro Angebot?</span><br>
+                Machen Sie es in 2 Minuten
+            </h1>
+            <p class="hero-subtitle hero-subtitle-max">
+                Software, die Angebote automatisch erstellt. Sie geben Kundendaten ein, sie spuckt fertiges PDF aus.
+                In Ihrer CI. Mit aktuellen Preisen. Ohne Excel. Ohne Tippfehler.
+            </p>
+            <div class="hero-actions">
+                <a href="kontakt" class="btn-hero-primary">Kostenlose Analyse</a>
+                <a href="#wie-es-funktioniert" class="btn-hero-secondary">Wie funktioniert's?</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-big">28 Min</span><span class="stat-label">pro Angebot gespart</span></div>
+                <div class="stat"><span class="stat-big">93%</span><span class="stat-label">schneller</span></div>
+                <div class="stat"><span class="stat-big">0</span><span class="stat-label">Tippfehler</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section style="padding: 8rem 0; background: white;">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem;">
+                <span class="section-label">Das Problem</span>
+                <h2 class="split-title">Warum Angebote so lange dauern</h2>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+                <div style="background: var(--lightgray); padding: 2.5rem; border-radius: 12px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📊</div>
+                    <h3 style="font-weight: 800; margin-bottom: 1rem;">Excel-Tabellen ausfüllen</h3>
+                    <p style="opacity: 0.7; line-height: 1.6;">
+                        Kundendaten eintippen, Positionen eintragen, Preise recherchieren, Formeln checken.
+                        <strong>10-15 Minuten verloren.</strong>
+                    </p>
+                </div>
+
+                <div style="background: var(--lightgray); padding: 2.5rem; border-radius: 12px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📄</div>
+                    <h3 style="font-weight: 800; margin-bottom: 1rem;">Word-Dokument formatieren</h3>
+                    <p style="opacity: 0.7; line-height: 1.6;">
+                        Daten aus Excel nach Word kopieren, Tabellen formatieren, Logo einfügen, Seitenzahlen checken.
+                        <strong>10-15 Minuten verloren.</strong>
+                    </p>
+                </div>
+
+                <div style="background: var(--lightgray); padding: 2.5rem; border-radius: 12px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔍</div>
+                    <h3 style="font-weight: 800; margin-bottom: 1rem;">Korrektur lesen</h3>
+                    <p style="opacity: 0.7; line-height: 1.6;">
+                        Tippfehler suchen, Zahlen checken, Rechtschreibung prüfen, PDF speichern.
+                        <strong>5 Minuten verloren.</strong>
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                <div style="background: var(--lightgray); padding: 2.5rem; border-radius: 12px; border-left: 4px solid var(--cyan);">
+                    <div style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Die Rechnung:</div>
+                    <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
+                        30 Minuten pro Angebot × 20 Angebote/Woche = <strong>10 Stunden/Woche</strong><br>
+                        Bei 50€/Stunde = <strong>2.000€/Monat verschwendet</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lösung -->
+    <section id="wie-es-funktioniert" style="padding: 8rem 0; background: var(--black); color: white;">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem;">
+                <span class="section-label" style="color: var(--cyan);">Die Lösung</span>
+                <h2 class="split-title">So funktioniert es</h2>
+                <p class="split-subtitle" style="color: rgba(255,255,255,0.8);">
+                    Keine Excel-Tabellen mehr. Keine Word-Dokumente mehr. Einfach Daten eingeben → fertiges PDF.
+                </p>
+            </div>
+
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="display: flex; gap: 2rem; align-items: start; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 2px solid rgba(255,255,255,0.1);">
+                    <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--cyan); color: var(--black); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900;">1</div>
+                    <div>
+                        <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">Kundendaten eingeben</h3>
+                        <p style="opacity: 0.8; line-height: 1.6; font-size: 1.125rem;">
+                            Kunde, Projekt, Standort. Fertig. Die Software holt sich den Rest aus Ihrem CRM (oder Sie geben es ein).
+                        </p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 2rem; align-items: start; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 2px solid rgba(255,255,255,0.1);">
+                    <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--cyan); color: var(--black); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900;">2</div>
+                    <div>
+                        <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">Leistungen auswählen</h3>
+                        <p style="opacity: 0.8; line-height: 1.6; font-size: 1.125rem;">
+                            Dropdown-Menü, Checkboxen, wie Sie wollen. Software rechnet automatisch: Material, Arbeitszeit, Marge.
+                        </p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 2rem; align-items: start; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 2px solid rgba(255,255,255,0.1);">
+                    <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--cyan); color: var(--black); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900;">3</div>
+                    <div>
+                        <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">PDF erstellen</h3>
+                        <p style="opacity: 0.8; line-height: 1.6; font-size: 1.125rem;">
+                            Klick auf "Erstellen" → fertig. In Ihrer CI. Mit Logo. Mit Fußzeile. Mit allem. Wie von Hand – nur in 2 Minuten.
+                        </p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 2rem; align-items: start;">
+                    <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--cyan); color: var(--black); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900;">4</div>
+                    <div>
+                        <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">Direkt versenden</h3>
+                        <p style="opacity: 0.8; line-height: 1.6; font-size: 1.125rem;">
+                            Per E-Mail oder WhatsApp. Automatisch. Mit persönlicher Nachricht. Der Kunde bekommt das Angebot sofort.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vorteile -->
+    <section style="padding: 8rem 0; background: white;">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem;">
+                <span class="section-label">Vorteile</span>
+                <h2 class="split-title">Was Sie davon haben</h2>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <div style="padding: 2rem; background: var(--lightgray); border-radius: 8px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">93% schneller</h3>
+                    <p style="opacity: 0.7; line-height: 1.6;">
+                        Von 30 Minuten auf 2 Minuten. 28 Minuten pro Angebot gespart. Bei 20 Angeboten/Woche = 9,3 Stunden/Woche.
+                    </p>
+                </div>
+
+                <div style="padding: 2rem; background: var(--lightgray); border-radius: 8px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">✅</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Keine Fehler mehr</h3>
+                    <p style="opacity: 0.7; line-height: 1.6;">
+                        Tippfehler? Falsche Preise? Vergessene Positionen? Passiert nicht mehr. Software rechnet automatisch.
+                    </p>
+                </div>
+
+                <div style="padding: 2rem; background: var(--lightgray); border-radius: 8px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📈</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Mehr Angebote</h3>
+                    <p style="opacity: 0.7; line-height: 1.6;">
+                        Schneller → mehr Anfragen bearbeitet → mehr Aufträge. 20 Angebote statt 10 pro Woche = 2x so viele Chancen.
+                    </p>
+                </div>
+
+                <div style="padding: 2rem; background: var(--lightgray); border-radius: 8px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">💰</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Aktuelle Preise</h3>
+                    <p style="opacity: 0.7; line-height: 1.6;">
+                        Software holt Materialpreise live. Keine veralteten Excel-Listen mehr. Immer die richtige Marge.
+                    </p>
+                </div>
+
+                <div style="padding: 2rem; background: var(--lightgray); border-radius: 8px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎨</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Professionelles Layout</h3>
+                    <p style="opacity: 0.7; line-height: 1.6;">
+                        Angebote sehen aus wie von einer Agentur. Einheitlich. Sauber. Mit Ihrer CI. Kunden nehmen Sie ernster.
+                    </p>
+                </div>
+
+                <div style="padding: 2rem; background: var(--lightgray); border-radius: 8px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📊</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Übersicht behalten</h3>
+                    <p style="opacity: 0.7; line-height: 1.6;">
+                        Alle Angebote an einem Ort. Nachverfolgbar. Sie sehen: Was ist offen? Was wurde angenommen? Was abgelehnt?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Für wen -->
+    <section style="padding: 8rem 0; background: var(--lightgray);">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem;">
+                <span class="section-label">Für wen ist das?</span>
+                <h2 class="split-title">Typische Einsatzbereiche</h2>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem;">
+                <div style="background: white; padding: 2.5rem; border-radius: 12px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔧</div>
+                    <h3 style="font-weight: 800; margin-bottom: 1rem;">Handwerk & Bau</h3>
+                    <p style="opacity: 0.7; line-height: 1.6; margin-bottom: 1rem;">
+                        Fenster, Türen, Treppen, Dachdeckung, Elektro, Sanitär. Immer gleicher Ablauf:
+                        Kunde → Maße → Material → Arbeit → Angebot.
+                    </p>
+                    <p style="font-weight: 700; color: var(--cyan);">
+                        → Automatisierung spart 80% der Zeit
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 2.5rem; border-radius: 12px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🚚</div>
+                    <h3 style="font-weight: 800; margin-bottom: 1rem;">Logistik & Transport</h3>
+                    <p style="opacity: 0.7; line-height: 1.6; margin-bottom: 1rem;">
+                        Anfrage per E-Mail → Route berechnen → Preis kalkulieren → Angebot schicken.
+                        Passiert 50x am Tag.
+                    </p>
+                    <p style="font-weight: 700; color: var(--cyan);">
+                        → Von 5 Minuten auf 30 Sekunden
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 2.5rem; border-radius: 12px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏭</div>
+                    <h3 style="font-weight: 800; margin-bottom: 1rem;">Produktion & Fertigung</h3>
+                    <p style="opacity: 0.7; line-height: 1.6; margin-bottom: 1rem;">
+                        Kunde will Bauteil → Maße checken → Maschinenzeit kalkulieren → Material → Angebot.
+                        Oft komplexe Berechnungen.
+                    </p>
+                    <p style="font-weight: 700; color: var(--cyan);">
+                        → Keine Kalkulationsfehler mehr
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI -->
+    <section style="padding: 8rem 0; background: var(--cyan); color: white;">
+        <div class="container" style="max-width: 900px; text-align: center;">
+            <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 2rem;">
+                Rechenbeispiel: Lohnt sich das?
+            </h2>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 3rem; border-radius: 12px; text-align: left;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                    <div>
+                        <div style="font-size: 0.9375rem; opacity: 0.8; margin-bottom: 0.5rem;">Zeitersparnis</div>
+                        <div style="font-size: 2rem; font-weight: 900;">28 Min/Angebot</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.9375rem; opacity: 0.8; margin-bottom: 0.5rem;">Angebote pro Woche</div>
+                        <div style="font-size: 2rem; font-weight: 900;">20 Stück</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.9375rem; opacity: 0.8; margin-bottom: 0.5rem;">Stundensatz</div>
+                        <div style="font-size: 2rem; font-weight: 900;">50€</div>
+                    </div>
+                </div>
+
+                <div style="border-top: 2px solid rgba(255,255,255,0.2); padding-top: 2rem; margin-top: 2rem;">
+                    <div style="font-size: 1.25rem; margin-bottom: 1rem;">
+                        <strong>Ersparnis pro Monat:</strong><br>
+                        28 Min × 20 Angebote × 4 Wochen = 37,3 Stunden<br>
+                        37,3h × 50€ = <span style="font-size: 2rem; font-weight: 900; color: white;">1.865€/Monat</span>
+                    </div>
+                    
+                    <div style="font-size: 1.25rem; margin-top: 2rem;">
+                        <strong>Investment:</strong> 12.000€ einmalig<br>
+                        <strong>ROI:</strong> <span style="font-size: 2rem; font-weight: 900; color: white;">6,4 Monate</span>
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top: 3rem; font-size: 1.25rem; opacity: 0.95;">
+                Danach: <strong>1.865€/Monat gespart.</strong> Jeden Monat. Jahr für Jahr.
+            </p>
+        </div>
+    </section>
+
+    <!-- Wie wir arbeiten -->
+    <section style="padding: 8rem 0; background: white;">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem;">
+                <span class="section-label">Umsetzung</span>
+                <h2 class="split-title">Wie wir arbeiten</h2>
+            </div>
+
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="display: flex; gap: 2rem; align-items: start; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 2px solid var(--lightgray);">
+                    <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--cyan); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900;">1</div>
+                    <div>
+                        <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">Analyse (1-2 Tage vor Ort)</h3>
+                        <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
+                            Wir schauen uns an, wie Sie Angebote erstellen. Welche Daten brauchen Sie? Welche Berechnungen?
+                            Welche Vorlagen nutzen Sie?
+                        </p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 2rem; align-items: start; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 2px solid var(--lightgray);">
+                    <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--cyan); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900;">2</div>
+                    <div>
+                        <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">Konzept (1 Woche)</h3>
+                        <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
+                            Wir zeigen Ihnen, wie die Software aussehen wird. Mockups, Klick-Dummy. Sie geben Feedback.
+                            Wir passen an.
+                        </p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 2rem; align-items: start; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 2px solid var(--lightgray);">
+                    <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--cyan); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900;">3</div>
+                    <div>
+                        <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">Entwicklung (4-6 Wochen)</h3>
+                        <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
+                            Wir bauen die Software. Sie bekommen alle 2 Wochen ein Update zum Testen. Feedback geben, anpassen.
+                            Keine Überraschungen am Ende.
+                        </p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 2rem; align-items: start;">
+                    <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--cyan); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900;">4</div>
+                    <div>
+                        <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">Go-Live & Schulung (1 Tag)</h3>
+                        <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
+                            Wir installieren alles, schulen Ihr Team (1-2 Stunden). Danach können Sie sofort loslegen.
+                            Wir bleiben die ersten Wochen eng dran.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="padding: 8rem 0; background: var(--lightgray);">
+        <div class="container" style="max-width: 900px;">
+            <div style="text-align: center; margin-bottom: 5rem;">
+                <span class="section-label">Häufige Fragen</span>
+                <h2 class="split-title">Was Geschäftsführer uns fragen</h2>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Funktioniert das mit meiner Branche?</h3>
+                    <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
+                        Wenn Sie Angebote erstellen, funktioniert es. Egal ob Handwerk, Logistik, Produktion oder Service.
+                        Wir passen die Software an IHRE Prozesse an.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Was kostet das?</h3>
+                    <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
+                        Je nach Komplexität: 8.000-15.000€ einmalig. Im Erstgespräch rechnen wir gemeinsam:
+                        Ihre Zeitersparnis vs. Investment. So sehen Sie vorher, ob es sich lohnt.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Können Sie das an meine Vorlagen anpassen?</h3>
+                    <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
+                        <strong>Ja.</strong> Wir übernehmen Ihr Layout, Ihre CI, Ihre Formulierungen. Das Angebot sieht aus wie bisher – nur erstellt in 2 statt 30 Minuten.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Muss ich meine Mitarbeiter schulen?</h3>
+                    <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
+                        Wir schulen Ihr Team (1-2 Stunden). Die Software ist so einfach wie WhatsApp. Nach 1 Tag kann jeder damit arbeiten.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Was ist, wenn ich etwas ändern will?</h3>
+                    <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
+                        Wir bleiben die ersten Wochen dran – kostenlos. Danach optional: Support-Vertrag für Anpassungen.
+                        Oder Sie betreiben die Software selbst.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-cta-bold">
+        <div class="cta-container">
+            <h2>Bereit, Zeit zu sparen?</h2>
+            <p>Kostenloses Erstgespräch. Wir rechnen gemeinsam: Ihre Zeitersparnis vs. Investment.</p>
+            <a href="kontakt" class="btn-cta-large">Kostenlose Analyse vereinbaren →</a>
+            <div class="cta-trust">
+                <span>15 Min. Erstgespräch</span>
+                <span>Ehrliche Einschätzung</span>
+                <span>Keine Verpflichtung</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Links -->
+    <section style="padding: 6rem 0; background: white;">
+        <div class="container" style="max-width: 900px;">
+            <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 2rem; text-align: center;">Das könnte Sie auch interessieren:</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <a href="crm-technische-betriebe" style="padding: 1.5rem; background: var(--lightgray); border-radius: 8px; text-decoration: none; color: inherit;">
+                    <h4 style="font-weight: 700; margin-bottom: 0.5rem;">CRM für technische Betriebe</h4>
+                    <p style="opacity: 0.7; font-size: 0.9375rem;">Alle Kundendaten auf einem Bildschirm</p>
+                </a>
+                <a href="ki-workshop-unternehmen" style="padding: 1.5rem; background: var(--lightgray); border-radius: 8px; text-decoration: none; color: inherit;">
+                    <h4 style="font-weight: 700; margin-bottom: 0.5rem;">KI-Workshop</h4>
+                    <p style="opacity: 0.7; font-size: 0.9375rem;">Mitarbeiter nutzen KI 10x produktiver</p>
+                </a>
+                <a href="/" style="padding: 1.5rem; background: var(--lightgray); border-radius: 8px; text-decoration: none; color: inherit;">
+                    <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Mehr Beispiele</h4>
+                    <p style="opacity: 0.7; font-size: 0.9375rem;">E-Mails, Rechnungen, Übersicht</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-minimal">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-mark"></div>
+                        <span>Vach Systems</span>
+                    </div>
+                    <p>Software für Handwerk und Servicebetriebe · Berlin</p>
+                </div>
+                <div class="footer-links">
+                    <a href="leistungen">Leistungen</a>
+                    <a href="angebote-automatisieren">Angebote automatisieren</a>
+                    <a href="ki-workshop-unternehmen">KI-Workshop</a>
+                    <a href="blog/">Blog</a>
+                    <a href="kontakt">Kontakt</a>
+                </div>
+                <div class="footer-contact">
+                    <a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <span>© 2026 Vach Systems</span>
+                <a href="impressum">Impressum</a>
+                <a href="datenschutz">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.min.js" defer></script>
+
+    <!-- Cookie Consent -->
+    <div id="cb" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#000;color:#fff;padding:1rem;z-index:9999">
+        <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+            <p style="margin:0;font-size:.9rem;flex:1;min-width:250px">Wir nutzen Google Analytics. <a href="datenschutz" style="color:#fff;text-decoration:underline">Datenschutz</a></p>
+            <div style="display:flex;gap:.75rem">
+                <button onclick="ac()" style="padding:.6rem 1.5rem;background:#fff;color:#000;border:none;border-radius:6px;font-weight:600;cursor:pointer">OK</button>
+                <button onclick="dc()" style="padding:.6rem 1.5rem;background:transparent;color:#fff;border:2px solid #fff;border-radius:6px;font-weight:600;cursor:pointer">Ablehnen</button>
+            </div>
+        </div>
+    </div>
+    <script>function lg(){var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-6ZZ7BX7SB0';document.head.appendChild(s);s.onload=function(){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6ZZ7BX7SB0',{anonymize_ip:!0})}}function ac(){localStorage.cookieConsent='accepted';cb.style.display='none';lg()}function dc(){localStorage.cookieConsent='declined';cb.style.display='none'}localStorage.cookieConsent?localStorage.cookieConsent==='accepted'&&lg():cb.style.display='block'</script>
+</body>
+</html>
