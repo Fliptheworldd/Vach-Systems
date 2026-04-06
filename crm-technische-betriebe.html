@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CRM für technische Betriebe: Alle Kundendaten auf einem Bildschirm. Keine 3 Programme mehr öffnen. 12 Minuten pro Anfrage gespart.">
+    <meta name="keywords" content="CRM technische Betriebe, Kundenverwaltung Handwerk, CRM Servicebetrieb, Kundendaten zusammenführen">
+    <title>Alle Kundendaten auf einem Bildschirm | CRM für technische Betriebe</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-minimal">
+        <div class="nav-container">
+            <a href="/" class="logo-minimal">
+                <div class="logo-mark"></div>
+                <span>Vach Systems</span>
+            </a>
+            <div class="nav-links">
+                <a href="leistungen">Leistungen</a>
+                <a href="/#use-cases">Beispiele</a>
+                <a href="ki-workshop-unternehmen">KI-Workshop</a>
+                <a href="blog/">Blog</a>
+                <a href="kontakt" class="nav-cta">Kostenlose Analyse</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/">Home</a>
+        <a href="leistungen">Leistungen</a>
+        <a href="/#use-cases">Beispiele</a>
+        <a href="ki-workshop-unternehmen">KI-Workshop</a>
+        <a href="blog/">Blog</a>
+        <a href="kontakt" class="nav-cta">Kostenlose Analyse</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero-fullscreen" style="min-height: 80vh;">
+        <div class="hero-bg">
+            <img srcset="images/services-hero-600w.webp 600w, 
+                     images/services-hero-1024w.webp 1024w, 
+                     images/services-hero.webp 1920w"
+             sizes="(max-width: 768px) 600px, (max-width: 1024px) 1024px, 1920px"
+             src="images/services-hero.webp" 
+             width="1920"
+             height="1280"
+             fetchpriority="high"
+             alt="CRM Dashboard"
+             loading="eager">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-container">
+            <span class="hero-badge">CRM für technische Betriebe</span>
+            <h1 class="hero-title">
+                <span class="gradient-text">3 Programme öffnen</span><br>
+                für eine Kundenanfrage?
+            </h1>
+            <p class="hero-subtitle hero-subtitle-max">
+                Kundendaten im CRM, Rechnungen in DATEV, Projekte in Excel. Bei jeder Anfrage: Suchen, öffnen, zusammensuchen.<br>
+                Wir bauen ein Dashboard, das alles zeigt. Auf einem Bildschirm. In einer Sekunde.
+            </p>
+            <div class="hero-actions">
+                <a href="kontakt" class="btn-hero-primary">Kostenlose Analyse</a>
+                <a href="#wie-es-funktioniert" class="btn-hero-secondary">Wie funktioniert's?</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-big">12 Min</span><span class="stat-label">pro Anfrage gespart</span></div>
+                <div class="stat"><span class="stat-big">1 Screen</span><span class="stat-label">statt 3 Programme</span></div>
+                <div class="stat"><span class="stat-big">0%</span><span class="stat-label">Daten vergessen</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section style="padding: 8rem 0; background: white;">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem;">
+                <span class="section-label">Das Problem</span>
+                <h2 class="split-title">Warum Kundenanfragen so lange dauern</h2>
+            </div>
+
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <div style="background: var(--lightgray); padding: 3rem; border-radius: 12px; margin-bottom: 2rem;">
+                    <h3 style="font-weight: 800; margin-bottom: 1rem; font-size: 1.5rem;">Typische Situation:</h3>
+                    <p style="opacity: 0.7; line-height: 1.8; font-size: 1.125rem;">
+                        Kunde ruft an: "Wann kommt meine Rechnung? Und wie ist der Stand beim Projekt XY?"
+                    </p>
+                    <div style="margin-top: 2rem; padding-top: 2rem; border-top: 2px solid rgba(0,0,0,0.1);">
+                        <p style="opacity: 0.7; line-height: 1.8; font-size: 1.125rem;">
+                            <strong>Was Sie machen:</strong><br>
+                            1. CRM öffnen → Kundendaten suchen (2 Min.)<br>
+                            2. DATEV öffnen → Rechnung suchen (3 Min.)<br>
+                            3. Excel öffnen → Projekt suchen (2 Min.)<br>
+                            4. E-Mail öffnen → Letzte Kommunikation suchen (3 Min.)<br>
+                            5. Kunde zurückrufen → Info geben (2 Min.)
+                        </p>
+                        <div style="background: var(--cyan); color: white; padding: 1.5rem; border-radius: 8px; margin-top: 2rem; font-weight: 700; font-size: 1.25rem; text-align: center;">
+                            = 12 Minuten pro Anfrage
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                    <div style="background: var(--lightgray); padding: 2.5rem; border-radius: 12px;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔍</div>
+                        <h3 style="font-weight: 800; margin-bottom: 1rem;">Ständiges Suchen</h3>
+                        <p style="opacity: 0.7; line-height: 1.6;">
+                            "Wo war nochmal...?" – Sie verbringen mehr Zeit mit Suchen als mit Arbeiten.
+                        </p>
+                    </div>
+
+                    <div style="background: var(--lightgray); padding: 2.5rem; border-radius: 12px;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">😤</div>
+                        <h3 style="font-weight: 800; margin-bottom: 1rem;">Kunden warten</h3>
+                        <p style="opacity: 0.7; line-height: 1.6;">
+                            "Ich muss das erst checken, ich ruf zurück" – Keine professionelle Antwort.
+                        </p>
+                    </div>
+
+                    <div style="background: var(--lightgray); padding: 2.5rem; border-radius: 12px;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">❌</div>
+                        <h3 style="font-weight: 800; margin-bottom: 1rem;">Fehler passieren</h3>
+                        <p style="opacity: 0.7; line-height: 1.6;">
+                            Rechnung übersehen, Projekt vergessen, falsche Info gegeben.
+                        </p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 4rem;">
+                    <div style="background: var(--lightgray); padding: 2.5rem; border-radius: 12px; border-left: 4px solid var(--cyan); max-width: 700px; margin: 0 auto;">
+                        <div style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Die Rechnung:</div>
+                        <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
+                            12 Minuten × 30 Anfragen/Tag = <strong>6 Stunden täglich</strong><br>
+                            Bei 50€/Stunde = <strong>1.500€/Tag verschwendet</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lösung -->
+    <section id="wie-es-funktioniert" style="padding: 8rem 0; background: var(--black); color: white;">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem;">
+                <span class="section-label" style="color: var(--cyan);">Die Lösung</span>
+                <h2 class="split-title">Ein Dashboard. Alle Daten. Eine Sekunde.</h2>
+                <p class="split-subtitle" style="color: rgba(255,255,255,0.8);">
+                    Keine 3 Programme mehr. Keine Suche mehr. Alle Infos zu einem Kunden auf einem Bildschirm.
+                </p>
+            </div>
+
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 12px; margin-bottom: 3rem;">
+                    <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 1.5rem;">Was das Dashboard zeigt:</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: start; gap: 1rem;">
+                            <span style="color: var(--cyan); font-size: 1.5rem;">✓</span>
+                            <div>
+                                <strong>Kundenstammdaten:</strong> Name, Adresse, Ansprechpartner, Telefon, E-Mail
+                            </div>
+                        </li>
+                        <li style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: start; gap: 1rem;">
+                            <span style="color: var(--cyan); font-size: 1.5rem;">✓</span>
+                            <div>
+                                <strong>Laufende Projekte:</strong> Was ist offen? Welcher Status? Wer arbeitet daran?
+                            </div>
+                        </li>
+                        <li style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: start; gap: 1rem;">
+                            <span style="color: var(--cyan); font-size: 1.5rem;">✓</span>
+                            <div>
+                                <strong>Rechnungen:</strong> Welche sind bezahlt? Welche offen? Seit wann überfällig?
+                            </div>
+                        </li>
+                        <li style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: start; gap: 1rem;">
+                            <span style="color: var(--cyan); font-size: 1.5rem;">✓</span>
+                            <div>
+                                <strong>Letzte Kommunikation:</strong> E-Mails, Anrufe, Meetings – chronologisch
+                            </div>
+                        </li>
+                        <li style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: start; gap: 1rem;">
+                            <span style="color: var(--cyan); font-size: 1.5rem;">✓</span>
+                            <div>
+                                <strong>Dokumente:</strong> Angebote, Verträge, Protokolle – alles an einem Ort
+                            </div>
+                        </li>
+                        <li style="padding: 1rem 0; display: flex; align-items: start; gap: 1rem;">
+                            <span style="color: var(--cyan); font-size: 1.5rem;">✓</span>
+                            <div>
+                                <strong>Historie:</strong> Was haben wir wann für diesen Kunden gemacht?
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div style="text-align: center; background: var(--cyan); color: var(--black); padding: 3rem; border-radius: 12px;">
+                    <h3 style="font-size: 2rem; font-weight: 900; margin-bottom: 1rem;">Das Ergebnis:</h3>
+                    <p style="font-size: 1.25rem; line-height: 1.6;">
+                        Kunde ruft an → Sie öffnen Dashboard → <strong>alle Infos in 1 Sekunde</strong><br>
+                        Keine Suche. Keine Wartezeit. Professionelle Auskunft sofort.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vorteile -->
+    <section style="padding: 8rem 0; background: white;">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem;">
+                <span class="section-label">Vorteile</span>
+                <h2 class="split-title">Was Sie davon haben</h2>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <div style="padding: 2rem; background: var(--lightgray); border-radius: 8px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">12 Min → 1 Sek</h3>
+                    <p style="opacity: 0.7; line-height: 1.6;">
+                        Von 12 Minuten auf 1 Sekunde pro Anfrage. Bei 30 Anfragen/Tag = 6 Stunden/Tag gespart.
+                    </p>
+                </div>
+
+                <div style="padding: 2rem; background: var(--lightgray); border-radius: 8px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">😊</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Kunden zufriedener</h3>
+                    <p style="opacity: 0.7; line-height: 1.6;">
+                        Sofortige Antworten statt "Ich muss das erst checken". Kunden merken den Unterschied.
+                    </p>
+                </div>
+
+                <div style="padding: 2rem; background: var(--lightgray); border-radius: 8px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">✅</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Nichts mehr vergessen</h3>
+                    <p style="opacity: 0.7; line-height: 1.6;">
+                        Alle Infos auf einen Blick. Keine übersehenen Rechnungen, keine vergessenen Projekte mehr.
+                    </p>
+                </div>
+
+                <div style="padding: 2rem; background: var(--lightgray); border-radius: 8px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📊</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Bessere Übersicht</h3>
+                    <p style="opacity: 0.7; line-height: 1.6;">
+                        Wer zahlt nicht? Welche Projekte laufen schlecht? Sie sehen es sofort.
+                    </p>
+                </div>
+
+                <div style="padding: 2rem; background: var(--lightgray); border-radius: 8px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔄</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Automatisch aktuell</h3>
+                    <p style="opacity: 0.7; line-height: 1.6;">
+                        Neue Rechnung in DATEV? Zeigt das Dashboard sofort. Kein manuelles Aktualisieren.
+                    </p>
+                </div>
+
+                <div style="padding: 2rem; background: var(--lightgray); border-radius: 8px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">👥</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Ganzes Team nutzt es</h3>
+                    <p style="opacity: 0.7; line-height: 1.6;">
+                        Jeder sieht das Gleiche. Neue Mitarbeiter sind in 10 Minuten eingearbeitet.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Für wen -->
+    <section style="padding: 8rem 0; background: var(--lightgray);">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem;">
+                <span class="section-label">Für wen ist das?</span>
+                <h2 class="split-title">Typische Einsatzbereiche</h2>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem;">
+                <div style="background: white; padding: 2.5rem; border-radius: 12px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔧</div>
+                    <h3 style="font-weight: 800; margin-bottom: 1rem;">Service & Wartung</h3>
+                    <p style="opacity: 0.7; line-height: 1.6; margin-bottom: 1rem;">
+                        Aufzugswartung, Klimaanlagen, Heizung. Viele Kunden, viele Wartungsverträge,
+                        viele Anrufe: "Wann kommt ihr wieder?"
+                    </p>
+                    <p style="font-weight: 700; color: var(--cyan);">
+                        → Dashboard zeigt: Letzte Wartung, nächster Termin, offene Tickets
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 2.5rem; border-radius: 12px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">💼</div>
+                    <h3 style="font-weight: 800; margin-bottom: 1rem;">IT & Consulting</h3>
+                    <p style="opacity: 0.7; line-height: 1.6; margin-bottom: 1rem;">
+                        Mehrere Projekte pro Kunde, verschiedene Ansprechpartner, ständige Rückfragen.
+                        "Wie ist der Stand bei Projekt XY?"
+                    </p>
+                    <p style="font-weight: 700; color: var(--cyan);">
+                        → Dashboard zeigt: Alle Projekte, Status, Ansprechpartner, letzte Updates
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 2.5rem; border-radius: 12px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏗️</div>
+                    <h3 style="font-weight: 800; margin-bottom: 1rem;">Handwerk & Bau</h3>
+                    <p style="opacity: 0.7; line-height: 1.6; margin-bottom: 1rem;">
+                        Mehrere Baustellen gleichzeitig, Nachträge, Abnahmen, Gewährleistung.
+                        "Welche Baustellen laufen gerade?"
+                    </p>
+                    <p style="font-weight: 700; color: var(--cyan);">
+                        → Dashboard zeigt: Aktive Baustellen, Rechnungsstand, offene Mängel
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wie wir arbeiten -->
+    <section style="padding: 8rem 0; background: white;">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem;">
+                <span class="section-label">Umsetzung</span>
+                <h2 class="split-title">Wie wir arbeiten</h2>
+            </div>
+
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="display: flex; gap: 2rem; align-items: start; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 2px solid var(--lightgray);">
+                    <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--cyan); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900;">1</div>
+                    <div>
+                        <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">Analyse (1 Tag vor Ort)</h3>
+                        <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
+                            Wir schauen uns an, welche Daten Sie brauchen. CRM, DATEV, Excel, E-Mail – was nutzen Sie?
+                            Was wollen Sie auf einen Blick sehen?
+                        </p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 2rem; align-items: start; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 2px solid var(--lightgray);">
+                    <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--cyan); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900;">2</div>
+                    <div>
+                        <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">Mockup (1 Woche)</h3>
+                        <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
+                            Wir zeigen Ihnen, wie das Dashboard aussehen wird. Sie geben Feedback: "Hier fehlt noch X" oder "Das ist perfekt".
+                        </p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 2rem; align-items: start; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 2px solid var(--lightgray);">
+                    <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--cyan); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900;">3</div>
+                    <div>
+                        <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">Integration (4-6 Wochen)</h3>
+                        <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
+                            Wir verbinden Ihre Systeme. CRM-API, DATEV-Schnittstelle, Excel-Import. Dashboard zieht sich alle Daten automatisch.
+                        </p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 2rem; align-items: start;">
+                    <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--cyan); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900;">4</div>
+                    <div>
+                        <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">Go-Live & Schulung</h3>
+                        <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
+                            Dashboard läuft. Ihr Team bekommt 1-2 Stunden Schulung. Danach kann jeder damit arbeiten. Wir bleiben die ersten Wochen eng dran.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="padding: 8rem 0; background: var(--lightgray);">
+        <div class="container" style="max-width: 900px;">
+            <div style="text-align: center; margin-bottom: 5rem;">
+                <span class="section-label">Häufige Fragen</span>
+                <h2 class="split-title">Was Geschäftsführer uns fragen</h2>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Funktioniert das mit meinem CRM?</h3>
+                    <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
+                        <strong>Ja.</strong> Wir haben schon mit Salesforce, HubSpot, Pipedrive, und selbst gebauten Systemen gearbeitet.
+                        Wenn es eine API hat, können wir es anbinden.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Was kostet das?</h3>
+                    <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
+                        Je nach Anzahl der Systeme: 15.000-30.000€ einmalig. Im Erstgespräch rechnen wir:
+                        Ihre Zeitersparnis (6h/Tag × 50€ = 300€/Tag) vs. Investment. Bei 30k€ ist das Investment in 100 Tagen zurück.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Muss ich meine Systeme ersetzen?</h3>
+                    <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
+                        <strong>Nein.</strong> Das Dashboard zeigt nur Daten. Sie arbeiten weiter in CRM, DATEV, Excel.
+                        Dashboard ist eine Übersicht, kein Ersatz.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Was ist, wenn sich was ändert?</h3>
+                    <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
+                        Wir bleiben die ersten Wochen dran – kostenlos. Danach optional: Support-Vertrag für Anpassungen und Updates.
+                        Oder Sie betreiben das System selbst.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-cta-bold">
+        <div class="cta-container">
+            <h2>Bereit für den Überblick?</h2>
+            <p>Kostenloses Erstgespräch. Wir rechnen: Ihre Zeitersparnis vs. Investment.</p>
+            <a href="kontakt" class="btn-cta-large">Kostenlose Analyse vereinbaren →</a>
+            <div class="cta-trust">
+                <span>15 Min. Erstgespräch</span>
+                <span>Ehrliche Einschätzung</span>
+                <span>Keine Verpflichtung</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Links -->
+    <section style="padding: 6rem 0; background: white;">
+        <div class="container" style="max-width: 900px;">
+            <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 2rem; text-align: center;">Das könnte Sie auch interessieren:</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <a href="angebote-automatisieren" style="padding: 1.5rem; background: var(--lightgray); border-radius: 8px; text-decoration: none; color: inherit;">
+                    <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Angebote automatisieren</h4>
+                    <p style="opacity: 0.7; font-size: 0.9375rem;">In 2 statt 30 Minuten fertig</p>
+                </a>
+                <a href="ki-workshop-unternehmen" style="padding: 1.5rem; background: var(--lightgray); border-radius: 8px; text-decoration: none; color: inherit;">
+                    <h4 style="font-weight: 700; margin-bottom: 0.5rem;">KI-Workshop</h4>
+                    <p style="opacity: 0.7; font-size: 0.9375rem;">Mitarbeiter nutzen KI 10x produktiver</p>
+                </a>
+                <a href="/" style="padding: 1.5rem; background: var(--lightgray); border-radius: 8px; text-decoration: none; color: inherit;">
+                    <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Mehr Beispiele</h4>
+                    <p style="opacity: 0.7; font-size: 0.9375rem;">E-Mails, Rechnungen, Termine</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-minimal">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-mark"></div>
+                        <span>Vach Systems</span>
+                    </div>
+                    <p>Software für Handwerk und Servicebetriebe · Berlin</p>
+                </div>
+                <div class="footer-links">
+                    <a href="leistungen">Leistungen</a>
+                    <a href="angebote-automatisieren">Angebote automatisieren</a>
+                    <a href="crm-technische-betriebe">CRM für Betriebe</a>
+                    <a href="ki-workshop-unternehmen">KI-Workshop</a>
+                    <a href="blog/">Blog</a>
+                    <a href="kontakt">Kontakt</a>
+                </div>
+                <div class="footer-contact">
+                    <a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <span>© 2026 Vach Systems</span>
+                <a href="impressum">Impressum</a>
+                <a href="datenschutz">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.min.js" defer></script>
+
+    <!-- Cookie Consent -->
+    <div id="cb" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#000;color:#fff;padding:1rem;z-index:9999">
+        <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+            <p style="margin:0;font-size:.9rem;flex:1;min-width:250px">Wir nutzen Google Analytics. <a href="datenschutz" style="color:#fff;text-decoration:underline">Datenschutz</a></p>
+            <div style="display:flex;gap:.75rem">
+                <button onclick="ac()" style="padding:.6rem 1.5rem;background:#fff;color:#000;border:none;border-radius:6px;font-weight:600;cursor:pointer">OK</button>
+                <button onclick="dc()" style="padding:.6rem 1.5rem;background:transparent;color:#fff;border:2px solid #fff;border-radius:6px;font-weight:600;cursor:pointer">Ablehnen</button>
+            </div>
+        </div>
+    </div>
+    <script>function lg(){var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-6ZZ7BX7SB0';document.head.appendChild(s);s.onload=function(){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6ZZ7BX7SB0',{anonymize_ip:!0})}}function ac(){localStorage.cookieConsent='accepted';cb.style.display='none';lg()}function dc(){localStorage.cookieConsent='declined';cb.style.display='none'}localStorage.cookieConsent?localStorage.cookieConsent==='accepted'&&lg():cb.style.display='block'</script>
+</body>
+</html>
