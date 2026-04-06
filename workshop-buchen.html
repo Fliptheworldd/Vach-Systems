@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KI Workshop buchen – Wählen Sie Ihren Termin und füllen Sie den Fragebogen aus. Einfach, schnell, direkt.">
+    <title>KI Workshop buchen – Vach Systems</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.min.css">
+    <style>
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+        .booking-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .booking-header h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+        .booking-header p {
+            font-size: 1.125rem;
+            color: #64748b;
+        }
+        .booking-step {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .step-number {
+            background: #06b6d4;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 0;
+        }
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .calendar-slot {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .calendar-slot:hover {
+            border-color: #06b6d4;
+            background: #ecfeff;
+        }
+        .calendar-slot.selected {
+            background: #06b6d4;
+            border-color: #06b6d4;
+            color: white;
+        }
+        .calendar-slot.disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+        .calendar-slot.disabled:hover {
+            border-color: #e2e8f0;
+            background: #f8fafc;
+        }
+        .slot-date {
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+        .slot-day {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+        .slot-time {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #06b6d4;
+        }
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+            font-family: inherit;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        .checkbox-item label {
+            margin: 0;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        .btn-submit {
+            background: #06b6d4;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s;
+        }
+        .btn-submit:hover {
+            background: #0891b2;
+        }
+        .btn-submit:disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+        }
+        .hidden {
+            display: none;
+        }
+        .success-message {
+            background: #d1fae5;
+            border: 2px solid #10b981;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .success-message h2 {
+            color: #065f46;
+            margin-bottom: 1rem;
+        }
+        .success-message p {
+            color: #047857;
+            font-size: 1.125rem;
+        }
+        .error-message {
+            background: #fee2e2;
+            border: 2px solid #ef4444;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            color: #991b1b;
+        }
+        .required {
+            color: #ef4444;
+        }
+        @media (max-width: 768px) {
+            .booking-header h1 {
+                font-size: 2rem;
+            }
+            .calendar-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-minimal">
+        <div class="nav-container">
+            <a href="/" class="logo-minimal">
+                <div class="logo-mark"></div>
+                <span>Vach Systems</span>
+            </a>
+            <div class="nav-links">
+                <a href="leistungen">Leistungen</a>
+                <a href="ki-workshop-unternehmen">KI-Workshop</a>
+                <a href="blog/">Blog</a>
+                <a href="kontakt">Kontakt</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/">Home</a>
+        <a href="leistungen">Leistungen</a>
+        <a href="ki-workshop-unternehmen">KI-Workshop</a>
+        <a href="blog/">Blog</a>
+        <a href="kontakt">Kontakt</a>
+    </div>
+
+    <div class="booking-container">
+        <div class="booking-header">
+            <h1>KI Workshop buchen</h1>
+            <p>Wählen Sie Ihren Wunschtermin und beantworten Sie 7 kurze Fragen. Wir melden uns innerhalb von 24 Stunden.</p>
+        </div>
+
+        <!-- Schritt 1: Terminauswahl -->
+        <div id="step1" class="booking-step">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <h2 class="step-title">Wählen Sie Ihren Termin</h2>
+            </div>
+            <p style="color: #64748b; margin-bottom: 1rem;">Alle Termine: Dienstag oder Donnerstag, 08:00 Uhr (4-6 Stunden). Wir kommen zu Ihnen.</p>
+            <div id="calendarGrid" class="calendar-grid">
+                <!-- Slots werden per JavaScript generiert -->
+            </div>
+        </div>
+
+        <!-- Schritt 2: Fragebogen -->
+        <div id="step2" class="booking-step hidden">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <h2 class="step-title">Über Ihr Unternehmen</h2>
+            </div>
+            
+            <div id="errorMessage" class="error-message hidden"></div>
+
+            <form id="bookingForm">
+                <input type="hidden" id="selectedDate" name="selectedDate">
+                
+                <div class="form-group">
+                    <label for="companyName">Unternehmensname <span class="required">*</span></label>
+                    <input type="text" id="companyName" name="companyName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="industry">Branche <span class="required">*</span></label>
+                    <select id="industry" name="industry" required>
+                        <option value="">Bitte wählen...</option>
+                        <option value="Handwerk">Handwerk (Elektrik, Sanitär, Heizung, etc.)</option>
+                        <option value="Dienstleistung">Dienstleistung (Beratung, Agentur, etc.)</option>
+                        <option value="Handel">Handel (Groß-/Einzelhandel)</option>
+                        <option value="Produktion">Produktion / Fertigung</option>
+                        <option value="IT">IT / Software</option>
+                        <option value="Gesundheit">Gesundheit / Pflege</option>
+                        <option value="Sonstiges">Sonstiges</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="employeeCount">Mitarbeiteranzahl <span class="required">*</span></label>
+                    <select id="employeeCount" name="employeeCount" required>
+                        <option value="">Bitte wählen...</option>
+                        <option value="1-5">1-5 Mitarbeiter</option>
+                        <option value="6-10">6-10 Mitarbeiter</option>
+                        <option value="11-25">11-25 Mitarbeiter</option>
+                        <option value="26-50">26-50 Mitarbeiter</option>
+                        <option value="51+">51+ Mitarbeiter</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="aiUsage">Aktuelle Nutzung von KI <span class="required">*</span></label>
+                    <select id="aiUsage" name="aiUsage" required>
+                        <option value="">Bitte wählen...</option>
+                        <option value="Keine">Keine – wir nutzen noch keine KI</option>
+                        <option value="Erste Versuche">Erste Versuche – einzelne Mitarbeiter probieren</option>
+                        <option value="Regelmäßig">Regelmäßig – aber nicht effizient</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tools">Welche Tools nutzen Sie bereits?</label>
+                    <input type="text" id="tools" name="tools" placeholder="z.B. Microsoft Copilot, ChatGPT, Claude...">
+                </div>
+
+                <div class="form-group">
+                    <label>Wo verschwenden Sie die meiste Zeit? <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="time1" name="timeWasters" value="Angebote erstellen">
+                            <label for="time1">Angebote erstellen</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="time2" name="timeWasters" value="E-Mails beantworten">
+                            <label for="time2">E-Mails beantworten</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="time3" name="timeWasters" value="Informationen suchen">
+                            <label for="time3">Informationen suchen</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="time4" name="timeWasters" value="Rechnungen / Buchhaltung">
+                            <label for="time4">Rechnungen / Buchhaltung</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="time5" name="timeWasters" value="Kundenservice / Support">
+                            <label for="time5">Kundenservice / Support</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="time6" name="timeWasters" value="Projektplanung">
+                            <label for="time6">Projektplanung</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="time7" name="timeWasters" value="Sonstiges">
+                            <label for="time7">Sonstiges</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="goal">Was ist Ihr konkretes Ziel? <span class="required">*</span></label>
+                    <textarea id="goal" name="goal" placeholder="z.B. Angebote schneller erstellen, E-Mails automatisieren, mehr Zeit für Kunden..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactEmail">E-Mail für Bestätigung <span class="required">*</span></label>
+                    <input type="email" id="contactEmail" name="contactEmail" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactPhone">Telefon (optional)</label>
+                    <input type="tel" id="contactPhone" name="contactPhone">
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">Workshop anfragen</button>
+            </form>
+        </div>
+
+        <!-- Schritt 3: Bestätigung -->
+        <div id="step3" class="booking-step hidden">
+            <div class="success-message">
+                <h2>✓ Anfrage gesendet!</h2>
+                <p>Wir haben Ihre Workshop-Anfrage erhalten und melden uns innerhalb von 24 Stunden per E-Mail.</p>
+                <p style="margin-top: 1rem; font-size: 1rem;">Ihr gewählter Termin: <strong id="confirmedDate"></strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-minimal">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-mark"></div>
+                        <span>Vach Systems</span>
+                    </div>
+                    <p>KI Workshops für Unternehmen · Berlin</p>
+                </div>
+                <div class="footer-links">
+                    <a href="leistungen">Leistungen</a>
+                    <a href="ki-workshop-unternehmen">KI-Workshop</a>
+                    <a href="blog/">Blog</a>
+                    <a href="kontakt">Kontakt</a>
+                </div>
+                <div class="footer-contact">
+                    <a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <span>© 2026 Vach Systems</span>
+                <a href="impressum">Impressum</a>
+                <a href="datenschutz">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.min.js" defer></script>
+    <script src="js/workshop-booking.js" defer></script>
+</body>
+</html>
