@@ -1,0 +1,32 @@
+﻿<section class="hero-fullscreen">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1920&q=85"
+             alt="Team Workshop KI Training" 
+             width="1920" 
+             height="1280"
+             fetchpriority="high"
+             loading="eager">
+            <div class="hero-overlay" style="background: rgba(0,0,0,0.75) !important;"></div>
+        </div>
+        <div class="hero-container" style="text-align: center; margin: 0 auto; padding-left: 1.5rem; padding-right: 1.5rem; width: 100%; max-width: 100%; box-sizing: border-box;">
+            <div class="hero-badge" style="text-align: center; margin-left: auto; margin-right: auto;">KI Workshop für Unternehmen</div>
+            <h1 class="hero-title" style="text-align: center; margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0; width: 100%;">
+                Ihre Mitarbeiter nutzen KI — <span class="gradient-text">aber nicht richtig</span>
+            </h1>
+            <p class="hero-subtitle hero-subtitle-max" style="text-align: center;">
+                In unserem 4–6h Workshop zeigen wir Ihrem Team, wie Sie mit Tools wie Copilot täglich Stunden sparen – konkret, praxisnah und direkt umsetzbar.
+            </p>
+            <div class="hero-actions" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                <a href="#booking" class="btn-hero-primary">Termin buchen</a>
+                <a href="#ablauf" class="btn-hero-secondary">Wie läuft's ab?</a>
+            </div>
+            <div class="hero-stats" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                <div class="stat"><span class="stat-big">4-6h</span><span class="stat-label">Training vor Ort</span></div>
+                <div class="stat"><span class="stat-big">Bis 5x</span><span class="stat-label">schneller arbeiten*</span></div>
+                <div class="stat"><span class="stat-big">1.900€</span><span class="stat-label">Festpreis</span></div>
+            </div>
+        </div>
+            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-top: 1.5rem; text-align: center; max-width: 600px;">*Durchschnittswerte aus internen Pilotprojekten</p>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
