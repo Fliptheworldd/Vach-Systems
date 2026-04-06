@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -13,6 +13,8 @@
     <meta property="og:title" content="10-20h/Woche sparen durch Software-Automatisierung | Vach Systems">
     <meta property="og:description" content="Angebote in 2 Minuten statt 30. E-Mails automatisch kategorisieren. Daten aus allen Systemen auf einem Bildschirm.">
     <meta property="og:image" content="https://vachsystems.de/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     
     <title>10-20h/Woche sparen | Software für Handwerk & Service | Vach Systems</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -24,9 +26,10 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Vach Systems",
+      "alternateName": "vachsystems",
       "url": "https://vachsystems.de",
       "logo": "https://vachsystems.de/favicon.svg",
-      "description": "Software für Handwerk und Servicebetriebe: Angebote automatisieren, E-Mails verarbeiten, Prozesse digitalisieren",
+      "description": "Softwareplattform für KI-Automatisierung und Prozessoptimierung",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Glienicker Str. 4A",
@@ -38,9 +41,31 @@
         "@type": "ContactPoint",
         "email": "contact@vachsystems.de",
         "contactType": "customer service"
-      }
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/patrick-vach-833b421a0/"
+      ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Vach Systems AI Automation Suite",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web-based",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "description": "KI-gestützte Plattform für Prozessautomatisierung, Kundenanalyse und Unternehmenswissen"
+    }
+    </script>
+
+    
+
+    
 </head>
 <body>
     <!-- Navigation -->
@@ -52,7 +77,7 @@
             </a>
             <div class="nav-links">
                 <a href="leistungen">Leistungen</a>
-                <a href="#use-cases">Beispiele</a>
+                <a href="loesungen">Lösungen</a>
                 <a href="ki-workshop-unternehmen">KI-Workshop</a>
                 <a href="blog/">Blog</a>
                 <a href="kontakt" class="nav-cta">Kostenlose Analyse</a>
@@ -69,7 +94,7 @@
     <div class="mobile-menu" id="mobileMenu">
         <a href="/">Home</a>
         <a href="leistungen">Leistungen</a>
-        <a href="#use-cases">Beispiele</a>
+        <a href="loesungen">Lösungen</a>
         <a href="ki-workshop-unternehmen">KI-Workshop</a>
         <a href="blog/">Blog</a>
         <a href="kontakt" class="nav-cta">Kostenlose Analyse</a>
@@ -86,394 +111,267 @@
              width="1920"
              height="1280"
              fetchpriority="high"
-             alt="Software Automatisierung">
+             alt="Tech Hintergrund">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-container">
             <div class="hero-badge">Software für Handwerk & Service</div>
             <h1 class="hero-title">
-                <span class="gradient-text">10-20 Stunden pro Woche</span><br>
-                einfach wegwerfen?
+                <span class="gradient-text">10-20 Stunden pro Woche</span> einfach wegwerfen?
             </h1>
             <p class="hero-subtitle hero-subtitle-max">
-                Ihre Mitarbeiter tippen Angebote ab, suchen Daten in 5 Programmen und vergessen Follow-Ups.<br>
-                Wir bauen Software, die das übernimmt. Automatisch. Zuverlässig. Messbar.
+                Ihre Mitarbeiter tippen Angebote ab, suchen Daten in 5 Programmen und vergessen Follow-Ups. Wir bauen Software, die das übernimmt. Automatisch. Zuverlässig. Messbar.
             </p>
             <div class="hero-actions">
                 <a href="kontakt" class="btn-hero-primary">Wo verliert IHR Unternehmen Zeit?</a>
-                <a href="#use-cases" class="btn-hero-secondary">Konkrete Beispiele ansehen</a>
+                <a href="#prozess" class="btn-hero-secondary">Wie wir arbeiten</a>
             </div>
             <div class="hero-stats">
-                <div class="stat"><span class="stat-big">16h</span><span class="stat-label">Ø gespart/Woche</span></div>
-                <div class="stat"><span class="stat-big">2-8 Mon.</span><span class="stat-label">Bis Invest. zurück</span></div>
+                <div class="stat"><span class="stat-big">16h</span><span class="stat-label">Ø gespart pro Woche</span></div>
+                <div class="stat"><span class="stat-big">2-8 Mon.</span><span class="stat-label">Bis Investment zurück</span></div>
                 <div class="stat"><span class="stat-big">87%</span><span class="stat-label">Weniger Tippfehler</span></div>
             </div>
         </div>
         <div class="scroll-indicator">↓</div>
     </section>
 
-    <!-- Use Cases -->
-    <section id="use-cases" style="padding: 8rem 0; background: white;">
-        <div class="container">
-            <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem;">
-                <span class="section-label">Typische Zeitfresser</span>
-                <h2 class="split-title">Wo verliert IHR Unternehmen Zeit?</h2>
-                <p class="split-subtitle">
-                    Jeden Tag entstehen hunderte manuelle Aufgaben. Hier zeigen wir, wie wir sie automatisieren.
-                </p>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
-                
-                <!-- Angebote erstellen -->
-                <div style="padding: 2.5rem; background: var(--lightgray); border-radius: 12px;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;"></div>
-                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Angebote erstellen</h3>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="color: red; font-weight: 700; margin-bottom: 0.5rem;"> Vorher:</div>
-                        <div style="opacity: 0.7; line-height: 1.6;">30 Minuten pro Angebot: Excel-Tabelle ausfüllen, Preise recherchieren, Word-Dokument formatieren, Korrektur lesen</div>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="color: green; font-weight: 700; margin-bottom: 0.5rem;"> Nachher:</div>
-                        <div style="opacity: 0.7; line-height: 1.6;">2 Minuten: Kundendaten eingeben → Software erstellt fertiges PDF mit aktuellen Preisen und Ihrer CI</div>
-                    </div>
-                    <div style="background: var(--cyan); color: white; padding: 0.75rem 1rem; border-radius: 8px; font-weight: 700; text-align: center;">
-                        28 Min. pro Angebot gespart
-                    </div>
-                    <a href="angebote-automatisieren" style="display: block; text-align: center; margin-top: 1rem; color: var(--cyan); font-weight: 600; text-decoration: none;">Mehr erfahren →</a>
-                </div>
-
-                <!-- E-Mails sortieren -->
-                <div style="padding: 2.5rem; background: var(--lightgray); border-radius: 12px;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;"></div>
-                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">E-Mails sortieren</h3>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="color: red; font-weight: 700; margin-bottom: 0.5rem;"> Vorher:</div>
-                        <div style="opacity: 0.7; line-height: 1.6;">Jeden Morgen 40 E-Mails: Anfragen, Rechnungen, Lieferscheine. Manuell sortieren, weiterleiten, abhaken</div>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="color: green; font-weight: 700; margin-bottom: 0.5rem;"> Nachher:</div>
-                        <div style="opacity: 0.7; line-height: 1.6;">Software liest alle E-Mails, sortiert sie automatisch und legt die wichtigen oben hin. Routine-Sachen direkt erledigt.</div>
-                    </div>
-                    <div style="background: var(--cyan); color: white; padding: 0.75rem 1rem; border-radius: 8px; font-weight: 700; text-align: center;">
-                        1h täglich gespart
-                    </div>
-                </div>
-
-                <!-- Daten zusammenführen -->
-                <div style="padding: 2.5rem; background: var(--lightgray); border-radius: 12px;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;"></div>
-                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Übersicht bekommen</h3>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="color: red; font-weight: 700; margin-bottom: 0.5rem;"> Vorher:</div>
-                        <div style="opacity: 0.7; line-height: 1.6;">Kundendaten im CRM, Rechnungen in DATEV, Projekte in Excel. Bei jeder Frage: 3 Programme öffnen, Infos zusammensuchen</div>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="color: green; font-weight: 700; margin-bottom: 0.5rem;"> Nachher:</div>
-                        <div style="opacity: 0.7; line-height: 1.6;">Ein Bildschirm zeigt alles: Kundendaten, offene Rechnungen, laufende Projekte, letzte E-Mails. Auf einen Blick.</div>
-                    </div>
-                    <div style="background: var(--cyan); color: white; padding: 0.75rem 1rem; border-radius: 8px; font-weight: 700; text-align: center;">
-                        12 Min. pro Anfrage gespart
-                    </div>
-                    <a href="crm-technische-betriebe" style="display: block; text-align: center; margin-top: 1rem; color: var(--cyan); font-weight: 600; text-decoration: none;">Mehr erfahren →</a>
-                </div>
-
-                <!-- Rechnungen verarbeiten -->
-                <div style="padding: 2.5rem; background: var(--lightgray); border-radius: 12px;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;"></div>
-                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Rechnungen verarbeiten</h3>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="color: red; font-weight: 700; margin-bottom: 0.5rem;"> Vorher:</div>
-                        <div style="opacity: 0.7; line-height: 1.6;">Rechnungen per Mail bekommen → PDF öffnen → Daten abtippen → in DATEV eingeben. 5 Minuten pro Rechnung, 50 Rechnungen/Woche</div>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="color: green; font-weight: 700; margin-bottom: 0.5rem;"> Nachher:</div>
-                        <div style="opacity: 0.7; line-height: 1.6;">Software liest Rechnungen automatisch, trägt alles ins System ein. Sie checken nur noch kurz und klicken "OK"</div>
-                    </div>
-                    <div style="background: var(--cyan); color: white; padding: 0.75rem 1rem; border-radius: 8px; font-weight: 700; text-align: center;">
-                        4h pro Woche gespart
-                    </div>
-                </div>
-
-                <!-- Termine koordinieren -->
-                <div style="padding: 2.5rem; background: var(--lightgray); border-radius: 12px;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;"></div>
-                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Termine koordinieren</h3>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="color: red; font-weight: 700; margin-bottom: 0.5rem;"> Vorher:</div>
-                        <div style="opacity: 0.7; line-height: 1.6;">Kunde fragt nach Termin → Kalender checken → 3 E-Mails hin und her → Termin steht. Dann vergessen, Reminder zu setzen</div>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="color: green; font-weight: 700; margin-bottom: 0.5rem;"> Nachher:</div>
-                        <div style="opacity: 0.7; line-height: 1.6;">Kunde bekommt Link, wählt freien Termin → automatisch im Kalender. Reminder gehen raus. Keine E-Mails mehr nötig</div>
-                    </div>
-                    <div style="background: var(--cyan); color: white; padding: 0.75rem 1rem; border-radius: 8px; font-weight: 700; text-align: center;">
-                        3h pro Woche gespart
-                    </div>
-                </div>
-
-                <!-- Lagerbestand -->
-                <div style="padding: 2.5rem; background: var(--lightgray); border-radius: 12px;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;"></div>
-                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Lagerbestand tracken</h3>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="color: red; font-weight: 700; margin-bottom: 0.5rem;"> Vorher:</div>
-                        <div style="opacity: 0.7; line-height: 1.6;">Excel-Liste mit Lagerbestand. Jede Woche manuell aktualisieren. Oft zu spät bestellt → Produktions-Stopp</div>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="color: green; font-weight: 700; margin-bottom: 0.5rem;"> Nachher:</div>
-                        <div style="opacity: 0.7; line-height: 1.6;">Software warnt, wenn Teile knapp werden. Kann automatisch nachbestellen. Sie sehen jederzeit: Was ist da? Was kommt?</div>
-                    </div>
-                    <div style="background: var(--cyan); color: white; padding: 0.75rem 1rem; border-radius: 8px; font-weight: 700; text-align: center;">
-                        2h pro Woche + 0 Ausfälle
-                    </div>
-                </div>
-
-            </div>
-
-            <div style="text-align: center; margin-top: 4rem;">
-                <p style="font-size: 1.125rem; opacity: 0.7; max-width: 700px; margin: 0 auto 2rem;">
-                    <strong>Das sind nur 6 Beispiele.</strong> Fast jeder Prozess, der heute manuell läuft, kann automatisiert werden.
-                </p>
-                <a href="kontakt" class="btn-hero-primary" style="display: inline-block;">
-                    Kostenlose Analyse: Wo verliert IHR Unternehmen Zeit?
-                </a>
-                <p style="margin-top: 1rem; opacity: 0.6; font-size: 0.9375rem;">
-                    15 Minuten Gespräch. Wir zeigen konkret, was bei Ihnen möglich ist.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Problem (reduziert) -->
-    <section class="section-visual-split" style="background: var(--black); color: white;">
-        <div class="content-half">
-            <span class="section-label" style="color: var(--cyan);">Warum das wichtig ist</span>
-            <h2 class="split-title">
-                Manuelle Arbeit kostet Sie Geld
-            </h2>
-            
-            <p class="split-subtitle" style="color: rgba(255,255,255,0.8);">
-                Ihr Team ist gut. Aber manuelle Prozesse verschwenden Zeit – Zeit, die produktiver genutzt werden könnte.
-            </p>
-            
-            <div class="problem-grid">
-                <div>
-                    <div class="problem-item-title" style="color: white;">Daten hin- und herkopieren</div>
-                    <div class="problem-item-text" style="opacity: 0.7;">Zwischen CRM, DATEV, Excel, E-Mail. 1-2 Stunden täglich pro Person</div>
-                </div>
-                <div>
-                    <div class="problem-item-title" style="color: white;">Informationen suchen</div>
-                    <div class="problem-item-text" style="opacity: 0.7;">„Wo war nochmal die Rechnung?" – 10-15 Minuten pro Anfrage verschwendet</div>
-                </div>
-                <div>
-                    <div class="problem-item-title" style="color: white;">Dinge vergessen</div>
-                    <div class="problem-item-text" style="opacity: 0.7;">Follow-Ups nicht gemacht, Bestellungen zu spät, Kunden unzufrieden</div>
-                </div>
-            </div>
-
-            <div class="impact-card" style="background: rgba(255,255,255,0.05); border-left: 4px solid var(--cyan);">
-                <div style="font-size: 1.125rem; font-weight: 700; margin-bottom: 0.5rem;">Die Rechnung ist einfach:</div>
-                <div style="opacity: 0.8;">10 Stunden manuelle Arbeit/Woche × 50€/Stunde = 2.000€/Monat verschwendet.<br>
-                Pro Mitarbeiter. Jeder Monat.</div>
-            </div>
-        </div>
+    <!-- Problem -->
+    <section class="section-visual-split">
         <div class="visual-half">
             <img src="images/problem-section.png"
              width="1536"
              height="1024"
              alt="Manuelle Arbeitsprozesse"
-             loading="lazy">
+             loading="lazy"
+             style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
         </div>
-    </section>
-
-    <!-- Social Proof -->
-    <section style="padding: 8rem 0; background: white;">
-        <div class="container">
-            <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem;">
-                <span class="section-label">Erfolgsgeschichten</span>
-                <h2 class="split-title">Echte Ergebnisse von echten Kunden</h2>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
-                
-                <div style="background: var(--lightgray); padding: 2.5rem; border-radius: 12px;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;"></div>
-                    <h3 style="font-weight: 800; margin-bottom: 0.5rem;">Handwerksbetrieb</h3>
-                    <p style="opacity: 0.6; font-size: 0.9375rem; margin-bottom: 1.5rem;">25 Mitarbeiter, Fensterbau</p>
-                    <p style="opacity: 0.7; margin-bottom: 1.5rem; line-height: 1.6;">
-                        <strong>Vorher:</strong> Stundenzettel auf Papier, Materialbestellung chaotisch, Angebote in Word (2h pro Angebot)
-                    </p>
-                    <div style="background: white; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan);">
-                        <strong>Nachher:</strong><br>
-                        • Angebote in 15 Minuten fertig<br>
-                        • Material-Bestellungen automatisch<br>
-                        • 15% mehr Projekte (gleiche Kapazität)<br>
-                        • <strong>20h Admin-Zeit/Woche gespart</strong>
-                    </div>
-                </div>
-
-                <div style="background: var(--lightgray); padding: 2.5rem; border-radius: 12px;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;"></div>
-                    <h3 style="font-weight: 800; margin-bottom: 0.5rem;">Spedition</h3>
-                    <p style="opacity: 0.6; font-size: 0.9375rem; margin-bottom: 1.5rem;">12 Mitarbeiter, Regionaltransporte</p>
-                    <p style="opacity: 0.7; margin-bottom: 1.5rem; line-height: 1.6;">
-                        <strong>Vorher:</strong> Anfragen per E-Mail → Daten manuell ins TMS → Angebot per Mail (5 Min. pro Anfrage)
-                    </p>
-                    <div style="background: white; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan);">
-                        <strong>Nachher:</strong><br>
-                        • Software liest E-Mails automatisch<br>
-                        • Angebote in 30 Sekunden fertig<br>
-                        • 30% schnellere Reaktionszeit<br>
-                        • <strong>12h Büro-Zeit/Woche gespart</strong>
-                    </div>
-                </div>
-
-                <div style="background: var(--lightgray); padding: 2.5rem; border-radius: 12px;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;"></div>
-                    <h3 style="font-weight: 800; margin-bottom: 0.5rem;">Dienstleister</h3>
-                    <p style="opacity: 0.6; font-size: 0.9375rem; margin-bottom: 1.5rem;">8 Mitarbeiter, IT-Beratung</p>
-                    <p style="opacity: 0.7; margin-bottom: 1.5rem; line-height: 1.6;">
-                        <strong>Vorher:</strong> Kundendaten im CRM, Projekte in Excel, Rechnungen in DATEV. Ständiges Suchen
-                    </p>
-                    <div style="background: white; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cyan);">
-                        <strong>Nachher:</strong><br>
-                        • Ein Dashboard für alles<br>
-                        • Alle Kunden-Infos auf einen Blick<br>
-                        • Keine Daten mehr vergessen<br>
-                        • <strong>8h Suchzeit/Woche gespart</strong>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Workshop-Teaser -->
-    <section style="padding: 6rem 0; background: var(--cyan); color: white;">
-        <div class="container" style="max-width: 900px; text-align: center;">
-            <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem;">
-                 Ihre Mitarbeiter nutzen KI?<br>
-                Wir zeigen, wie sie 10x produktiver werden
+        <div class="content-half">
+            <span class="section-label">Das Problem</span>
+            <h2 class="split-title">
+                Manuelle Prozesse verschwenden Zeit
             </h2>
-            <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95; line-height: 1.6;">
-                4-6 Stunden Training bei Ihnen vor Ort. Danach erstellt Ihr Team Angebote in 2 statt 30 Minuten,
-                E-Mails in 2 statt 10 Minuten. Praxisorientiert, sofort umsetzbar.
+            
+            <p class="split-subtitle">
+                Täglich entstehen tausende Aufgaben und Datenflüsse in Ihrem Unternehmen. Die Systeme, die diese unterstützen sollen, sind oft fragmentiert — und vieles wird manuell erledigt.
             </p>
-            <a href="ki-workshop-unternehmen" style="display: inline-block; padding: 1rem 3rem; background: white; color: var(--cyan); text-decoration: none; border-radius: 8px; font-weight: 800; font-size: 1.125rem;">
-                Workshop-Details ansehen
-            </a>
-        </div>
-    </section>
-
-    <!-- Wie wir arbeiten -->
-    <section style="padding: 8rem 0; background: white;">
-        <div class="container">
-            <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem;">
-                <span class="section-label">Ablauf</span>
-                <h2 class="split-title">Wie wir arbeiten</h2>
-                <p class="split-subtitle">Von Erstgespräch bis Go-Live: 8-16 Wochen</p>
+            
+            <div class="problem-grid">
+                <div>
+                    <div class="problem-item-title">Daten manuell übertragen</div>
+                    <div class="problem-item-text">Informationen werden zwischen Systemen hin- und herkopiert. Zeit, die produktiver genutzt werden könnte.</div>
+                </div>
+                <div>
+                    <div class="problem-item-title">Keine Übersicht</div>
+                    <div class="problem-item-text">Daten liegen in verschiedenen Tools, aber niemand sieht das große Bild. Entscheidungen werden auf Bauchgefühl getroffen.</div>
+                </div>
+                <div>
+                    <div class="problem-item-title">Probleme zu spät erkannt</div>
+                    <div class="problem-item-text">Fehler, unzufriedene Kunden oder Engpässe werden erst erkannt, wenn es zu spät ist.</div>
+                </div>
             </div>
 
-            <div style="max-width: 900px; margin: 0 auto;">
-                <div style="display: flex; gap: 2rem; align-items: start; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 2px solid var(--lightgray);">
-                    <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--cyan); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900;">1</div>
-                    <div>
-                        <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">Kostenloses Erstgespräch (15 Min.)</h3>
-                        <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
-                            Sie erzählen uns, wo Zeit verloren geht. Wir sagen ehrlich: Was geht, was nicht geht, was es bringt.
-                        </p>
-                    </div>
+            <div class="impact-card">
+                <div style="display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.5rem;">
+                    <div class="impact-number">120h</div>
+                    <span class="impact-unit">pro Monat</span>
                 </div>
-
-                <div style="display: flex; gap: 2rem; align-items: start; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 2px solid var(--lightgray);">
-                    <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--cyan); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900;">2</div>
-                    <div>
-                        <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">Analyse vor Ort (1-2 Tage)</h3>
-                        <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
-                            Wir schauen uns Ihre Prozesse an. Nicht per Video-Call, sondern bei Ihnen. Wir sehen, was Ihr Team macht und wo die Probleme liegen.
-                        </p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 2rem; align-items: start; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 2px solid var(--lightgray);">
-                    <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--cyan); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900;">3</div>
-                    <div>
-                        <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">Entwicklung (6-12 Wochen)</h3>
-                        <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
-                            Wir bauen die Software. Sie bekommen alle 2 Wochen ein Update und können Feedback geben. Keine Überraschungen am Ende.
-                        </p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 2rem; align-items: start;">
-                    <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--cyan); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900;">4</div>
-                    <div>
-                        <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">Go-Live & Schulung</h3>
-                        <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
-                            Wir installieren alles bei Ihnen, schulen Ihr Team und bleiben die ersten Wochen eng dran. Bis es läuft.
-                        </p>
-                    </div>
-                </div>
+                <div class="impact-label">Durchschnittlicher Aufwand pro Mitarbeiter für manuelle Prozesse</div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ (reduziert) -->
-    <section style="padding: 8rem 0; background: var(--lightgray);">
-        <div class="container" style="max-width: 900px;">
-            <div style="text-align: center; margin-bottom: 5rem;">
-                <span class="section-label">Häufige Fragen</span>
-                <h2 class="split-title">Was Geschäftsführer uns fragen</h2>
+    <!-- Lösung -->
+    <section class="section-product-showcase">
+        <div class="showcase-container">
+            <span class="section-label-center">Unsere Lösung</span>
+            <h2 class="section-title-center">
+                Intelligente Systeme, die Ihre Arbeit verstehen
+            </h2>
+            <p class="section-subtitle-center">
+                Wir entwickeln Software, die <a href="loesungen#prozessoptimierung" style="color: var(--accent); text-decoration: none; font-weight: 600;">Prozesse analysiert, automatisiert</a> und kontinuierlich optimiert. Keine Standard-Software — <a href="loesungen" style="color: var(--accent); text-decoration: none; font-weight: 600;">maßgeschneiderte Lösungen</a> für Ihre Anforderungen.
+            </p>
+            
+            <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.15); margin-bottom: 5rem; background: var(--gray-100);">
+                <img srcset="images/solution-section-400w.webp 400w, 
+                     images/solution-section-650w.webp 650w, 
+                     images/solution-section-1024w.webp 1024w, 
+                     images/solution-section.webp 1536w"
+             sizes="(max-width: 640px) 400px, (max-width: 1024px) 650px, 700px"
+             src="images/solution-section.webp"
+             width="1536"
+             height="1024"
+             alt="Modernes Software-Dashboard"
+             loading="lazy"
+             style="width: 100%; display: block; height: auto;">
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+            <div class="solution-features">
                 <div>
-                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Was kostet das?</h3>
-                    <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
-                        Hängt davon ab, was Sie brauchen. Kleine Automatisierungen (z.B. Rechnungen automatisch verarbeiten) ab 8.000€.
-                        Größere Systeme (mehrere Prozesse verbinden) 20.000-50.000€. Im Erstgespräch rechnen wir gemeinsam:
-                        <strong>Ihre Zeitersparnis pro Monat vs. einmalige Investition.</strong> So sehen Sie vorher, ob es sich lohnt.
-                    </p>
+                    <h4>KI-gestützt</h4>
+                    <p>Lernt aus Ihren Daten</p>
                 </div>
-
                 <div>
-                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Wie lange dauert es?</h3>
-                    <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
-                        Von Erstgespräch bis Go-Live: <strong>8-16 Wochen</strong>. Kleinere Sachen (z.B. Angebots-Generator) schneller, komplexere Systeme länger.
-                        Sie bekommen alle 2 Wochen Updates und können mitentscheiden.
-                    </p>
+                    <h4>Echtzeit</h4>
+                    <p>Sofortige Einblicke</p>
                 </div>
-
                 <div>
-                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Brauche ich technisches Wissen?</h3>
-                    <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
-                        <strong>Nein.</strong> Sie erklären uns, was Sie machen. Wir übersetzen das in Software.
-                        Die fertigen Systeme sind so einfach zu bedienen wie WhatsApp – keine IT-Kenntnisse nötig.
-                    </p>
+                    <h4>Integriert</h4>
+                    <p>Alle Tools verbunden</p>
                 </div>
-
                 <div>
-                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Werden Mitarbeiter ersetzt?</h3>
-                    <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
-                        <strong>Nein.</strong> Software übernimmt nervige Routinearbeit (abtippen, suchen, sortieren).
-                        Ihr Team hat mehr Zeit für Kundengespräche, Planung, kreative Aufgaben. Mitarbeiter sind froh, wenn sie sich auf echte Arbeit konzentrieren können.
-                    </p>
-                </div>
-
-                <div>
-                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;">Was passiert, wenn etwas nicht funktioniert?</h3>
-                    <p style="opacity: 0.7; line-height: 1.6; font-size: 1.125rem;">
-                        Wir bleiben die ersten Wochen eng dran. Wenn etwas nicht läuft, fixen wir es. <strong>Kostenlos.</strong>
-                        Danach optional: Support-Vertrag für Wartung und Updates. Oder Sie betreiben das System selbst – Ihre Wahl.
-                    </p>
+                    <h4>Sicher</h4>
+                    <p>Auf Ihren Servern</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div style="text-align: center; margin-top: 4rem; padding: 2.5rem; background: white; border-radius: 12px;">
-                <p style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">Weitere Fragen?</p>
-                <p style="margin-bottom: 2rem; opacity: 0.7;">15 Minuten Gespräch. Wir klären alles.</p>
-                <a href="kontakt" class="btn-hero-primary" style="display: inline-block;">Kostenloses Erstgespräch vereinbaren</a>
+    <!-- Beispiel -->
+    <section class="section-case-study">
+        <div class="case-container">
+            <div class="case-header">
+                <span class="section-label">Beispiel</span>
+                <h2>Wie ein B2B-Unternehmen die Kundenabwanderung halbierte</h2>
+            </div>
+            <div class="case-visual">
+                <div class="case-before">
+                    <div class="case-label">Vorher</div>
+                    <img srcset="images/case-before-400w.webp 400w, 
+                     images/case-before-650w.webp 650w, 
+                     images/case-before-1024w.webp 1024w, 
+                     images/case-before.webp 1536w"
+             sizes="(max-width: 640px) 400px, (max-width: 1024px) 650px, 1024px"
+             src="images/case-before.webp" 
+             alt="Vor der Automatisierung"
+             loading="lazy"
+             width="1536"
+             height="1024">
+                    <div class="case-stats-bad">
+                        <div class="case-stat">25% Kündigungen/Jahr</div>
+                        <div class="case-stat">2h/Tag manuell</div>
+                        <div class="case-stat">12 Tools</div>
+                    </div>
+                </div>
+                <div class="case-arrow">→</div>
+                <div class="case-after">
+                    <div class="case-label success">Nachher</div>
+                    <img srcset="images/case-after-400w.webp 400w, 
+                     images/case-after-650w.webp 650w, 
+                     images/case-after-1024w.webp 1024w, 
+                     images/case-after.webp 1536w"
+             sizes="(max-width: 640px) 400px, (max-width: 1024px) 650px, 1024px"
+             src="images/case-after.webp" 
+             alt="Nach der Automatisierung"
+             loading="lazy"
+             width="1536"
+             height="1024">
+                    <div class="case-stats-good">
+                        <div class="case-stat">9% Kündigungen/Jahr</div>
+                        <div class="case-stat">15min/Tag</div>
+                        <div class="case-stat">1 System</div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-result">
+                <div class="result-item">
+                    <div class="result-number">64%</div>
+                    <div class="result-text">weniger Kündigungen</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-number">87%</div>
+                    <div class="result-text">Zeitersparnis</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-number">8.2x</div>
+                    <div class="result-text">ROI nach 6 Monaten</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prozess -->
+    <section class="section-process" id="prozess">
+        <div class="process-container">
+            <span class="section-label-center">Unser Vorgehen</span>
+            <h2 class="section-title-center">Von Analyse bis Go-Live in 8-16 Wochen</h2>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=75&fm=webp&auto=format" alt="Analyse-Phase">
+                    </div>
+                    <div class="step-number">01</div>
+                    <h4>Analyse</h4>
+                    <p>Prozessanalyse & Strategie</p>
+                    <div class="step-duration">Woche 1-2</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&q=75&fm=webp&auto=format" alt="Konzept-Phase">
+                    </div>
+                    <div class="step-number">02</div>
+                    <h4>Konzept</h4>
+                    <p>Technisches Design</p>
+                    <div class="step-duration">Woche 3-4</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=75&fm=webp&auto=format" alt="Entwicklung">
+                    </div>
+                    <div class="step-number">03</div>
+                    <h4>Entwicklung</h4>
+                    <p>Entwicklung & Testing</p>
+                    <div class="step-duration">Woche 5-12</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&q=75&fm=webp&auto=format" alt="Go-Live">
+                    </div>
+                    <div class="step-number">04</div>
+                    <h4>Go-Live</h4>
+                    <p>Integration & Rollout</p>
+                    <div class="step-duration">Woche 13-16</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologie -->
+    <section class="section-tech" id="technologie">
+        <div class="tech-bg">
+            <img srcset="images/tech-bg-400w.webp 400w, 
+                         images/tech-bg-650w.webp 650w, 
+                         images/tech-bg-1024w.webp 1024w, 
+                         images/tech-bg.webp 1536w"
+                 sizes="(max-width: 640px) 400px, (max-width: 1024px) 650px, 1536px"
+                 src="images/tech-bg.webp" 
+                 width="1536"
+                 height="1024"
+                 alt="Moderne Technologie"
+                 loading="lazy">
+        </div>
+        <div class="tech-container">
+            <span class="section-label-light">Technologie</span>
+            <h2 class="section-title-light">Modern. Skalierbar. Sicher.</h2>
+            <div class="tech-logos">
+                <div class="tech-logo" data-tooltip="Universelle Programmiersprache für KI, Datenanalyse und Automatisierung">
+                    <span class="tech-name">Python</span>
+                </div>
+                <div class="tech-logo" data-tooltip="Moderne JavaScript-Bibliothek für schnelle, interaktive Benutzeroberflächen">
+                    <span class="tech-name">React</span>
+                </div>
+                <div class="tech-logo" data-tooltip="Google's KI-Framework für Machine Learning und neuronale Netze">
+                    <span class="tech-name">TensorFlow</span>
+                </div>
+                <div class="tech-logo" data-tooltip="Robuste Open-Source-Datenbank für komplexe Datenstrukturen">
+                    <span class="tech-name">PostgreSQL</span>
+                </div>
+                <div class="tech-logo" data-tooltip="Container-Technologie für konsistente Bereitstellung auf allen Systemen">
+                    <span class="tech-name">Docker</span>
+                </div>
+                <div class="tech-logo" data-tooltip="Amazon Web Services – skalierbare Cloud-Infrastruktur weltweit">
+                    <span class="tech-name">AWS</span>
+                </div>
             </div>
         </div>
     </section>
@@ -481,13 +379,129 @@
     <!-- CTA -->
     <section class="section-cta-bold">
         <div class="cta-container">
-            <h2>Bereit, Zeit zu sparen?</h2>
-            <p>Kostenloses Erstgespräch. Keine Verkaufsshow. Wir sagen ehrlich, was geht und was es bringt.</p>
-            <a href="kontakt" class="btn-cta-large">Gespräch vereinbaren →</a>
+            <h2>Bereit für intelligentere Prozesse?</h2>
+            <p>Unverbindliches Erstgespräch. Konkrete Einschätzung. Keine Verkaufsshow.</p>
+            <a href="https://wa.me/491636683867?text=Hallo%2C%20ich%20m%C3%B6chte%20mehr%20%C3%BCber%20Vach%20Systems%20erfahren." class="btn-cta-large" target="_blank" rel="noopener">Gespräch starten →</a>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: rgba(255,255,255,0.6);">Oder per <a href="kontakt" style="color: rgba(255,255,255,0.9); text-decoration: underline;">E-Mail</a></p>
             <div class="cta-trust">
-                <span>15 Min. Erstgespräch</span>
-                <span>Ehrliche Einschätzung</span>
-                <span>Keine Verpflichtung</span>
+                <span>Keine Setup-Gebühr</span>
+                <span>Feste Deadlines</span>
+                <span>ROI-Garantie</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section 1: Was ist KI-Automatisierung -->
+    <section class="section-seo-content">
+        <div class="container-narrow">
+            <h2>Was ist KI-Automatisierung für Unternehmen?</h2>
+            <p>
+                <strong>KI Automatisierung</strong> bedeutet, dass Software selbstständig Aufgaben erledigt, die bisher Menschen gemacht haben. Anders als klassische Automatisierung versteht KI den Kontext: Sie liest E-Mails, extrahiert Informationen aus Dokumenten, trifft Entscheidungen basierend auf Regeln – und lernt dabei kontinuierlich dazu.
+            </p>
+            <p>
+                Für mittelständische Unternehmen ist das besonders wertvoll: Viele Prozesse sind repetitiv, kosten Zeit, aber sind zu komplex für einfache Automatisierung. Genau hier setzt <strong>KI-gestützte Prozessautomatisierung</strong> an.
+            </p>
+            
+            <h3>Typische Anwendungsfälle:</h3>
+            <ul>
+                <li><strong>E-Mail-Verarbeitung:</strong> Anfragen automatisch kategorisieren, weiterleiten oder direkt beantworten</li>
+                <li><strong>Dokumentenanalyse:</strong> Rechnungen, Verträge, Lieferscheine automatisch erfassen und verarbeiten</li>
+                <li><strong>Angebotserstellung:</strong> Kalkulationen automatisch erstellen basierend auf Anfrage-Daten</li>
+                <li><strong>Kundendaten-Management:</strong> Informationen aus verschiedenen Systemen zusammenführen und aktuell halten</li>
+                <li><strong>Prozess-Monitoring:</strong> Engpässe erkennen, Probleme melden, bevor sie kritisch werden</li>
+            </ul>
+            
+            <p>
+                Der Unterschied zu Standard-Software: Unsere Systeme werden <strong>individuell für Ihre Prozesse entwickelt</strong>. Keine Standard-Lösung, die Sie an Ihre Abläufe anpassen müssen – sondern Software, die sich an Ihre Arbeitsweise anpasst.
+            </p>
+        </div>
+    </section>
+
+    <!-- SEO Content Section 2: Welche Prozesse automatisieren -->
+    <section class="section-seo-content-alt">
+        <div class="container-narrow">
+            <h2>Welche Prozesse lassen sich mit KI automatisieren?</h2>
+            <p>
+                Die Frage ist nicht "Ob", sondern "Welche zuerst". Fast jeder Prozess, der heute manuell läuft, kann zumindest teilweise automatisiert werden. Besonders lohnenswert sind Prozesse, die:
+            </p>
+            <ul>
+                <li>Häufig wiederholt werden (täglich oder wöchentlich)</li>
+                <li>Viel Zeit kosten (mehr als 1 Stunde pro Woche)</li>
+                <li>Fehleranfällig sind (manuelle Übertragungen, Tippfehler)</li>
+                <li>Mehrere Systeme involvieren (Daten müssen kopiert werden)</li>
+            </ul>
+
+            <h3>Beispiele aus verschiedenen Branchen:</h3>
+            
+            <div class="process-examples">
+                <div class="example-box">
+                    <h4>Logistik & Spedition</h4>
+                    <p><strong>Problem:</strong> Transportanfragen kommen per E-Mail, müssen manuell ins TMS übertragen, kalkuliert und als Angebot verschickt werden.</p>
+                    <p><strong>Automatisierung:</strong> KI liest E-Mails, extrahiert Daten (Abholung, Ziel, Gewicht), kalkuliert Route, erstellt Angebot automatisch.</p>
+                    <p><strong>Zeitersparnis:</strong> 80% – von 5 Minuten auf 1 Minute pro Anfrage</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Handwerk & Bau</h4>
+                    <p><strong>Problem:</strong> Angebote manuell in Excel erstellen, Materialkosten recherchieren, Arbeitszeiten schätzen, formatieren.</p>
+                    <p><strong>Automatisierung:</strong> System erstellt Angebote basierend auf Projektbeschreibung, holt Materialpreise live ab, rechnet automatisch.</p>
+                    <p><strong>Zeitersparnis:</strong> 75% – von 2 Stunden auf 30 Minuten pro Angebot</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Dienstleister & Beratung</h4>
+                    <p><strong>Problem:</strong> Kundendaten in CRM, Rechnungen in Buchhaltung, Projekte in Excel – keine Übersicht, ständiges Suchen.</p>
+                    <p><strong>Automatisierung:</strong> Intelligentes Dashboard zeigt alle Infos zu einem Kunden: Projekte, Rechnungen, Kommunikation, Dokumente.</p>
+                    <p><strong>Zeitersparnis:</strong> 60% – von 15 Minuten auf 6 Minuten pro Kundenanfrage</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 2rem; font-size: 1.125rem;">
+                <strong>Ihr Potenzial berechnen:</strong> Überlegen Sie, welcher Prozess bei Ihnen am meisten Zeit kostet. Multiplizieren Sie diese Zeit mit der Anzahl der Wiederholungen pro Monat. Das ist Ihr Automatisierungs-Potenzial.
+            </p>
+        </div>
+    </section>
+
+    <!-- SEO Content Section 3: FAQ -->
+    <section class="section-faq">
+        <div class="container-narrow">
+            <h2>Häufige Fragen zu KI-Automatisierung</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Wie lange dauert die Umsetzung?</h3>
+                    <p>Von Analyse bis Go-Live typischerweise <strong>8-16 Wochen</strong>. Einfache Automatisierungen (z.B. Rechnungsdaten automatisch ins ERP übertragen) in 4-6 Wochen, komplexere Systeme (Multi-System-Integration, ML-Modelle) in 12-16 Wochen.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Was kostet KI-Automatisierung?</h3>
+                    <p>Das hängt vom Umfang ab – von kleinen Automatisierungen bis zu umfassenden Systemen. Die meisten Projekte amortisieren sich in <strong>6-12 Monaten</strong> durch eingesparte Zeit. Im kostenlosen Erstgespräch rechnen wir gemeinsam: Ihre Zeitersparnis vs. Investition. So sehen Sie vorher, ob es sich lohnt.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Brauche ich technisches Wissen?</h3>
+                    <p><strong>Nein.</strong> Wir übernehmen die technische Umsetzung komplett. Sie erklären uns Ihre Prozesse – wir übersetzen das in Software. Die fertigen Systeme sind so intuitiv, dass Ihre Mitarbeiter sie ohne Schulung nutzen können.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Werden meine Mitarbeiter ersetzt?</h3>
+                    <p><strong>Nein.</strong> KI-Automatisierung übernimmt repetitive Aufgaben – nicht die Menschen. Ihr Team gewinnt Zeit für strategische, kreative oder kundenorientierte Tätigkeiten. Erfahrung zeigt: Mitarbeiter sind froh, wenn sie sich auf wertschöpfende Arbeit konzentrieren können.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Wo werden meine Daten gespeichert?</h3>
+                    <p>Standardmäßig auf <strong>Ihren eigenen Servern oder in deutscher Cloud-Infrastruktur</strong> (DSGVO-konform). Sie behalten volle Kontrolle. Alternativ: Hosting bei uns mit klaren Datenschutz-Vereinbarungen.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Was passiert nach Go-Live?</h3>
+                    <p>Wir begleiten Sie die ersten Wochen intensiv: Fragen beantworten, Anpassungen vornehmen, Mitarbeiter unterstützen. Danach optional: <strong>Support-Vertrag</strong> für Wartung, Updates und Erweiterungen – oder Sie betreiben das System selbst.</p>
+                </div>
+            </div>
+
+            <div class="faq-cta">
+                <p><strong>Weitere Fragen?</strong> In einem kostenlosen Erstgespräch klären wir, ob und wie KI-Automatisierung bei Ihnen funktioniert.</p>
+                <a href="kontakt" class="btn-secondary">Gespräch vereinbaren →</a>
             </div>
         </div>
     </section>
@@ -501,13 +515,12 @@
                         <div class="logo-mark"></div>
                         <span>Vach Systems</span>
                     </div>
-                    <p>Software für Handwerk und Servicebetriebe · Berlin</p>
+                    <p>Intelligente Softwaresysteme für moderne Unternehmen · vachsystems.de</p>
                 </div>
                 <div class="footer-links">
                     <a href="leistungen">Leistungen</a>
-                    <a href="angebote-automatisieren">Angebote automatisieren</a>
-                    <a href="ki-workshop-unternehmen">KI-Workshop</a>
-                    <a href="blog/">Blog</a>
+                    <a href="loesungen">Lösungen</a>
+                    <a href="ueber-uns">Über uns</a>
                     <a href="kontakt">Kontakt</a>
                 </div>
                 <div class="footer-contact">
@@ -524,6 +537,8 @@
 
     <script src="js/script.min.js" defer></script>
     <script src="/register-sw.js" defer></script>
+
+    
 
     <!-- Cookie Consent -->
     <div id="cb" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#000;color:#fff;padding:1rem;z-index:9999">
