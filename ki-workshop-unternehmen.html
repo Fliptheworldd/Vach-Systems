@@ -482,8 +482,8 @@
     </section>
 
     <!-- Booking Section -->
-    <section id="booking" style="background: #f8fafc; padding: 4rem 0;">
-        <div class="container-narrow">
+    <section id="booking" style="background: #f8fafc; padding: 4rem 0; overflow: visible;">
+        <div style="max-width: 1000px; margin: 0 auto; padding: 0 1.5rem;">
             <div style="text-align: center; margin-bottom: 3rem;">
                 <span class="section-label-center">Jetzt buchen</span>
                 <h2 class="section-title-center">Wählen Sie Ihren Wunschtermin</h2>
@@ -491,8 +491,8 @@
             </div>
             
             <!-- Calendly Inline Widget -->
-            <div style="background: #1a1a1a; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-                <div class="calendly-inline-widget" data-url="https://calendly.com/vachsystems/ki-workshop?hide_event_type_details=1&hide_gdpr_banner=1&background_color=1a1a1a&text_color=ffffff&primary_color=00eaff" style="min-width:320px;height:1200px;"></div>
+            <div class="calendly-wrapper" style="width: 100%; max-width: 100%; margin: 0 auto; background: #1a1a1a; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: relative;">
+                <div class="calendly-inline-widget" data-url="https://calendly.com/vachsystems/ki-workshop?hide_event_type_details=1&hide_gdpr_banner=1&background_color=1a1a1a&text_color=ffffff&primary_color=00eaff" style="min-width:320px;height:950px;width:100%;"></div>
                 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
             </div>
             
@@ -501,6 +501,37 @@
             </div>
         </div>
     </section>
+    
+    <style>
+        /* Calendly Widget Fixes */
+        .calendly-wrapper {
+            overflow: visible !important;
+        }
+        .calendly-wrapper iframe {
+            width: 100% !important;
+            height: 100% !important;
+            border: none !important;
+        }
+        
+        /* Mobile Anpassungen */
+        @media (max-width: 768px) {
+            #booking {
+                padding: 2rem 0 !important;
+            }
+            .calendly-wrapper {
+                border-radius: 8px !important;
+            }
+            .calendly-inline-widget {
+                height: 1100px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .calendly-inline-widget {
+                height: 1200px !important;
+            }
+        }
+    </style>
 
     <!-- FAQ -->
     <section class="section-faq">
