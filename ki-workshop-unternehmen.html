@@ -9,6 +9,33 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/mobile-hero-fix.css">
+
+<style>
+@media (max-width: 768px) {
+    .hero-fullscreen .hero-overlay {
+        background: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.85)) !important;
+    }
+    .hero-container {
+        text-align: center !important;
+    }
+    .hero-title,
+    .hero-subtitle,
+    .hero-badge {
+        text-align: center !important;
+        text-shadow: 0 2px 20px rgba(0,0,0,1) !important;
+    }
+    .hero-actions {
+        justify-content: center !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .hero-stats {
+        text-align: center !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+}
+</style>
 </head>
 <body>
     <!-- Navigation -->
@@ -619,6 +646,7 @@
     </script>
 </body>
 </html>
+
 
 
 
