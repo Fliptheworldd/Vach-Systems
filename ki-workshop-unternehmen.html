@@ -577,6 +577,72 @@
         </div>
     </div>
     <script>function lg(){var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-6ZZ7BX7SB0';document.head.appendChild(s);s.onload=function(){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6ZZ7BX7SB0',{anonymize_ip:!0})}}function ac(){localStorage.cookieConsent='accepted';cb.style.display='none';lg()}function dc(){localStorage.cookieConsent='declined';cb.style.display='none'}localStorage.cookieConsent?localStorage.cookieConsent==='accepted'&&lg():cb.style.display='block'</script>
+
+    <!-- Sticky Workshop Buchen Button -->
+    <a href="#booking" id="stickyBookBtn" style="
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        box-shadow: 0 4px 20px rgba(6, 182, 212, 0.4);
+        z-index: 9998;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    ">
+        <span>Workshop buchen</span>
+        <span style="font-size: 1.25rem;">→</span>
+    </a>
+
+    <style>
+        #stickyBookBtn.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        
+        #stickyBookBtn:hover {
+            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+            box-shadow: 0 6px 30px rgba(6, 182, 212, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            #stickyBookBtn {
+                bottom: 20px;
+                right: 20px;
+                padding: 0.875rem 1.5rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+
+    <script>
+        // Show sticky button after scrolling 500px
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('stickyBookBtn');
+            const bookingSection = document.getElementById('booking');
+            const bookingSectionTop = bookingSection ? bookingSection.offsetTop : 99999;
+            const scrollPos = window.scrollY;
+            
+            // Show button after 500px, hide when booking section is visible
+            if (scrollPos > 500 && scrollPos < bookingSectionTop - 200) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
+        });
+    </script>
 </body>
 </html>
 
