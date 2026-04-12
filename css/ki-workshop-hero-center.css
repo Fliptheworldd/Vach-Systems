@@ -2,6 +2,7 @@
 
 .hero-workshop {
     position: relative;
+    overflow: visible !important; /* Fix: Kein Clipping */
 }
 
 .hero-workshop-overlay {
@@ -20,25 +21,30 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    overflow: visible !important; /* Fix: Kein Clipping */
 }
 
 .hero-workshop-container > * {
     text-align: center;
+    overflow: visible; /* Fix: Kein Clipping */
 }
 
 .hero-workshop-title {
-    max-width: 820px;
+    max-width: 900px; /* Erhöht von 820px */
     margin: 1.25rem auto 1.5rem;
-    line-height: 0.95;
-    letter-spacing: -0.03em;
-    font-size: clamp(3.4rem, 7vw, 6.4rem);
+    line-height: 1.02; /* Erhöht von 0.95 - verhindert Clipping */
+    letter-spacing: -0.02em; /* Reduziert von -0.03em - mehr Luft */
+    font-size: clamp(3.1rem, 6vw, 5.8rem); /* Leicht reduziert */
     font-weight: 900;
+    text-align: center;
+    overflow: visible !important; /* Fix: Kein Clipping */
     text-wrap: balance;
 }
 
 .hero-workshop-title .hero-line-1,
 .hero-workshop-title .hero-line-2 {
     display: block;
+    overflow: visible !important; /* Fix: Kein Clipping */
 }
 
 .hero-workshop-title .hero-line-2 {
@@ -111,7 +117,7 @@
     
     .hero-workshop-title {
         max-width: 100%;
-        line-height: 0.98;
+        line-height: 1.05; /* Erhöht auch auf Mobile */
         font-size: clamp(2.4rem, 10vw, 4rem);
         margin: 1rem auto 1.25rem;
     }
@@ -157,6 +163,7 @@
     
     .hero-workshop-title {
         font-size: clamp(2.1rem, 11vw, 3.2rem);
+        line-height: 1.05;
     }
     
     .hero-workshop-stats {
