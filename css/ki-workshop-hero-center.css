@@ -213,9 +213,17 @@
     overflow: hidden;
 }
 
+.calendly-inline-widget iframe {
+    height: 1100px !important;
+}
+
 @media (max-width: 1024px) {
     .calendly-inline-widget {
         height: 1000px;
+    }
+    
+    .calendly-inline-widget iframe {
+        height: 1000px !important;
     }
 }
 
@@ -227,10 +235,18 @@
     .calendly-inline-widget {
         height: 950px;
     }
+    
+    .calendly-inline-widget iframe {
+        height: 950px !important;
+    }
 }
 
 @media (max-width: 480px) {
     .calendly-inline-widget {
         height: 1000px;
+    }
+    
+    .calendly-inline-widget iframe {
+        height: 1000px !important;
     }
 }
