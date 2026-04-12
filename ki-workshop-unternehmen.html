@@ -431,25 +431,28 @@
     </section>
 
     <!-- Booking Section -->
-    <section id="booking" style="background: #f8fafc; padding: 4rem 0; overflow: visible;">
-        <div style="max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; overflow: visible;">
-            <div style="text-align: center; margin-bottom: 3rem;">
+    <section id="booking" class="booking-section">
+        <div class="booking-inner">
+            <div class="booking-head">
                 <span class="section-label-center">Jetzt buchen</span>
                 <h2 class="section-title-center">Wählen Sie Ihren Wunschtermin</h2>
-                <p class="section-subtitle-center">Alle Termine: Dienstag oder Donnerstag, 08:00 Uhr (4-6 Stunden). Wir kommen zu Ihnen.</p>
+                <p class="section-subtitle-center">
+                    Alle Termine: Dienstag oder Donnerstag, 08:00 Uhr (4–6 Stunden). Wir kommen zu Ihnen.
+                </p>
             </div>
             
-            <!-- Calendly Inline Widget -->
-            <div class="calendly-wrapper">
-                <div class="calendly-inline-widget" data-url="https://calendly.com/vachsystems/ki-workshop?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=2de2ff" style="min-width:320px;height:1100px;"></div>
+            <div class="calendly-inline-widget" 
+                 data-url="https://calendly.com/vachsystems/ki-workshop?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=2de2ff" 
+                 data-resize="true" 
+                 style="min-width:320px;height:1100px;">
             </div>
-            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
             
             <div style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.95rem;">
                 <p><strong>Nach der Buchung:</strong> Sie erhalten sofort eine Bestätigung per E-Mail + Kalender-Einladung</p>
             </div>
         </div>
     </section>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
     <!-- FAQ -->
     <section class="section-faq">

@@ -186,38 +186,51 @@
 }
 
 /* ========================================
-   CALENDLY WIDGET FIX
+   CALENDLY BOOKING SECTION
    ======================================== */
 
-.calendly-wrapper {
-    width: 100%;
-    max-width: 100%;
+.booking-section {
+    background: #f8fafc;
+    padding: 4rem 0;
+}
+
+.booking-inner {
+    max-width: 1100px;
     margin: 0 auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    overflow: visible !important;
+    padding: 0 1.5rem;
+}
+
+.booking-head {
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .calendly-inline-widget {
     width: 100%;
     min-width: 320px;
-    height: 1100px !important;
+    height: 1100px;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 @media (max-width: 1024px) {
     .calendly-inline-widget {
-        height: 1000px !important;
+        height: 1000px;
     }
 }
 
 @media (max-width: 768px) {
+    .booking-section {
+        padding: 3rem 0;
+    }
+    
     .calendly-inline-widget {
-        height: 950px !important;
+        height: 950px;
     }
 }
 
 @media (max-width: 480px) {
     .calendly-inline-widget {
-        height: 1000px !important;
+        height: 1000px;
     }
 }
