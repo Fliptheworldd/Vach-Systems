@@ -184,3 +184,40 @@
         max-width: 220px;
     }
 }
+
+/* ========================================
+   CALENDLY WIDGET FIX
+   ======================================== */
+
+.calendly-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: visible !important;
+}
+
+.calendly-inline-widget {
+    width: 100%;
+    min-width: 320px;
+    height: 1100px !important;
+}
+
+@media (max-width: 1024px) {
+    .calendly-inline-widget {
+        height: 1000px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .calendly-inline-widget {
+        height: 950px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendly-inline-widget {
+        height: 1000px !important;
+    }
+}

@@ -431,8 +431,8 @@
     </section>
 
     <!-- Booking Section -->
-    <section id="booking" style="background: #f8fafc; padding: 4rem 0;">
-        <div style="max-width: 1000px; margin: 0 auto; padding: 0 1.5rem;">
+    <section id="booking" style="background: #f8fafc; padding: 4rem 0; overflow: visible;">
+        <div style="max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; overflow: visible;">
             <div style="text-align: center; margin-bottom: 3rem;">
                 <span class="section-label-center">Jetzt buchen</span>
                 <h2 class="section-title-center">Wählen Sie Ihren Wunschtermin</h2>
@@ -440,7 +440,9 @@
             </div>
             
             <!-- Calendly Inline Widget -->
-            <div class="calendly-inline-widget" data-url="https://calendly.com/vachsystems/ki-workshop?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=2de2ff" style="min-width:320px;height:700px;"></div>
+            <div class="calendly-wrapper">
+                <div class="calendly-inline-widget" data-url="https://calendly.com/vachsystems/ki-workshop?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=2de2ff" style="min-width:320px;height:1100px;"></div>
+            </div>
             <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
             
             <div style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.95rem;">
