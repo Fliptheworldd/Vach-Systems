@@ -186,6 +186,30 @@
 }
 
 /* ========================================
+   PROCESS TIMELINE - CENTERED
+   ======================================== */
+
+.section-process .process-timeline {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 991px) {
+    .section-process .process-timeline {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .section-process .process-timeline {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+}
+
+/* ========================================
    CALENDLY BOOKING SECTION
    ======================================== */
 
