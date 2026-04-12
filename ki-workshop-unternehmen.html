@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -8,111 +8,7 @@
     <title>KI Workshop für Unternehmen – Mitarbeiter effizient mit KI arbeiten lassen</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="css/mobile-hero-fix.css">
-
-<style>
-@media (max-width: 768px) {
-    .hero-container {
-        text-align: center !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    .hero-container > * {
-        text-align: center !important;
-    }
-    .hero-title,
-    .hero-subtitle,
-    .hero-badge,
-    .hero-subtitle-max {
-        text-align: center !important;
-        width: 100% !important;
-    }
-        .hero-bg img {
-        filter: brightness(0.5) !important;
-    }
-    .hero-fullscreen .hero-overlay {
-        background: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.85)) !important;
-    }
-    .hero-container {
-        text-align: center !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    .hero-container > * {
-        text-align: center !important;
-    }
-        .hero-container,
-    .hero-container * {
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-    .hero-actions {
-        width: 100% !important;
-    }
-    .btn-hero-primary,
-    .btn-hero-secondary {
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-    .hero-stats {
-        text-align: center !important; margin-left: auto !important; margin-right: auto !important;
-        justify-content: center !important;
-        align-items: center !important;
-    }
-}
-</style>
-
-<style>
-/* MOBILE HERO CENTERING - HIGHEST PRIORITY */
-@media (max-width: 768px) {
-    section.hero-fullscreen .hero-container {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-        text-align: center !important;
-    }
-    
-    section.hero-fullscreen .hero-container .hero-title {
-        text-align: center !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        width: 100% !important;
-        display: block !important;
-    }
-    
-    section.hero-fullscreen .hero-container .hero-subtitle {
-        text-align: center !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-    
-    section.hero-fullscreen .hero-container .hero-badge {
-        margin-left: auto !important;
-        margin-right: auto !important;
-        text-align: center !important;
-    }
-}
-</style>
-
-<style>
-@media (max-width: 768px) {
-    .hero-fullscreen .hero-container {
-        max-width: none !important;
-        width: 100% !important;
-        margin: 0 !important;
-        padding-left: 1.5rem !important;
-        padding-right: 1.5rem !important;
-        text-align: center !important;
-    }
-}
-</style>    <link rel="stylesheet" href="css/mobile-hero-center-final.css">
+    <link rel="stylesheet" href="css/ki-workshop-hero-center.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -127,7 +23,8 @@
                 <a href="loesungen">Lösungen</a>
                 <a href="ki-workshop-unternehmen">KI-Workshop</a>
                 <a href="blog/">Blog</a>
-                <a href="ueber-uns">Über uns</a>                <a href="kontakt" class="nav-cta">Kostenlose Analyse</a>
+                <a href="ueber-uns">Über uns</a>
+                <a href="kontakt" class="nav-cta">Kostenlose Analyse</a>
             </div>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -140,43 +37,55 @@
     <div class="menu-overlay" id="menuOverlay"></div>
     <div class="mobile-menu" id="mobileMenu">
         <a href="/">Home</a>
-                <a href="leistungen">Leistungen</a>
-                <a href="loesungen">Lösungen</a>
-                <a href="ki-workshop-unternehmen">KI-Workshop</a>
-                <a href="blog/">Blog</a>
-                <a href="ueber-uns">Über uns</a>        <a href="kontakt" class="nav-cta">Kostenlose Analyse</a>
+        <a href="leistungen">Leistungen</a>
+        <a href="loesungen">Lösungen</a>
+        <a href="ki-workshop-unternehmen">KI-Workshop</a>
+        <a href="blog/">Blog</a>
+        <a href="ueber-uns">Über uns</a>
+        <a href="kontakt" class="nav-cta">Kostenlose Analyse</a>
     </div>
 
     <!-- Hero -->
-    <section class="hero-fullscreen">
+    <section class="hero-fullscreen hero-workshop">
         <div class="hero-bg">
             <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1920&q=85"
-             alt="Team Workshop KI Training" 
-             width="1920" 
-             height="1280"
-             fetchpriority="high"
-             loading="eager">
-            <div class="hero-overlay" style="background: rgba(0,0,0,0.75) !important;"></div>
+                 alt="Team Workshop KI Training"
+                 width="1920"
+                 height="1280"
+                 fetchpriority="high"
+                 loading="eager">
+            <div class="hero-overlay hero-workshop-overlay"></div>
         </div>
-        <div class="hero-container" style="text-align: center; margin: 0 auto; padding-left: 1.5rem; padding-right: 1.5rem; width: 100%; max-width: 100%; box-sizing: border-box;">
-            <div class="hero-badge" style="text-align: center; margin-left: auto; margin-right: auto;">KI Workshop für Unternehmen</div>
-            <h1 class="hero-title" style="text-align: center; margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0; width: 100%;">
-                Ihre Mitarbeiter nutzen KI — <span class="gradient-text">aber nicht richtig</span>
+        <div class="hero-container hero-workshop-container">
+            <div class="hero-badge">KI Workshop für Unternehmen</div>
+            <h1 class="hero-title hero-workshop-title">
+                <span class="hero-line-1">Ihre Mitarbeiter nutzen KI</span>
+                <span class="hero-line-2 gradient-text">aber nicht richtig</span>
             </h1>
-            <p class="hero-subtitle hero-subtitle-max" style="text-align: center;">
+            <p class="hero-subtitle hero-workshop-subtitle">
                 In unserem 4–6h Workshop zeigen wir Ihrem Team, wie Sie mit Tools wie Copilot täglich Stunden sparen – konkret, praxisnah und direkt umsetzbar.
             </p>
-            <div class="hero-actions" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <div class="hero-actions hero-workshop-actions">
                 <a href="#booking" class="btn-hero-primary">Termin buchen</a>
                 <a href="#ablauf" class="btn-hero-secondary">Wie läuft's ab?</a>
             </div>
-            <div class="hero-stats" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
-                <div class="stat"><span class="stat-big">4-6h</span><span class="stat-label">Training vor Ort</span></div>
-                <div class="stat"><span class="stat-big">Bis 5x</span><span class="stat-label">schneller arbeiten*</span></div>
-                <div class="stat"><span class="stat-big">1.900€</span><span class="stat-label">Festpreis</span></div>
+            <div class="hero-stats hero-workshop-stats">
+                <div class="stat">
+                    <span class="stat-big">4–6h</span>
+                    <span class="stat-label">Training vor Ort</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-big">Bis 5x</span>
+                    <span class="stat-label">schneller arbeiten*</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-big">1.900€</span>
+                    <span class="stat-label">Festpreis</span>
+                </div>
             </div>
-        </div>
-            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-top: 1.5rem; text-align: center; max-width: 600px;">*Durchschnittswerte aus internen Pilotprojekten</p>
+            <p class="hero-note">
+                *Durchschnittswerte aus internen Pilotprojekten
+            </p>
         </div>
         <div class="scroll-indicator">↓</div>
     </section>
@@ -324,7 +233,7 @@
         </div>
     </section>
 
-        <!-- Use Case 4: Geschäftsführung -->
+    <!-- Use Case 4: Geschäftsführung -->
     <section class="section-visual-split">
         <div class="content-half">
             <span class="section-label">Use Case 4</span>
@@ -494,9 +403,6 @@
             <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80" 
                  alt="Professioneller Business Workshop"
                  loading="lazy">
-            
-            </div>
-            </div>
         </div>
     </section>
 
@@ -525,7 +431,7 @@
     </section>
 
     <!-- Booking Section -->
-    <section id="booking" style="background: #f8fafc; padding: 4rem 0; overflow: visible;">
+    <section id="booking" style="background: #f8fafc; padding: 4rem 0;">
         <div style="max-width: 1000px; margin: 0 auto; padding: 0 1.5rem;">
             <div style="text-align: center; margin-bottom: 3rem;">
                 <span class="section-label-center">Jetzt buchen</span>
@@ -534,60 +440,14 @@
             </div>
             
             <!-- Calendly Inline Widget -->
-            <div class="calendly-wrapper" style="width: 100%; max-width: 100%; margin: 0 auto; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: relative;"><div class="calendly-inline-widget" data-url="https://calendly.com/vachsystems/ki-workshop?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=2de2ff" style="min-width:320px;height:700px;"></div><script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script></div>
+            <div class="calendly-inline-widget" data-url="https://calendly.com/vachsystems/ki-workshop?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=2de2ff" style="min-width:320px;height:700px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
             
             <div style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.95rem;">
                 <p><strong>Nach der Buchung:</strong> Sie erhalten sofort eine Bestätigung per E-Mail + Kalender-Einladung</p>
             </div>
         </div>
     </section>
-    
-    <style>
-        /* Calendly Widget Fixes */
-        .calendly-wrapper {
-            overflow: visible !important;
-        }
-        .calendly-wrapper iframe {
-            width: 100% !important;
-            height: 100% !important;
-            border: none !important;
-        }
-        
-        /* Mobile Anpassungen */
-        @media (max-width: 768px) {
-    .hero-container {
-        text-align: center !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    .hero-container > * {
-        text-align: center !important;
-    }
-    .hero-title,
-    .hero-subtitle,
-    .hero-badge,
-    .hero-subtitle-max {
-        text-align: center !important;
-        width: 100% !important;
-    }
-        .hero-bg img {
-        filter: brightness(0.5) !important;
-    }
-            #booking {
-                padding: 2rem 0 !important;
-            }
-            .calendly-wrapper {
-                border-radius: 8px !important;
-            }
-            .calendly-inline-widget { height: 750px !important; }
-        }
-        
-        @media (max-width: 480px) {
-            .calendly-inline-widget { height: 850px !important; }
-        }
-    </style>
 
     <!-- FAQ -->
     <section class="section-faq">
@@ -649,7 +509,7 @@
                     <a href="angebote-automatisieren">Angebote automatisieren</a>
                     <a href="ki-workshop-unternehmen">KI-Workshop</a>
                     <a href="blog/">Blog</a>
-                <a href="ueber-uns">Über uns</a>
+                    <a href="ueber-uns">Über uns</a>
                     <a href="kontakt">Kontakt</a>
                 </div>
                 <div class="footer-contact">
@@ -679,23 +539,7 @@
     <script>function lg(){var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-6ZZ7BX7SB0';document.head.appendChild(s);s.onload=function(){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6ZZ7BX7SB0',{anonymize_ip:!0})}}function ac(){localStorage.cookieConsent='accepted';cb.style.display='none';lg()}function dc(){localStorage.cookieConsent='declined';cb.style.display='none'}localStorage.cookieConsent?localStorage.cookieConsent==='accepted'&&lg():cb.style.display='block'</script>
 
     <!-- Sticky Workshop Buchen Button -->
-    <a href="#booking" id="stickyBookBtn" style="
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        font-weight: 700;
-        font-size: 1rem;
-        text-decoration: none;
-        box-shadow: 0 4px 20px rgba(6, 182, 212, 0.4);
-        z-index: 9998; opacity: 1; transform: translateY(0); transition: all 0.3s ease; pointer-events: auto;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    ">
+    <a href="#booking" id="stickyBookBtn" style="position: fixed; bottom: 30px; right: 30px; background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); color: white; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; font-size: 1rem; text-decoration: none; box-shadow: 0 4px 20px rgba(6, 182, 212, 0.4); z-index: 9998; opacity: 0; transform: translateY(20px); transition: all 0.3s ease; pointer-events: none; display: flex; align-items: center; gap: 0.5rem;">
         <span>Workshop buchen</span>
         <span style="font-size: 1.25rem;">→</span>
     </a>
@@ -714,26 +558,6 @@
         }
         
         @media (max-width: 768px) {
-    .hero-container {
-        text-align: center !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    .hero-container > * {
-        text-align: center !important;
-    }
-    .hero-title,
-    .hero-subtitle,
-    .hero-badge,
-    .hero-subtitle-max {
-        text-align: center !important;
-        width: 100% !important;
-    }
-        .hero-bg img {
-        filter: brightness(0.5) !important;
-    }
             #stickyBookBtn {
                 bottom: 20px;
                 right: 20px;
@@ -761,50 +585,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
