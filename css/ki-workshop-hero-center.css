@@ -13,9 +13,9 @@
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 1200px; /* Nochmal erhöht - maximaler Raum */
+    max-width: 1400px; /* Deutlich breiter */
     margin: 0 auto;
-    padding: 7rem 2.5rem 5rem; /* Noch mehr Padding */
+    padding: 7rem 3rem 5rem; /* Noch mehr seitliches Padding */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,11 +30,11 @@
 }
 
 .hero-workshop-title {
-    max-width: 1100px; /* Nochmal 100px mehr */
+    max-width: 1250px; /* Deutlich breiter für zweite Zeile */
     margin: 1.25rem auto 1.5rem;
-    line-height: 1.08; /* Mehr vertikaler Raum */
-    letter-spacing: 0em; /* Komplett neutral - kein negatives spacing mehr */
-    font-size: clamp(2.7rem, 5vw, 5rem); /* Nochmal kleiner für mehr Sicherheit */
+    line-height: 1.12; /* Noch mehr vertikaler Raum */
+    letter-spacing: 0.01em; /* Leicht positives Spacing - extra Luft */
+    font-size: clamp(2.5rem, 4.5vw, 4.6rem); /* Deutlich kleiner */
     font-weight: 900;
     text-align: center;
     overflow: visible !important; /* Fix: Kein Clipping */
@@ -94,14 +94,14 @@
     .hero-workshop-container {
         padding-top: 6rem;
         padding-bottom: 4rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
     }
     
     .hero-workshop-title {
-        max-width: 90%; /* Mehr Breite auf Tablet */
-        font-size: clamp(2.6rem, 6.5vw, 4.5rem);
-        letter-spacing: 0em; /* Auch auf Tablet neutral */
+        max-width: 95%; /* Fast volle Breite */
+        font-size: clamp(2.4rem, 6vw, 4.2rem);
+        letter-spacing: 0.01em; /* Auch auf Tablet positiv */
     }
     
     .hero-workshop-subtitle {
@@ -115,15 +115,15 @@
 
 @media (max-width: 768px) {
     .hero-workshop-container {
-        padding: 5.5rem 1.5rem 3.5rem;
+        padding: 5.5rem 2rem 3.5rem;
     }
     
     .hero-workshop-title {
         max-width: 100%;
-        line-height: 1.1; /* Noch mehr Luft auf Mobile */
-        font-size: clamp(2.2rem, 9vw, 3.8rem);
+        line-height: 1.15; /* Maximale Luft auf Mobile */
+        font-size: clamp(2.1rem, 8.5vw, 3.6rem);
         margin: 1rem auto 1.25rem;
-        letter-spacing: 0em; /* Neutral auch auf Mobile */
+        letter-spacing: 0.01em; /* Auch Mobile positiv */
     }
     
     .hero-workshop-subtitle {
@@ -163,14 +163,14 @@
 @media (max-width: 480px) {
     .hero-workshop-container {
         padding-top: 5rem;
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
     
     .hero-workshop-title {
-        font-size: clamp(2rem, 10vw, 3rem);
-        line-height: 1.12; /* Maximaler vertikaler Raum */
-        letter-spacing: 0em;
+        font-size: clamp(1.9rem, 9.5vw, 2.9rem);
+        line-height: 1.18; /* Maximum vertikaler Raum */
+        letter-spacing: 0.01em;
     }
     
     .hero-workshop-stats {
