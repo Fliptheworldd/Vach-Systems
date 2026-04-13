@@ -630,6 +630,22 @@
             
             if (!btn) return;
 
+            // Custom scroll with offset for mobile
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (!bookingSection) return;
+                
+                const isMobile = window.innerWidth <= 768;
+                const offset = isMobile ? 80 : 20; // Mobile needs more offset
+                const elementPosition = bookingSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            });
+
             function toggleStickyButton() {
                 const scrollY = window.scrollY || window.pageYOffset;
                 let show = scrollY > 350;
