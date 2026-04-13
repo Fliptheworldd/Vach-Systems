@@ -543,57 +543,88 @@
     </div>
     <script>function lg(){var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-6ZZ7BX7SB0';document.head.appendChild(s);s.onload=function(){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6ZZ7BX7SB0',{anonymize_ip:!0})}}function ac(){localStorage.cookieConsent='accepted';cb.style.display='none';lg()}function dc(){localStorage.cookieConsent='declined';cb.style.display='none'}localStorage.cookieConsent?localStorage.cookieConsent==='accepted'&&lg():cb.style.display='block'</script>
 
-    <!-- Sticky Workshop Buchen Button -->
-    <a href="#booking" id="stickyBookBtn" style="position: fixed; bottom: 30px; right: 30px; background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); color: white; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; font-size: 1rem; text-decoration: none; box-shadow: 0 4px 20px rgba(6, 182, 212, 0.4); z-index: 10000; opacity: 0; transform: translateY(20px); transition: all 0.3s ease; pointer-events: none; display: flex; align-items: center; gap: 0.5rem;">
-        <span>Workshop buchen</span>
-        <span style="font-size: 1.25rem;">→</span>
+    <!-- Sticky CTA Button -->
+    <a href="#booking" id="stickyBookBtn" aria-label="Zum Buchungsbereich springen">
+        <span>Termin buchen</span>
+        <span class="stickyBookBtn-arrow">→</span>
     </a>
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #stickyBookBtn {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 9998;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.95rem 1.35rem;
+            border-radius: 999px;
+            background: #0f172a;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.98rem;
+            line-height: 1;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
         #stickyBookBtn.visible {
             opacity: 1;
             transform: translateY(0);
             pointer-events: auto;
         }
-        
+
         #stickyBookBtn:hover {
-            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
-            box-shadow: 0 6px 30px rgba(6, 182, 212, 0.5);
-            transform: translateY(-2px);
+            box-shadow: 0 14px 34px rgba(0,0,0,0.24);
         }
-        
+
+        .stickyBookBtn-arrow {
+            font-size: 1.1rem;
+        }
+
         @media (max-width: 768px) {
             #stickyBookBtn {
-                bottom: 20px;
-                right: 20px;
-                padding: 0.875rem 1.5rem;
-                font-size: 0.95rem;
+                right: 16px;
+                bottom: 16px;
+                padding: 0.9rem 1.15rem;
+                font-size: 0.92rem;
             }
         }
     </style>
 
     <script>
-        // Show sticky button after scrolling 500px
-        document.addEventListener('DOMContentLoaded', function() {
+        (function () {
             const btn = document.getElementById('stickyBookBtn');
-            if (!btn) {
-                console.error('Sticky button not found!');
-                return;
-            }
+            const bookingSection = document.getElementById('booking');
             
-            window.addEventListener('scroll', function() {
-                const bookingSection = document.getElementById('booking');
-                const bookingSectionTop = bookingSection ? bookingSection.offsetTop : 99999;
-                const scrollPos = window.scrollY;
-                
-                // Show button after 500px, hide when booking section is visible
-                if (scrollPos > 500 && scrollPos < bookingSectionTop - 200) {
-                    btn.classList.add('visible');
-                } else {
-                    btn.classList.remove('visible');
+            if (!btn) return;
+
+            function toggleStickyButton() {
+                const scrollY = window.scrollY || window.pageYOffset;
+                let show = scrollY > 350;
+
+                if (bookingSection) {
+                    const rect = bookingSection.getBoundingClientRect();
+                    const bookingVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > 120;
+                    if (bookingVisible) show = false;
                 }
-            });
-        });
+
+                btn.classList.toggle('visible', show);
+            }
+
+            window.addEventListener('scroll', toggleStickyButton, { passive: true });
+            window.addEventListener('load', toggleStickyButton);
+            window.addEventListener('resize', toggleStickyButton);
+        })();
     </script>
 </body>
 </html>
