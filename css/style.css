@@ -1637,8 +1637,8 @@ section {
     
     .hero-bg img {
         display: block;
-        filter: blur(25px) brightness(2.0) contrast(1.1);
-        transform: scale(1.2);
+        filter: brightness(0.4);
+        transform: none;
         width: 100%;
         height: 100%;
         object-fit: cover;

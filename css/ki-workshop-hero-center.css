@@ -114,12 +114,6 @@
 }
 
 @media (max-width: 768px) {
-    /* Fix: Kein Blur auf Workshop Hero */
-    .hero-workshop .hero-bg img {
-        filter: brightness(0.4) !important;
-        transform: none !important;
-    }
-    
     .hero-workshop-container {
         padding: 5.5rem 2rem 3.5rem;
     }
