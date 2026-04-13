@@ -574,18 +574,25 @@
 
     <script>
         // Show sticky button after scrolling 500px
-        window.addEventListener('scroll', function() {
+        document.addEventListener('DOMContentLoaded', function() {
             const btn = document.getElementById('stickyBookBtn');
-            const bookingSection = document.getElementById('booking');
-            const bookingSectionTop = bookingSection ? bookingSection.offsetTop : 99999;
-            const scrollPos = window.scrollY;
-            
-            // Show button after 500px, hide when booking section is visible
-            if (scrollPos > 500 && scrollPos < bookingSectionTop - 200) {
-                btn.classList.add('visible');
-            } else {
-                btn.classList.remove('visible');
+            if (!btn) {
+                console.error('Sticky button not found!');
+                return;
             }
+            
+            window.addEventListener('scroll', function() {
+                const bookingSection = document.getElementById('booking');
+                const bookingSectionTop = bookingSection ? bookingSection.offsetTop : 99999;
+                const scrollPos = window.scrollY;
+                
+                // Show button after 500px, hide when booking section is visible
+                if (scrollPos > 500 && scrollPos < bookingSectionTop - 200) {
+                    btn.classList.add('visible');
+                } else {
+                    btn.classList.remove('visible');
+                }
+            });
         });
     </script>
 </body>
