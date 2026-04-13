@@ -222,6 +222,7 @@
 .booking-section {
     background: #f8fafc;
     padding: 4rem 0;
+    scroll-margin-top: 80px; /* Desktop offset */
 }
 
 .booking-inner {
@@ -260,6 +261,7 @@
 @media (max-width: 768px) {
     .booking-section {
         padding: 3rem 0;
+        scroll-margin-top: 100px; /* Mobile: mehr Offset wegen Nav */
     }
     
     .calendly-inline-widget {
@@ -272,6 +274,10 @@
 }
 
 @media (max-width: 480px) {
+    .booking-section {
+        scroll-margin-top: 120px; /* Kleine Screens: noch mehr Offset */
+    }
+    
     .calendly-inline-widget {
         height: 1000px;
     }
