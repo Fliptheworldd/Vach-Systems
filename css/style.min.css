@@ -1,4 +1,4 @@
-﻿/* ============================================
+/* ============================================
    VACH SYSTEMS - PREMIUM DESIGN
    Inspired by: Apple, Stripe, Notion, Linear
    ============================================ */
@@ -1029,7 +1029,7 @@ section {
     transform: translateX(-50%) translateY(-15px);
 }
 
-/* Arrow fÃ¼r Tooltip */
+/* Arrow für Tooltip */
 .tech-logo::before {
     content: '';
     position: absolute;
