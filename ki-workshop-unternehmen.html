@@ -463,7 +463,7 @@
                 </p>
             </div>
             
-            <div class="calendly-inline-widget" 
+            <div id="booking-widget" class="calendly-inline-widget" 
                  data-url="https://calendly.com/vachsystems/ki-workshop?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=2de2ff" 
                  data-resize="true" 
                  style="min-width:320px;height:1100px;">
@@ -619,50 +619,66 @@
         (function() {
             'use strict';
             
-            // Create button dynamically
-            const btn = document.createElement('a');
-            btn.id = 'stickyBookBtn';
-            btn.setAttribute('aria-label', 'Zum Buchungsbereich springen');
-            btn.innerHTML = '<span>Termin buchen</span><span class="stickyBookBtn-arrow">→</span>';
-            document.body.appendChild(btn);
-            
-            const bookingSection = document.getElementById('booking');
-            if (!bookingSection) return;
-
-            // Click handler - directly attached
-            btn.onclick = function(e) {
-                e.preventDefault();
-                e.stopPropagation();
+            // Wait for DOM to be ready
+            function initStickyButton() {
+                const bookingWidget = document.getElementById('booking-widget');
+                const bookingSection = document.getElementById('booking');
                 
-                const isMobile = window.innerWidth <= 768;
-                const offset = isMobile ? 80 : 20;
-                const elementPosition = bookingSection.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+                if (!bookingWidget || !bookingSection) {
+                    // Retry after short delay if widget not loaded yet
+                    setTimeout(initStickyButton, 100);
+                    return;
+                }
                 
-                return false;
-            };
+                // Create button
+                const btn = document.createElement('a');
+                btn.id = 'stickyBookBtn';
+                btn.href = '#booking-widget';
+                btn.setAttribute('aria-label', 'Zum Buchungsbereich springen');
+                btn.innerHTML = '<span>Termin buchen</span><span class="stickyBookBtn-arrow">→</span>';
+                document.body.appendChild(btn);
+                
+                // Click handler - scroll directly to Calendly widget
+                btn.onclick = function(e) {
+                    e.preventDefault();
+                    
+                    const isMobile = window.innerWidth <= 768;
+                    const yOffset = isMobile ? -20 : -30;
+                    const y = bookingWidget.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    
+                    window.scrollTo({
+                        top: y,
+                        behavior: 'smooth'
+                    });
+                    
+                    return false;
+                };
 
-            function toggleStickyButton() {
-                const scrollY = window.scrollY || window.pageYOffset;
-                let show = scrollY > 350;
+                // Toggle visibility based on scroll position
+                function toggleStickyButton() {
+                    const scrollY = window.scrollY || window.pageYOffset;
+                    let show = scrollY > 350;
 
-                const rect = bookingSection.getBoundingClientRect();
-                const bookingVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > 120;
-                if (bookingVisible) show = false;
+                    const rect = bookingSection.getBoundingClientRect();
+                    const bookingVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > 120;
+                    if (bookingVisible) show = false;
 
-                btn.classList.toggle('visible', show);
+                    btn.classList.toggle('visible', show);
+                }
+
+                window.addEventListener('scroll', toggleStickyButton, { passive: true });
+                window.addEventListener('resize', toggleStickyButton);
+                
+                // Initial call
+                setTimeout(toggleStickyButton, 100);
             }
-
-            window.addEventListener('scroll', toggleStickyButton, { passive: true });
-            window.addEventListener('resize', toggleStickyButton);
             
-            // Initial call after short delay
-            setTimeout(toggleStickyButton, 100);
+            // Start initialization
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initStickyButton);
+            } else {
+                initStickyButton();
+            }
         })();
     </script>
 </body>
