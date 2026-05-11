@@ -1,0 +1,563 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wir sparen Ihrem Unternehmen 10-20 Stunden pro Woche. Angebote automatisch erstellen, E-Mails kategorisieren, Daten zusammenführen. Software für Handwerk, Service und technische Betriebe.">
+    <meta name="keywords" content="Angebote automatisieren, E-Mail Automatisierung, Prozesse digitalisieren Handwerk, Software Servicebetrieb, Zeit sparen Unternehmen">
+    <meta name="theme-color" content="#000000">
+    
+    <!-- Open Graph / WhatsApp Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vachsystems.de/">
+    <meta property="og:title" content="10-20h/Woche sparen durch Software-Automatisierung | Vach Systems">
+    <meta property="og:description" content="Angebote in 2 Minuten statt 30. E-Mails automatisch kategorisieren. Daten aus allen Systemen auf einem Bildschirm.">
+    <meta property="og:image" content="https://vachsystems.de/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <title>10-20h/Woche sparen | Software für Handwerk & Service | Vach Systems</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Vach Systems",
+      "alternateName": "vachsystems",
+      "url": "https://vachsystems.de",
+      "logo": "https://vachsystems.de/favicon.svg",
+      "description": "Softwareplattform für KI-Automatisierung und Prozessoptimierung",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Glienicker Str. 4A",
+        "addressLocality": "Berlin",
+        "postalCode": "13187",
+        "addressCountry": "DE"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@vachsystems.de",
+        "contactType": "customer service"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/patrick-vach-833b421a0/"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Vach Systems AI Automation Suite",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web-based",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "description": "KI-gestützte Plattform für Prozessautomatisierung, Kundenanalyse und Unternehmenswissen"
+    }
+    </script>
+
+    
+
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-minimal">
+        <div class="nav-container">
+            <a href="/" class="logo-minimal">
+                <div class="logo-mark"></div>
+                <span>Vach Systems</span>
+            </a>
+            <div class="nav-links">
+                <a href="leistungen">Leistungen</a>
+                <a href="loesungen">Lösungen</a>
+                <a href="ki-workshop-unternehmen">KI-Workshop</a>
+                <a href="blog/">Blog</a>
+                <a href="ueber-uns">Über uns</a>                <a href="kontakt" class="nav-cta">Kostenlose Analyse</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/">Home</a>
+                <a href="leistungen">Leistungen</a>
+                <a href="loesungen">Lösungen</a>
+                <a href="ki-workshop-unternehmen">KI-Workshop</a>
+                <a href="blog/">Blog</a>
+                <a href="ueber-uns">Über uns</a>        <a href="kontakt" class="nav-cta">Kostenlose Analyse</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero-fullscreen">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=85"
+                 srcset="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=85 600w,
+                         https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1024&q=85 1024w,
+                         https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1400&q=85 1400w,
+                         https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=85 1920w"
+                 sizes="100vw"
+                 width="1920"
+                 height="1280"
+                 fetchpriority="high"
+                 loading="eager"
+                 alt="Tech Hintergrund Digital Network">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-badge">Software für Handwerk & Service</div>
+            <h1 class="hero-title">
+                <span class="gradient-text">10-20 Stunden pro Woche</span> einfach wegwerfen?
+            </h1>
+            <p class="hero-subtitle hero-subtitle-max">
+                Ihre Mitarbeiter tippen Angebote ab, suchen Daten in 5 Programmen und vergessen Follow-Ups. Wir bauen Software, die das übernimmt. Automatisch. Zuverlässig. Messbar.
+            </p>
+            <div class="hero-actions">
+                <a href="kontakt" class="btn-hero-primary">Wo verliert IHR Unternehmen Zeit?</a>
+                <a href="#prozess" class="btn-hero-secondary">Wie wir arbeiten</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-big">16h</span><span class="stat-label">Ø gespart pro Woche</span></div>
+                <div class="stat"><span class="stat-big">2-8 Mon.</span><span class="stat-label">Bis Investment zurück</span></div>
+                <div class="stat"><span class="stat-big">87%</span><span class="stat-label">Weniger Tippfehler</span></div>
+            </div>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section-visual-split">
+        <div class="visual-half">
+            <img src="images/problem-section.png"
+             width="1536"
+             height="1024"
+             alt="Manuelle Arbeitsprozesse"
+             loading="lazy"
+             style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
+        </div>
+        <div class="content-half">
+            <span class="section-label">Das Problem</span>
+            <h2 class="split-title">
+                Manuelle Prozesse verschwenden Zeit
+            </h2>
+            
+            <p class="split-subtitle">
+                Täglich entstehen tausende Aufgaben und Datenflüsse in Ihrem Unternehmen. Die Systeme, die diese unterstützen sollen, sind oft fragmentiert — und vieles wird manuell erledigt.
+            </p>
+            
+            <div class="problem-grid">
+                <div>
+                    <div class="problem-item-title">Daten manuell übertragen</div>
+                    <div class="problem-item-text">Informationen werden zwischen Systemen hin- und herkopiert. Zeit, die produktiver genutzt werden könnte.</div>
+                </div>
+                <div>
+                    <div class="problem-item-title">Keine Übersicht</div>
+                    <div class="problem-item-text">Daten liegen in verschiedenen Tools, aber niemand sieht das große Bild. Entscheidungen werden auf Bauchgefühl getroffen.</div>
+                </div>
+                <div>
+                    <div class="problem-item-title">Probleme zu spät erkannt</div>
+                    <div class="problem-item-text">Fehler, unzufriedene Kunden oder Engpässe werden erst erkannt, wenn es zu spät ist.</div>
+                </div>
+            </div>
+
+            <div class="impact-card">
+                <div style="display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.5rem;">
+                    <div class="impact-number">120h</div>
+                    <span class="impact-unit">pro Monat</span>
+                </div>
+                <div class="impact-label">Durchschnittlicher Aufwand pro Mitarbeiter für manuelle Prozesse</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lösung -->
+    <section class="section-product-showcase">
+        <div class="showcase-container">
+            <span class="section-label-center">Unsere Lösung</span>
+            <h2 class="section-title-center">
+                Intelligente Systeme, die Ihre Arbeit verstehen
+            </h2>
+            <p class="section-subtitle-center">
+                Wir entwickeln Software, die <a href="loesungen#prozessoptimierung" style="color: var(--accent); text-decoration: none; font-weight: 600;">Prozesse analysiert, automatisiert</a> und kontinuierlich optimiert. Keine Standard-Software — <a href="loesungen" style="color: var(--accent); text-decoration: none; font-weight: 600;">maßgeschneiderte Lösungen</a> für Ihre Anforderungen.
+            </p>
+            
+            <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.15); margin-bottom: 5rem; background: var(--gray-100);">
+                <img srcset="images/solution-section-400w.webp 400w, 
+                     images/solution-section-650w.webp 650w, 
+                     images/solution-section-1024w.webp 1024w, 
+                     images/solution-section.webp 1536w"
+             sizes="(max-width: 640px) 400px, (max-width: 1024px) 650px, 700px"
+             src="images/solution-section.webp"
+             width="1536"
+             height="1024"
+             alt="Modernes Software-Dashboard"
+             loading="lazy"
+             style="width: 100%; display: block; height: auto;">
+            </div>
+
+            <div class="solution-features">
+                <div>
+                    <h4>KI-gestützt</h4>
+                    <p>Lernt aus Ihren Daten</p>
+                </div>
+                <div>
+                    <h4>Echtzeit</h4>
+                    <p>Sofortige Einblicke</p>
+                </div>
+                <div>
+                    <h4>Integriert</h4>
+                    <p>Alle Tools verbunden</p>
+                </div>
+                <div>
+                    <h4>Sicher</h4>
+                    <p>Auf Ihren Servern</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beispiel -->
+    <section class="section-case-study">
+        <div class="case-container">
+            <div class="case-header">
+                <span class="section-label">Beispiel</span>
+                <h2>Wie ein B2B-Unternehmen die Kundenabwanderung halbierte</h2>
+            </div>
+            <div class="case-visual">
+                <div class="case-before">
+                    <div class="case-label">Vorher</div>
+                    <img srcset="images/case-before-400w.webp 400w, 
+                     images/case-before-650w.webp 650w, 
+                     images/case-before-1024w.webp 1024w, 
+                     images/case-before.webp 1536w"
+             sizes="(max-width: 640px) 400px, (max-width: 1024px) 650px, 1024px"
+             src="images/case-before.webp" 
+             alt="Vor der Automatisierung"
+             loading="lazy"
+             width="1536"
+             height="1024">
+                    <div class="case-stats-bad">
+                        <div class="case-stat">25% Kündigungen/Jahr</div>
+                        <div class="case-stat">2h/Tag manuell</div>
+                        <div class="case-stat">12 Tools</div>
+                    </div>
+                </div>
+                <div class="case-arrow">→</div>
+                <div class="case-after">
+                    <div class="case-label success">Nachher</div>
+                    <img srcset="images/case-after-400w.webp 400w, 
+                     images/case-after-650w.webp 650w, 
+                     images/case-after-1024w.webp 1024w, 
+                     images/case-after.webp 1536w"
+             sizes="(max-width: 640px) 400px, (max-width: 1024px) 650px, 1024px"
+             src="images/case-after.webp" 
+             alt="Nach der Automatisierung"
+             loading="lazy"
+             width="1536"
+             height="1024">
+                    <div class="case-stats-good">
+                        <div class="case-stat">9% Kündigungen/Jahr</div>
+                        <div class="case-stat">15min/Tag</div>
+                        <div class="case-stat">1 System</div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-result">
+                <div class="result-item">
+                    <div class="result-number">64%</div>
+                    <div class="result-text">weniger Kündigungen</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-number">87%</div>
+                    <div class="result-text">Zeitersparnis</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-number">8.2x</div>
+                    <div class="result-text">ROI nach 6 Monaten</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prozess -->
+    <section class="section-process" id="prozess">
+        <div class="process-container">
+            <span class="section-label-center">Unser Vorgehen</span>
+            <h2 class="section-title-center">Von Analyse bis Go-Live in 8-16 Wochen</h2>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=75&fm=webp&auto=format" alt="Analyse-Phase">
+                    </div>
+                    <div class="step-number">01</div>
+                    <h4>Analyse</h4>
+                    <p>Prozessanalyse & Strategie</p>
+                    <div class="step-duration">Woche 1-2</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&q=75&fm=webp&auto=format" alt="Konzept-Phase">
+                    </div>
+                    <div class="step-number">02</div>
+                    <h4>Konzept</h4>
+                    <p>Technisches Design</p>
+                    <div class="step-duration">Woche 3-4</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=75&fm=webp&auto=format" alt="Entwicklung">
+                    </div>
+                    <div class="step-number">03</div>
+                    <h4>Entwicklung</h4>
+                    <p>Entwicklung & Testing</p>
+                    <div class="step-duration">Woche 5-12</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-image">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&q=75&fm=webp&auto=format" alt="Go-Live">
+                    </div>
+                    <div class="step-number">04</div>
+                    <h4>Go-Live</h4>
+                    <p>Integration & Rollout</p>
+                    <div class="step-duration">Woche 13-16</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologie -->
+    <section class="section-tech" id="technologie">
+        <div class="tech-bg">
+            <img srcset="images/tech-bg-400w.webp 400w, 
+                         images/tech-bg-650w.webp 650w, 
+                         images/tech-bg-1024w.webp 1024w, 
+                         images/tech-bg.webp 1536w"
+                 sizes="(max-width: 640px) 400px, (max-width: 1024px) 650px, 1536px"
+                 src="images/tech-bg.webp" 
+                 width="1536"
+                 height="1024"
+                 alt="Moderne Technologie"
+                 loading="lazy">
+        </div>
+        <div class="tech-container">
+            <span class="section-label-light">Technologie</span>
+            <h2 class="section-title-light">Modern. Skalierbar. Sicher.</h2>
+            <div class="tech-logos">
+                <div class="tech-logo" data-tooltip="Universelle Programmiersprache für KI, Datenanalyse und Automatisierung">
+                    <span class="tech-name">Python</span>
+                </div>
+                <div class="tech-logo" data-tooltip="Moderne JavaScript-Bibliothek für schnelle, interaktive Benutzeroberflächen">
+                    <span class="tech-name">React</span>
+                </div>
+                <div class="tech-logo" data-tooltip="Google's KI-Framework für Machine Learning und neuronale Netze">
+                    <span class="tech-name">TensorFlow</span>
+                </div>
+                <div class="tech-logo" data-tooltip="Robuste Open-Source-Datenbank für komplexe Datenstrukturen">
+                    <span class="tech-name">PostgreSQL</span>
+                </div>
+                <div class="tech-logo" data-tooltip="Container-Technologie für konsistente Bereitstellung auf allen Systemen">
+                    <span class="tech-name">Docker</span>
+                </div>
+                <div class="tech-logo" data-tooltip="Amazon Web Services – skalierbare Cloud-Infrastruktur weltweit">
+                    <span class="tech-name">AWS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-cta-bold">
+        <div class="cta-container">
+            <h2>Bereit für intelligentere Prozesse?</h2>
+            <p>Unverbindliches Erstgespräch. Konkrete Einschätzung. Keine Verkaufsshow.</p>
+            <a href="https://wa.me/491636683867?text=Hallo%2C%20ich%20m%C3%B6chte%20mehr%20%C3%BCber%20Vach%20Systems%20erfahren." class="btn-cta-large" target="_blank" rel="noopener">Gespräch starten →</a>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: rgba(255,255,255,0.6);">Oder per <a href="kontakt" style="color: rgba(255,255,255,0.9); text-decoration: underline;">E-Mail</a></p>
+            <div class="cta-trust">
+                <span>Keine Setup-Gebühr</span>
+                <span>Feste Deadlines</span>
+                <span>ROI-Garantie</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section 1: Was ist KI-Automatisierung -->
+    <section class="section-seo-content">
+        <div class="container-narrow">
+            <h2>Was ist KI-Automatisierung für Unternehmen?</h2>
+            <p>
+                <strong>KI Automatisierung</strong> bedeutet, dass Software selbstständig Aufgaben erledigt, die bisher Menschen gemacht haben. Anders als klassische Automatisierung versteht KI den Kontext: Sie liest E-Mails, extrahiert Informationen aus Dokumenten, trifft Entscheidungen basierend auf Regeln – und lernt dabei kontinuierlich dazu.
+            </p>
+            <p>
+                Für mittelständische Unternehmen ist das besonders wertvoll: Viele Prozesse sind repetitiv, kosten Zeit, aber sind zu komplex für einfache Automatisierung. Genau hier setzt <strong>KI-gestützte Prozessautomatisierung</strong> an.
+            </p>
+            
+            <h3>Typische Anwendungsfälle:</h3>
+            <ul>
+                <li><strong>E-Mail-Verarbeitung:</strong> Anfragen automatisch kategorisieren, weiterleiten oder direkt beantworten</li>
+                <li><strong>Dokumentenanalyse:</strong> Rechnungen, Verträge, Lieferscheine automatisch erfassen und verarbeiten</li>
+                <li><strong>Angebotserstellung:</strong> Kalkulationen automatisch erstellen basierend auf Anfrage-Daten</li>
+                <li><strong>Kundendaten-Management:</strong> Informationen aus verschiedenen Systemen zusammenführen und aktuell halten</li>
+                <li><strong>Prozess-Monitoring:</strong> Engpässe erkennen, Probleme melden, bevor sie kritisch werden</li>
+            </ul>
+            
+            <p>
+                Der Unterschied zu Standard-Software: Unsere Systeme werden <strong>individuell für Ihre Prozesse entwickelt</strong>. Keine Standard-Lösung, die Sie an Ihre Abläufe anpassen müssen – sondern Software, die sich an Ihre Arbeitsweise anpasst.
+            </p>
+        </div>
+    </section>
+
+    <!-- SEO Content Section 2: Welche Prozesse automatisieren -->
+    <section class="section-seo-content-alt">
+        <div class="container-narrow">
+            <h2>Welche Prozesse lassen sich mit KI automatisieren?</h2>
+            <p>
+                Die Frage ist nicht "Ob", sondern "Welche zuerst". Fast jeder Prozess, der heute manuell läuft, kann zumindest teilweise automatisiert werden. Besonders lohnenswert sind Prozesse, die:
+            </p>
+            <ul>
+                <li>Häufig wiederholt werden (täglich oder wöchentlich)</li>
+                <li>Viel Zeit kosten (mehr als 1 Stunde pro Woche)</li>
+                <li>Fehleranfällig sind (manuelle Übertragungen, Tippfehler)</li>
+                <li>Mehrere Systeme involvieren (Daten müssen kopiert werden)</li>
+            </ul>
+
+            <h3>Beispiele aus verschiedenen Branchen:</h3>
+            
+            <div class="process-examples">
+                <div class="example-box">
+                    <h4>Logistik & Spedition</h4>
+                    <p><strong>Problem:</strong> Transportanfragen kommen per E-Mail, müssen manuell ins TMS übertragen, kalkuliert und als Angebot verschickt werden.</p>
+                    <p><strong>Automatisierung:</strong> KI liest E-Mails, extrahiert Daten (Abholung, Ziel, Gewicht), kalkuliert Route, erstellt Angebot automatisch.</p>
+                    <p><strong>Zeitersparnis:</strong> 80% – von 5 Minuten auf 1 Minute pro Anfrage</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Handwerk & Bau</h4>
+                    <p><strong>Problem:</strong> Angebote manuell in Excel erstellen, Materialkosten recherchieren, Arbeitszeiten schätzen, formatieren.</p>
+                    <p><strong>Automatisierung:</strong> System erstellt Angebote basierend auf Projektbeschreibung, holt Materialpreise live ab, rechnet automatisch.</p>
+                    <p><strong>Zeitersparnis:</strong> 75% – von 2 Stunden auf 30 Minuten pro Angebot</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Dienstleister & Beratung</h4>
+                    <p><strong>Problem:</strong> Kundendaten in CRM, Rechnungen in Buchhaltung, Projekte in Excel – keine Übersicht, ständiges Suchen.</p>
+                    <p><strong>Automatisierung:</strong> Intelligentes Dashboard zeigt alle Infos zu einem Kunden: Projekte, Rechnungen, Kommunikation, Dokumente.</p>
+                    <p><strong>Zeitersparnis:</strong> 60% – von 15 Minuten auf 6 Minuten pro Kundenanfrage</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 2rem; font-size: 1.125rem;">
+                <strong>Ihr Potenzial berechnen:</strong> Überlegen Sie, welcher Prozess bei Ihnen am meisten Zeit kostet. Multiplizieren Sie diese Zeit mit der Anzahl der Wiederholungen pro Monat. Das ist Ihr Automatisierungs-Potenzial.
+            </p>
+        </div>
+    </section>
+
+    <!-- SEO Content Section 3: FAQ -->
+    <section class="section-faq">
+        <div class="container-narrow">
+            <h2>Häufige Fragen zu KI-Automatisierung</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Wie lange dauert die Umsetzung?</h3>
+                    <p>Von Analyse bis Go-Live typischerweise <strong>8-16 Wochen</strong>. Einfache Automatisierungen (z.B. Rechnungsdaten automatisch ins ERP übertragen) in 4-6 Wochen, komplexere Systeme (Multi-System-Integration, ML-Modelle) in 12-16 Wochen.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Was kostet KI-Automatisierung?</h3>
+                    <p>Das hängt vom Umfang ab – von kleinen Automatisierungen bis zu umfassenden Systemen. Die meisten Projekte amortisieren sich in <strong>6-12 Monaten</strong> durch eingesparte Zeit. Im kostenlosen Erstgespräch rechnen wir gemeinsam: Ihre Zeitersparnis vs. Investition. So sehen Sie vorher, ob es sich lohnt.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Brauche ich technisches Wissen?</h3>
+                    <p><strong>Nein.</strong> Wir übernehmen die technische Umsetzung komplett. Sie erklären uns Ihre Prozesse – wir übersetzen das in Software. Die fertigen Systeme sind so intuitiv, dass Ihre Mitarbeiter sie ohne Schulung nutzen können.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Werden meine Mitarbeiter ersetzt?</h3>
+                    <p><strong>Nein.</strong> KI-Automatisierung übernimmt repetitive Aufgaben – nicht die Menschen. Ihr Team gewinnt Zeit für strategische, kreative oder kundenorientierte Tätigkeiten. Erfahrung zeigt: Mitarbeiter sind froh, wenn sie sich auf wertschöpfende Arbeit konzentrieren können.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Wo werden meine Daten gespeichert?</h3>
+                    <p>Standardmäßig auf <strong>Ihren eigenen Servern oder in deutscher Cloud-Infrastruktur</strong> (DSGVO-konform). Sie behalten volle Kontrolle. Alternativ: Hosting bei uns mit klaren Datenschutz-Vereinbarungen.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Was passiert nach Go-Live?</h3>
+                    <p>Wir begleiten Sie die ersten Wochen intensiv: Fragen beantworten, Anpassungen vornehmen, Mitarbeiter unterstützen. Danach optional: <strong>Support-Vertrag</strong> für Wartung, Updates und Erweiterungen – oder Sie betreiben das System selbst.</p>
+                </div>
+            </div>
+
+            <div class="faq-cta">
+                <p><strong>Weitere Fragen?</strong> In einem kostenlosen Erstgespräch klären wir, ob und wie KI-Automatisierung bei Ihnen funktioniert.</p>
+                <a href="kontakt" class="btn-secondary">Gespräch vereinbaren →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-minimal">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-mark"></div>
+                        <span>Vach Systems</span>
+                    </div>
+                    <p>Intelligente Softwaresysteme für moderne Unternehmen · vachsystems.de</p>
+                </div>
+                <div class="footer-links">
+                    <a href="leistungen">Leistungen</a>
+                    <a href="loesungen">Lösungen</a>
+                    <a href="ueber-uns">Über uns</a>
+                    <a href="kontakt">Kontakt</a>
+                </div>
+                <div class="footer-contact">
+                    <a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <span>© 2026 Vach Systems</span>
+                <a href="impressum">Impressum</a>
+                <a href="datenschutz">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.min.js" defer></script>
+    <script src="/register-sw.js" defer></script>
+
+    
+
+    <!-- Cookie Consent -->
+    <div id="cb" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#000;color:#fff;padding:1rem;z-index:9999">
+        <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+            <p style="margin:0;font-size:.9rem;flex:1;min-width:250px">Wir nutzen Google Analytics. <a href="datenschutz" style="color:#fff;text-decoration:underline">Datenschutz</a></p>
+            <div style="display:flex;gap:.75rem">
+                <button onclick="ac()" style="padding:.6rem 1.5rem;background:#fff;color:#000;border:none;border-radius:6px;font-weight:600;cursor:pointer">OK</button>
+                <button onclick="dc()" style="padding:.6rem 1.5rem;background:transparent;color:#fff;border:2px solid #fff;border-radius:6px;font-weight:600;cursor:pointer">Ablehnen</button>
+            </div>
+        </div>
+    </div>
+    <script>function lg(){var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-6ZZ7BX7SB0';document.head.appendChild(s);s.onload=function(){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6ZZ7BX7SB0',{anonymize_ip:!0})}}function ac(){localStorage.cookieConsent='accepted';cb.style.display='none';lg()}function dc(){localStorage.cookieConsent='declined';cb.style.display='none'}localStorage.cookieConsent?localStorage.cookieConsent==='accepted'&&lg():cb.style.display='block'</script>
+</body>
+</html>
+
+
+
+
+
+
