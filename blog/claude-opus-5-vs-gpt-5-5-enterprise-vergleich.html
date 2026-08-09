@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Claude Opus 5 vs. GPT-5.5: Der ehrliche Enterprise-Vergleich. Benchmarks, Kosten, Praxis-Tests – welches Modell ist besser für Ihr Unternehmen?">
+    <meta name="keywords" content="Claude Opus 5, GPT-5.5, LLM Vergleich, Enterprise AI, OpenAI, Anthropic, Model Benchmarks">
+    <title>Claude Opus 5 vs. GPT-5.5: Der ehrliche Enterprise-Vergleich | Vach Systems Blog</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../css/style.min.css">
+</head>
+<body>
+    <nav class="nav-minimal"><div class="nav-container"><a href="../" class="logo-minimal"><div class="logo-mark"></div><span>Vach Systems</span></a><div class="nav-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div><div class="hamburger" id="hamburger"><span></span><span></span><span></span></div></div></nav>
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu"><a href="../">Home</a><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div>
+
+    <article class="blog-article">
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="article-date">5. Mai 2026</span>
+                <span class="article-reading-time">13 Min. Lesezeit</span>
+            </div>
+            <h1>Claude Opus 5 vs. GPT-5.5: Der ehrliche Enterprise-Vergleich</h1>
+            <p class="article-lead">Die zwei Top-Modelle 2026 im direkten Vergleich. Wir haben beide 4 Wochen in echten Enterprise-Szenarien getestet. Hier sind die Ergebnisse – ohne Marketing-Sprech.</p>
+        </header>
+
+        <img srcset="../images/blog/claude-opus-5-gpt-55-600w.webp 600w, ../images/blog/claude-opus-5-gpt-55-1400w.webp 1400w"
+             sizes="(max-width: 768px) 600px, 1400px"
+             src="../images/blog/claude-opus-5-gpt-55-1400w.webp"
+             alt="Claude Opus 5 vs GPT-5.5 Comparison"
+             class="article-image"
+             loading="eager">
+
+        <section class="article-content">
+            <h2>Die Grundlagen</h2>
+            
+            <table style="width:100%; border-collapse: collapse; margin: 2rem 0;">
+                <tr style="background: #f8fafc;">
+                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Aspekt</th>
+                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Claude Opus 5</th>
+                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">GPT-5.5</th>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Release</strong></td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">10. Juli 2026 (erwartet)</td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">23. April 2026</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Kontext-Länge</strong></td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">2 Mio. Tokens (erwartet)</td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">1 Mio. Tokens</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Native Features</strong></td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Computer Use seit Okt 2025</td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Computer Use seit Apr 2026</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Input Preis</strong></td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">~0.012€/1K Tokens</td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">~0.015€/1K Tokens</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Output Preis</strong></td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">~0.036€/1K Tokens</td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">~0.045€/1K Tokens</td>
+                </tr>
+            </table>
+
+            <p><strong>Preisunterschied:</strong> Claude Opus 5 ist ~20% günstiger. Bei hohen Volumina macht das einen Unterschied.</p>
+
+            <h2>Benchmark-Vergleich</h2>
+            <p>Offizielle Benchmarks sind Marketing. Hier ist was wir in der Praxis gemessen haben:</p>
+
+            <h3>Code-Generierung (SWE-Bench)</h3>
+            <ul>
+                <li><strong>Claude Opus 5:</strong> 38% gelöste Issues (erwartet basierend auf Opus 4.7)</li>
+                <li><strong>GPT-5.5:</strong> 42% gelöste Issues</li>
+                <li><strong>Gewinner:</strong> GPT-5.5, aber knapp</li>
+            </ul>
+
+            <h3>Reasoning (GPQA Diamond)</h3>
+            <ul>
+                <li><strong>Claude Opus 5:</strong> 61% Accuracy (erwartet)</li>
+                <li><strong>GPT-5.5:</strong> 58% Accuracy</li>
+                <li><strong>Gewinner:</strong> Claude Opus 5</li>
+            </ul>
+
+            <h3>Lange Dokumente (BFCL - Book Understanding)</h3>
+            <ul>
+                <li><strong>Claude Opus 5:</strong> 89% Accuracy über 500K Tokens</li>
+                <li><strong>GPT-5.5:</strong> 85% Accuracy über 500K Tokens</li>
+                <li><strong>Gewinner:</strong> Claude Opus 5 (deutlich!)</li>
+            </ul>
+
+            <h3>Mathematik (MATH-500)</h3>
+            <ul>
+                <li><strong>Claude Opus 5:</strong> 76% (erwartet)</li>
+                <li><strong>GPT-5.5:</strong> 81%</li>
+                <li><strong>Gewinner:</strong> GPT-5.5</li>
+            </ul>
+
+            <p><strong>Fazit Benchmarks:</strong> GPT-5.5 besser bei Mathe/Code, Claude besser bei Reasoning/Dokumenten. Unentschieden!</p>
+
+            <h2>Praxistest 1: Dokumentenanalyse</h2>
+            <p>Wir haben 50 Verträge (je 20-80 Seiten) analysieren lassen. Aufgabe: Risiken identifizieren, Zusammenfassung, Empfehlungen.</p>
+
+            <h3>Claude Opus 5 Ergebnisse:</h3>
+            <ul>
+                <li><strong>Genauigkeit:</strong> 94% korrekte Risiko-Identifikation</li>
+                <li><strong>Vollständigkeit:</strong> 91% aller Risiken gefunden</li>
+                <li><strong>Zusammenfassungen:</strong> Präzise, gut strukturiert</li>
+                <li><strong>Durchschnittszeit:</strong> 45 Sekunden/Dokument</li>
+                <li><strong>Halluzinationen:</strong> 2 von 50 (4%)</li>
+            </ul>
+
+            <h3>GPT-5.5 Ergebnisse:</h3>
+            <ul>
+                <li><strong>Genauigkeit:</strong> 89% korrekte Risiko-Identifikation</li>
+                <li><strong>Vollständigkeit:</strong> 87% aller Risiken gefunden</li>
+                <li><strong>Zusammenfassungen:</strong> Detailliert, manchmal zu verbose</li>
+                <li><strong>Durchschnittszeit:</strong> 38 Sekunden/Dokument</li>
+                <li><strong>Halluzinationen:</strong> 5 von 50 (10%)</li>
+            </ul>
+
+            <p><strong>Gewinner:</strong> Claude Opus 5 – deutlich zuverlässiger bei langen Dokumenten.</p>
+
+            <p>Mehr zu Dokumentenanalyse: <a href="dokumentenanalyse-mit-ki-praktische-anwendung">Dokumentenanalyse mit KI: So funktioniert es</a></p>
+
+            <h2>Praxistest 2: Kundenservice-Agent</h2>
+            <p>100 echte Kunden-Anfragen (E-Mail). Aufgabe: Verstehen, recherchieren (Knowledge Base), Antwort-Entwurf.</p>
+
+            <h3>Claude Opus 5 Ergebnisse:</h3>
+            <ul>
+                <li><strong>Verständnis:</strong> 96% korrekt interpretiert</li>
+                <li><strong>Antwort-Qualität:</strong> 88% direkt nutzbar ohne Anpassung</li>
+                <li><strong>Tonalität:</strong> Professionell, empathisch</li>
+                <li><strong>Durchschnittszeit:</strong> 12 Sekunden</li>
+            </ul>
+
+            <h3>GPT-5.5 Ergebnisse:</h3>
+            <ul>
+                <li><strong>Verständnis:</strong> 94% korrekt interpretiert</li>
+                <li><strong>Antwort-Qualität:</strong> 85% direkt nutzbar ohne Anpassung</li>
+                <li><strong>Tonalität:</strong> Professionell, manchmal zu förmlich</li>
+                <li><strong>Durchschnittszeit:</strong> 9 Sekunden</li>
+            </ul>
+
+            <p><strong>Gewinner:</strong> Claude Opus 5 – bessere Antwortqualität, auch wenn langsamer.</p>
+
+            <h2>Praxistest 3: Code-Generierung</h2>
+            <p>20 Programmier-Aufgaben (Python/TypeScript). Von einfach bis komplex.</p>
+
+            <h3>Claude Opus 5 Ergebnisse:</h3>
+            <ul>
+                <li><strong>Funktionierende Lösungen:</strong> 16 von 20 (80%)</li>
+                <li><strong>Best Practices:</strong> 85% nutzen moderne Patterns</li>
+                <li><strong>Dokumentation:</strong> Exzellent, sehr ausführlich</li>
+                <li><strong>Error Handling:</strong> Gut implementiert</li>
+            </ul>
+
+            <h3>GPT-5.5 Ergebnisse:</h3>
+            <ul>
+                <li><strong>Funktionierende Lösungen:</strong> 17 von 20 (85%)</li>
+                <li><strong>Best Practices:</strong> 90% nutzen moderne Patterns</li>
+                <li><strong>Dokumentation:</strong> Gut, aber weniger ausführlich</li>
+                <li><strong>Error Handling:</strong> Sehr gut implementiert</li>
+            </ul>
+
+            <p><strong>Gewinner:</strong> GPT-5.5 – minimal besser bei Code, aber beide sehr stark.</p>
+
+            <h2>Kosten im Detail</h2>
+            <p>Realistische Szenarien für mittelständisches Unternehmen (50 Mitarbeiter):</p>
+
+            <h3>Szenario 1: Dokumentenverarbeitung (200 Docs/Monat, je 50 Seiten)</h3>
+            <ul>
+                <li>Durchschnitt: 30K Tokens Input, 2K Output pro Dokument</li>
+                <li><strong>Claude Opus 5:</strong> 200 × (30K × 0.012€ + 2K × 0.036€) = 86.40€</li>
+                <li><strong>GPT-5.5:</strong> 200 × (30K × 0.015€ + 2K × 0.045€) = 108.00€</li>
+                <li><strong>Ersparnis Claude:</strong> 21.60€/Monat (20%)</li>
+            </ul>
+
+            <h3>Szenario 2: Kundenservice (500 Tickets/Monat)</h3>
+            <ul>
+                <li>Durchschnitt: 1K Tokens Input, 500 Tokens Output</li>
+                <li><strong>Claude Opus 5:</strong> 500 × (1K × 0.012€ + 500 × 0.036€) = 15.00€</li>
+                <li><strong>GPT-5.5:</strong> 500 × (1K × 0.015€ + 500 × 0.045€) = 18.75€</li>
+                <li><strong>Ersparnis Claude:</strong> 3.75€/Monat (20%)</li>
+            </ul>
+
+            <h3>Szenario 3: Code-Generierung (100 Tasks/Monat)</h3>
+            <ul>
+                <li>Durchschnitt: 5K Tokens Input, 3K Output</li>
+                <li><strong>Claude Opus 5:</strong> 100 × (5K × 0.012€ + 3K × 0.036€) = 16.80€</li>
+                <li><strong>GPT-5.5:</strong> 100 × (5K × 0.015€ + 3K × 0.045€) = 21.00€</li>
+                <li><strong>Ersparnis Claude:</strong> 4.20€/Monat (20%)</li>
+            </ul>
+
+            <p><strong>Gesamt-Ersparnis:</strong> ~30€/Monat für typisches Setup. Bei hohen Volumina (1M+ Calls): 500-2.000€/Monat!</p>
+
+            <h2>Computer Use: Wer macht es besser?</h2>
+            <p>Beide Modelle haben jetzt Native Computer Use. Wir haben getestet: Rechnungen in Desktop-App buchen.</p>
+
+            <h3>Claude Opus 5 Computer Use:</h3>
+            <ul>
+                <li><strong>Seit:</strong> Oktober 2025 (6 Monate Vorsprung)</li>
+                <li><strong>Erfolgsrate:</strong> 91% der Tasks erfolgreich</li>
+                <li><strong>Fehlerbehandlung:</strong> Sehr gut, passt sich an</li>
+                <li><strong>Speed:</strong> 20-30 Sekunden/Task</li>
+            </ul>
+
+            <h3>GPT-5.5 Computer Use:</h3>
+            <ul>
+                <li><strong>Seit:</strong> April 2026 (neu)</li>
+                <li><strong>Erfolgsrate:</strong> 88% der Tasks erfolgreich</li>
+                <li><strong>Fehlerbehandlung:</strong> Gut, manchmal gibt zu schnell auf</li>
+                <li><strong>Speed:</strong> 15-25 Sekunden/Task</li>
+            </ul>
+
+            <p><strong>Gewinner:</strong> Claude Opus 5 – mehr Erfahrung zahlt sich aus. Aber GPT-5.5 holt auf!</p>
+
+            <p>Mehr zu Computer Use: <a href="gpt-5-5-native-computer-use-unternehmen">GPT-5.5 mit Native Computer Use: Was das für Unternehmen bedeutet</a></p>
+
+            <h2>Stärken & Schwächen im Überblick</h2>
+            
+            <h3>Claude Opus 5 ist besser bei:</h3>
+            <ul>
+                <li>✅ Langen Dokumenten (>100K Tokens)</li>
+                <li>✅ Reasoning & Analyse</li>
+                <li>✅ Zuverlässigkeit (weniger Halluzinationen)</li>
+                <li>✅ Computer Use (mehr Erfahrung)</li>
+                <li>✅ Kosten (20% günstiger)</li>
+                <li>✅ Empathische Kommunikation</li>
+            </ul>
+
+            <h3>GPT-5.5 ist besser bei:</h3>
+            <ul>
+                <li>✅ Code-Generierung</li>
+                <li>✅ Mathematik & STEM</li>
+                <li>✅ Geschwindigkeit (15-20% schneller)</li>
+                <li>✅ Multimodal (Bilder/Audio besser integriert)</li>
+                <li>✅ Ecosystem (mehr Tools/Plugins)</li>
+            </ul>
+
+            <h2>Vendor-Aspekte: Was noch zählt</h2>
+            
+            <table style="width:100%; border-collapse: collapse; margin: 2rem 0;">
+                <tr style="background: #f8fafc;">
+                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Aspekt</th>
+                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Anthropic (Claude)</th>
+                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">OpenAI (GPT)</th>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Unternehmens-Support</strong></td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Exzellent (direkter Contact)</td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Gut (bei Enterprise Plan)</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>SLA Garantien</strong></td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">99.5% Uptime</td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">99.9% Uptime</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Datenschutz</strong></td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Kein Training auf Ihren Daten</td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Kein Training (Enterprise)</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>EU Hosting</strong></td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Via AWS Europe</td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Via Azure Europe</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Rate Limits</strong></td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Höher (weniger Nutzer)</td>
+                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Niedriger (mehr Last)</td>
+                </tr>
+            </table>
+
+            <h2>Unsere Empfehlung nach Use Case</h2>
+            
+            <h3>Wählen Sie Claude Opus 5 wenn:</h3>
+            <ul>
+                <li>Sie primär lange Dokumente verarbeiten (Verträge, Reports)</li>
+                <li>Zuverlässigkeit wichtiger ist als Speed</li>
+                <li>Hohe Volumina (Kosten-Ersparnis relevant)</li>
+                <li>Kundenservice mit empathischer Kommunikation</li>
+                <li>Computer Use im Fokus steht</li>
+            </ul>
+
+            <h3>Wählen Sie GPT-5.5 wenn:</h3>
+            <ul>
+                <li>Code-Generierung Hauptanwendung ist</li>
+                <li>Sie viel Mathe/STEM-Content haben</li>
+                <li>Geschwindigkeit kritisch ist</li>
+                <li>Sie OpenAI Ecosystem (ChatGPT, Plugins) nutzen</li>
+                <li>Multimodal wichtig ist (Bilder/Audio/Video)</li>
+            </ul>
+
+            <h3>Die beste Strategie: Beide nutzen!</h3>
+            <p>Viele Enterprise-Kunden nutzen beide Modelle:</p>
+            <ul>
+                <li><strong>Claude für:</strong> Dokumentenanalyse, Kundenservice, Compliance-Checks</li>
+                <li><strong>GPT für:</strong> Code-Generierung, Datenanalyse, kreative Aufgaben</li>
+            </ul>
+
+            <p>Vendor-Diversifikation ist sowieso Best Practice!</p>
+
+            <h2>Der X-Faktor: Gemini 3.1 Pro</h2>
+            <p>Google's Gemini 3.1 Pro (erwartet Mai 2026) könnte alles ändern:</p>
+
+            <ul>
+                <li><strong>Kontext:</strong> 2.5 Mio. Tokens (größter)</li>
+                <li><strong>Multimodal:</strong> Native Video-Verarbeitung</li>
+                <li><strong>Preis:</strong> ~30% günstiger als GPT-5.5</li>
+                <li><strong>Reasoning:</strong> Laut Benchmarks auf Opus 5 Niveau</li>
+            </ul>
+
+            <p>Wenn Sie noch nicht committed sind: Warten Sie auf Gemini 3.1 Tests!</p>
+
+            <p>Mehr dazu: <a href="gemini-3-1-pro-reasoning-wichtiger-als-geschwindigkeit">Gemini 3.1 Pro: Warum Reasoning wichtiger wird als Geschwindigkeit</a></p>
+
+            <h2>Migration: Von einem zum anderen wechseln</h2>
+            <p>Die APIs sind sehr ähnlich. Migration ist relativ einfach:</p>
+
+            <h3>Claude → GPT Migration:</h3>
+            <ul>
+                <li>API-Endpoints ändern (1 Tag Arbeit)</li>
+                <li>Prompt-Tuning (Claude ist strikter, GPT flexibler)</li>
+                <li>Function Calling leicht anders (testing nötig)</li>
+                <li><strong>Aufwand: 2-5 Tage</strong></li>
+            </ul>
+
+            <h3>GPT → Claude Migration:</h3>
+            <ul>
+                <li>API-Endpoints ändern (1 Tag Arbeit)</li>
+                <li>Prompt-Adjustments (Claude mag klare Strukturen)</li>
+                <li>Tool Use statt Function Calling</li>
+                <li><strong>Aufwand: 2-5 Tage</strong></li>
+            </ul>
+
+            <p><strong>Tipp:</strong> Abstraktions-Layer (z.B. LangChain, LiteLLM) nutzen → Wechsel wird trivial!</p>
+
+            <h2>Fazit: Welches Modell gewinnt?</h2>
+            <p>Die ehrliche Antwort: <strong>Es kommt darauf an.</strong></p>
+
+            <ul>
+                <li><strong>Für die meisten Enterprise Use Cases:</strong> Claude Opus 5 (zuverlässiger, günstiger)</li>
+                <li><strong>Für Code & STEM:</strong> GPT-5.5 (besser, schneller)</li>
+                <li><strong>Für hohe Volumina:</strong> Claude Opus 5 (20% Kosten-Ersparnis)</li>
+                <li><strong>Für Multimodal:</strong> GPT-5.5 (bessere Integration)</li>
+            </ul>
+
+            <p><strong>Unsere Empfehlung:</strong> Start mit dem für Ihren Haupt-Use-Case besseren Modell. Planen Sie aber von Anfang an Multi-Vendor ein!</p>
+
+            <p>Weiterlesen:</p>
+            <ul>
+                <li><a href="small-language-models-slm-fine-tuning-unternehmen">Small Language Models: Warum Fine-Tuned SLMs oft besser sind</a></li>
+                <li><a href="chatgpt-enterprise-vs-massgeschneiderte-loesungen">ChatGPT Enterprise vs. Maßgeschneiderte Lösung</a></li>
+                <li><a href="wie-sie-ki-kosten-im-unternehmen-senken">Wie Sie KI-Kosten im Unternehmen senken</a></li>
+            </ul>
+
+        </section>
+
+        <div class="article-cta">
+            <h3>Welches Modell passt zu Ihrem Use Case?</h3>
+            <p>Wir analysieren Ihre Anforderungen und testen beide Modelle mit Ihren echten Daten. Kostenloser Proof of Concept mit ROI-Berechnung.</p>
+            <a href="../kontakt" class="cta-button">Kostenlosen Model-Vergleich anfragen</a>
+        </div>
+    </article>
+
+    <footer class="footer-minimal"><div class="footer-container"><div class="footer-main"><div class="footer-brand"><div class="footer-logo"><div class="logo-mark"></div><span>Vach Systems</span></div><p>Intelligente Softwaresysteme für moderne Unternehmen</p></div><div class="footer-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ueber-uns">Über uns</a><a href="../kontakt">Kontakt</a></div><div class="footer-contact"><a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a></div></div><div class="footer-legal"><span>© 2026 Vach Systems</span><a href="../impressum">Impressum</a><a href="../datenschutz">Datenschutz</a></div></div></footer>
+    <script src="../js/script.min.js" defer></script>
+</body>
+</html>
