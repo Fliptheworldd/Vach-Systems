@@ -1,55 +1,85 @@
-const fs = require('fs');
+#!/usr/bin/env node
+/**
+ * Blog Image Updater für Vach Systems
+ * 
+ * Fügt die generierten WebP-Bilder automatisch in die Blog-Artikel ein
+ */
+
+const fs = require('fs').promises;
 const path = require('path');
 
-const blogDir = path.join(__dirname, 'blog');
-const htmlFiles = fs.readdirSync(blogDir).filter(f => f.endsWith('.html'));
-
-// Mapping of Unsplash URLs to local WebP files
-const imageMap = {
-  'photo-1450101499163-c8848c66ca85': '1450101499163-c8848c66ca85.webp',
-  'photo-1460925895917-afdab827c52f': '1460925895917-afdab827c52f.webp',
-  'photo-1486312338219-ce68d2c6f44d': '1486312338219-ce68d2c6f44d.webp',
-  'photo-1531482615713-2afd69097998': '1531482615713-2afd69097998.webp',
-  'photo-1531746790731-6c087fecd65a': '1531746790731-6c087fecd65a.webp',
-  'photo-1551288049-bebda4e38f71': '1551288049-bebda4e38f71.webp',
-  'photo-1553413077-190dd305871c': '1553413077-190dd305871c.webp',
-  'photo-1554224154-26032ffc0d07': '1554224154-26032ffc0d07.webp',
-  'photo-1554224155-8d04cb21cd6c': '1554224155-8d04cb21cd6c.webp',
-  'photo-1556742502-ec7c0e9f34b1': '1556742502-ec7c0e9f34b1.webp',
-  'photo-1556761175-b413da4baf72': '1556761175-b413da4baf72.webp',
-  'photo-1558346490-a72e53ae2d4f': '1558346490-a72e53ae2d4f.webp',
-  'photo-1558494949-ef010cbdcc31': '1558494949-ef010cbdcc31.webp',
-  'photo-1586528116311-ad8dd3c8310d': '1586528116311-ad8dd3c8310d.webp',
-  'photo-1589829545856-d10d557cf95f': '1589829545856-d10d557cf95f.webp',
-  'photo-1633356122544-f134324a6cee': '1633356122544-f134324a6cee.webp'
-};
-
-let totalChanges = 0;
-
-for (const file of htmlFiles) {
-  const filePath = path.join(blogDir, file);
-  let content = fs.readFileSync(filePath, 'utf8');
-  let changes = 0;
-  
-  // Replace all Unsplash URLs with local WebP paths
-  for (const [unsplashId, webpFile] of Object.entries(imageMap)) {
-    const regex = new RegExp(
-      `https://images\\.unsplash\\.com/${unsplashId}\\?w=\\d+&q=\\d+`,
-      'g'
-    );
+async function updateArticleImage(articlePath, image600w, image1400w, articleTitle) {
+    let html = await fs.readFile(articlePath, 'utf-8');
     
-    const before = content;
-    content = content.replace(regex, `../images/blog/${webpFile}`);
-    if (content !== before) {
-      changes++;
+    // Generiere alt-text aus Artikel-Titel
+    const altText = articleTitle || path.basename(articlePath, '.html')
+        .replace(/-/g, ' ')
+        .replace(/\b\w/g, l => l.toUpperCase());
+    
+    // Bild-Tag Template
+    const imgTag = `        <img srcset="../images/blog/${image600w} 600w, ../images/blog/${image1400w} 1400w" 
+             sizes="(max-width: 768px) 600px, 1400px"
+             src="../images/blog/${image1400w}" 
+             alt="${altText}" 
+             class="article-image"
+             loading="lazy"
+             width="1400"
+             height="933">`;
+    
+    // Suche nach existierendem Bild-Tag
+    const imgRegex = /<img[^>]*class="article-image"[^>]*>/;
+    
+    if (imgRegex.test(html)) {
+        // Ersetze existierendes Bild
+        html = html.replace(imgRegex, imgTag);
+        console.log(`    ✓ Bild ersetzt`);
+    } else {
+        // Füge Bild nach </header> ein
+        const headerEndRegex = /<\/header>/;
+        if (headerEndRegex.test(html)) {
+            html = html.replace(headerEndRegex, `</header>\n\n${imgTag}`);
+            console.log(`    ✓ Bild eingefügt`);
+        } else {
+            console.log(`    ✗ Konnte Einfügepunkt nicht finden`);
+            return false;
+        }
     }
-  }
-  
-  if (changes > 0) {
-    fs.writeFileSync(filePath, content, 'utf8');
-    console.log(`✅ ${file} (${changes} replacements)`);
-    totalChanges += changes;
-  }
+    
+    // Speichere aktualisierte Datei
+    await fs.writeFile(articlePath, html, 'utf-8');
+    return true;
 }
 
-console.log(`\n🎉 Updated ${totalChanges} image references in ${htmlFiles.length} blog articles!`);
+async function main() {
+    console.log('🔧 Blog Image Updater - Vach Systems\n');
+    
+    // Lade Mapping
+    const mappingPath = path.join(__dirname, 'blog-images-mapping.json');
+    const mapping = JSON.parse(await fs.readFile(mappingPath, 'utf-8'));
+    
+    console.log(`📋 Mapping geladen: ${Object.keys(mapping).length} Artikel\n`);
+    console.log('━'.repeat(80));
+    
+    let updated = 0;
+    
+    for (const [articleFile, data] of Object.entries(mapping)) {
+        const articlePath = path.join(__dirname, 'blog', articleFile);
+        console.log(`\n${articleFile}`);
+        console.log(`    600w: ${data.image600w}`);
+        console.log(`    1400w: ${data.image1400w}`);
+        
+        const success = await updateArticleImage(
+            articlePath,
+            data.image600w,
+            data.image1400w,
+            null // Alt-text wird aus Dateinamen generiert
+        );
+        
+        if (success) updated++;
+    }
+    
+    console.log('\n' + '━'.repeat(80));
+    console.log(`\n✅ Fertig! ${updated} Artikel aktualisiert.\n`);
+}
+
+main().catch(console.error);
