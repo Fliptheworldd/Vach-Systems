@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website-Optimierung & Entwicklung: Von langsam zu Lighthouse 95+. Performance, SEO, Responsive Design – professionelle Websites für Unternehmen.">
+    <meta name="keywords" content="Website-Optimierung, Performance, Lighthouse Score, SEO, Responsive Design, WebP, Core Web Vitals, Website Entwicklung">
+    <meta name="theme-color" content="#000000">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vachsystems.de/website-optimierung">
+    <meta property="og:title" content="Website-Optimierung – Performance, SEO, Responsive Design">
+    <meta property="og:description" content="Von langsam zu Lighthouse 95+. Professionelle Website-Optimierung für messbar bessere Performance.">
+    <meta property="og:image" content="https://vachsystems.de/og-image.jpg">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Website-Optimierung & Entwicklung – Performance, SEO, Design | vachsystems</title>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+    <nav class="nav-minimal">
+        <div class="nav-container">
+            <a href="/" class="logo-minimal">
+                <div class="logo-mark"></div>
+                <span>Vach Systems</span>
+            </a>
+            <div class="nav-links">
+                <a href="leistungen">Leistungen</a>
+                <a href="loesungen">Lösungen</a>
+                <a href="ki-workshop-unternehmen">KI-Workshop</a>
+                <a href="blog/">Blog</a>
+                <a href="ueber-uns">Über uns</a>
+                <a href="kontakt" class="nav-cta">Kostenlose Analyse</a>
+            </div>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/">Home</a>
+        <a href="leistungen">Leistungen</a>
+        <a href="loesungen">Lösungen</a>
+        <a href="ki-workshop-unternehmen">KI-Workshop</a>
+        <a href="blog/">Blog</a>
+        <a href="ueber-uns">Über uns</a>
+        <a href="kontakt" class="nav-cta">Kostenlose Analyse</a>
+    </div>
+
+    <section class="hero-fullscreen" style="min-height: 80vh;">
+        <div class="hero-bg">
+            <img srcset="images/website-optimization-hero-600w.webp 600w, 
+                     images/website-optimization-hero-1024w.webp 1024w, 
+                     images/website-optimization-hero.webp 1920w"
+             sizes="(max-width: 768px) 600px, (max-width: 1024px) 1024px, 1920px"
+             src="images/website-optimization-hero.webp" 
+             width="1920"
+             height="1280"
+             fetchpriority="high"
+             alt="Website Performance Optimierung"
+             loading="eager">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-container">
+            <span class="hero-badge">Website-Optimierung</span>
+            <h1 class="hero-title">Von langsam zu Lighthouse 95+</h1>
+            <p class="hero-subtitle hero-subtitle-max">
+                Professionelle Websites die laden, ranken und konvertieren. Performance-Optimierung mit messbaren Ergebnissen.
+            </p>
+        </div>
+    </section>
+
+    <section class="section-visual-split">
+        <div class="visual-half">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80" alt="Website Analytics Dashboard">
+        </div>
+        <div class="content-half">
+            <span class="section-label">Performance-Optimierung</span>
+            <h2 class="split-title">Lighthouse Score 95+ garantiert</h2>
+            <p class="split-subtitle-large">
+                Ihre Website lädt 5 Sekunden? Wir bringen Sie auf unter 1 Sekunde. Google rankt schnelle Websites höher. Besucher konvertieren besser.
+            </p>
+            <div class="service-list">
+                <div>
+                    <div class="service-item-title">Core Web Vitals Optimierung</div>
+                    <div class="service-item-text">
+                        LCP unter 1.0s, FID unter 100ms, CLS unter 0.1. Google's Ranking-Faktoren professionell optimiert.
+                    </div>
+                </div>
+                <div>
+                    <div class="service-item-title">Bild-Optimierung (WebP)</div>
+                    <div class="service-item-text">
+                        14.7 MB → 1.1 MB (93% kleiner). Responsive Images für Mobile. Lazy Loading für schnellere Initial Loads.
+                    </div>
+                </div>
+                <div>
+                    <div class="service-item-title">Service Worker & Caching</div>
+                    <div class="service-item-text">
+                        Client-side Caching: 0 KB Repeat Visits. Offline-Fähigkeit. Progressive Web App Features.
+                    </div>
+                </div>
+                <div>
+                    <div class="service-item-title">Critical Path Optimierung</div>
+                    <div class="service-item-text">
+                        Minified CSS/JS (-40%). Scripts defer. Font Preload. Render-blocking eliminiert.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-centered" style="padding: 8rem 2rem; background: #f8fafc;">
+        <div class="container-narrow">
+            <span class="section-label">Vorher / Nachher</span>
+            <h2 class="section-title">Echte Ergebnisse</h2>
+            <p class="section-subtitle">
+                Ein typisches Optimierungs-Projekt für einen Berliner Mittelständler:
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 4rem;">
+                <div style="background: white; padding: 2.5rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <div style="font-size: 0.875rem; color: #dc2626; font-weight: 700; margin-bottom: 1rem;">❌ VORHER</div>
+                    <ul style="list-style: none; padding: 0; line-height: 2;">
+                        <li>🐌 <strong>Ladezeit:</strong> 5.2 Sekunden</li>
+                        <li>📊 <strong>Lighthouse:</strong> 47 / 100</li>
+                        <li>📱 <strong>Mobile:</strong> Kaputt (Horizontal Scroll)</li>
+                        <li>🖼️ <strong>Bilder:</strong> 14.7 MB Desktop-JPGs</li>
+                        <li>📉 <strong>Bounce Rate:</strong> 68%</li>
+                        <li>🔍 <strong>SEO Score:</strong> 62 / 100</li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 2.5rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 2px solid #10b981;">
+                    <div style="font-size: 0.875rem; color: #10b981; font-weight: 700; margin-bottom: 1rem;">✅ NACHHER</div>
+                    <ul style="list-style: none; padding: 0; line-height: 2;">
+                        <li>⚡ <strong>Ladezeit:</strong> 0.9 Sekunden (-83%!)</li>
+                        <li>📊 <strong>Lighthouse:</strong> 98 / 100</li>
+                        <li>📱 <strong>Mobile:</strong> Perfekt (5 Breakpoints)</li>
+                        <li>🖼️ <strong>Bilder:</strong> 1.1 MB WebP + Responsive</li>
+                        <li>📈 <strong>Bounce Rate:</strong> 32% (-53%!)</li>
+                        <li>🔍 <strong>SEO Score:</strong> 96 / 100</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; padding: 2rem; background: #ecfdf5; border-radius: 12px; border-left: 4px solid #10b981;">
+                <div style="font-weight: 700; margin-bottom: 0.5rem;">📊 Business Impact:</div>
+                <div style="line-height: 1.8;">
+                    +127% organischer Traffic (Google mag schnelle Websites) • +48% Conversion Rate (Besucher bleiben) • +89% Mobile Traffic (endlich mobile-optimiert) • Investition amortisiert nach 3 Monaten
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-visual-split" style="flex-direction: row-reverse;">
+        <div class="visual-half">
+            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=1200&q=80" alt="Responsive Web Design">
+        </div>
+        <div class="content-half">
+            <span class="section-label">Responsive Design</span>
+            <h2 class="split-title">Mobile-First für alle Geräte</h2>
+            <p class="split-subtitle-large">
+                60% Ihrer Besucher kommen vom Smartphone. Wenn die Website dort kaputt ist, verlieren Sie Kunden. Wir bauen Mobile-First.
+            </p>
+            <div class="service-list">
+                <div>
+                    <div class="service-item-title">5-Tier Breakpoint System</div>
+                    <div class="service-item-text">
+                        Mobile (640px) → Tablet (768px) → Desktop (992px) → Wide (1200px) → Ultra-Wide (1400px+). Perfekt auf jedem Gerät.
+                    </div>
+                </div>
+                <div>
+                    <div class="service-item-title">Touch-Optimiert</div>
+                    <div class="service-item-text">
+                        Große Buttons (min. 44×44px). Keine Hover-Abhängigkeit. Mobile Navigation. Kein Horizontal-Scroll.
+                    </div>
+                </div>
+                <div>
+                    <div class="service-item-title">Responsive Images</div>
+                    <div class="service-item-text">
+                        srcset für alle Bilder. Mobile lädt 600px, Desktop 1400px. 76% kleinere Downloads auf Mobile.
+                    </div>
+                </div>
+                <div>
+                    <div class="service-item-title">Performance auf Low-End Devices</div>
+                    <div class="service-item-text">
+                        Getestet auf iPhone SE, Android Budget-Phones. Funktioniert auch auf langsamen Geräten.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-visual-split">
+        <div class="visual-half">
+            <img src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=1200&q=80" alt="SEO Optimierung">
+        </div>
+        <div class="content-half">
+            <span class="section-label">SEO-Optimierung</span>
+            <h2 class="split-title">Google Ranking verbessern</h2>
+            <p class="split-subtitle-large">
+                Schöne Website bringt nichts wenn sie keiner findet. Wir optimieren für Suchmaschinen – technisch und inhaltlich.
+            </p>
+            <div class="service-list">
+                <div>
+                    <div class="service-item-title">Technical SEO</div>
+                    <div class="service-item-text">
+                        Sitemap.xml, robots.txt, Meta-Tags, Structured Data (Schema.org), Canonical URLs, HTTPS.
+                    </div>
+                </div>
+                <div>
+                    <div class="service-item-title">On-Page SEO</div>
+                    <div class="service-item-text">
+                        Keyword-Optimierung, H1-H3 Struktur, Alt-Tags für Bilder, interne Verlinkung, Content-Optimierung.
+                    </div>
+                </div>
+                <div>
+                    <div class="service-item-title">Core Web Vitals</div>
+                    <div class="service-item-text">
+                        Google's Ranking-Faktor. LCP, FID, CLS optimiert. Performance = besseres Ranking.
+                    </div>
+                </div>
+                <div>
+                    <div class="service-item-title">Mobile-Friendly</div>
+                    <div class="service-item-text">
+                        Google's Mobile-First Indexing. Ihre Mobile-Version ist entscheidend für Ranking.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-centered" style="padding: 8rem 2rem;">
+        <div class="container-narrow">
+            <span class="section-label">Leistungen im Detail</span>
+            <h2 class="section-title">Was wir konkret machen</h2>
+            
+            <div style="display: grid; gap: 2rem; margin-top: 4rem;">
+                <div style="background: #f8fafc; padding: 2.5rem; border-radius: 16px;">
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">1. Performance-Audit</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                        Wir analysieren Ihre Website mit Lighthouse, WebPageTest, Chrome DevTools. Identifizieren Bottlenecks: Bilder zu groß? Render-blocking CSS? Zu viele HTTP-Requests?
+                    </p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; font-size: 0.875rem;">
+                        <div>✅ Lighthouse Audit</div>
+                        <div>✅ Core Web Vitals Check</div>
+                        <div>✅ Bundle-Size Analysis</div>
+                        <div>✅ Network Waterfall</div>
+                    </div>
+                </div>
+
+                <div style="background: #f8fafc; padding: 2.5rem; border-radius: 16px;">
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">2. Bild-Optimierung</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                        Konvertierung zu WebP (93% kleiner als JPEG). Responsive Images mit srcset. Lazy Loading. CDN-Integration optional.
+                    </p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; font-size: 0.875rem;">
+                        <div>✅ WebP Konvertierung</div>
+                        <div>✅ Responsive srcset</div>
+                        <div>✅ Lazy Loading</div>
+                        <div>✅ Alt-Tags (SEO)</div>
+                    </div>
+                </div>
+
+                <div style="background: #f8fafc; padding: 2.5rem; border-radius: 16px;">
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">3. Code-Optimierung</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                        Minify CSS/JS (-40%). Scripts defer/async. Kritischer CSS inline. Tree-shaking für JavaScript. Font Preload.
+                    </p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; font-size: 0.875rem;">
+                        <div>✅ CSS/JS Minification</div>
+                        <div>✅ Script Defer/Async</div>
+                        <div>✅ Critical CSS Inline</div>
+                        <div>✅ Font Optimization</div>
+                    </div>
+                </div>
+
+                <div style="background: #f8fafc; padding: 2.5rem; border-radius: 16px;">
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">4. Caching & Service Worker</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                        Client-side Caching via Service Worker. Bilder 1 Jahr gecacht. CSS/JS 30 Tage. 0 KB Repeat Visits. Progressive Web App Features.
+                    </p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; font-size: 0.875rem;">
+                        <div>✅ Service Worker</div>
+                        <div>✅ Cache Strategy</div>
+                        <div>✅ Offline-Fähigkeit</div>
+                        <div>✅ PWA Features</div>
+                    </div>
+                </div>
+
+                <div style="background: #f8fafc; padding: 2.5rem; border-radius: 16px;">
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">5. Responsive Design</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                        Mobile-First Approach. 5 Breakpoints (640px-1400px). Touch-optimiert. Keine horizontal scrolls. Getestet auf 10+ Geräten.
+                    </p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; font-size: 0.875rem;">
+                        <div>✅ Mobile-First CSS</div>
+                        <div>✅ 5-Tier Breakpoints</div>
+                        <div>✅ Touch-Optimierung</div>
+                        <div>✅ Cross-Device Tests</div>
+                    </div>
+                </div>
+
+                <div style="background: #f8fafc; padding: 2.5rem; border-radius: 16px;">
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">6. SEO-Setup</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                        Technical SEO (Meta, Sitemap, robots.txt). On-Page Optimierung. Schema.org Markup. Google Search Console Setup.
+                    </p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; font-size: 0.875rem;">
+                        <div>✅ Meta Tags</div>
+                        <div>✅ Sitemap.xml</div>
+                        <div>✅ Structured Data</div>
+                        <div>✅ Search Console</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-centered" style="padding: 8rem 2rem; background: #f8fafc;">
+        <div class="container-narrow">
+            <span class="section-label">Pakete</span>
+            <h2 class="section-title">Unsere Website-Pakete</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-top: 4rem;">
+                <div style="background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <div style="font-size: 0.875rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem;">OPTIMIERUNG</div>
+                    <h3 style="font-size: 2rem; font-weight: 900; margin-bottom: 1rem;">Performance Boost</h3>
+                    <p style="color: var(--gray-600); margin-bottom: 2rem;">
+                        Ihre bestehende Website schneller machen. Lighthouse 95+ garantiert.
+                    </p>
+                    <div style="font-size: 2.5rem; font-weight: 900; margin-bottom: 2rem;">
+                        ab 2.500€
+                        <div style="font-size: 1rem; font-weight: 400; color: var(--gray-600);">einmalig</div>
+                    </div>
+                    <ul style="list-style: none; padding: 0; line-height: 2.2; margin-bottom: 2rem;">
+                        <li>✅ Performance-Audit</li>
+                        <li>✅ Bild-Optimierung (WebP)</li>
+                        <li>✅ Code Minification</li>
+                        <li>✅ Service Worker</li>
+                        <li>✅ Responsive Fixes</li>
+                        <li>✅ Basic SEO</li>
+                    </ul>
+                    <a href="kontakt" style="display: block; text-align: center; padding: 1rem; background: var(--accent); color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">Anfragen</a>
+                </div>
+
+                <div style="background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 2px solid var(--accent);">
+                    <div style="font-size: 0.875rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem;">NEU ENTWICKLUNG</div>
+                    <h3 style="font-size: 2rem; font-weight: 900; margin-bottom: 1rem;">Business Website</h3>
+                    <p style="color: var(--gray-600); margin-bottom: 2rem;">
+                        Professionelle Website von Grund auf. Modern, schnell, konvertierend.
+                    </p>
+                    <div style="font-size: 2.5rem; font-weight: 900; margin-bottom: 2rem;">
+                        ab 5.500€
+                        <div style="font-size: 1rem; font-weight: 400; color: var(--gray-600);">einmalig</div>
+                    </div>
+                    <ul style="list-style: none; padding: 0; line-height: 2.2; margin-bottom: 2rem;">
+                        <li>✅ Custom Design</li>
+                        <li>✅ 5-10 Seiten</li>
+                        <li>✅ Lighthouse 98+ garantiert</li>
+                        <li>✅ Mobile-First Responsive</li>
+                        <li>✅ SEO-optimiert</li>
+                        <li>✅ CMS-Integration optional</li>
+                        <li>✅ Kontaktformular</li>
+                        <li>✅ Google Analytics</li>
+                    </ul>
+                    <a href="kontakt" style="display: block; text-align: center; padding: 1rem; background: var(--accent); color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">Anfragen</a>
+                </div>
+
+                <div style="background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <div style="font-size: 0.875rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem;">ENTERPRISE</div>
+                    <h3 style="font-size: 2rem; font-weight: 900; margin-bottom: 1rem;">Custom Projekt</h3>
+                    <p style="color: var(--gray-600); margin-bottom: 2rem;">
+                        Komplexe Web-Applikationen, E-Commerce, SaaS-Plattformen.
+                    </p>
+                    <div style="font-size: 2.5rem; font-weight: 900; margin-bottom: 2rem;">
+                        Individuell
+                        <div style="font-size: 1rem; font-weight: 400; color: var(--gray-600);">auf Anfrage</div>
+                    </div>
+                    <ul style="list-style: none; padding: 0; line-height: 2.2; margin-bottom: 2rem;">
+                        <li>✅ Individuelle Entwicklung</li>
+                        <li>✅ Frontend + Backend</li>
+                        <li>✅ Datenbank-Design</li>
+                        <li>✅ API-Integration</li>
+                        <li>✅ User Authentication</li>
+                        <li>✅ Payment-Integration</li>
+                        <li>✅ CI/CD Pipeline</li>
+                        <li>✅ Wartung & Support</li>
+                    </ul>
+                    <a href="kontakt" style="display: block; text-align: center; padding: 1rem; background: var(--accent); color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">Anfragen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-centered" style="padding: 8rem 2rem;">
+        <div class="container-narrow">
+            <span class="section-label">Technologie-Stack</span>
+            <h2 class="section-title">Womit wir arbeiten</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 4rem;">
+                <div>
+                    <h3 style="font-weight: 800; margin-bottom: 1rem;">Frontend</h3>
+                    <ul style="list-style: none; padding: 0; line-height: 2; color: var(--gray-700);">
+                        <li>React / Next.js</li>
+                        <li>Vue / Nuxt</li>
+                        <li>HTML / CSS / JavaScript</li>
+                        <li>TailwindCSS / Bootstrap</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="font-weight: 800; margin-bottom: 1rem;">Performance</h3>
+                    <ul style="list-style: none; padding: 0; line-height: 2; color: var(--gray-700);">
+                        <li>WebP / AVIF</li>
+                        <li>Service Workers</li>
+                        <li>Code Splitting</li>
+                        <li>Lazy Loading</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="font-weight: 800; margin-bottom: 1rem;">SEO</h3>
+                    <ul style="list-style: none; padding: 0; line-height: 2; color: var(--gray-700);">
+                        <li>Schema.org Markup</li>
+                        <li>Sitemap Generation</li>
+                        <li>Meta Tag Optimization</li>
+                        <li>Search Console Setup</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="font-weight: 800; margin-bottom: 1rem;">Hosting</h3>
+                    <ul style="list-style: none; padding: 0; line-height: 2; color: var(--gray-700);">
+                        <li>GitHub Pages</li>
+                        <li>Vercel / Netlify</li>
+                        <li>AWS / Google Cloud</li>
+                        <li>Ihr eigener Server</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-centered" style="padding: 8rem 2rem; background: var(--dark);">
+        <div class="container-narrow" style="text-align: center;">
+            <h2 style="font-size: 3rem; font-weight: 900; color: white; margin-bottom: 2rem;">
+                Bereit für eine schnelle Website?
+            </h2>
+            <p style="font-size: 1.25rem; color: rgba(255,255,255,0.8); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Kostenloses Performance-Audit Ihrer Website. Wir zeigen Ihnen wo Optimierungspotenzial liegt – ohne Verkaufsveranstaltung.
+            </p>
+            <a href="kontakt" style="display: inline-block; padding: 1.25rem 3rem; background: var(--accent); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1.125rem;">
+                Kostenlose Analyse anfragen
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer-minimal">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-mark"></div>
+                        <span>Vach Systems</span>
+                    </div>
+                    <p>Intelligente Softwaresysteme für moderne Unternehmen</p>
+                </div>
+                <div class="footer-links">
+                    <a href="leistungen">Leistungen</a>
+                    <a href="loesungen">Lösungen</a>
+                    <a href="ueber-uns">Über uns</a>
+                    <a href="kontakt">Kontakt</a>
+                </div>
+                <div class="footer-contact">
+                    <a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <span>© 2026 Vach Systems</span>
+                <a href="impressum">Impressum</a>
+                <a href="datenschutz">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.min.js" defer></script>
+    <script src="register-sw.js" defer></script>
+</body>
+</html>
