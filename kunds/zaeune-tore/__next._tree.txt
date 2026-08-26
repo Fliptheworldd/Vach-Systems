@@ -1,0 +1,3 @@
+:HL["/kunds/_next/static/chunks/10fpkxwcxeafi.css","style"]
+:HL["https://www.kundsmetallbau.de/images/referenzen/Privat/Zaeune_und_Tore/Zaun_2.jpg","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"zaeune-tore","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"BH3F-oL-Xi8Z2KNTcXhV2"}

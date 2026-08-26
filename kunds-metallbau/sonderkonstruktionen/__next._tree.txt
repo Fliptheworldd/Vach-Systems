@@ -1,3 +1,0 @@
-:HL["/kunds-metallbau/_next/static/chunks/0jd97msdx9apk.css","style"]
-:HL["https://www.kundsmetallbau.de/images/referenzen/Gewerblich/Treppe_1.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"sonderkonstruktionen","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"iElU6En3nZgyiMjvW0Lxz"}
