@@ -1,0 +1,103 @@
+.home-founder-minimal {
+    padding-top: 0;
+}
+
+.home-founder-minimal .home-founder-inner {
+    max-width: var(--home-max);
+    display: block;
+    padding: 0;
+    background: #fff;
+    border: 0;
+    border-top: 1px solid var(--home-line);
+}
+
+.home-founder-minimal .home-founder-copy {
+    display: block;
+    padding: 54px 0 0;
+}
+
+.home-founder-minimal .home-kicker {
+    margin-bottom: 20px;
+}
+
+.home-founder-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
+    gap: clamp(44px, 7vw, 96px);
+    align-items: end;
+}
+
+.home-founder-minimal h2 {
+    max-width: 720px;
+    font-size: clamp(30px, 3.1vw, 46px);
+    font-weight: 620;
+    line-height: 1.06;
+    letter-spacing: -.04em;
+}
+
+.home-founder-row > div:first-child > p {
+    max-width: 650px;
+    margin: 20px 0 0;
+    color: var(--home-muted);
+    font-size: 16px;
+    line-height: 1.68;
+}
+
+.home-founder-minimal .founder-signature {
+    align-self: stretch;
+    align-content: end;
+    gap: 5px;
+    padding-left: 26px;
+    border-left: 1px solid var(--home-line);
+}
+
+.home-founder-minimal .founder-signature .founder-role {
+    margin-bottom: 5px;
+    color: var(--home-blue);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.home-founder-minimal .founder-signature strong {
+    font-size: 16px;
+    letter-spacing: -.02em;
+}
+
+.home-founder-minimal .founder-signature > span:not(.founder-role) {
+    color: #747d88;
+    font-size: 12px;
+}
+
+.home-founder-minimal .founder-signature a {
+    width: fit-content;
+    margin-top: 13px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #aeb7bf;
+    color: var(--home-ink);
+    font-size: 12px;
+    font-weight: 760;
+}
+
+.home-founder-minimal .founder-signature a:hover {
+    border-color: var(--home-blue);
+    color: var(--home-blue);
+}
+
+@media (max-width: 760px) {
+    .home-founder-minimal .home-founder-copy {
+        padding-top: 42px;
+    }
+
+    .home-founder-row {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .home-founder-minimal .founder-signature {
+        padding: 22px 0 0;
+        border-left: 0;
+        border-top: 1px solid var(--home-line);
+    }
+}
