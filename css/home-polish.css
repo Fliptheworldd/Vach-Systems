@@ -573,42 +573,44 @@
 }
 
 .home-founder {
-    padding: 0 34px clamp(100px, 10vw, 160px);
+    padding: 20px 34px clamp(100px, 10vw, 150px);
     background: #fff;
 }
 
 .home-founder-inner {
-    max-width: var(--home-max);
-    min-height: 610px;
+    max-width: 1120px;
     margin: auto;
     display: grid;
-    grid-template-columns: minmax(0, 1.25fr) minmax(320px, .75fr);
+    grid-template-columns: minmax(0, 1fr) 230px;
+    gap: clamp(40px, 6vw, 78px);
+    align-items: center;
+    padding: clamp(46px, 5vw, 68px);
     background: var(--home-paper);
+    border: 1px solid var(--home-line);
 }
 
 .home-founder-copy {
-    padding: clamp(58px, 7vw, 102px);
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.home-founder blockquote {
-    max-width: 840px;
+.home-founder h2 {
+    max-width: 680px;
     margin: 0;
-    font-size: clamp(37px, 4vw, 64px);
-    font-weight: 610;
-    line-height: 1.04;
-    letter-spacing: -.05em;
+    font-size: clamp(30px, 3vw, 43px);
+    font-weight: 620;
+    line-height: 1.08;
+    letter-spacing: -.04em;
     text-wrap: balance;
 }
 
 .home-founder-copy > p {
-    max-width: 700px;
-    margin: 30px 0 36px;
+    max-width: 650px;
+    margin: 22px 0 30px;
     color: var(--home-muted);
-    font-size: 17px;
-    line-height: 1.7;
+    font-size: 16px;
+    line-height: 1.65;
 }
 
 .founder-signature {
@@ -626,6 +628,9 @@
 }
 
 .home-founder-photo {
+    width: 230px;
+    aspect-ratio: 1;
+    justify-self: end;
     overflow: hidden;
     background: #384046;
 }
@@ -790,17 +795,17 @@
     }
 
     .home-founder-inner {
-        min-height: 0;
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr) 190px;
+        gap: 32px;
+        padding: 48px;
     }
 
     .home-founder-photo {
-        max-height: 560px;
+        width: 190px;
     }
 
     .home-founder-photo img {
-        aspect-ratio: 1.2 / 1;
-        object-position: center 22%;
+        object-position: center;
     }
 
     .home-final-cta {
@@ -895,20 +900,23 @@
     }
 
     .home-founder {
-        padding-right: 0;
-        padding-left: 0;
+        padding-right: 18px;
+        padding-left: 18px;
     }
 
-    .home-founder-copy {
-        padding: 54px 24px;
+    .home-founder-inner {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        padding: 42px 24px;
     }
 
-    .home-founder blockquote {
-        font-size: 37px;
+    .home-founder h2 {
+        font-size: 31px;
     }
 
-    .home-founder-photo img {
-        aspect-ratio: 1 / 1;
+    .home-founder-photo {
+        width: 150px;
+        justify-self: start;
     }
 }
 
