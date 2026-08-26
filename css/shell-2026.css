@@ -1,0 +1,67 @@
+/* Shared navigation and page frame for the public vachsystems pages. */
+.vs-nav {
+    height: 72px;
+    background: rgba(248, 250, 251, .93);
+    border-bottom: 1px solid rgba(8, 11, 16, .1);
+    backdrop-filter: blur(22px) saturate(150%);
+}
+
+.vs-brand {
+    color: #080b10;
+    font-weight: 850;
+    letter-spacing: -.045em;
+}
+
+.vs-links {
+    color: #505966;
+}
+
+.vs-links a:hover {
+    color: #080b10;
+}
+
+.vs-cta {
+    padding: 11px 18px;
+    border-radius: 999px;
+    color: #fff !important;
+    background: #080b10;
+}
+
+.menu-btn {
+    color: #080b10;
+}
+
+.page-hero {
+    padding-top: 122px;
+    background:
+        radial-gradient(circle at 88% 20%, rgba(0, 201, 232, .12), transparent 28%),
+        linear-gradient(135deg, #080b10, #101923);
+}
+
+.page-hero::after {
+    background-image: linear-gradient(
+        90deg,
+        transparent 0,
+        transparent calc(100% - 1px),
+        rgba(255, 255, 255, .035) calc(100% - 1px)
+    );
+    background-size: 84px 100%;
+    opacity: .48;
+}
+
+.btn {
+    border-radius: 999px;
+}
+
+.footer .vs-brand {
+    color: #fff;
+}
+
+@media (max-width: 860px) {
+    .mobile-menu.open {
+        top: 72px;
+        color: #080b10;
+        background: rgba(248, 250, 251, .98);
+        border-top: 1px solid rgba(8, 11, 16, .08);
+    }
+}
