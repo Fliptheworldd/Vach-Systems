@@ -1,0 +1,3 @@
+:HL["/kunds-metallbau/_next/static/chunks/0jd97msdx9apk.css","style"]
+:HL["https://www.kundsmetallbau.de/images/spsimpleportfolio/fensterbruestung-01/Fensterbruestung_1_600x400.jpg","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"gelaender-balkone","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"iElU6En3nZgyiMjvW0Lxz"}
