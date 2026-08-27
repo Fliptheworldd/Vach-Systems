@@ -11,7 +11,7 @@
     :root{color-scheme:light;font-family:Arial,Helvetica,sans-serif;--ink:#111315;--paper:#f3f1ea;--blue:#1458e7;--acid:#d8ff32}
     *{box-sizing:border-box}body{min-height:100svh;margin:0;background:var(--paper);color:var(--ink)}
     .gate{min-height:100svh;display:grid;place-items:center;padding:32px;position:relative;overflow:hidden}.gate:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.9%,rgba(17,19,21,.08) 50%,transparent 50.1%),linear-gradient(rgba(17,19,21,.04) 1px,transparent 1px);background-size:100% 100%,100% 48px;pointer-events:none}
-    .card{position:relative;width:min(680px,100%);border-top:6px solid var(--ink);padding-top:28px}.brand{display:flex;width:max-content;font-size:14px;line-height:.8;font-weight:900;letter-spacing:.04em}.brand span:first-child{background:var(--ink);color:var(--acid);padding:8px 7px 7px}.brand span:last-child{border:2px solid var(--ink);padding:6px 7px 5px}
+    .card{position:relative;width:min(680px,100%);border-top:6px solid var(--ink);padding-top:28px}.brand{display:flex;align-items:center;gap:10px;width:max-content;font-size:18px;line-height:1;font-weight:800;letter-spacing:-.03em}.brand img{width:24px;height:24px;display:block}
     .kicker{margin:72px 0 18px;font-size:10px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}h1{font:400 clamp(58px,9vw,102px)/.79 Georgia,"Times New Roman",serif;letter-spacing:-.07em;margin:0}h1 i{color:var(--blue);font-weight:400}.copy{font:18px/1.5 Georgia,"Times New Roman",serif;max-width:540px;margin:36px 0}
     form{border-top:1px solid var(--ink);padding-top:18px}label{display:block;margin-bottom:9px;font-size:9px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}.row{display:grid;grid-template-columns:1fr auto}input{min-width:0;height:56px;border:1px solid var(--ink);border-right:0;background:rgba(255,255,255,.55);padding:0 16px;font:18px Georgia,serif;outline:0}input:focus{box-shadow:inset 0 0 0 2px var(--blue)}button{border:1px solid var(--ink);background:var(--ink);color:#fff;padding:0 22px;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}button:disabled{cursor:wait;opacity:.65}.error{min-height:18px;margin:12px 0 0;color:#b72518;font-size:12px;font-weight:700}.note{margin:42px 0 0;font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#686864}
     @media(max-width:600px){.gate{padding:24px}.kicker{margin-top:55px}h1{font-size:61px}.copy{font-size:16px}.row{grid-template-columns:1fr}input{border-right:1px solid var(--ink)}button{height:52px}}
@@ -20,7 +20,7 @@
 <body>
   <main class="gate">
     <section class="card" aria-labelledby="access-title">
-      <div class="brand" aria-label="Vachsystems"><span>VACH</span><span>SYSTEMS</span></div>
+      <div class="brand" aria-label="vachsystems"><img src="/Projektvorschau/favicon.svg" alt=""><span>vachsystems</span></div>
       <p class="kicker">Nicht öffentliche Projektvorschau</p>
       <h1 id="access-title">Geschützter<br><i>Zugang.</i></h1>
       <p class="copy">Dieser Bereich enthält einen frühen, unverbindlichen Konzeptstand von Vachsystems. Der Zugriff ist ausschließlich mit dem vereinbarten Kennwort möglich.</p>
@@ -34,7 +34,7 @@
   </main>
   <script>
   (()=>{
-    const DATA="JDu7m6MGbHaTd/2nyNVVKRYPMjMg81xXn9ujd8nZyEIptdqLHN2B1j0kTP6h2j/UDrlxJO+OxsyEVQpulDdmQ+XDzCB32aNzpndoNd1nlm0n3KGC/3/KyvuYQmeShaKK+Gd0K58e+ZoUkyaWvkKNPJCKUBxIKBFx+1iMbhfFvLFS1ZrNhFMOZQOyY8k3z1m7hTTNbJ02gYy9TBTJFH3ihMQCfZ1coGwv1NgtMkwj3Qo+ASBJ8Mg+lVC36Zqxllzg1gweISzUw4L5mOsEAME6pBncpQcSRoCRbtFdLfatmx6pxA44gH0riyrKmXIinwrOa4h/4ZeFIhrf/FTc5BEpz2FQ+8PVtf2WVGJgp6o2eUuv/wwi2av1TiAZdXmwuVB0o4NH4frDRY9TF9AdCuHVkNk7VsereWBJ9t1zsolE5nB8E18g7evP",IV="KevRCqziVp/VsL4b",SALT="GkNn5rhj3GHPuVOQzFKUVx14jYLbLPPo",ROUNDS=310000,STORE="vachsystems-preview-key-v1";
+    const DATA="ZBkb/SdraKB8cTEbuwTKzeUop3qIHHAYBBNatEO3Y5TtciAXZ4azBZJf7w8J/8+4rW/hWHA9oFRgzU8lRKnPRe1pX/x9iuwrb04p/V8uuOCT4uGsMOJcco1Wz4vBtje1WdbDydQR9IEg49xlOvuLQKXPQA1paT+ahoh21Hq7GCROg7MAbpGmAj6Zi8iMakUx/rTMoa/0kN9WKpZeLO4ao1pDxOPH90+JiO3l+vbEPlPKmLoIGwY9CKGRhh2JDXB6TKMJsuchUj/bt8RBl54y6Gxx/HNVOaLcGGGkxHO+S1zjg+oez1VMWQHub4A4SqrVrKhWOBuAuJR6dgnrYvGonLlyQjdfIvqgVsWua00somP3vcNSV8VuvRIbQAtW5KRAuFxjUe4DtRxlJ6QBWSRLo/QTClMCLyDlTBc6zRZ31N67bFfHhRuW",IV="Jj+HCmtLB9/3sQZK",SALT="vIB9pzdO0CJP5zu6ChvukRg2d2skf6eO",ROUNDS=310000,STORE="vachsystems-preview-key-v1";
     const bytes=value=>Uint8Array.from(atob(value),char=>char.charCodeAt(0));
     const text=new TextDecoder();
     async function decrypt(rawKey){
