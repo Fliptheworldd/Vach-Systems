@@ -86,6 +86,10 @@ function json(value) {
   return JSON.stringify(value, null, 2).replace(/</g, '\\u003c');
 }
 
+function arrowIcon(className = 'studio-icon-arrow') {
+  return `<svg class="${className}" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/></svg>`;
+}
+
 function head({ title, description, slug = '', prefix = '', type = 'website', schema, extraStyles = '' }) {
   const canonical = slug ? `${BASE}/${slug}` : `${BASE}/`;
   const structured = schema || {
@@ -138,10 +142,11 @@ function nav(active = '', prefix = '') {
       ${item('leistungen', 'Websites', 'leistungen')}
       ${item('loesungen', 'Software', 'loesungen')}
       ${item('ki-automatisierung-unternehmen', 'Automatisierung', 'automatisierung')}
+      ${item('ki-workshop-unternehmen', 'KI-Workshop', 'workshop')}
       ${item('projekte', 'Arbeiten', 'projekte')}
       ${item('ueber-uns', 'Über uns', 'ueber-uns')}
     </div>
-    <a class="studio-nav-cta" href="${prefix}kontakt">Projekt besprechen <span aria-hidden="true">↗</span></a>
+    <a class="studio-nav-cta" href="${prefix}kontakt">Projekt besprechen ${arrowIcon()}</a>
     <button class="studio-menu-button" type="button" aria-expanded="false" aria-controls="studio-navigation" aria-label="Menü öffnen" data-menu-button><span></span><span></span></button>
   </nav>
 </header>`;
@@ -168,7 +173,7 @@ function hero(kicker, title, mutedTitle, text, tags = []) {
 }
 
 function cta(title, text, button = 'Projekt besprechen', prefix = '') {
-  return `<section class="cta-stage"><div class="cta-inner reveal"><p class="page-kicker">Ihr Vorhaben</p><h2>${title}</h2><div class="cta-row"><p>${text}</p><a class="button light" href="${prefix}kontakt"><span>${button}</span><span aria-hidden="true">↗</span></a></div></div></section>`;
+  return `<section class="cta-stage"><div class="cta-inner reveal"><p class="page-kicker">Ihr Vorhaben</p><h2>${title}</h2><div class="cta-row"><p>${text}</p><a class="button light" href="${prefix}kontakt"><span>${button}</span>${arrowIcon()}</a></div></div></section>`;
 }
 
 function page(slug, active, main) {
@@ -254,7 +259,7 @@ ${methodStory('Kontrolle ist Teil des Systems', 'Verantwortung bleibt im Ablauf 
 <section class="section"><div class="section-inner"><div class="section-head reveal"><div><p class="section-label">Sicher einführen</p><h2>Klein starten. Messen. Kontrolliert erweitern.</h2></div><p>Ein begrenzter Pilot zeigt schneller als ein großes Konzeptpapier, ob Qualität, Zeitgewinn und Akzeptanz tatsächlich stimmen.</p></div><div class="editorial-grid"><article class="editorial-item reveal"><small>Pilot</small><h3>Eine Aufgabe, ein klares Ziel.</h3><p>Volumen, Aufwand und Qualitätsmaß werden vorab definiert.</p></article><article class="editorial-item reveal"><small>Kontrolle</small><h3>Ausnahmen sind Teil des Designs.</h3><p>Unsicherheit wird sichtbar und führt in einen sicheren Prüfweg.</p></article><article class="editorial-item reveal"><small>Betrieb</small><h3>Ergebnisse bleiben nachvollziehbar.</h3><p>Versionen, Kosten und Entscheidungen lassen sich später prüfen.</p></article></div></div></section>
 ${cta('Welche wiederkehrende Aufgabe soll verlässlich leichter werden?', 'Wir analysieren den tatsächlichen Ablauf und entwickeln daraus eine passende, kontrollierbare Lösung.', 'Ablauf besprechen')}`);
 
-pages['ki-workshop-unternehmen'] = page('ki-workshop-unternehmen', '', `
+pages['ki-workshop-unternehmen'] = page('ki-workshop-unternehmen', 'workshop', `
 ${hero('KI-Workshop für Unternehmen', 'KI verstehen.', 'Im Alltag sicher nutzen.', 'Ein praxisnaher Workshop für Teams und Führungskräfte. Mit Aufgaben aus Ihrem Unternehmen, klaren Grenzen und umsetzbaren Regeln.', ['Individuell vorbereitet', 'Vor Ort oder remote', 'Für Teams', 'Ohne Vorkenntnisse'])}
 <section class="section"><div class="section-inner"><div class="section-head reveal"><div><p class="section-label">Individuell vorbereitet</p><h2>Der Workshop arbeitet mit den Aufgaben Ihres Teams.</h2></div><p>So entsteht ein gemeinsames Verständnis dafür, wo KI unterstützt, welche Daten sensibel sind, wie Ergebnisse geprüft werden und welche Anwendungen in Ihrem Alltag tragfähig sind.</p></div><div class="tabs-shell reveal" data-tabs><div class="tab-list" role="tablist" aria-label="Workshop-Inhalte"><button class="tab-button" id="workshop-tab-1" role="tab" aria-selected="true" aria-controls="workshop-panel-1"><strong>Verstehen</strong><span>Möglichkeiten & Grenzen</span></button><button class="tab-button" id="workshop-tab-2" role="tab" aria-selected="false" aria-controls="workshop-panel-2"><strong>Anwenden</strong><span>Aufgaben aus dem Alltag</span></button><button class="tab-button" id="workshop-tab-3" role="tab" aria-selected="false" aria-controls="workshop-panel-3"><strong>Regeln</strong><span>Daten, Qualität & Freigaben</span></button></div><div><article class="tab-panel" id="workshop-panel-1" role="tabpanel" aria-labelledby="workshop-tab-1"><span class="panel-kicker">Realistische Einordnung</span><h3>Möglichkeiten und Grenzen sicher unterscheiden.</h3><p>Wir erklären verständlich, wie Sprachmodelle arbeiten, warum Ergebnisse schwanken und wann Quellen oder Fachwissen unverzichtbar sind.</p><div class="panel-note">Ergebnis: ein gemeinsames Vokabular und realistische Erwartungen.</div></article><article class="tab-panel" id="workshop-panel-2" role="tabpanel" aria-labelledby="workshop-tab-2" hidden><span class="panel-kicker">Direkt ausprobieren</span><h3>Die eigene Arbeit wird zum Ausgangspunkt.</h3><p>Texte, Dokumente, Recherche oder Auswertungen: Die Übungen orientieren sich an Tätigkeiten, die in Ihrem Team wirklich vorkommen.</p><div class="panel-note">Ergebnis: wiederverwendbare Arbeitsweisen für sinnvolle Aufgaben.</div></article><article class="tab-panel" id="workshop-panel-3" role="tabpanel" aria-labelledby="workshop-tab-3" hidden><span class="panel-kicker">Sicherer Rahmen</span><h3>Verantwortung wird konkret geregelt.</h3><p>Gemeinsam definieren wir einfache Regeln für sensible Informationen, Quellenprüfung, Freigaben und dokumentierte Verantwortung.</p><div class="panel-note">Ergebnis: konkrete Leitplanken für den Arbeitsalltag.</div></article></div></div></div></section>
 ${methodStory('Vom Gespräch zum Transfer', 'Der Workshop beginnt vor dem Workshop.', 'Vorab klären wir Rollen, Werkzeuge und typische Aufgaben. So passt der Termin zu Ihrem Unternehmen und endet nicht bei allgemeinen Folien.', [
@@ -305,7 +310,7 @@ ${hero('Projekt besprechen', 'Erzählen Sie,', 'was besser werden soll.', 'Eine 
   <div class="field"><label for="message">Nachricht *</label><textarea id="message" name="message" required placeholder="Was besteht heute, was soll besser werden und gibt es einen zeitlichen Rahmen?"></textarea></div>
   <input type="hidden" name="_subject" value="Neue Projektanfrage über vachsystems.de">
   <p class="form-note">Mit dem Absenden werden Ihre Angaben zur Bearbeitung der Anfrage an Formspree übermittelt. Mehr dazu in der <a href="datenschutz">Datenschutzerklärung</a>.</p>
-  <button class="button" type="submit"><span>Anfrage senden</span><span aria-hidden="true">↗</span></button>
+  <button class="button" type="submit"><span>Anfrage senden</span>${arrowIcon()}</button>
 </form></div><aside class="contact-aside reveal" aria-label="Direkter Kontakt"><div class="contact-detail"><small>Ansprechpartner</small><span>Patrick Vach</span></div><div class="contact-detail"><small>E-Mail</small><a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a></div><div class="contact-detail"><small>WhatsApp</small><a href="https://wa.me/491636683867" target="_blank" rel="noopener noreferrer">+49 163 6683867</a></div><div class="contact-detail"><small>Standort</small><span>Berlin, Deutschland</span></div><div class="contact-detail"><small>Rückmeldung</small><span>In der Regel innerhalb eines Werktags.</span></div></aside></div></div></section>
 ${methodStory('Danach', 'Ein klares Gespräch schafft die richtige Grundlage.', 'Wir klären offene Fragen, ordnen das Vorhaben ein und entwickeln daraus einen sinnvollen nächsten Schritt.', [
   ['Anfrage', 'Wir lesen zuerst', 'Was besteht heute, was soll sich verändern und woran würde man eine Verbesserung erkennen?'],
@@ -346,7 +351,7 @@ function blogIndex() {
   const title = 'Einblicke zu Web, Software & Automatisierung | vachsystems';
   const description = 'Nüchterne Einordnungen zu digitalen Produkten, Automatisierung und KI im Unternehmen – mit Quellen, Kontext und klarer Autorenschaft.';
   const schema = { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Einblicke von vachsystems', url: `${BASE}/blog/`, description, publisher: { '@type': 'Organization', name: 'vachsystems', url: `${BASE}/` } };
-  const entries = articleCatalog.map(([slug, date, category, itemTitle, excerpt]) => `<a class="journal-entry reveal" href="${slug}"><time>${date}<br>${category}</time><div><h2>${itemTitle}</h2><p>${excerpt}</p></div><span aria-hidden="true">↗</span></a>`).join('');
+  const entries = articleCatalog.map(([slug, date, category, itemTitle, excerpt]) => `<a class="journal-entry reveal" href="${slug}"><time>${date}<br>${category}</time><div><h2>${itemTitle}</h2><p>${excerpt}</p></div>${arrowIcon('journal-entry-arrow')}</a>`).join('');
   return `${head({ title, description, slug: 'blog/', prefix: '../', schema, extraStyles: '<link rel="stylesheet" href="../css/editorial-studio.css?v=20260828-2">' })}
 </head><body>
 ${nav('', '../')}
@@ -545,7 +550,7 @@ function retiredArticlePage() {
   return `${head({ title, description, slug: 'blog/', prefix: '../' }).replace('index, follow, max-image-preview:large', 'noindex, follow')}
 </head><body>
 ${nav('', '../')}
-<main id="main">${hero('Einblicke', 'Dieser Beitrag wurde', 'neu eingeordnet.', 'Unser öffentliches Archiv konzentriert sich auf belastbare, dauerhaft relevante Fachbeiträge. Die aktuellen Einordnungen finden Sie gesammelt unter Einblicke.', [])}<section class="section"><div class="section-inner"><a class="button" href="/blog/"><span>Zu den aktuellen Einblicken</span><span aria-hidden="true">↗</span></a></div></section></main>
+<main id="main">${hero('Einblicke', 'Dieser Beitrag wurde', 'neu eingeordnet.', 'Unser öffentliches Archiv konzentriert sich auf belastbare, dauerhaft relevante Fachbeiträge. Die aktuellen Einordnungen finden Sie gesammelt unter Einblicke.', [])}<section class="section"><div class="section-inner"><a class="button" href="/blog/"><span>Zu den aktuellen Einblicken</span>${arrowIcon()}</a></div></section></main>
 ${footer('../')}
 </body></html>\n`;
 }

@@ -25,7 +25,7 @@
 .journal-entry time { color: var(--muted-dark); font-size: .72rem; font-weight: 740; letter-spacing: .08em; }
 .journal-entry h2 { max-width: 890px; margin: 0 0 9px; font-size: clamp(1.55rem, 2.8vw, 3rem); line-height: 1.05; letter-spacing: -.045em; font-weight: 580; }
 .journal-entry p { max-width: 800px; margin: 0; color: var(--muted-dark); font-size: .92rem; }
-.journal-entry > span { color: var(--cyan-deep); font-size: 1.2rem; }
+.journal-entry-arrow { width: 18px; height: 18px; overflow: visible; color: var(--cyan-deep); }
 .journal-entry:hover h2 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; }
 
 .article-shell { background: var(--paper); }

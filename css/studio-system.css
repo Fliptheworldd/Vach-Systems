@@ -33,6 +33,13 @@ img { display: block; max-width: 100%; }
 button, input, textarea, select { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 
+.studio-icon-arrow {
+  flex: 0 0 auto;
+  width: 15px;
+  height: 15px;
+  overflow: visible;
+}
+
 .studio-skip {
   position: fixed;
   z-index: 1000;

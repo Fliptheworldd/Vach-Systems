@@ -306,6 +306,13 @@ html {
     transition: transform .25s ease, color .25s ease, background .25s ease, border-color .25s ease;
 }
 
+.studio-icon-arrow {
+    flex: 0 0 auto;
+    width: 15px;
+    height: 15px;
+    overflow: visible;
+}
+
 .studio-button:hover { transform: translateY(-3px); }
 
 .studio-button-light {
@@ -650,8 +657,10 @@ html {
     position: absolute;
     top: 50%;
     right: 3px;
+    width: 23px;
+    height: 23px;
+    overflow: visible;
     color: var(--studio-cyan-deep);
-    font-size: 23px;
     transform: translateY(-50%);
     transition: transform .35s ease;
 }
