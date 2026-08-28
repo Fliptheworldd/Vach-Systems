@@ -1,4 +1,5 @@
 (() => {
+  const header = document.querySelector('[data-header]');
   const menuButton = document.querySelector('[data-menu-button]');
   const navigation = document.querySelector('[data-navigation]');
 
@@ -23,6 +24,12 @@
       if (event.key === 'Escape') closeMenu();
     });
   }
+
+  const updateHeader = () => {
+    if (header) header.classList.toggle('is-scrolled', window.scrollY > 20);
+  };
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
 
   document.querySelectorAll('[data-tabs]').forEach(group => {
     const tabs = [...group.querySelectorAll('[role="tab"]')];
