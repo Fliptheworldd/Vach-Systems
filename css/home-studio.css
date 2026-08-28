@@ -603,22 +603,14 @@ html {
     align-items: center;
     color: var(--studio-ink);
     border-bottom: 1px solid var(--studio-line);
-    transition: color .35s ease, background .35s ease, padding .35s ease;
+    background: transparent;
+    transition: background .35s ease, padding .35s ease;
 }
 
-.studio-service::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    inset: -1px calc(var(--studio-gutter) * -1);
-    background: var(--studio-black);
-    opacity: 0;
-    transform: scaleY(.9);
-    transition: opacity .35s ease, transform .35s ease;
+.studio-service:hover {
+    padding-left: 20px;
+    background: linear-gradient(90deg, rgba(67, 226, 239, .11), rgba(67, 226, 239, .025) 58%, transparent 82%);
 }
-
-.studio-service:hover { color: var(--studio-white); padding-left: 20px; }
-.studio-service:hover::before { opacity: 1; transform: scaleY(1); }
 
 .studio-service-name > span {
     color: var(--studio-cyan-deep);
@@ -642,10 +634,7 @@ html {
     color: var(--studio-muted);
     font-size: 15px;
     line-height: 1.7;
-    transition: color .35s ease;
 }
-
-.studio-service:hover .studio-service-copy p { color: rgba(255, 255, 255, .65); }
 
 .studio-service-meta {
     display: block;
@@ -1122,6 +1111,5 @@ html {
     .studio-hero-art img,
     .work-sheet,
     .studio-brand i::after,
-    .studio-service,
-    .studio-service::before { transition: none; }
+    .studio-service { transition: none; }
 }
