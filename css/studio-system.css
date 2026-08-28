@@ -588,6 +588,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .founder-portrait img {
   position: relative;
   width: 100%;
+  height: auto;
   aspect-ratio: 399 / 400;
   object-fit: cover;
   filter: grayscale(1) contrast(1.04);
