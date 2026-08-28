@@ -106,7 +106,7 @@ function head({ title, description, slug = '', prefix = '', type = 'website', sc
   <meta name="theme-color" content="#050608">
   <link rel="canonical" href="${canonical}">
   <link rel="icon" href="${prefix}favicon.svg">
-  <link rel="stylesheet" href="${prefix}css/studio-system.css?v=20260828-3">
+  <link rel="stylesheet" href="${prefix}css/studio-system.css?v=20260828-4">
   <link rel="stylesheet" href="${prefix}css/studio-header.css?v=20260828-3">
   <meta property="og:type" content="${type}">
   <meta property="og:locale" content="de_DE">
