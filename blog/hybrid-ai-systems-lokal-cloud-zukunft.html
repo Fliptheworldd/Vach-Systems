@@ -1,82 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hybrid AI Systems: Warum lokale + Cloud die Zukunft ist. Best of both worlds für Enterprise AI.">
-    <meta name="keywords" content="Hybrid AI, Local AI, Cloud AI, On-Premise LLM, Hybrid Architecture">
-    <title>Hybrid AI Systems: Warum lokale + Cloud die Zukunft ist | Vach Systems Blog</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="stylesheet" href="../css/style.min.css">
-    <style>
-        * { hyphens: none !important; -webkit-hyphens: none !important; word-break: normal !important; }
-        .article { max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem; }
-        .article-header { margin-bottom: 3rem; }
-        .article-meta { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-        .article-excerpt { font-size: 1.25rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem; }
-        .article-lead { font-size: 1.25rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem; }
-        .article-image { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 3rem; }
-        .article-content { font-size: 1.125rem; line-height: 1.8; color: var(--gray-900); }
-        .article-content h2 { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; line-height: 1.3; }
-        .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul, .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
-        .article-content li { margin-bottom: 0.75rem; }
-        .article-content strong { font-weight: 700; color: var(--gray-900); }
-        .highlight-box { background: #f8f9fa; border-left: 4px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
-        .highlight-box p:last-child { margin-bottom: 0; }
-        .blog-cta{margin:4rem 0;padding:3rem;background:linear-gradient(135deg,#000 0%,#1F2937 100%);border-radius:16px;text-align:center;color:#fff}.blog-cta h3{font-size:2rem;font-weight:800;margin-bottom:1rem;color:#fff}.blog-cta>p{font-size:1.125rem;margin-bottom:2rem;color:#fff!important;opacity:.95}.blog-cta a{display:inline-block;padding:1rem 2.5rem;background:#fff;color:var(--black);text-decoration:none;border-radius:8px;font-weight:700;margin-bottom:1rem}.blog-cta .email-alt{font-size:.9rem;color:rgba(255,255,255,.9)!important;margin:0;opacity:1!important}.blog-cta .email-alt a{display:inline;padding:0;background:0 0;color:#fff!important;text-decoration:underline;font-size:.9rem;margin:0}
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 2rem 0; }
-        .stat-box { text-align: center; padding: 2rem; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .stat-number { font-size: 3rem; font-weight: 900; color: var(--accent); margin-bottom: 0.5rem; }
-        .stat-label { font-size: 0.875rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.05em; }
-        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--accent); font-weight: 600; text-decoration: none; }
-        .back-link:hover { text-decoration: underline; }
-        .blog-article { max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem; }
-        .blog-article .article-header { margin-bottom: 3rem; }
-        .blog-article .article-meta { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; display: flex; gap: 1rem; }
-        .blog-article h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-        .blog-article .article-content { font-size: 1.125rem; line-height: 1.8; color: var(--gray-900); }
-        .blog-article .article-content h2 { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; line-height: 1.3; }
-        .blog-article .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
-        .blog-article .article-content ul, .blog-article .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
-        .blog-article .article-content li { margin-bottom: 0.75rem; }
-        @media (max-width: 768px) {
-            .article { padding: 4rem 1.5rem 3rem; }
-            .article-title { font-size: 2.25rem; }
-            h1 { font-size: 2.25rem; }
-            .article-image { height: 250px; }
-            .article-content { font-size: 1rem; }
-            .article-content h2 { font-size: 1.75rem; }
-            .stats-grid { grid-template-columns: 1fr; gap: 1rem; }
-        }
-    </style>
-</head>
-<body>
-    <nav class="nav-minimal"><div class="nav-container"><a href="../" class="logo-minimal"><div class="logo-mark"></div><span>Vach Systems</span></a><div class="nav-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div><div class="hamburger" id="hamburger"><span></span><span></span><span></span></div></div></nav>
-    <div class="menu-overlay" id="menuOverlay"></div>
-    <div class="mobile-menu" id="mobileMenu"><a href="../">Home</a><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div>
-
-    <article class="blog-article">
-        <header class="article-header">
-            <div class="article-meta">
-                <span class="article-date">12. August 2026</span>
-                <span class="article-reading-time">9 Min. Lesezeit</span>
-            </div>
-            <h1>Hybrid AI Systems: Warum lokale + Cloud die Zukunft ist</h1>
-            <p class="article-lead">Weder nur Cloud noch nur On-Premise. Die Zukunft ist Hybrid: Sensible Daten lokal, Heavy Lifting in der Cloud. Best of both worlds.</p>
-        <img srcset="../images/blog/1786288084435-1z8kvv-600w.webp 600w, ../images/blog/1786288084435-1z8kvv-1400w.webp 1400w" 
-             sizes="(max-width: 768px) 600px, 1400px"
-             src="../images/blog/1786288084435-1z8kvv-1400w.webp" 
-             alt="Hybrid Ai Systems Lokal Cloud Zukunft" 
-             class="article-image"
-             loading="lazy"
-             width="1400"
-             height="933">
-        </header>
-
-        <section class="article-content">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lokale KI und Cloud sinnvoll kombinieren | vachsystems</title>
+  <meta name="description" content="Eine nüchterne Entscheidungshilfe für Daten, Betrieb, Kosten und Skalierung.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#050608">
+  <link rel="canonical" href="https://vachsystems.de/blog/hybrid-ai-systems-lokal-cloud-zukunft">
+  <link rel="icon" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/studio-system.css?v=20260828-1">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Lokale KI und Cloud sinnvoll kombinieren | vachsystems">
+  <meta property="og:description" content="Eine nüchterne Entscheidungshilfe für Daten, Betrieb, Kosten und Skalierung.">
+  <meta property="og:url" content="https://vachsystems.de/blog/hybrid-ai-systems-lokal-cloud-zukunft">
+  <meta property="og:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Abstraktes digitales Objekt von vachsystems">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lokale KI und Cloud sinnvoll kombinieren | vachsystems">
+  <meta name="twitter:description" content="Eine nüchterne Entscheidungshilfe für Daten, Betrieb, Kosten und Skalierung.">
+  <meta name="twitter:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Lokale KI und Cloud sinnvoll kombinieren",
+  "description": "Eine nüchterne Entscheidungshilfe für Daten, Betrieb, Kosten und Skalierung.",
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-28",
+  "mainEntityOfPage": "https://vachsystems.de/blog/hybrid-ai-systems-lokal-cloud-zukunft",
+  "author": {
+    "@type": "Person",
+    "name": "Patrick Vach"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "vachsystems",
+    "url": "https://vachsystems.de/"
+  },
+  "image": "https://vachsystems.de/images/vachsystems-object-og.webp"
+}</script>
+  <link rel="stylesheet" href="../css/editorial-studio.css?v=20260828-1">
+</head><body class="article-shell">
+<a class="studio-skip" href="#main">Zum Inhalt springen</a>
+<header class="studio-header" data-header>
+  <nav class="studio-nav" aria-label="Hauptnavigation">
+    <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>
+    <div class="studio-links" id="studio-navigation" data-navigation>
+      <a href="../leistungen">Websites</a>
+      <a href="../loesungen">Software</a>
+      <a href="../ki-automatisierung-unternehmen">Automatisierung</a>
+      <a href="../projekte">Arbeiten</a>
+      <a href="../ueber-uns">Über uns</a>
+    </div>
+    <a class="studio-nav-cta" href="../kontakt">Projekt besprechen <span aria-hidden="true">↗</span></a>
+    <button class="studio-menu-button" type="button" aria-expanded="false" aria-controls="studio-navigation" aria-label="Menü öffnen" data-menu-button><span></span><span></span></button>
+  </nav>
+</header>
+<main id="main"><article>
+  <header class="article-masthead"><div class="article-masthead-inner"><div class="article-meta"><span>Architektur</span><time datetime="2026-08-12">12. August 2026</time><span>Zuletzt geprüft: 28. August 2026</span></div><h1>Lokale KI und Cloud sinnvoll kombinieren</h1><p class="article-lead">Eine nüchterne Entscheidungshilfe für Daten, Betrieb, Kosten und Skalierung.</p><div class="article-byline"><span>Text & Einordnung: <strong>Patrick Vach</strong></span><span>Technische Angaben sind zeitabhängig und werden vor Projektentscheidungen neu geprüft.</span></div></div></header>
+  <div class="article-layout"><div class="article-content">
             <h2>Das Dilemma: Cloud vs. On-Premise</h2>
             
             <h3>Cloud-Only Probleme:</h3>
@@ -97,10 +83,10 @@
 
             <h3>Hybrid: Best of Both</h3>
             <ul>
-                <li>✅ Sensible Daten lokal</li>
-                <li>✅ Komplexe Tasks in Cloud</li>
-                <li>✅ Kosten-optimiert</li>
-                <li>✅ Flexibel skalierbar</li>
+                <li> Sensible Daten lokal</li>
+                <li> Komplexe Tasks in Cloud</li>
+                <li> Kosten-optimiert</li>
+                <li> Flexibel skalierbar</li>
             </ul>
 
             <h2>Hybrid Architecture Patterns</h2>
@@ -126,9 +112,9 @@
                 <li><strong>Low Volume (&lt;10K/Monat):</strong> Cloud (einfacher)</li>
             </ul>
 
-            <p>Mehr zu Stack: <a href="enterprise-ai-stack-2026-richtige-architektur">Enterprise AI Stack 2026: Die richtige Architektur wählen</a></p>
+            <p>Mehr zu Stack: <a href="enterprise-ai-stack-2026-richtige-architektur">Enterprise KI Stack 2026: Die richtige Architektur wählen</a></p>
 
-            <h2>Real-World Hybrid Setup</h2>
+            <h2>Beispielhafte Hybrid Setup</h2>
             <p>Finanzdienstleister (200 Mitarbeiter):</p>
 
             <h3>Lokale Models (On-Premise):</h3>
@@ -148,9 +134,9 @@
 
             <h3>Routing-Logik:</h3>
             <ul>
-                <li>Enthält PII → Lokal</li>
-                <li>Öffentliche Daten + komplex → Cloud</li>
-                <li>Öffentliche Daten + simple → Lokal (günstiger)</li>
+                <li>Enthält PII  Lokal</li>
+                <li>Öffentliche Daten + komplex  Cloud</li>
+                <li>Öffentliche Daten + simple  Lokal (günstiger)</li>
             </ul>
 
             <p><strong>Resultat:</strong> Best Quality + DSGVO-konform + 40% günstiger als Pure Cloud!</p>
@@ -158,7 +144,7 @@
             <h2>Technische Implementation</h2>
             
             <h3>Routing Layer:</h3>
-            <pre style="background: #f8fafc; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code>def route_request(data, task):
+            <pre><code>def route_request(data, task):
     if contains_pii(data):
         return local_llama(data, task)
     elif task.complexity == "high":
@@ -181,24 +167,24 @@
 
             <h2>Kosten-Optimierung</h2>
             
-            <table style="width:100%; border-collapse: collapse; margin: 2rem 0;">
-                <tr style="background: #f8fafc;">
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Szenario</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Cloud-Only</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Hybrid</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Ersparnis</th>
+            <table>
+                <tr>
+                    <th>Szenario</th>
+                    <th>Cloud-Only</th>
+                    <th>Hybrid</th>
+                    <th>Ersparnis</th>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>500K Requests/Monat</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">8.000€</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">4.500€</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">44%</td>
+                    <td><strong>500K Requests/Monat</strong></td>
+                    <td>8.000€</td>
+                    <td>4.500€</td>
+                    <td>44%</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>2M Requests/Monat</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">32.000€</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">8.000€</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">75%</td>
+                    <td><strong>2M Requests/Monat</strong></td>
+                    <td>32.000€</td>
+                    <td>8.000€</td>
+                    <td>75%</td>
                 </tr>
             </table>
 
@@ -225,14 +211,14 @@
             <h2>Edge Computing: Die nächste Stufe</h2>
             <p>2027-2028: Hybrid wird Edge.</p>
 
-            <h3>Edge AI:</h3>
+            <h3>Edge KI:</h3>
             <ul>
                 <li><strong>On-Device:</strong> Phi-4 läuft auf Laptop/Phone</li>
                 <li><strong>On-Premise:</strong> Llama für Backend</li>
                 <li><strong>Cloud:</strong> GPT-5.5 für Heavy Tasks</li>
             </ul>
 
-            <p><strong>Use Case:</strong> Mobile App mit AI-Features → Edge für Privacy + Speed, Cloud für Komplexität.</p>
+            <p><strong>Anwendungsfall:</strong> Mobile App mit KI-Features  Edge für Privacy + Speed, Cloud für Komplexität.</p>
 
             <h2>Best Practices</h2>
             
@@ -246,25 +232,25 @@
             <p>Continuous Optimization: Sind Routing-Rules noch optimal?</p>
 
             <h3>4. Test Failover</h3>
-            <p>Wenn lokal ausfällt → Cloud übernimmt? Testen!</p>
+            <p>Wenn lokal ausfällt  Cloud übernimmt? Testen!</p>
 
             <p>Weiterlesen:</p>
             <ul>
                 <li><a href="small-language-models-slm-fine-tuning-unternehmen">Small Language Models: Warum Fine-Tuned SLMs oft besser sind</a></li>
-                <li><a href="ai-vendor-lock-in-vermeiden-open-source-vs-proprietary">AI Vendor Lock-in vermeiden</a></li>
+                <li><a href="ai-vendor-lock-in-vermeiden-open-source-vs-proprietary">KI Vendor Lock-in vermeiden</a></li>
                 <li><a href="500-llm-modelle-richtiges-fuer-unternehmen-waehlen">500+ LLM-Modelle: Wie wählt man das richtige?</a></li>
             </ul>
 
-        </section>
-
-        <div class="article-cta">
-            <h3>Hybrid AI Architektur designen?</h3>
-            <p>Wir analysieren Ihre Use Cases und designen optimale Hybrid-Architektur. Kostenlose Architektur-Session.</p>
-            <a href="../kontakt" class="cta-button">Kostenlose Hybrid-AI-Beratung</a>
-        </div>
-    </article>
-
-    <footer class="footer-minimal"><div class="footer-container"><div class="footer-main"><div class="footer-brand"><div class="footer-logo"><div class="logo-mark"></div><span>Vach Systems</span></div><p>Intelligente Softwaresysteme für moderne Unternehmen</p></div><div class="footer-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ueber-uns">Über uns</a><a href="../kontakt">Kontakt</a></div><div class="footer-contact"><a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a></div></div><div class="footer-legal"><span>© 2026 Vach Systems</span><a href="../impressum">Impressum</a><a href="../datenschutz">Datenschutz</a></div></div></footer>
-    <script src="../js/script.min.js" defer></script>
-</body>
-</html>
+        <section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: AI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p></div><aside class="article-aside" aria-label="Artikelhinweise"><div class="article-aside-block"><small>Autor</small><p>Patrick Vach<br>Inhaber, vachsystems</p></div><div class="article-aside-block"><small>Stand</small><p>Geprüft am 28.08.2026</p></div><div class="article-aside-block"><small>Einordnung</small><p>Keine Rechts- oder Anlageberatung. Technische Entscheidungen immer am konkreten Einsatzfall prüfen.</p></div><div class="article-aside-block"><small>Zurück</small><a href="/blog/">Alle Einblicke</a></div></aside></div>
+</article><section class="cta-stage"><div class="cta-inner reveal"><p class="page-kicker">Ihr Vorhaben</p><h2>Passt das Thema zu einer konkreten Aufgabe in Ihrem Unternehmen?</h2><div class="cta-row"><p>Wir ordnen den Anwendungsfall gemeinsam ein und sagen offen, ob eine technische Umsetzung sinnvoll ist.</p><a class="button light" href="../kontakt"><span>Projekt besprechen</span><span aria-hidden="true">↗</span></a></div></div></section></main>
+<footer class="studio-footer">
+  <div class="studio-footer-main">
+    <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>
+    <div class="studio-footer-links"><span>Leistungen</span><a href="../leistungen">Websites</a><a href="../loesungen">Software</a><a href="../ki-automatisierung-unternehmen">Automatisierung</a><a href="../ki-workshop-unternehmen">KI-Workshop</a></div>
+    <div class="studio-footer-links"><span>vachsystems</span><a href="../projekte">Arbeiten</a><a href="../ueber-uns">Über uns</a><a href="../blog/">Einblicke</a><a href="../kontakt">Kontakt</a></div>
+  </div>
+  <div class="studio-footer-legal"><span>© 2026 vachsystems · Berlin · ohne Tracking</span><div><a href="../impressum">Impressum</a><a href="../datenschutz">Datenschutz</a></div></div>
+</footer>
+<script src="../js/studio-system.js?v=20260828-1" defer></script>
+<script src="../js/site-cleanup.js?v=20260828-1" defer></script>
+</body></html>

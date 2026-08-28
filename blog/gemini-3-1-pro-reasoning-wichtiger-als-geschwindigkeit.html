@@ -1,82 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gemini 3.1 Pro setzt 2026 auf Reasoning statt Geschwindigkeit. Warum tiefes Denken wichtiger wird als schnelle Antworten.">
-    <meta name="keywords" content="Gemini 3.1 Pro, Reasoning AI, Google AI, Deep Thinking, Chain-of-Thought, Enterprise LLM">
-    <title>Gemini 3.1 Pro: Warum Reasoning wichtiger wird als Geschwindigkeit | Vach Systems Blog</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="stylesheet" href="../css/style.min.css">
-    <style>
-        * { hyphens: none !important; -webkit-hyphens: none !important; word-break: normal !important; }
-        .article { max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem; }
-        .article-header { margin-bottom: 3rem; }
-        .article-meta { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-        .article-excerpt { font-size: 1.25rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem; }
-        .article-lead { font-size: 1.25rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem; }
-        .article-image { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 3rem; }
-        .article-content { font-size: 1.125rem; line-height: 1.8; color: var(--gray-900); }
-        .article-content h2 { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; line-height: 1.3; }
-        .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul, .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
-        .article-content li { margin-bottom: 0.75rem; }
-        .article-content strong { font-weight: 700; color: var(--gray-900); }
-        .highlight-box { background: #f8f9fa; border-left: 4px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
-        .highlight-box p:last-child { margin-bottom: 0; }
-        .blog-cta{margin:4rem 0;padding:3rem;background:linear-gradient(135deg,#000 0%,#1F2937 100%);border-radius:16px;text-align:center;color:#fff}.blog-cta h3{font-size:2rem;font-weight:800;margin-bottom:1rem;color:#fff}.blog-cta>p{font-size:1.125rem;margin-bottom:2rem;color:#fff!important;opacity:.95}.blog-cta a{display:inline-block;padding:1rem 2.5rem;background:#fff;color:var(--black);text-decoration:none;border-radius:8px;font-weight:700;margin-bottom:1rem}.blog-cta .email-alt{font-size:.9rem;color:rgba(255,255,255,.9)!important;margin:0;opacity:1!important}.blog-cta .email-alt a{display:inline;padding:0;background:0 0;color:#fff!important;text-decoration:underline;font-size:.9rem;margin:0}
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 2rem 0; }
-        .stat-box { text-align: center; padding: 2rem; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .stat-number { font-size: 3rem; font-weight: 900; color: var(--accent); margin-bottom: 0.5rem; }
-        .stat-label { font-size: 0.875rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.05em; }
-        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--accent); font-weight: 600; text-decoration: none; }
-        .back-link:hover { text-decoration: underline; }
-        .blog-article { max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem; }
-        .blog-article .article-header { margin-bottom: 3rem; }
-        .blog-article .article-meta { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; display: flex; gap: 1rem; }
-        .blog-article h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-        .blog-article .article-content { font-size: 1.125rem; line-height: 1.8; color: var(--gray-900); }
-        .blog-article .article-content h2 { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; line-height: 1.3; }
-        .blog-article .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
-        .blog-article .article-content ul, .blog-article .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
-        .blog-article .article-content li { margin-bottom: 0.75rem; }
-        @media (max-width: 768px) {
-            .article { padding: 4rem 1.5rem 3rem; }
-            .article-title { font-size: 2.25rem; }
-            h1 { font-size: 2.25rem; }
-            .article-image { height: 250px; }
-            .article-content { font-size: 1rem; }
-            .article-content h2 { font-size: 1.75rem; }
-            .stats-grid { grid-template-columns: 1fr; gap: 1rem; }
-        }
-    </style>
-</head>
-<body>
-    <nav class="nav-minimal"><div class="nav-container"><a href="../" class="logo-minimal"><div class="logo-mark"></div><span>Vach Systems</span></a><div class="nav-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div><div class="hamburger" id="hamburger"><span></span><span></span><span></span></div></div></nav>
-    <div class="menu-overlay" id="menuOverlay"></div>
-    <div class="mobile-menu" id="mobileMenu"><a href="../">Home</a><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div>
-
-    <article class="blog-article">
-        <header class="article-header">
-            <div class="article-meta">
-                <span class="article-date">15. Mai 2026</span>
-                <span class="article-reading-time">11 Min. Lesezeit</span>
-            </div>
-            <h1>Gemini 3.1 Pro: Warum Reasoning wichtiger wird als Geschwindigkeit</h1>
-            <p class="article-lead">Google's Gemini 3.1 Pro (Launch Mai 2026) setzt bewusst auf Reasoning statt Speed. Antworten dauern länger – sind aber deutlich besser. Warum das die richtige Strategie für Enterprise ist.</p>
-        <img srcset="../images/blog/1786288082868-sm3x0m-600w.webp 600w, ../images/blog/1786288082868-sm3x0m-1400w.webp 1400w" 
-             sizes="(max-width: 768px) 600px, 1400px"
-             src="../images/blog/1786288082868-sm3x0m-1400w.webp" 
-             alt="Gemini 3 1 Pro Reasoning Wichtiger Als Geschwindigkeit" 
-             class="article-image"
-             loading="lazy"
-             width="1400"
-             height="933">
-        </header>
-
-        <section class="article-content">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gemini 3.1 Pro: Qualität vor reiner Geschwindigkeit | vachsystems</title>
+  <meta name="description" content="Wie Reasoning, Latenz und Kosten je nach Aufgabe unterschiedlich gewichtet werden.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#050608">
+  <link rel="canonical" href="https://vachsystems.de/blog/gemini-3-1-pro-reasoning-wichtiger-als-geschwindigkeit">
+  <link rel="icon" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/studio-system.css?v=20260828-1">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Gemini 3.1 Pro: Qualität vor reiner Geschwindigkeit | vachsystems">
+  <meta property="og:description" content="Wie Reasoning, Latenz und Kosten je nach Aufgabe unterschiedlich gewichtet werden.">
+  <meta property="og:url" content="https://vachsystems.de/blog/gemini-3-1-pro-reasoning-wichtiger-als-geschwindigkeit">
+  <meta property="og:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Abstraktes digitales Objekt von vachsystems">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gemini 3.1 Pro: Qualität vor reiner Geschwindigkeit | vachsystems">
+  <meta name="twitter:description" content="Wie Reasoning, Latenz und Kosten je nach Aufgabe unterschiedlich gewichtet werden.">
+  <meta name="twitter:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Gemini 3.1 Pro: Qualität vor reiner Geschwindigkeit",
+  "description": "Wie Reasoning, Latenz und Kosten je nach Aufgabe unterschiedlich gewichtet werden.",
+  "datePublished": "2026-05-15",
+  "dateModified": "2026-08-28",
+  "mainEntityOfPage": "https://vachsystems.de/blog/gemini-3-1-pro-reasoning-wichtiger-als-geschwindigkeit",
+  "author": {
+    "@type": "Person",
+    "name": "Patrick Vach"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "vachsystems",
+    "url": "https://vachsystems.de/"
+  },
+  "image": "https://vachsystems.de/images/vachsystems-object-og.webp"
+}</script>
+  <link rel="stylesheet" href="../css/editorial-studio.css?v=20260828-1">
+</head><body class="article-shell">
+<a class="studio-skip" href="#main">Zum Inhalt springen</a>
+<header class="studio-header" data-header>
+  <nav class="studio-nav" aria-label="Hauptnavigation">
+    <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>
+    <div class="studio-links" id="studio-navigation" data-navigation>
+      <a href="../leistungen">Websites</a>
+      <a href="../loesungen">Software</a>
+      <a href="../ki-automatisierung-unternehmen">Automatisierung</a>
+      <a href="../projekte">Arbeiten</a>
+      <a href="../ueber-uns">Über uns</a>
+    </div>
+    <a class="studio-nav-cta" href="../kontakt">Projekt besprechen <span aria-hidden="true">↗</span></a>
+    <button class="studio-menu-button" type="button" aria-expanded="false" aria-controls="studio-navigation" aria-label="Menü öffnen" data-menu-button><span></span><span></span></button>
+  </nav>
+</header>
+<main id="main"><article>
+  <header class="article-masthead"><div class="article-masthead-inner"><div class="article-meta"><span>Modelle</span><time datetime="2026-05-15">15. Mai 2026</time><span>Zuletzt geprüft: 28. August 2026</span></div><h1>Gemini 3.1 Pro: Qualität vor reiner Geschwindigkeit</h1><p class="article-lead">Wie Reasoning, Latenz und Kosten je nach Aufgabe unterschiedlich gewichtet werden.</p><div class="article-byline"><span>Text & Einordnung: <strong>Patrick Vach</strong></span><span>Technische Angaben sind zeitabhängig und werden vor Projektentscheidungen neu geprüft.</span></div></div></header>
+  <div class="article-layout"><div class="article-content">
             <h2>Die Reasoning-Revolution</h2>
             <p>2024-2025: Das Rennen war "wer ist schneller?". GPT-5 in 2 Sekunden, Claude in 1.8 Sekunden.</p>
             
@@ -115,36 +101,36 @@
 
             <h2>Benchmark-Vergleich: Reasoning vs. Speed</h2>
             
-            <table style="width:100%; border-collapse: collapse; margin: 2rem 0;">
-                <tr style="background: #f8fafc;">
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Benchmark</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">GPT-5.5 (fast)</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Gemini 3.1 Pro (reasoning)</th>
+            <table>
+                <tr>
+                    <th>Benchmark</th>
+                    <th>GPT-5.5 (fast)</th>
+                    <th>Gemini 3.1 Pro (reasoning)</th>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>GPQA Diamond (Wissenschaft)</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">58%</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">68% (erwart.)</td>
+                    <td><strong>GPQA Diamond (Wissenschaft)</strong></td>
+                    <td>58%</td>
+                    <td>68% (erwart.)</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>MATH-500 (Mathematik)</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">81%</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">87% (erwart.)</td>
+                    <td><strong>MATH-500 (Mathematik)</strong></td>
+                    <td>81%</td>
+                    <td>87% (erwart.)</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Legal Reasoning</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">72%</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">84% (erwart.)</td>
+                    <td><strong>Legal Reasoning</strong></td>
+                    <td>72%</td>
+                    <td>84% (erwart.)</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Code-Generierung (SWE-Bench)</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">42%</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">39% (schwächer!)</td>
+                    <td><strong>Code-Generierung (SWE-Bench)</strong></td>
+                    <td>42%</td>
+                    <td>39% (schwächer!)</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Antwort-Zeit</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">2-5 Sek</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">15-30 Sek</td>
+                    <td><strong>Antwort-Zeit</strong></td>
+                    <td>2-5 Sek</td>
+                    <td>15-30 Sek</td>
                 </tr>
             </table>
 
@@ -152,7 +138,7 @@
 
             <h2>Wann ist Reasoning wichtiger als Speed?</h2>
             
-            <h3>✅ Reasoning-kritische Use Cases:</h3>
+            <h3> Reasoning-kritische Anwendungsfälle:</h3>
             <ul>
                 <li><strong>Rechts- & Compliance-Prüfungen:</strong> Ein Fehler kostet mehr als 20 Sekunden Wartezeit</li>
                 <li><strong>Medizinische Diagnosen:</strong> Genauigkeit > Geschwindigkeit</li>
@@ -161,7 +147,7 @@
                 <li><strong>Wissenschaftliche Recherche:</strong> Tiefe Analyse statt oberflächliche Zusammenfassung</li>
             </ul>
 
-            <h3>❌ Speed-kritische Use Cases:</h3>
+            <h3> Speed-kritische Anwendungsfälle:</h3>
             <ul>
                 <li>Kundenservice-Chatbots (2 Sek Wartezeit = Absprung)</li>
                 <li>Echtzeit-Übersetzungen</li>
@@ -198,42 +184,42 @@
 
             <h2>Gemini 3.1 Pro vs. Konkurrenz</h2>
             
-            <table style="width:100%; border-collapse: collapse; margin: 2rem 0;">
-                <tr style="background: #f8fafc;">
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Feature</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Gemini 3.1 Pro</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Claude Opus 5</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">GPT-5.5</th>
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>Gemini 3.1 Pro</th>
+                    <th>Claude Opus 5</th>
+                    <th>GPT-5.5</th>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Kontext</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">2.5M Tokens</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">2M Tokens</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">1M Tokens</td>
+                    <td><strong>Kontext</strong></td>
+                    <td>2.5M Tokens</td>
+                    <td>2M Tokens</td>
+                    <td>1M Tokens</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Reasoning</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">⭐⭐⭐⭐⭐</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">⭐⭐⭐⭐</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">⭐⭐⭐</td>
+                    <td><strong>Reasoning</strong></td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                    <td>⭐⭐⭐⭐</td>
+                    <td>⭐⭐⭐</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Speed</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">⭐⭐</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">⭐⭐⭐</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">⭐⭐⭐⭐⭐</td>
+                    <td><strong>Speed</strong></td>
+                    <td>⭐⭐</td>
+                    <td>⭐⭐⭐</td>
+                    <td>⭐⭐⭐⭐⭐</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Multimodal</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">⭐⭐⭐⭐⭐ (Native Video!)</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">⭐⭐⭐</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">⭐⭐⭐⭐</td>
+                    <td><strong>Multimodal</strong></td>
+                    <td>⭐⭐⭐⭐⭐ (Native Video!)</td>
+                    <td>⭐⭐⭐</td>
+                    <td>⭐⭐⭐⭐</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Preis</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">⭐⭐⭐⭐ (günstig)</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">⭐⭐⭐⭐</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">⭐⭐⭐</td>
+                    <td><strong>Preis</strong></td>
+                    <td>⭐⭐⭐⭐ (günstig)</td>
+                    <td>⭐⭐⭐⭐</td>
+                    <td>⭐⭐⭐</td>
                 </tr>
             </table>
 
@@ -260,7 +246,7 @@
             <h2>Native Video-Verarbeitung: Der Killer-Feature</h2>
             <p>Gemini 3.1 Pro kann Videos nativ verarbeiten – nicht nur als Frames.</p>
 
-            <h3>Praxis-Use Cases:</h3>
+            <h3>Praxis-Anwendungsfälle:</h3>
             <ul>
                 <li><strong>Qualitätskontrolle:</strong> Produktions-Videos automatisch auf Fehler prüfen</li>
                 <li><strong>Sicherheit:</strong> Überwachungs-Videos analysieren (Anomalie-Erkennung)</li>
@@ -272,7 +258,7 @@
 
             <h2>Wann sollten Sie Gemini 3.1 Pro nutzen?</h2>
             
-            <h3>✅ Gemini ist ideal wenn:</h3>
+            <h3> Gemini ist ideal wenn:</h3>
             <ul>
                 <li>Reasoning & Tiefe wichtiger sind als Speed</li>
                 <li>Sie sehr lange Dokumente haben (>500K Tokens)</li>
@@ -281,11 +267,11 @@
                 <li>Sie im Google Ecosystem sind (GCP, Workspace)</li>
             </ul>
 
-            <h3>❌ Andere Modelle besser wenn:</h3>
+            <h3> Andere Modelle besser wenn:</h3>
             <ul>
-                <li>Speed kritisch ist (→ GPT-5.5)</li>
-                <li>Primär Code-Generierung (→ GPT-5.5)</li>
-                <li>Kundenservice Chatbot (→ Claude Haiku/GPT-5-mini)</li>
+                <li>Speed kritisch ist ( GPT-5.5)</li>
+                <li>Primär Code-Generierung ( GPT-5.5)</li>
+                <li>Kundenservice Chatbot ( Claude Haiku/GPT-5-mini)</li>
                 <li>Sie OpenAI/Anthropic Ecosystem nutzen</li>
             </ul>
 
@@ -319,7 +305,7 @@
             <p>OpenAI & Anthropic dominieren "fast & good". Google braucht USP. Reasoning ist es.</p>
 
             <h3>2. Enterprise-Focus</h3>
-            <p>Enterprises zahlen für Qualität, nicht für Speed. B2B > B2C für Google AI.</p>
+            <p>Enterprises zahlen für Qualität, nicht für Speed. B2B > B2C für Google KI.</p>
 
             <h3>3. Hardware-Vorteil</h3>
             <p>Google's TPUs sind optimiert für große Batch-Inferenzen. Reasoning spielt diese Stärke aus.</p>
@@ -365,21 +351,21 @@
 
             <p>Weiterlesen:</p>
             <ul>
-                <li><a href="ai-first-vs-ai-ready-unternehmen-2026">AI-First vs. AI-Ready: Wie sich Unternehmen 2026 unterscheiden</a></li>
-                <li><a href="chatgpt-enterprise-vs-massgeschneiderte-loesungen">ChatGPT Enterprise vs. Maßgeschneiderte Lösung</a></li>
-                <li><a href="welche-unternehmensprozesse-lassen-sich-mit-ki-automatisieren">Welche Prozesse lassen sich automatisieren?</a></li>
+                <li><a href="ai-first-vs-ai-ready-unternehmen-2026">KI-First vs. KI-Ready: Wie sich Unternehmen 2026 unterscheiden</a></li>
+                <li><a href="/blog/">ChatGPT Enterprise vs. Maßgeschneiderte Lösung</a></li>
+                <li><a href="/blog/">Welche Prozesse lassen sich automatisieren?</a></li>
             </ul>
 
-        </section>
-
-        <div class="article-cta">
-            <h3>Welches Modell passt zu Ihren Anforderungen?</h3>
-            <p>Wir analysieren Ihre Use Cases und empfehlen die optimale Model-Strategie (Speed vs. Reasoning vs. Cost). Kostenloses Erstgespräch.</p>
-            <a href="../kontakt" class="cta-button">Kostenlose Model-Strategie-Beratung</a>
-        </div>
-    </article>
-
-    <footer class="footer-minimal"><div class="footer-container"><div class="footer-main"><div class="footer-brand"><div class="footer-logo"><div class="logo-mark"></div><span>Vach Systems</span></div><p>Intelligente Softwaresysteme für moderne Unternehmen</p></div><div class="footer-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ueber-uns">Über uns</a><a href="../kontakt">Kontakt</a></div><div class="footer-contact"><a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a></div></div><div class="footer-legal"><span>© 2026 Vach Systems</span><a href="../impressum">Impressum</a><a href="../datenschutz">Datenschutz</a></div></div></footer>
-    <script src="../js/script.min.js" defer></script>
-</body>
-</html>
+        <section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank" rel="noopener noreferrer">Google: Gemini 3.1 Pro</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank" rel="noopener noreferrer">Google: Gemini 3.1 Pro</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank" rel="noopener noreferrer">Google: Gemini 3.1 Pro</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank" rel="noopener noreferrer">Google: Gemini 3.1 Pro</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank" rel="noopener noreferrer">Google: Gemini 3.1 Pro</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: AI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p></div><aside class="article-aside" aria-label="Artikelhinweise"><div class="article-aside-block"><small>Autor</small><p>Patrick Vach<br>Inhaber, vachsystems</p></div><div class="article-aside-block"><small>Stand</small><p>Geprüft am 28.08.2026</p></div><div class="article-aside-block"><small>Einordnung</small><p>Keine Rechts- oder Anlageberatung. Technische Entscheidungen immer am konkreten Einsatzfall prüfen.</p></div><div class="article-aside-block"><small>Zurück</small><a href="/blog/">Alle Einblicke</a></div></aside></div>
+</article><section class="cta-stage"><div class="cta-inner reveal"><p class="page-kicker">Ihr Vorhaben</p><h2>Passt das Thema zu einer konkreten Aufgabe in Ihrem Unternehmen?</h2><div class="cta-row"><p>Wir ordnen den Anwendungsfall gemeinsam ein und sagen offen, ob eine technische Umsetzung sinnvoll ist.</p><a class="button light" href="../kontakt"><span>Projekt besprechen</span><span aria-hidden="true">↗</span></a></div></div></section></main>
+<footer class="studio-footer">
+  <div class="studio-footer-main">
+    <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>
+    <div class="studio-footer-links"><span>Leistungen</span><a href="../leistungen">Websites</a><a href="../loesungen">Software</a><a href="../ki-automatisierung-unternehmen">Automatisierung</a><a href="../ki-workshop-unternehmen">KI-Workshop</a></div>
+    <div class="studio-footer-links"><span>vachsystems</span><a href="../projekte">Arbeiten</a><a href="../ueber-uns">Über uns</a><a href="../blog/">Einblicke</a><a href="../kontakt">Kontakt</a></div>
+  </div>
+  <div class="studio-footer-legal"><span>© 2026 vachsystems · Berlin · ohne Tracking</span><div><a href="../impressum">Impressum</a><a href="../datenschutz">Datenschutz</a></div></div>
+</footer>
+<script src="../js/studio-system.js?v=20260828-1" defer></script>
+<script src="../js/site-cleanup.js?v=20260828-1" defer></script>
+</body></html>

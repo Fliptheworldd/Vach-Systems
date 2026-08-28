@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /kunds/
+Disallow: /Projektvorschau/
 
 Sitemap: https://vachsystems.de/sitemap.xml

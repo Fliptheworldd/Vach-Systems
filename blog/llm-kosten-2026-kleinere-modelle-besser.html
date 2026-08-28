@@ -1,136 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="LLM-Kosten 2026: Warum kleinere Modelle oft besser performen. Cost-per-Task schlägt Model-Größe. Der ehrliche Kosten-Guide.">
-    <meta name="keywords" content="LLM Kosten, AI Budget, Model Pricing, Enterprise AI Kosten, SLM vs LLM, Cost Optimization">
-    <title>LLM-Kosten 2026: Warum kleinere Modelle oft besser performen | Vach Systems Blog</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="stylesheet" href="../css/style.min.css">
-    <style>
-        * { hyphens: none !important; -webkit-hyphens: none !important; word-break: normal !important; }
-        .article { max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem; }
-        .article-header { margin-bottom: 3rem; }
-        .article-meta { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-        .article-excerpt { font-size: 1.25rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem; }
-        .article-lead { font-size: 1.25rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem; }
-        .article-image { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 3rem; }
-        .article-content { font-size: 1.125rem; line-height: 1.8; color: var(--gray-900); }
-        .article-content h2 { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; line-height: 1.3; }
-        .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul, .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
-        .article-content li { margin-bottom: 0.75rem; }
-        .article-content strong { font-weight: 700; color: var(--gray-900); }
-        .highlight-box { background: #f8f9fa; border-left: 4px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
-        .highlight-box p:last-child { margin-bottom: 0; }
-        .blog-cta{margin:4rem 0;padding:3rem;background:linear-gradient(135deg,#000 0%,#1F2937 100%);border-radius:16px;text-align:center;color:#fff}.blog-cta h3{font-size:2rem;font-weight:800;margin-bottom:1rem;color:#fff}.blog-cta>p{font-size:1.125rem;margin-bottom:2rem;color:#fff!important;opacity:.95}.blog-cta a{display:inline-block;padding:1rem 2.5rem;background:#fff;color:var(--black);text-decoration:none;border-radius:8px;font-weight:700;margin-bottom:1rem}.blog-cta .email-alt{font-size:.9rem;color:rgba(255,255,255,.9)!important;margin:0;opacity:1!important}.blog-cta .email-alt a{display:inline;padding:0;background:0 0;color:#fff!important;text-decoration:underline;font-size:.9rem;margin:0}
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 2rem 0; }
-        .stat-box { text-align: center; padding: 2rem; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .stat-number { font-size: 3rem; font-weight: 900; color: var(--accent); margin-bottom: 0.5rem; }
-        .stat-label { font-size: 0.875rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.05em; }
-        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--accent); font-weight: 600; text-decoration: none; }
-        .back-link:hover { text-decoration: underline; }
-        .blog-article { max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem; }
-        .blog-article .article-header { margin-bottom: 3rem; }
-        .blog-article .article-meta { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; display: flex; gap: 1rem; }
-        .blog-article h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-        .blog-article .article-content { font-size: 1.125rem; line-height: 1.8; color: var(--gray-900); }
-        .blog-article .article-content h2 { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; line-height: 1.3; }
-        .blog-article .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
-        .blog-article .article-content ul, .blog-article .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
-        .blog-article .article-content li { margin-bottom: 0.75rem; }
-        @media (max-width: 768px) {
-            .article { padding: 4rem 1.5rem 3rem; }
-            .article-title { font-size: 2.25rem; }
-            h1 { font-size: 2.25rem; }
-            .article-image { height: 250px; }
-            .article-content { font-size: 1rem; }
-            .article-content h2 { font-size: 1.75rem; }
-            .stats-grid { grid-template-columns: 1fr; gap: 1rem; }
-        }
-    </style>
-</head>
-<body>
-    <nav class="nav-minimal"><div class="nav-container"><a href="../" class="logo-minimal"><div class="logo-mark"></div><span>Vach Systems</span></a><div class="nav-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div><div class="hamburger" id="hamburger"><span></span><span></span><span></span></div></div></nav>
-    <div class="menu-overlay" id="menuOverlay"></div>
-    <div class="mobile-menu" id="mobileMenu"><a href="../">Home</a><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div>
-
-    <article class="blog-article">
-        <header class="article-header">
-            <div class="article-meta">
-                <span class="article-date">5. Juni 2026</span>
-                <span class="article-reading-time">11 Min. Lesezeit</span>
-            </div>
-            <h1>LLM-Kosten 2026: Warum kleinere Modelle oft besser performen</h1>
-            <p class="article-lead">GPT-5.5 kostet 5× mehr als ein Fine-Tuned SLM – liefert aber nicht 5× bessere Ergebnisse. Warum Cost-per-Task wichtiger ist als Model-Größe.</p>
-        <img srcset="../images/blog/1786288087808-vvb62j-600w.webp 600w, ../images/blog/1786288087808-vvb62j-1400w.webp 1400w" 
-             sizes="(max-width: 768px) 600px, 1400px"
-             src="../images/blog/1786288087808-vvb62j-1400w.webp" 
-             alt="Llm Kosten 2026 Kleinere Modelle Besser" 
-             class="article-image"
-             loading="lazy"
-             width="1400"
-             height="933">
-        </header>
-
-        <section class="article-content">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Warum kleinere Modelle oft die bessere Wahl sind | vachsystems</title>
+  <meta name="description" content="Aufgaben nach Komplexität routen, Qualität messen und laufende Kosten kontrollieren.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#050608">
+  <link rel="canonical" href="https://vachsystems.de/blog/llm-kosten-2026-kleinere-modelle-besser">
+  <link rel="icon" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/studio-system.css?v=20260828-1">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Warum kleinere Modelle oft die bessere Wahl sind | vachsystems">
+  <meta property="og:description" content="Aufgaben nach Komplexität routen, Qualität messen und laufende Kosten kontrollieren.">
+  <meta property="og:url" content="https://vachsystems.de/blog/llm-kosten-2026-kleinere-modelle-besser">
+  <meta property="og:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Abstraktes digitales Objekt von vachsystems">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Warum kleinere Modelle oft die bessere Wahl sind | vachsystems">
+  <meta name="twitter:description" content="Aufgaben nach Komplexität routen, Qualität messen und laufende Kosten kontrollieren.">
+  <meta name="twitter:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Warum kleinere Modelle oft die bessere Wahl sind",
+  "description": "Aufgaben nach Komplexität routen, Qualität messen und laufende Kosten kontrollieren.",
+  "datePublished": "2026-06-05",
+  "dateModified": "2026-08-28",
+  "mainEntityOfPage": "https://vachsystems.de/blog/llm-kosten-2026-kleinere-modelle-besser",
+  "author": {
+    "@type": "Person",
+    "name": "Patrick Vach"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "vachsystems",
+    "url": "https://vachsystems.de/"
+  },
+  "image": "https://vachsystems.de/images/vachsystems-object-og.webp"
+}</script>
+  <link rel="stylesheet" href="../css/editorial-studio.css?v=20260828-1">
+</head><body class="article-shell">
+<a class="studio-skip" href="#main">Zum Inhalt springen</a>
+<header class="studio-header" data-header>
+  <nav class="studio-nav" aria-label="Hauptnavigation">
+    <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>
+    <div class="studio-links" id="studio-navigation" data-navigation>
+      <a href="../leistungen">Websites</a>
+      <a href="../loesungen">Software</a>
+      <a href="../ki-automatisierung-unternehmen">Automatisierung</a>
+      <a href="../projekte">Arbeiten</a>
+      <a href="../ueber-uns">Über uns</a>
+    </div>
+    <a class="studio-nav-cta" href="../kontakt">Projekt besprechen <span aria-hidden="true">↗</span></a>
+    <button class="studio-menu-button" type="button" aria-expanded="false" aria-controls="studio-navigation" aria-label="Menü öffnen" data-menu-button><span></span><span></span></button>
+  </nav>
+</header>
+<main id="main"><article>
+  <header class="article-masthead"><div class="article-masthead-inner"><div class="article-meta"><span>Kosten</span><time datetime="2026-06-05">5. Juni 2026</time><span>Zuletzt geprüft: 28. August 2026</span></div><h1>Warum kleinere Modelle oft die bessere Wahl sind</h1><p class="article-lead">Aufgaben nach Komplexität routen, Qualität messen und laufende Kosten kontrollieren.</p><div class="article-byline"><span>Text & Einordnung: <strong>Patrick Vach</strong></span><span>Technische Angaben sind zeitabhängig und werden vor Projektentscheidungen neu geprüft.</span></div></div></header>
+  <div class="article-layout"><div class="article-content">
             <h2>Die Kosten-Explosion 2024-2026</h2>
             <p>2024: "ChatGPT ist kostenlos!" 2026: Unternehmen zahlen 5.000-50.000€/Monat für LLM-APIs.</p>
             
             <h3>Was ist passiert?</h3>
             <ul>
-                <li>Von experimentell zu produktiv → 100× mehr API-Calls</li>
-                <li>Von GPT-3.5 zu GPT-5.5 → 10× höhere Token-Preise</li>
-                <li>Von manuell zu automatisiert → 24/7 Nutzung</li>
+                <li>Von experimentell zu produktiv  100× mehr API-Calls</li>
+                <li>Von GPT-3.5 zu GPT-5.5  10× höhere Token-Preise</li>
+                <li>Von manuell zu automatisiert  24/7 Nutzung</li>
             </ul>
 
             <p><strong>Resultat:</strong> IT-Budget-Killer wenn nicht optimiert.</p>
 
             <h2>Die echten Kosten: Token-Preise 2026</h2>
             
-            <table style="width:100%; border-collapse: collapse; margin: 2rem 0;">
-                <tr style="background: #f8fafc;">
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Model</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Input (€/1M Tokens)</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Output (€/1M Tokens)</th>
+            <table>
+                <tr>
+                    <th>Model</th>
+                    <th>Input (€/1M Tokens)</th>
+                    <th>Output (€/1M Tokens)</th>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>GPT-5.5</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">15.00€</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">45.00€</td>
+                    <td><strong>GPT-5.5</strong></td>
+                    <td>15.00€</td>
+                    <td>45.00€</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Claude Opus 5</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">12.00€</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">36.00€</td>
+                    <td><strong>Claude Opus 5</strong></td>
+                    <td>12.00€</td>
+                    <td>36.00€</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Gemini 3.1 Pro</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">10.00€</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">30.00€</td>
+                    <td><strong>Gemini 3.1 Pro</strong></td>
+                    <td>10.00€</td>
+                    <td>30.00€</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>GPT-5-mini</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">0.50€</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">1.50€</td>
+                    <td><strong>GPT-5-mini</strong></td>
+                    <td>0.50€</td>
+                    <td>1.50€</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Claude Haiku</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">0.40€</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">1.20€</td>
+                    <td><strong>Claude Haiku</strong></td>
+                    <td>0.40€</td>
+                    <td>1.20€</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>DeepSeek V4</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">3.00€</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">9.00€</td>
+                    <td><strong>DeepSeek V4</strong></td>
+                    <td>3.00€</td>
+                    <td>9.00€</td>
                 </tr>
-                <tr style="background: #ecfdf5;">
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Llama 3.3 (Self-Hosted)</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">~0.02€</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">~0.02€</td>
+                <tr>
+                    <td><strong>Llama 3.3 (Self-Hosted)</strong></td>
+                    <td>~0.02€</td>
+                    <td>~0.02€</td>
                 </tr>
             </table>
 
@@ -179,7 +165,7 @@
             <p>10-40h um optimale Prompts zu finden = 800-3.200€ Aufwand</p>
 
             <h3>2. Failed Requests (Verschwendung)</h3>
-            <p>15-25% aller API-Calls schlagen fehl oder liefern Müll → 15-25% Budget verschwendet</p>
+            <p>15-25% aller API-Calls schlagen fehl oder liefern Müll  15-25% Budget verschwendet</p>
 
             <h3>3. Over-Fetching (zu große Modelle)</h3>
             <p>GPT-5.5 für einfache Tasks = Ferrari für Brötchen holen</p>
@@ -201,26 +187,26 @@
             <ul>
                 <li><strong>Model:</strong> GPT-5-mini oder Claude Haiku</li>
                 <li><strong>Kosten:</strong> 0.001-0.003€/Request</li>
-                <li><strong>Use Cases:</strong> Simple Klassifikation, Standard-Antworten</li>
+                <li><strong>Anwendungsfälle:</strong> Simple Klassifikation, Standard-Antworten</li>
             </ul>
 
             <h3>Tier 2: Mittlere Komplexität (25%)</h3>
             <ul>
                 <li><strong>Model:</strong> Gemini 3.1 Pro oder DeepSeek V4</li>
                 <li><strong>Kosten:</strong> 0.01-0.05€/Request</li>
-                <li><strong>Use Cases:</strong> Dokumentenanalyse, Zusammenfassungen</li>
+                <li><strong>Anwendungsfälle:</strong> Dokumentenanalyse, Zusammenfassungen</li>
             </ul>
 
             <h3>Tier 3: Hohe Komplexität (5%)</h3>
             <ul>
                 <li><strong>Model:</strong> GPT-5.5 oder Claude Opus 5</li>
                 <li><strong>Kosten:</strong> 0.05-0.20€/Request</li>
-                <li><strong>Use Cases:</strong> Komplexe Reasoning, kritische Entscheidungen</li>
+                <li><strong>Anwendungsfälle:</strong> Komplexe Reasoning, kritische Entscheidungen</li>
             </ul>
 
             <p><strong>Einsparung durch Tiering: 60-70% vs. "alles mit GPT-5.5"!</strong></p>
 
-            <h2>Real-World Case Study: E-Commerce</h2>
+            <h2>Beispielhafte Case Study: E-Commerce</h2>
             <p>Mittelständischer Online-Shop (100M€ Umsatz) optimiert LLM-Kosten.</p>
 
             <h3>Vorher (Q1 2026): All GPT-5.5</h3>
@@ -246,22 +232,22 @@
             <h2>Cost Optimization Strategien</h2>
             
             <h3>1. Prompt Caching</h3>
-            <p>System-Prompts werden gecacht → nur User-Input ist neu → 50-70% Token-Reduktion</p>
+            <p>System-Prompts werden gecacht  nur User-Input ist neu  50-70% Token-Reduktion</p>
 
             <h3>2. Response Streaming</h3>
-            <p>User sieht Output während Generierung → kann abbrechen wenn ausreichend</p>
+            <p>User sieht Output während Generierung  kann abbrechen wenn ausreichend</p>
 
             <h3>3. Temperature Optimization</h3>
             <p>Niedrigere Temperature (0.1-0.3) = kürzere Outputs = weniger Kosten</p>
 
             <h3>4. Max Tokens Limits</h3>
-            <p>Hard Limit setzen → verhindert exzessive Outputs</p>
+            <p>Hard Limit setzen  verhindert exzessive Outputs</p>
 
             <h3>5. Batching</h3>
-            <p>Mehrere Requests zusammenfassen → Overhead reduzieren</p>
+            <p>Mehrere Requests zusammenfassen  Overhead reduzieren</p>
 
             <h3>6. Result Caching</h3>
-            <p>Gleiche Frage = gleiche Antwort → nicht neu generieren</p>
+            <p>Gleiche Frage = gleiche Antwort  nicht neu generieren</p>
 
             <p><strong>Kombination dieser Techniken: 40-60% Kosten-Reduktion!</strong></p>
 
@@ -283,37 +269,37 @@
 
             <h2>Die Kosten-Fallen vermeiden</h2>
             
-            <h3>Falle 1: "Kostenlose" Trials → Lock-In</h3>
-            <p>Vendor gibt 50€ Free Credits → Sie bauen Product darauf → dann: Preiserhöhung</p>
+            <h3>Falle 1: "Kostenlose" Trials  Lock-In</h3>
+            <p>Vendor gibt 50€ Free Credits  Sie bauen Product darauf  dann: Preiserhöhung</p>
 
             <h3>Falle 2: Undurchsichtige Pricing</h3>
-            <p>"Pay as you grow" klingt gut → plötzlich 10.000€ Rechnung ohne Warnung</p>
+            <p>"Pay as you grow" klingt gut  plötzlich 10.000€ Rechnung ohne Warnung</p>
 
             <h3>Falle 3: Qualität > Kosten Mythos</h3>
-            <p>"Wir brauchen das beste Model" → 5× Kosten für 2% bessere Qualität</p>
+            <p>"Wir brauchen das beste Model"  5× Kosten für 2% bessere Qualität</p>
 
             <h3>Falle 4: Keine Monitoring</h3>
-            <p>Kosten steigen unbemerkt → erst am Monatsende die Überraschung</p>
+            <p>Kosten steigen unbemerkt  erst am Monatsende die Überraschung</p>
 
             <h3>Falle 5: Over-Engineering</h3>
             <p>Komplexe Multi-Step Agents wo simpler Prompt reicht</p>
 
-            <p>Mehr zu Fehlern: <a href="die-5-haeufigsten-fehler-bei-ki-projekten">Die 5 häufigsten Fehler bei KI-Projekten</a></p>
+            <p>Mehr zu Fehlern: <a href="/blog/">Die 5 häufigsten Fehler bei KI-Projekten</a></p>
 
             <h2>Budget-Planung 2026: Realistische Zahlen</h2>
             
             <h3>Kleines Unternehmen (10-50 Mitarbeiter):</h3>
             <ul>
                 <li>Experimentell: 200-500€/Monat</li>
-                <li>Produktiv (1-2 Use Cases): 500-2.000€/Monat</li>
-                <li>Skaliert (5+ Use Cases): 2.000-5.000€/Monat</li>
+                <li>Produktiv (1-2 Anwendungsfälle): 500-2.000€/Monat</li>
+                <li>Skaliert (5+ Anwendungsfälle): 2.000-5.000€/Monat</li>
             </ul>
 
             <h3>Mittelstand (50-500 Mitarbeiter):</h3>
             <ul>
                 <li>Early Adoption: 1.000-5.000€/Monat</li>
-                <li>AI-Ready: 5.000-20.000€/Monat</li>
-                <li>AI-First: 20.000-100.000€/Monat</li>
+                <li>KI-Ready: 5.000-20.000€/Monat</li>
+                <li>KI-First: 20.000-100.000€/Monat</li>
             </ul>
 
             <h3>Enterprise (500+ Mitarbeiter):</h3>
@@ -323,7 +309,7 @@
                 <li>Heavy Users: 200.000-1M€/Monat</li>
             </ul>
 
-            <p><strong>Trend 2026 → 2027:</strong> Kosten sinken um 20-40% durch günstigere Modelle und bessere Optimization.</p>
+            <p><strong>Trend 2026  2027:</strong> Kosten sinken um 20-40% durch günstigere Modelle und bessere Optimization.</p>
 
             <h2>Cost Monitoring Tools</h2>
             
@@ -357,19 +343,19 @@
             <ul>
                 <li><a href="claude-opus-5-vs-gpt-5-5-enterprise-vergleich">Claude Opus 5 vs. GPT-5.5: Der ehrliche Enterprise-Vergleich</a></li>
                 <li><a href="deepseek-v4-moonshot-kimi-chinesische-ki-modelle">DeepSeek V4 & Moonshot Kimi: Die chinesischen KI-Modelle kommen</a></li>
-                <li><a href="wie-sie-ki-kosten-im-unternehmen-senken">Wie Sie KI-Kosten im Unternehmen senken</a></li>
+                <li><a href="/blog/">Wie Sie KI-Kosten im Unternehmen senken</a></li>
             </ul>
 
-        </section>
-
-        <div class="article-cta">
-            <h3>LLM-Kosten optimieren?</h3>
-            <p>Wir analysieren Ihre aktuelle Nutzung und identifizieren Einsparpotenziale. Durchschnittlich 60% Kostenreduktion ohne Qualitätsverlust. Kostenloses Audit.</p>
-            <a href="../kontakt" class="cta-button">Kostenloses LLM-Kosten-Audit</a>
-        </div>
-    </article>
-
-    <footer class="footer-minimal"><div class="footer-container"><div class="footer-main"><div class="footer-brand"><div class="footer-logo"><div class="logo-mark"></div><span>Vach Systems</span></div><p>Intelligente Softwaresysteme für moderne Unternehmen</p></div><div class="footer-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ueber-uns">Über uns</a><a href="../kontakt">Kontakt</a></div><div class="footer-contact"><a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a></div></div><div class="footer-legal"><span>© 2026 Vach Systems</span><a href="../impressum">Impressum</a><a href="../datenschutz">Datenschutz</a></div></div></footer>
-    <script src="../js/script.min.js" defer></script>
-</body>
-</html>
+        <section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://openai.com/index/introducing-gpt-5-5/" target="_blank" rel="noopener noreferrer">OpenAI: GPT-5.5</a></li><li><a href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener noreferrer">Anthropic: Claude Opus 5</a></li><li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank" rel="noopener noreferrer">Google: Gemini 3.1 Pro</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://openai.com/index/introducing-gpt-5-5/" target="_blank" rel="noopener noreferrer">OpenAI: GPT-5.5</a></li><li><a href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener noreferrer">Anthropic: Claude Opus 5</a></li><li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank" rel="noopener noreferrer">Google: Gemini 3.1 Pro</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://openai.com/index/introducing-gpt-5-5/" target="_blank" rel="noopener noreferrer">OpenAI: GPT-5.5</a></li><li><a href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener noreferrer">Anthropic: Claude Opus 5</a></li><li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank" rel="noopener noreferrer">Google: Gemini 3.1 Pro</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://openai.com/index/introducing-gpt-5-5/" target="_blank" rel="noopener noreferrer">OpenAI: GPT-5.5</a></li><li><a href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener noreferrer">Anthropic: Claude Opus 5</a></li><li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank" rel="noopener noreferrer">Google: Gemini 3.1 Pro</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://openai.com/index/introducing-gpt-5-5/" target="_blank" rel="noopener noreferrer">OpenAI: GPT-5.5</a></li><li><a href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener noreferrer">Anthropic: Claude Opus 5</a></li><li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank" rel="noopener noreferrer">Google: Gemini 3.1 Pro</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p></div><aside class="article-aside" aria-label="Artikelhinweise"><div class="article-aside-block"><small>Autor</small><p>Patrick Vach<br>Inhaber, vachsystems</p></div><div class="article-aside-block"><small>Stand</small><p>Geprüft am 28.08.2026</p></div><div class="article-aside-block"><small>Einordnung</small><p>Keine Rechts- oder Anlageberatung. Technische Entscheidungen immer am konkreten Einsatzfall prüfen.</p></div><div class="article-aside-block"><small>Zurück</small><a href="/blog/">Alle Einblicke</a></div></aside></div>
+</article><section class="cta-stage"><div class="cta-inner reveal"><p class="page-kicker">Ihr Vorhaben</p><h2>Passt das Thema zu einer konkreten Aufgabe in Ihrem Unternehmen?</h2><div class="cta-row"><p>Wir ordnen den Anwendungsfall gemeinsam ein und sagen offen, ob eine technische Umsetzung sinnvoll ist.</p><a class="button light" href="../kontakt"><span>Projekt besprechen</span><span aria-hidden="true">↗</span></a></div></div></section></main>
+<footer class="studio-footer">
+  <div class="studio-footer-main">
+    <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>
+    <div class="studio-footer-links"><span>Leistungen</span><a href="../leistungen">Websites</a><a href="../loesungen">Software</a><a href="../ki-automatisierung-unternehmen">Automatisierung</a><a href="../ki-workshop-unternehmen">KI-Workshop</a></div>
+    <div class="studio-footer-links"><span>vachsystems</span><a href="../projekte">Arbeiten</a><a href="../ueber-uns">Über uns</a><a href="../blog/">Einblicke</a><a href="../kontakt">Kontakt</a></div>
+  </div>
+  <div class="studio-footer-legal"><span>© 2026 vachsystems · Berlin · ohne Tracking</span><div><a href="../impressum">Impressum</a><a href="../datenschutz">Datenschutz</a></div></div>
+</footer>
+<script src="../js/studio-system.js?v=20260828-1" defer></script>
+<script src="../js/site-cleanup.js?v=20260828-1" defer></script>
+</body></html>

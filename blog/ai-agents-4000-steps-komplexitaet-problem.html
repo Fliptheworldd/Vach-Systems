@@ -1,83 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI Agents mit 4000 Steps können viel – aber wann wird Komplexität zum Problem? Der Praxis-Guide zu Agent-Komplexität im Unternehmen.">
-    <meta name="keywords" content="AI Agents, Agent Steps, Complexity, Multi-Agent Systems, Agent Orchestration, Enterprise AI">
-    <title>AI Agents mit 4000 Steps: Wann Komplexität zum Problem wird | Vach Systems Blog</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="stylesheet" href="../css/style.min.css">
-    <style>
-        * { hyphens: none !important; -webkit-hyphens: none !important; word-break: normal !important; }
-        .article { max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem; }
-        .article-header { margin-bottom: 3rem; }
-        .article-meta { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-        .article-excerpt { font-size: 1.25rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem; }
-        .article-lead { font-size: 1.25rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem; }
-        .article-image { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 3rem; }
-        .article-content { font-size: 1.125rem; line-height: 1.8; color: var(--gray-900); }
-        .article-content h2 { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; line-height: 1.3; }
-        .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul, .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
-        .article-content li { margin-bottom: 0.75rem; }
-        .article-content strong { font-weight: 700; color: var(--gray-900); }
-        .highlight-box { background: #f8f9fa; border-left: 4px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
-        .highlight-box p:last-child { margin-bottom: 0; }
-        .blog-cta{margin:4rem 0;padding:3rem;background:linear-gradient(135deg,#000 0%,#1F2937 100%);border-radius:16px;text-align:center;color:#fff}.blog-cta h3{font-size:2rem;font-weight:800;margin-bottom:1rem;color:#fff}.blog-cta>p{font-size:1.125rem;margin-bottom:2rem;color:#fff!important;opacity:.95}.blog-cta a{display:inline-block;padding:1rem 2.5rem;background:#fff;color:var(--black);text-decoration:none;border-radius:8px;font-weight:700;margin-bottom:1rem}.blog-cta .email-alt{font-size:.9rem;color:rgba(255,255,255,.9)!important;margin:0;opacity:1!important}.blog-cta .email-alt a{display:inline;padding:0;background:0 0;color:#fff!important;text-decoration:underline;font-size:.9rem;margin:0}
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 2rem 0; }
-        .stat-box { text-align: center; padding: 2rem; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .stat-number { font-size: 3rem; font-weight: 900; color: var(--accent); margin-bottom: 0.5rem; }
-        .stat-label { font-size: 0.875rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.05em; }
-        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--accent); font-weight: 600; text-decoration: none; }
-        .back-link:hover { text-decoration: underline; }
-        .blog-article { max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem; }
-        .blog-article .article-header { margin-bottom: 3rem; }
-        .blog-article .article-meta { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; display: flex; gap: 1rem; }
-        .blog-article h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-        .blog-article .article-content { font-size: 1.125rem; line-height: 1.8; color: var(--gray-900); }
-        .blog-article .article-content h2 { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; line-height: 1.3; }
-        .blog-article .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
-        .blog-article .article-content ul, .blog-article .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
-        .blog-article .article-content li { margin-bottom: 0.75rem; }
-        @media (max-width: 768px) {
-            .article { padding: 4rem 1.5rem 3rem; }
-            .article-title { font-size: 2.25rem; }
-            h1 { font-size: 2.25rem; }
-            .article-image { height: 250px; }
-            .article-content { font-size: 1rem; }
-            .article-content h2 { font-size: 1.75rem; }
-            .stats-grid { grid-template-columns: 1fr; gap: 1rem; }
-        }
-    </style>
-</head>
-<body>
-    <nav class="nav-minimal"><div class="nav-container"><a href="../" class="logo-minimal"><div class="logo-mark"></div><span>Vach Systems</span></a><div class="nav-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div><div class="hamburger" id="hamburger"><span></span><span></span><span></span></div></div></nav>
-    <div class="menu-overlay" id="menuOverlay"></div>
-    <div class="mobile-menu" id="mobileMenu"><a href="../">Home</a><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div>
-
-    <article class="blog-article">
-        <header class="article-header">
-            <div class="article-meta">
-                <span class="article-date">28. Mai 2026</span>
-                <span class="article-reading-time">12 Min. Lesezeit</span>
-            </div>
-            <h1>AI Agents mit 4000 Steps: Wann Komplexität zum Problem wird</h1>
-            <p class="article-lead">Moonshot Kimi nutzt 4000 Steps. DeepSeek V4 arbeitet mit 300 Sub-Agents. Aber mehr ist nicht immer besser. Wann wird Agent-Komplexität kontraproduktiv?</p>
-        <img srcset="../images/blog/1786288073902-trxxbf-600w.webp 600w, ../images/blog/1786288073902-trxxbf-1400w.webp 1400w" 
-             sizes="(max-width: 768px) 600px, 1400px"
-             src="../images/blog/1786288073902-trxxbf-1400w.webp" 
-             alt="Ai Agents 4000 Steps Komplexitaet Problem" 
-             class="article-image"
-             loading="lazy"
-             width="1400"
-             height="933">
-        </header>
-
-        <section class="article-content">
-            <h2>Was sind "Steps" bei AI Agents?</h2>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wann agentische Abläufe zu komplex werden | vachsystems</title>
+  <meta name="description" content="Warum mehr Schritte nicht automatisch mehr Leistung bedeuten und wo Kontrolle verloren geht.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#050608">
+  <link rel="canonical" href="https://vachsystems.de/blog/ai-agents-4000-steps-komplexitaet-problem">
+  <link rel="icon" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/studio-system.css?v=20260828-1">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Wann agentische Abläufe zu komplex werden | vachsystems">
+  <meta property="og:description" content="Warum mehr Schritte nicht automatisch mehr Leistung bedeuten und wo Kontrolle verloren geht.">
+  <meta property="og:url" content="https://vachsystems.de/blog/ai-agents-4000-steps-komplexitaet-problem">
+  <meta property="og:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Abstraktes digitales Objekt von vachsystems">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wann agentische Abläufe zu komplex werden | vachsystems">
+  <meta name="twitter:description" content="Warum mehr Schritte nicht automatisch mehr Leistung bedeuten und wo Kontrolle verloren geht.">
+  <meta name="twitter:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Wann agentische Abläufe zu komplex werden",
+  "description": "Warum mehr Schritte nicht automatisch mehr Leistung bedeuten und wo Kontrolle verloren geht.",
+  "datePublished": "2026-05-28",
+  "dateModified": "2026-08-28",
+  "mainEntityOfPage": "https://vachsystems.de/blog/ai-agents-4000-steps-komplexitaet-problem",
+  "author": {
+    "@type": "Person",
+    "name": "Patrick Vach"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "vachsystems",
+    "url": "https://vachsystems.de/"
+  },
+  "image": "https://vachsystems.de/images/vachsystems-object-og.webp"
+}</script>
+  <link rel="stylesheet" href="../css/editorial-studio.css?v=20260828-1">
+</head><body class="article-shell">
+<a class="studio-skip" href="#main">Zum Inhalt springen</a>
+<header class="studio-header" data-header>
+  <nav class="studio-nav" aria-label="Hauptnavigation">
+    <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>
+    <div class="studio-links" id="studio-navigation" data-navigation>
+      <a href="../leistungen">Websites</a>
+      <a href="../loesungen">Software</a>
+      <a href="../ki-automatisierung-unternehmen">Automatisierung</a>
+      <a href="../projekte">Arbeiten</a>
+      <a href="../ueber-uns">Über uns</a>
+    </div>
+    <a class="studio-nav-cta" href="../kontakt">Projekt besprechen <span aria-hidden="true">↗</span></a>
+    <button class="studio-menu-button" type="button" aria-expanded="false" aria-controls="studio-navigation" aria-label="Menü öffnen" data-menu-button><span></span><span></span></button>
+  </nav>
+</header>
+<main id="main"><article>
+  <header class="article-masthead"><div class="article-masthead-inner"><div class="article-meta"><span>Agenten</span><time datetime="2026-05-28">28. Mai 2026</time><span>Zuletzt geprüft: 28. August 2026</span></div><h1>Wann agentische Abläufe zu komplex werden</h1><p class="article-lead">Warum mehr Schritte nicht automatisch mehr Leistung bedeuten und wo Kontrolle verloren geht.</p><div class="article-byline"><span>Text & Einordnung: <strong>Patrick Vach</strong></span><span>Technische Angaben sind zeitabhängig und werden vor Projektentscheidungen neu geprüft.</span></div></div></header>
+  <div class="article-layout"><div class="article-content">
+            <h2>Was sind "Steps" bei KI-Agenten?</h2>
             <p>Ein Step ist eine einzelne Aktion die ein Agent ausführt:</p>
             
             <ul>
@@ -94,42 +80,42 @@
             <p>Theorie: Mehr Steps = mehr Kapazität = bessere Ergebnisse.</p>
             <p>Praxis: Ab ~100 Steps steigt Fehlerrate exponentiell.</p>
 
-            <table style="width:100%; border-collapse: collapse; margin: 2rem 0;">
-                <tr style="background: #f8fafc;">
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Step-Range</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Erfolgsrate</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Durchschnittliche Zeit</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Kosten/Task</th>
+            <table>
+                <tr>
+                    <th>Step-Range</th>
+                    <th>Erfolgsrate</th>
+                    <th>Durchschnittliche Zeit</th>
+                    <th>Kosten/Task</th>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>1-10 Steps</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">95%</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">10-30 Sek</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">0.05€</td>
+                    <td><strong>1-10 Steps</strong></td>
+                    <td>95%</td>
+                    <td>10-30 Sek</td>
+                    <td>0.05€</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>10-50 Steps</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">88%</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">1-3 Min</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">0.20€</td>
+                    <td><strong>10-50 Steps</strong></td>
+                    <td>88%</td>
+                    <td>1-3 Min</td>
+                    <td>0.20€</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>50-200 Steps</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">76%</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">5-15 Min</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">0.80€</td>
+                    <td><strong>50-200 Steps</strong></td>
+                    <td>76%</td>
+                    <td>5-15 Min</td>
+                    <td>0.80€</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>200-1000 Steps</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">61%</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">15-45 Min</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">3.50€</td>
+                    <td><strong>200-1000 Steps</strong></td>
+                    <td>61%</td>
+                    <td>15-45 Min</td>
+                    <td>3.50€</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>1000-4000 Steps</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">48%</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">1-3 Stunden</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">12.00€</td>
+                    <td><strong>1000-4000 Steps</strong></td>
+                    <td>48%</td>
+                    <td>1-3 Stunden</td>
+                    <td>12.00€</td>
                 </tr>
             </table>
 
@@ -148,14 +134,14 @@
             <p>300 Sub-Agents müssen kommunizieren. Wer macht was wann? Warten auf andere Agents. Deadlocks.</p>
 
             <h3>4. Debugging wird unmöglich</h3>
-            <p>"Warum ist das Ergebnis falsch?" → "Irgendwo bei Step 1-4000 ging was schief" → Nadel im Heuhaufen.</p>
+            <p>"Warum ist das Ergebnis falsch?"  "Irgendwo bei Step 1-4000 ging was schief"  Nadel im Heuhaufen.</p>
 
             <h3>5. Kosten explodieren</h3>
             <p>4000 Steps × durchschnittlich 2K Tokens = 8M Tokens. Bei GPT-5.5: 120€ pro Task!</p>
 
-            <p>Mehr zu Komplexität: <a href="multi-agent-systems-ki-teams-komplexe-aufgaben">Multi-Agent Systems: Wie KI-Teams komplexe Aufgaben lösen</a></p>
+            <p>Mehr zu Komplexität: <a href="/blog/">Multi-Agent Systems: Wie KI-Teams komplexe Aufgaben lösen</a></p>
 
-            <h2>Real-World Beispiel: Recherche-Agent</h2>
+            <h2>Beispielhafte Beispiel: Recherche-Agent</h2>
             <p>Zwei Ansätze für gleiche Aufgabe: "Erstelle Marktanalyse für Produkt X"</p>
 
             <h3>Ansatz 1: Simple Agent (25 Steps)</h3>
@@ -190,15 +176,15 @@
             <p><strong>Fazit:</strong> Complex Agent ist 30× teurer, 18× langsamer, und scheitert häufiger. Nur lohnenswert wenn höchste Qualität absolut kritisch ist.</p>
 
             <h2>Die Sweet Spot Zone: 10-50 Steps</h2>
-            <p>Unsere Empfehlung für die meisten Enterprise Use Cases:</p>
+            <p>Unsere Empfehlung für die meisten Enterprise Anwendungsfälle:</p>
 
             <h3>Warum 10-50 Steps optimal sind:</h3>
             <ul>
-                <li>✅ Erfolgsrate 85-90% (zuverlässig)</li>
-                <li>✅ Zeit 1-5 Min (akzeptabel)</li>
-                <li>✅ Kosten 0.10-0.50€ (skalierbar)</li>
-                <li>✅ Debuggable (man kann Fehler finden)</li>
-                <li>✅ Vorhersagbar (Ergebnisse konsistent)</li>
+                <li> Erfolgsrate 85-90% (zuverlässig)</li>
+                <li> Zeit 1-5 Min (akzeptabel)</li>
+                <li> Kosten 0.10-0.50€ (skalierbar)</li>
+                <li> Debuggable (man kann Fehler finden)</li>
+                <li> Vorhersagbar (Ergebnisse konsistent)</li>
             </ul>
 
             <h3>Praxis-Beispiele für 10-50 Step Agents:</h3>
@@ -213,7 +199,7 @@
             <h2>Wann sind >100 Steps gerechtfertigt?</h2>
             <p>Es gibt Szenarien wo Komplexität nötig ist:</p>
 
-            <h3>✅ Hochkomplexe Agents sinnvoll bei:</h3>
+            <h3> Hochkomplexe Agents sinnvoll bei:</h3>
             <ul>
                 <li><strong>Wissenschaftliche Recherche:</strong> Tiefe Literatur-Reviews</li>
                 <li><strong>Due Diligence:</strong> M&A Prüfungen (Millionen auf dem Spiel)</li>
@@ -224,7 +210,7 @@
 
             <p><strong>Gemeinsam:</strong> Hoher Wert, niedrige Frequenz, menschliches Review eingebaut.</p>
 
-            <h3>❌ Übertrieben für:</h3>
+            <h3> Übertrieben für:</h3>
             <ul>
                 <li>Standardprozesse (Rechnungen, E-Mails)</li>
                 <li>Hohe Volumina (>1000 Tasks/Tag)</li>
@@ -236,13 +222,13 @@
             
             <h3>1. Hierarchische Decomposition</h3>
             <p>Große Task in mehrere kleine Agents aufteilen statt einen Mega-Agent.</p>
-            <p><strong>Beispiel:</strong> Statt 1 Agent mit 500 Steps → 5 Agents à 100 Steps die sequenziell arbeiten.</p>
+            <p><strong>Beispiel:</strong> Statt 1 Agent mit 500 Steps  5 Agents à 100 Steps die sequenziell arbeiten.</p>
 
             <h3>2. Checkpoints einbauen</h3>
             <p>Nach jedem 20-30 Steps: Human Review oder Validation-Agent prüft Zwischenergebnis.</p>
 
             <h3>3. Fail-Fast Prinzip</h3>
-            <p>Wenn Confidence <70% bei Step 50 → Abbrechen statt weitere 950 Steps verschwenden.</p>
+            <p>Wenn Confidence <70% bei Step 50  Abbrechen statt weitere 950 Steps verschwenden.</p>
 
             <h3>4. Monitoring & Logging</h3>
             <p>Jeder Step wird protokolliert. Bei Fehler: Genau nachvollziehbar wo es schief ging.</p>
@@ -250,7 +236,7 @@
             <h3>5. Timeout Limits</h3>
             <p>Agent darf max. X Minuten laufen. Verhindert endlose Loops.</p>
 
-            <p>Mehr zu Best Practices: <a href="agentic-ai-mittelstand-von-theorie-zur-praxis">Agentic AI im Mittelstand: Von der Theorie zur Praxis</a></p>
+            <p>Mehr zu Best Practices: <a href="/blog/">Agentic KI im Mittelstand: Von der Theorie zur Praxis</a></p>
 
             <h2>Kosten-Nutzen-Rechnung: Lohnt sich Komplexität?</h2>
             
@@ -260,7 +246,7 @@
             <ul>
                 <li>Kosten: 100 × 0.50€ = 50€/Jahr</li>
                 <li>Zeit: 100 × 5 Min = 8h</li>
-                <li>Erfolgsrate: 85% → 15 manuelle Nacharbeiten à 2h = 30h</li>
+                <li>Erfolgsrate: 85%  15 manuelle Nacharbeiten à 2h = 30h</li>
                 <li><strong>Total: 50€ + 38h Arbeitszeit</strong></li>
             </ul>
 
@@ -268,7 +254,7 @@
             <ul>
                 <li>Kosten: 100 × 15€ = 1.500€/Jahr</li>
                 <li>Zeit: 100 × 90 Min = 150h</li>
-                <li>Erfolgsrate: 62% → 38 manuelle Nacharbeiten à 4h = 152h</li>
+                <li>Erfolgsrate: 62%  38 manuelle Nacharbeiten à 4h = 152h</li>
                 <li><strong>Total: 1.500€ + 302h Arbeitszeit</strong></li>
             </ul>
 
@@ -302,7 +288,7 @@
             <p>Visualisiert Agent-Steps, zeigt Execution-Flow, hilft beim Debugging.</p>
 
             <h3>2. Weights & Biases (W&B)</h3>
-            <p>Monitoring für AI Agents. Tracks Performance, Kosten, Erfolgsraten.</p>
+            <p>Monitoring für KI-Agenten. Tracks Performance, Kosten, Erfolgsraten.</p>
 
             <h3>3. Custom Dashboards (Grafana)</h3>
             <p>Real-time Monitoring: Wie viele Steps pro Task? Wo scheitern Agents?</p>
@@ -321,7 +307,7 @@
                 <li>Learned Optimization: Wird über Zeit effizienter</li>
             </ul>
 
-            <p><strong>Aber:</strong> Bis dahin → Manuelle Optimierung ist Pflicht!</p>
+            <p><strong>Aber:</strong> Bis dahin  Manuelle Optimierung ist Pflicht!</p>
 
             <h2>Empfehlungen nach Unternehmensgröße</h2>
             
@@ -349,20 +335,20 @@
             <p>Weiterlesen:</p>
             <ul>
                 <li><a href="deepseek-v4-moonshot-kimi-chinesische-ki-modelle">DeepSeek V4 & Moonshot Kimi: Die chinesischen KI-Modelle kommen</a></li>
-                <li><a href="warum-95-prozent-der-ki-projekte-scheitern">Warum 95% der KI-Projekte scheitern</a></li>
-                <li><a href="ki-agenten-im-unternehmen-2026">KI-Agenten im Unternehmen 2026</a></li>
+                <li><a href="/blog/">Warum 95% der KI-Projekte scheitern</a></li>
+                <li><a href="/blog/">KI-Agenten im Unternehmen 2026</a></li>
             </ul>
 
-        </section>
-
-        <div class="article-cta">
-            <h3>Agent-Komplexität im Griff?</h3>
-            <p>Wir analysieren Ihre Agent-Architektur und optimieren auf optimale Step-Anzahl. Weniger Komplexität, mehr Erfolgsrate. Kostenloses Audit.</p>
-            <a href="../kontakt" class="cta-button">Kostenloses Agent-Komplexitäts-Audit</a>
-        </div>
-    </article>
-
-    <footer class="footer-minimal"><div class="footer-container"><div class="footer-main"><div class="footer-brand"><div class="footer-logo"><div class="logo-mark"></div><span>Vach Systems</span></div><p>Intelligente Softwaresysteme für moderne Unternehmen</p></div><div class="footer-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ueber-uns">Über uns</a><a href="../kontakt">Kontakt</a></div><div class="footer-contact"><a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a></div></div><div class="footer-legal"><span>© 2026 Vach Systems</span><a href="../impressum">Impressum</a><a href="../datenschutz">Datenschutz</a></div></div></footer>
-    <script src="../js/script.min.js" defer></script>
-</body>
-</html>
+        <section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: AI Risk Management Framework</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p></div><aside class="article-aside" aria-label="Artikelhinweise"><div class="article-aside-block"><small>Autor</small><p>Patrick Vach<br>Inhaber, vachsystems</p></div><div class="article-aside-block"><small>Stand</small><p>Geprüft am 28.08.2026</p></div><div class="article-aside-block"><small>Einordnung</small><p>Keine Rechts- oder Anlageberatung. Technische Entscheidungen immer am konkreten Einsatzfall prüfen.</p></div><div class="article-aside-block"><small>Zurück</small><a href="/blog/">Alle Einblicke</a></div></aside></div>
+</article><section class="cta-stage"><div class="cta-inner reveal"><p class="page-kicker">Ihr Vorhaben</p><h2>Passt das Thema zu einer konkreten Aufgabe in Ihrem Unternehmen?</h2><div class="cta-row"><p>Wir ordnen den Anwendungsfall gemeinsam ein und sagen offen, ob eine technische Umsetzung sinnvoll ist.</p><a class="button light" href="../kontakt"><span>Projekt besprechen</span><span aria-hidden="true">↗</span></a></div></div></section></main>
+<footer class="studio-footer">
+  <div class="studio-footer-main">
+    <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>
+    <div class="studio-footer-links"><span>Leistungen</span><a href="../leistungen">Websites</a><a href="../loesungen">Software</a><a href="../ki-automatisierung-unternehmen">Automatisierung</a><a href="../ki-workshop-unternehmen">KI-Workshop</a></div>
+    <div class="studio-footer-links"><span>vachsystems</span><a href="../projekte">Arbeiten</a><a href="../ueber-uns">Über uns</a><a href="../blog/">Einblicke</a><a href="../kontakt">Kontakt</a></div>
+  </div>
+  <div class="studio-footer-legal"><span>© 2026 vachsystems · Berlin · ohne Tracking</span><div><a href="../impressum">Impressum</a><a href="../datenschutz">Datenschutz</a></div></div>
+</footer>
+<script src="../js/studio-system.js?v=20260828-1" defer></script>
+<script src="../js/site-cleanup.js?v=20260828-1" defer></script>
+</body></html>

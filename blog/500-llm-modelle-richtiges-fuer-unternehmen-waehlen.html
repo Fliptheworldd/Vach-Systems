@@ -1,82 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="500+ LLM-Modelle 2026: Wie wählt man das richtige für sein Unternehmen? Decision Framework, Vergleichs-Matrix, Auswahlkriterien.">
-    <meta name="keywords" content="LLM Auswahl, Model Selection, AI Model Comparison, Enterprise LLM, Model Decision Framework">
-    <title>500+ LLM-Modelle: Wie wählt man das richtige für sein Unternehmen? | Vach Systems Blog</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="stylesheet" href="../css/style.min.css">
-    <style>
-        * { hyphens: none !important; -webkit-hyphens: none !important; word-break: normal !important; }
-        .article { max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem; }
-        .article-header { margin-bottom: 3rem; }
-        .article-meta { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-        .article-excerpt { font-size: 1.25rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem; }
-        .article-lead { font-size: 1.25rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem; }
-        .article-image { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 3rem; }
-        .article-content { font-size: 1.125rem; line-height: 1.8; color: var(--gray-900); }
-        .article-content h2 { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; line-height: 1.3; }
-        .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul, .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
-        .article-content li { margin-bottom: 0.75rem; }
-        .article-content strong { font-weight: 700; color: var(--gray-900); }
-        .highlight-box { background: #f8f9fa; border-left: 4px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
-        .highlight-box p:last-child { margin-bottom: 0; }
-        .blog-cta{margin:4rem 0;padding:3rem;background:linear-gradient(135deg,#000 0%,#1F2937 100%);border-radius:16px;text-align:center;color:#fff}.blog-cta h3{font-size:2rem;font-weight:800;margin-bottom:1rem;color:#fff}.blog-cta>p{font-size:1.125rem;margin-bottom:2rem;color:#fff!important;opacity:.95}.blog-cta a{display:inline-block;padding:1rem 2.5rem;background:#fff;color:var(--black);text-decoration:none;border-radius:8px;font-weight:700;margin-bottom:1rem}.blog-cta .email-alt{font-size:.9rem;color:rgba(255,255,255,.9)!important;margin:0;opacity:1!important}.blog-cta .email-alt a{display:inline;padding:0;background:0 0;color:#fff!important;text-decoration:underline;font-size:.9rem;margin:0}
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 2rem 0; }
-        .stat-box { text-align: center; padding: 2rem; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .stat-number { font-size: 3rem; font-weight: 900; color: var(--accent); margin-bottom: 0.5rem; }
-        .stat-label { font-size: 0.875rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.05em; }
-        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--accent); font-weight: 600; text-decoration: none; }
-        .back-link:hover { text-decoration: underline; }
-        .blog-article { max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem; }
-        .blog-article .article-header { margin-bottom: 3rem; }
-        .blog-article .article-meta { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; display: flex; gap: 1rem; }
-        .blog-article h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-        .blog-article .article-content { font-size: 1.125rem; line-height: 1.8; color: var(--gray-900); }
-        .blog-article .article-content h2 { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; line-height: 1.3; }
-        .blog-article .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
-        .blog-article .article-content ul, .blog-article .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
-        .blog-article .article-content li { margin-bottom: 0.75rem; }
-        @media (max-width: 768px) {
-            .article { padding: 4rem 1.5rem 3rem; }
-            .article-title { font-size: 2.25rem; }
-            h1 { font-size: 2.25rem; }
-            .article-image { height: 250px; }
-            .article-content { font-size: 1rem; }
-            .article-content h2 { font-size: 1.75rem; }
-            .stats-grid { grid-template-columns: 1fr; gap: 1rem; }
-        }
-    </style>
-</head>
-<body>
-    <nav class="nav-minimal"><div class="nav-container"><a href="../" class="logo-minimal"><div class="logo-mark"></div><span>Vach Systems</span></a><div class="nav-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div><div class="hamburger" id="hamburger"><span></span><span></span><span></span></div></div></nav>
-    <div class="menu-overlay" id="menuOverlay"></div>
-    <div class="mobile-menu" id="mobileMenu"><a href="../">Home</a><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div>
-
-    <article class="blog-article">
-        <header class="article-header">
-            <div class="article-meta">
-                <span class="article-date">25. Juli 2026</span>
-                <span class="article-reading-time">10 Min. Lesezeit</span>
-            </div>
-            <h1>500+ LLM-Modelle: Wie wählt man das richtige für sein Unternehmen?</h1>
-            <p class="article-lead">2021 gab es 10 LLMs. 2026 gibt es 500+. Von GPT-5.5 über Llama bis DeepSeek – wie findet man das richtige Modell? Der Decision Framework.</p>
-        <img srcset="../images/blog/1786288071727-rlb4ob-600w.webp 600w, ../images/blog/1786288071727-rlb4ob-1400w.webp 1400w" 
-             sizes="(max-width: 768px) 600px, 1400px"
-             src="../images/blog/1786288071727-rlb4ob-1400w.webp" 
-             alt="500 Llm Modelle Richtiges Fuer Unternehmen Waehlen" 
-             class="article-image"
-             loading="lazy"
-             width="1400"
-             height="933">
-        </header>
-
-        <section class="article-content">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Das passende Sprachmodell für ein Unternehmen wählen | vachsystems</title>
+  <meta name="description" content="Qualität, Kosten, Datenschutz und Betrieb anhand konkreter Anforderungen sinnvoll vergleichen.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#050608">
+  <link rel="canonical" href="https://vachsystems.de/blog/500-llm-modelle-richtiges-fuer-unternehmen-waehlen">
+  <link rel="icon" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/studio-system.css?v=20260828-1">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Das passende Sprachmodell für ein Unternehmen wählen | vachsystems">
+  <meta property="og:description" content="Qualität, Kosten, Datenschutz und Betrieb anhand konkreter Anforderungen sinnvoll vergleichen.">
+  <meta property="og:url" content="https://vachsystems.de/blog/500-llm-modelle-richtiges-fuer-unternehmen-waehlen">
+  <meta property="og:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Abstraktes digitales Objekt von vachsystems">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Das passende Sprachmodell für ein Unternehmen wählen | vachsystems">
+  <meta name="twitter:description" content="Qualität, Kosten, Datenschutz und Betrieb anhand konkreter Anforderungen sinnvoll vergleichen.">
+  <meta name="twitter:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Das passende Sprachmodell für ein Unternehmen wählen",
+  "description": "Qualität, Kosten, Datenschutz und Betrieb anhand konkreter Anforderungen sinnvoll vergleichen.",
+  "datePublished": "2026-07-25",
+  "dateModified": "2026-08-28",
+  "mainEntityOfPage": "https://vachsystems.de/blog/500-llm-modelle-richtiges-fuer-unternehmen-waehlen",
+  "author": {
+    "@type": "Person",
+    "name": "Patrick Vach"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "vachsystems",
+    "url": "https://vachsystems.de/"
+  },
+  "image": "https://vachsystems.de/images/vachsystems-object-og.webp"
+}</script>
+  <link rel="stylesheet" href="../css/editorial-studio.css?v=20260828-1">
+</head><body class="article-shell">
+<a class="studio-skip" href="#main">Zum Inhalt springen</a>
+<header class="studio-header" data-header>
+  <nav class="studio-nav" aria-label="Hauptnavigation">
+    <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>
+    <div class="studio-links" id="studio-navigation" data-navigation>
+      <a href="../leistungen">Websites</a>
+      <a href="../loesungen">Software</a>
+      <a href="../ki-automatisierung-unternehmen">Automatisierung</a>
+      <a href="../projekte">Arbeiten</a>
+      <a href="../ueber-uns">Über uns</a>
+    </div>
+    <a class="studio-nav-cta" href="../kontakt">Projekt besprechen <span aria-hidden="true">↗</span></a>
+    <button class="studio-menu-button" type="button" aria-expanded="false" aria-controls="studio-navigation" aria-label="Menü öffnen" data-menu-button><span></span><span></span></button>
+  </nav>
+</header>
+<main id="main"><article>
+  <header class="article-masthead"><div class="article-masthead-inner"><div class="article-meta"><span>Modellauswahl</span><time datetime="2026-07-25">25. Juli 2026</time><span>Zuletzt geprüft: 28. August 2026</span></div><h1>Das passende Sprachmodell für ein Unternehmen wählen</h1><p class="article-lead">Qualität, Kosten, Datenschutz und Betrieb anhand konkreter Anforderungen sinnvoll vergleichen.</p><div class="article-byline"><span>Text & Einordnung: <strong>Patrick Vach</strong></span><span>Technische Angaben sind zeitabhängig und werden vor Projektentscheidungen neu geprüft.</span></div></div></header>
+  <div class="article-layout"><div class="article-content">
             <h2>Die LLM-Explosion</h2>
             <p>2021: GPT-3, BERT, T5. 2026: 500+ Modelle von 100+ Anbietern.</p>
             
@@ -91,8 +77,8 @@
 
             <h2>Decision Framework: 5 Schritte</h2>
             
-            <h3>Schritt 1: Use Case definieren</h3>
-            <p>Was soll die AI machen? Code? Text? Analyse? Reasoning?</p>
+            <h3>Schritt 1: Anwendungsfall definieren</h3>
+            <p>Was soll die KI machen? Code? Text? Analyse? Reasoning?</p>
 
             <h3>Schritt 2: Requirements festlegen</h3>
             <ul>
@@ -114,42 +100,42 @@
 
             <h2>Die wichtigsten Auswahlkriterien</h2>
             
-            <table style="width:100%; border-collapse: collapse; margin: 2rem 0;">
-                <tr style="background: #f8fafc;">
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Kriterium</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Warum wichtig</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Gewichtung</th>
+            <table>
+                <tr>
+                    <th>Kriterium</th>
+                    <th>Warum wichtig</th>
+                    <th>Gewichtung</th>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Quality</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Accuracy entscheidet über Nutzen</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">40%</td>
+                    <td><strong>Quality</strong></td>
+                    <td>Accuracy entscheidet über Nutzen</td>
+                    <td>40%</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Cost</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Skalierung muss bezahlbar sein</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">30%</td>
+                    <td><strong>Cost</strong></td>
+                    <td>Skalierung muss bezahlbar sein</td>
+                    <td>30%</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Latency</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">User Experience</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">15%</td>
+                    <td><strong>Latency</strong></td>
+                    <td>User Experience</td>
+                    <td>15%</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Privacy</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">DSGVO, Datenschutz</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">10%</td>
+                    <td><strong>Privacy</strong></td>
+                    <td>DSGVO, Datenschutz</td>
+                    <td>10%</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Vendor</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Stabilität, Support, Lock-in</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">5%</td>
+                    <td><strong>Vendor</strong></td>
+                    <td>Stabilität, Support, Lock-in</td>
+                    <td>5%</td>
                 </tr>
             </table>
 
             <p>Mehr Vergleiche: <a href="claude-opus-5-vs-gpt-5-5-enterprise-vergleich">Claude Opus 5 vs. GPT-5.5: Der ehrliche Enterprise-Vergleich</a></p>
 
-            <h2>Use Case → Model Mapping</h2>
+            <h2>Anwendungsfall  Model Mapping</h2>
             
             <h3>Code-Generierung</h3>
             <p><strong>Best:</strong> GPT-5.5, StarCoder2<br><strong>Budget:</strong> DeepSeek Coder, Qwen-Coder</p>
@@ -170,7 +156,7 @@
             
             <h3>Schritt 1: Test-Dataset vorbereiten</h3>
             <ul>
-                <li>100-500 echte Beispiele aus Ihrem Use Case</li>
+                <li>100-500 echte Beispiele aus Ihrem Anwendungsfall</li>
                 <li>Ground Truth (korrekte Antworten)</li>
                 <li>Edge Cases (schwierige Beispiele)</li>
             </ul>
@@ -187,9 +173,9 @@
             </ul>
 
             <h3>Schritt 4: Scoring Matrix</h3>
-            <p>Gewichtete Scores pro Kriterium → Gesamt-Score.</p>
+            <p>Gewichtete Scores pro Kriterium  Gesamt-Score.</p>
 
-            <h2>Real-World Case: Model Selection</h2>
+            <h2>Beispielhafte Case: Model Selection</h2>
             <p>E-Commerce Firma wählt Model für Produktbeschreibungen.</p>
 
             <h3>Getestete Modelle:</h3>
@@ -261,19 +247,19 @@
             <ul>
                 <li><a href="llm-kosten-2026-kleinere-modelle-besser">LLM-Kosten 2026: Warum kleinere Modelle oft besser performen</a></li>
                 <li><a href="deepseek-v4-moonshot-kimi-chinesische-ki-modelle">DeepSeek V4 & Moonshot Kimi: Die chinesischen KI-Modelle kommen</a></li>
-                <li><a href="enterprise-ai-stack-2026-richtige-architektur">Enterprise AI Stack 2026: Die richtige Architektur wählen</a></li>
+                <li><a href="enterprise-ai-stack-2026-richtige-architektur">Enterprise KI Stack 2026: Die richtige Architektur wählen</a></li>
             </ul>
 
-        </section>
-
-        <div class="article-cta">
-            <h3>Das richtige Model finden?</h3>
-            <p>Wir benchmarken 3-5 Modelle mit Ihren echten Daten und empfehlen die optimale Lösung. Kostenloser Model-Comparison-Test.</p>
-            <a href="../kontakt" class="cta-button">Kostenlosen Model-Test anfragen</a>
-        </div>
-    </article>
-
-    <footer class="footer-minimal"><div class="footer-container"><div class="footer-main"><div class="footer-brand"><div class="footer-logo"><div class="logo-mark"></div><span>Vach Systems</span></div><p>Intelligente Softwaresysteme für moderne Unternehmen</p></div><div class="footer-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ueber-uns">Über uns</a><a href="../kontakt">Kontakt</a></div><div class="footer-contact"><a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a></div></div><div class="footer-legal"><span>© 2026 Vach Systems</span><a href="../impressum">Impressum</a><a href="../datenschutz">Datenschutz</a></div></div></footer>
-    <script src="../js/script.min.js" defer></script>
-</body>
-</html>
+        <section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://openai.com/index/introducing-gpt-5-5/" target="_blank" rel="noopener noreferrer">OpenAI: GPT-5.5</a></li><li><a href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener noreferrer">Anthropic: Claude Opus 5</a></li><li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank" rel="noopener noreferrer">Google: Gemini 3.1 Pro</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://openai.com/index/introducing-gpt-5-5/" target="_blank" rel="noopener noreferrer">OpenAI: GPT-5.5</a></li><li><a href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener noreferrer">Anthropic: Claude Opus 5</a></li><li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank" rel="noopener noreferrer">Google: Gemini 3.1 Pro</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://openai.com/index/introducing-gpt-5-5/" target="_blank" rel="noopener noreferrer">OpenAI: GPT-5.5</a></li><li><a href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener noreferrer">Anthropic: Claude Opus 5</a></li><li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank" rel="noopener noreferrer">Google: Gemini 3.1 Pro</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://openai.com/index/introducing-gpt-5-5/" target="_blank" rel="noopener noreferrer">OpenAI: GPT-5.5</a></li><li><a href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener noreferrer">Anthropic: Claude Opus 5</a></li><li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank" rel="noopener noreferrer">Google: Gemini 3.1 Pro</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://openai.com/index/introducing-gpt-5-5/" target="_blank" rel="noopener noreferrer">OpenAI: GPT-5.5</a></li><li><a href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener noreferrer">Anthropic: Claude Opus 5</a></li><li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank" rel="noopener noreferrer">Google: Gemini 3.1 Pro</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p></div><aside class="article-aside" aria-label="Artikelhinweise"><div class="article-aside-block"><small>Autor</small><p>Patrick Vach<br>Inhaber, vachsystems</p></div><div class="article-aside-block"><small>Stand</small><p>Geprüft am 28.08.2026</p></div><div class="article-aside-block"><small>Einordnung</small><p>Keine Rechts- oder Anlageberatung. Technische Entscheidungen immer am konkreten Einsatzfall prüfen.</p></div><div class="article-aside-block"><small>Zurück</small><a href="/blog/">Alle Einblicke</a></div></aside></div>
+</article><section class="cta-stage"><div class="cta-inner reveal"><p class="page-kicker">Ihr Vorhaben</p><h2>Passt das Thema zu einer konkreten Aufgabe in Ihrem Unternehmen?</h2><div class="cta-row"><p>Wir ordnen den Anwendungsfall gemeinsam ein und sagen offen, ob eine technische Umsetzung sinnvoll ist.</p><a class="button light" href="../kontakt"><span>Projekt besprechen</span><span aria-hidden="true">↗</span></a></div></div></section></main>
+<footer class="studio-footer">
+  <div class="studio-footer-main">
+    <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>
+    <div class="studio-footer-links"><span>Leistungen</span><a href="../leistungen">Websites</a><a href="../loesungen">Software</a><a href="../ki-automatisierung-unternehmen">Automatisierung</a><a href="../ki-workshop-unternehmen">KI-Workshop</a></div>
+    <div class="studio-footer-links"><span>vachsystems</span><a href="../projekte">Arbeiten</a><a href="../ueber-uns">Über uns</a><a href="../blog/">Einblicke</a><a href="../kontakt">Kontakt</a></div>
+  </div>
+  <div class="studio-footer-legal"><span>© 2026 vachsystems · Berlin · ohne Tracking</span><div><a href="../impressum">Impressum</a><a href="../datenschutz">Datenschutz</a></div></div>
+</footer>
+<script src="../js/studio-system.js?v=20260828-1" defer></script>
+<script src="../js/site-cleanup.js?v=20260828-1" defer></script>
+</body></html>

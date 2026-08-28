@@ -1,87 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI-Pragmatismus 2026: Vom Hype zur messbaren Produktivität. Wie Unternehmen AI endlich profitabel einsetzen.">
-    <meta name="keywords" content="AI Pragmatismus, AI ROI, Messbare Produktivität, Enterprise AI, AI Strategy 2026">
-    <title>AI-Pragmatismus 2026: Vom Hype zur messbaren Produktivität | Vach Systems Blog</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="stylesheet" href="../css/style.min.css">
-    <style>
-        * { hyphens: none !important; -webkit-hyphens: none !important; word-break: normal !important; }
-        .article { max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem; }
-        .article-header { margin-bottom: 3rem; }
-        .article-meta { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-        .article-excerpt { font-size: 1.25rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem; }
-        .article-lead { font-size: 1.25rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem; }
-        .article-image { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 3rem; }
-        .article-content { font-size: 1.125rem; line-height: 1.8; color: var(--gray-900); }
-        .article-content h2 { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; line-height: 1.3; }
-        .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul, .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
-        .article-content li { margin-bottom: 0.75rem; }
-        .article-content strong { font-weight: 700; color: var(--gray-900); }
-        .highlight-box { background: #f8f9fa; border-left: 4px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
-        .highlight-box p:last-child { margin-bottom: 0; }
-        .blog-cta{margin:4rem 0;padding:3rem;background:linear-gradient(135deg,#000 0%,#1F2937 100%);border-radius:16px;text-align:center;color:#fff}.blog-cta h3{font-size:2rem;font-weight:800;margin-bottom:1rem;color:#fff}.blog-cta>p{font-size:1.125rem;margin-bottom:2rem;color:#fff!important;opacity:.95}.blog-cta a{display:inline-block;padding:1rem 2.5rem;background:#fff;color:var(--black);text-decoration:none;border-radius:8px;font-weight:700;margin-bottom:1rem}.blog-cta .email-alt{font-size:.9rem;color:rgba(255,255,255,.9)!important;margin:0;opacity:1!important}.blog-cta .email-alt a{display:inline;padding:0;background:0 0;color:#fff!important;text-decoration:underline;font-size:.9rem;margin:0}
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 2rem 0; }
-        .stat-box { text-align: center; padding: 2rem; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .stat-number { font-size: 3rem; font-weight: 900; color: var(--accent); margin-bottom: 0.5rem; }
-        .stat-label { font-size: 0.875rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.05em; }
-        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--accent); font-weight: 600; text-decoration: none; }
-        .back-link:hover { text-decoration: underline; }
-        .blog-article { max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem; }
-        .blog-article .article-header { margin-bottom: 3rem; }
-        .blog-article .article-meta { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; display: flex; gap: 1rem; }
-        .blog-article h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-        .blog-article .article-content { font-size: 1.125rem; line-height: 1.8; color: var(--gray-900); }
-        .blog-article .article-content h2 { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; line-height: 1.3; }
-        .blog-article .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
-        .blog-article .article-content ul, .blog-article .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
-        .blog-article .article-content li { margin-bottom: 0.75rem; }
-        @media (max-width: 768px) {
-            .article { padding: 4rem 1.5rem 3rem; }
-            .article-title { font-size: 2.25rem; }
-            h1 { font-size: 2.25rem; }
-            .article-image { height: 250px; }
-            .article-content { font-size: 1rem; }
-            .article-content h2 { font-size: 1.75rem; }
-            .stats-grid { grid-template-columns: 1fr; gap: 1rem; }
-        }
-    </style>
-</head>
-<body>
-    <nav class="nav-minimal"><div class="nav-container"><a href="../" class="logo-minimal"><div class="logo-mark"></div><span>Vach Systems</span></a><div class="nav-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div><div class="hamburger" id="hamburger"><span></span><span></span><span></span></div></div></nav>
-    <div class="menu-overlay" id="menuOverlay"></div>
-    <div class="mobile-menu" id="mobileMenu"><a href="../">Home</a><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div>
-
-    <article class="blog-article">
-        <header class="article-header">
-            <div class="article-meta">
-                <span class="article-date">5. August 2026</span>
-                <span class="article-reading-time">10 Min. Lesezeit</span>
-            </div>
-            <h1>AI-Pragmatismus 2026: Vom Hype zur messbaren Produktivität</h1>
-            <p class="article-lead">Der Hype ist vorbei. 2026 zählt nur noch: Messbare Produktivität, ROI, echte Zeitersparnis. Wie Unternehmen AI pragmatisch und profitabel einsetzen.</p>
-        <img srcset="../images/blog/1786288075188-1ddy5ff-600w.webp 600w, ../images/blog/1786288075188-1ddy5ff-1400w.webp 1400w" 
-             sizes="(max-width: 768px) 600px, 1400px"
-             src="../images/blog/1786288075188-1ddy5ff-1400w.webp" 
-             alt="Ai Pragmatismus 2026 Hype Zu Produktivitaet" 
-             class="article-image"
-             loading="lazy"
-             width="1400"
-             height="933">
-        </header>
-
-        <section class="article-content">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vom KI-Hype zur produktiven Anwendung | vachsystems</title>
+  <meta name="description" content="Warum ein klarer Prozess wertvoller ist als die nächste Werkzeug-Demo.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#050608">
+  <link rel="canonical" href="https://vachsystems.de/blog/ai-pragmatismus-2026-hype-zu-produktivitaet">
+  <link rel="icon" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/studio-system.css?v=20260828-1">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Vom KI-Hype zur produktiven Anwendung | vachsystems">
+  <meta property="og:description" content="Warum ein klarer Prozess wertvoller ist als die nächste Werkzeug-Demo.">
+  <meta property="og:url" content="https://vachsystems.de/blog/ai-pragmatismus-2026-hype-zu-produktivitaet">
+  <meta property="og:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Abstraktes digitales Objekt von vachsystems">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vom KI-Hype zur produktiven Anwendung | vachsystems">
+  <meta name="twitter:description" content="Warum ein klarer Prozess wertvoller ist als die nächste Werkzeug-Demo.">
+  <meta name="twitter:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Vom KI-Hype zur produktiven Anwendung",
+  "description": "Warum ein klarer Prozess wertvoller ist als die nächste Werkzeug-Demo.",
+  "datePublished": "2026-08-05",
+  "dateModified": "2026-08-28",
+  "mainEntityOfPage": "https://vachsystems.de/blog/ai-pragmatismus-2026-hype-zu-produktivitaet",
+  "author": {
+    "@type": "Person",
+    "name": "Patrick Vach"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "vachsystems",
+    "url": "https://vachsystems.de/"
+  },
+  "image": "https://vachsystems.de/images/vachsystems-object-og.webp"
+}</script>
+  <link rel="stylesheet" href="../css/editorial-studio.css?v=20260828-1">
+</head><body class="article-shell">
+<a class="studio-skip" href="#main">Zum Inhalt springen</a>
+<header class="studio-header" data-header>
+  <nav class="studio-nav" aria-label="Hauptnavigation">
+    <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>
+    <div class="studio-links" id="studio-navigation" data-navigation>
+      <a href="../leistungen">Websites</a>
+      <a href="../loesungen">Software</a>
+      <a href="../ki-automatisierung-unternehmen">Automatisierung</a>
+      <a href="../projekte">Arbeiten</a>
+      <a href="../ueber-uns">Über uns</a>
+    </div>
+    <a class="studio-nav-cta" href="../kontakt">Projekt besprechen <span aria-hidden="true">↗</span></a>
+    <button class="studio-menu-button" type="button" aria-expanded="false" aria-controls="studio-navigation" aria-label="Menü öffnen" data-menu-button><span></span><span></span></button>
+  </nav>
+</header>
+<main id="main"><article>
+  <header class="article-masthead"><div class="article-masthead-inner"><div class="article-meta"><span>Praxis</span><time datetime="2026-08-05">5. August 2026</time><span>Zuletzt geprüft: 28. August 2026</span></div><h1>Vom KI-Hype zur produktiven Anwendung</h1><p class="article-lead">Warum ein klarer Prozess wertvoller ist als die nächste Werkzeug-Demo.</p><div class="article-byline"><span>Text & Einordnung: <strong>Patrick Vach</strong></span><span>Technische Angaben sind zeitabhängig und werden vor Projektentscheidungen neu geprüft.</span></div></div></header>
+  <div class="article-layout"><div class="article-content">
             <h2>2024 vs. 2026: Der Wandel</h2>
             
             <h3>2024: Der Hype</h3>
             <ul>
-                <li>"AI wird alles verändern!"</li>
+                <li>"KI wird alles verändern!"</li>
                 <li>Jeder experimentiert mit ChatGPT</li>
                 <li>Innovation > ROI</li>
                 <li>100 Projekte gestartet, 5 produktiv</li>
@@ -90,73 +76,73 @@
             <h3>2026: Der Pragmatismus</h3>
             <ul>
                 <li>"Zeig mir messbare Ergebnisse"</li>
-                <li>Fokus auf 5-10 Core Use Cases</li>
+                <li>Fokus auf 5-10 Core Anwendungsfälle</li>
                 <li>ROI > Coolness</li>
                 <li>10 Projekte gestartet, 8 produktiv</li>
             </ul>
 
             <p><strong>Shift:</strong> Von "Was ist möglich?" zu "Was lohnt sich?"</p>
 
-            <h2>Die 5 Prinzipien des AI-Pragmatismus</h2>
+            <h2>Die 5 Prinzipien des KI-Pragmatismus</h2>
             
             <h3>1. ROI First</h3>
-            <p>Jedes AI-Projekt braucht Business Case. Keine Experimente ohne klares Ziel.</p>
+            <p>Jedes KI-Projekt braucht Business Case. Keine Experimente ohne klares Ziel.</p>
 
             <h3>2. Start Small</h3>
-            <p>1 Use Case perfekt > 10 Use Cases halbfertig.</p>
+            <p>1 Anwendungsfall perfekt > 10 Anwendungsfälle halbfertig.</p>
 
             <h3>3. Measure Everything</h3>
-            <p>Zeit gespart? Fehlerrate? Kosten? Wenn nicht messbar → nicht real.</p>
+            <p>Zeit gespart? Fehlerrate? Kosten? Wenn nicht messbar  nicht real.</p>
 
             <h3>4. Iterate Fast</h3>
-            <p>2 Wochen testen → entscheiden → nächster Test. Kein 6-Monats-Projekt ohne Zwischenergebnisse.</p>
+            <p>2 Wochen testen  entscheiden  nächster Test. Kein 6-Monats-Projekt ohne Zwischenergebnisse.</p>
 
             <h3>5. Kill Bad Projects</h3>
-            <p>Wenn ROI nach 3 Monaten nicht erkennbar → stoppen. Sunk Cost Fallacy vermeiden.</p>
+            <p>Wenn ROI nach 3 Monaten nicht erkennbar  stoppen. Sunk Cost Fallacy vermeiden.</p>
 
-            <p>Mehr zu Strategie: <a href="ai-first-vs-ai-ready-unternehmen-2026">AI-First vs. AI-Ready: Wie sich Unternehmen 2026 unterscheiden</a></p>
+            <p>Mehr zu Strategie: <a href="ai-first-vs-ai-ready-unternehmen-2026">KI-First vs. KI-Ready: Wie sich Unternehmen 2026 unterscheiden</a></p>
 
             <h2>Messbare Metriken die zählen</h2>
             
             <h3>Zeit-Ersparnis</h3>
             <ul>
                 <li><strong>Vorher:</strong> Task dauert 10h/Woche</li>
-                <li><strong>Mit AI:</strong> Task dauert 3h/Woche</li>
+                <li><strong>Mit KI:</strong> Task dauert 3h/Woche</li>
                 <li><strong>Ersparnis:</strong> 7h × 52 Wochen × 30€/h = 10.920€/Jahr</li>
             </ul>
 
             <h3>Fehler-Reduktion</h3>
             <ul>
                 <li><strong>Vorher:</strong> 5% Fehlerquote bei Rechnungen</li>
-                <li><strong>Mit AI:</strong> 0.5% Fehlerquote</li>
+                <li><strong>Mit KI:</strong> 0.5% Fehlerquote</li>
                 <li><strong>Ersparnis:</strong> 90% weniger Nacharbeit</li>
             </ul>
 
             <h3>Kosten-Einsparung</h3>
             <ul>
                 <li><strong>Vorher:</strong> 3 FTE für Task X</li>
-                <li><strong>Mit AI:</strong> 1 FTE + AI System</li>
-                <li><strong>Ersparnis:</strong> 2 × 60K€ - 10K€ AI = 110K€/Jahr</li>
+                <li><strong>Mit KI:</strong> 1 FTE + KI System</li>
+                <li><strong>Ersparnis:</strong> 2 × 60K€ - 10K€ KI = 110K€/Jahr</li>
             </ul>
 
-            <h2>Real-World Cases: Pragmatisch umgesetzt</h2>
+            <h2>Beispielhafte Cases: Pragmatisch umgesetzt</h2>
             
             <h3>Case 1: Logistik-Firma</h3>
-            <p><strong>Use Case:</strong> E-Mail-Routing (200 Mails/Tag)</p>
+            <p><strong>Anwendungsfall:</strong> E-Mail-Routing (200 Mails/Tag)</p>
             <p><strong>Lösung:</strong> Simple GPT-5-mini Classification</p>
             <p><strong>Kosten:</strong> 50€/Monat</p>
             <p><strong>Ersparnis:</strong> 2h/Tag × 20 Tage × 30€ = 1.200€/Monat</p>
             <p><strong>ROI:</strong> 2.300%</p>
 
             <h3>Case 2: Handwerksbetrieb</h3>
-            <p><strong>Use Case:</strong> Angebotserstellung</p>
+            <p><strong>Anwendungsfall:</strong> Angebotserstellung</p>
             <p><strong>Lösung:</strong> Fine-Tuned Llama 3.3</p>
             <p><strong>Kosten:</strong> 3.000€ Setup + 100€/Monat</p>
             <p><strong>Ersparnis:</strong> 15h/Woche × 30€ = 1.800€/Monat</p>
             <p><strong>ROI:</strong> Break-Even nach 2 Monaten</p>
 
             <h3>Case 3: SaaS-Startup</h3>
-            <p><strong>Use Case:</strong> Kundenservice Tier-1</p>
+            <p><strong>Anwendungsfall:</strong> Kundenservice Tier-1</p>
             <p><strong>Lösung:</strong> Claude Haiku Agent</p>
             <p><strong>Kosten:</strong> 400€/Monat</p>
             <p><strong>Ersparnis:</strong> 40% Tickets automatisch = 1 FTE gespart = 4.000€/Monat</p>
@@ -166,24 +152,24 @@
 
             <h2>Anti-Patterns: Was nicht funktioniert</h2>
             
-            <h3>❌ "AI für alles"</h3>
-            <p>30 Use Cases parallel → keiner wird gut. Fokus fehlt.</p>
+            <h3> "KI für alles"</h3>
+            <p>30 Anwendungsfälle parallel  keiner wird gut. Fokus fehlt.</p>
 
-            <h3>❌ "Wir brauchen das beste Model"</h3>
-            <p>GPT-5.5 für simple Klassifikation → 10× zu teuer.</p>
+            <h3> "Wir brauchen das beste Model"</h3>
+            <p>GPT-5.5 für simple Klassifikation  10× zu teuer.</p>
 
-            <h3>❌ "Innovation Theater"</h3>
-            <p>Pilot-Projekte ohne Rollout-Plan → ewiges Experimentieren.</p>
+            <h3> "Innovation Theater"</h3>
+            <p>Pilot-Projekte ohne Rollout-Plan  ewiges Experimentieren.</p>
 
-            <h3>❌ "No Measurement"</h3>
-            <p>"AI ist toll" – aber keine Zahlen. Bauchgefühl ≠ ROI.</p>
+            <h3> "No Measurement"</h3>
+            <p>"KI ist toll" – aber keine Zahlen. Bauchgefühl ≠ ROI.</p>
 
-            <h3>❌ "Over-Engineering"</h3>
+            <h3> "Over-Engineering"</h3>
             <p>Multi-Agent System mit 500 Steps für simple E-Mail-Aufgabe.</p>
 
-            <p>Mehr zu Fehlern: <a href="warum-95-prozent-der-ki-projekte-scheitern">Warum 95% der KI-Projekte scheitern</a></p>
+            <p>Mehr zu Fehlern: <a href="/blog/">Warum 95% der KI-Projekte scheitern</a></p>
 
-            <h2>Der Pragmatic AI Stack</h2>
+            <h2>Der Pragmatic KI Stack</h2>
             
             <h3>Layer 1: Quick Wins (Woche 1-4)</h3>
             <ul>
@@ -212,7 +198,7 @@
             
             <h3>Mittelstand (50-500 Mitarbeiter):</h3>
             <ul>
-                <li><strong>Total AI Budget:</strong> 50-200K€/Jahr</li>
+                <li><strong>Total KI Budget:</strong> 50-200K€/Jahr</li>
                 <li><strong>API-Kosten:</strong> 30-40%</li>
                 <li><strong>Engineering:</strong> 40-50%</li>
                 <li><strong>Tools & Infra:</strong> 10-20%</li>
@@ -220,23 +206,23 @@
             </ul>
 
             <h3>ROI-Erwartung:</h3>
-            <p>2× Return minimum. Wenn Investment 100K€ → mind. 200K€ Nutzen/Jahr.</p>
+            <p>2× Return minimum. Wenn Investment 100K€  mind. 200K€ Nutzen/Jahr.</p>
 
             <h2>Change Management: Team mitnehmen</h2>
             
-            <h3>Fear: "AI nimmt Jobs weg"</h3>
-            <p><strong>Realität:</strong> AI übernimmt repetitive Tasks. Menschen machen wertvollere Arbeit.</p>
+            <h3>Fear: "KI nimmt Jobs weg"</h3>
+            <p><strong>Realität:</strong> KI übernimmt repetitive Tasks. Menschen machen wertvollere Arbeit.</p>
 
-            <h3>Fear: "Ich kann kein AI"</h3>
+            <h3>Fear: "Ich kann kein KI"</h3>
             <p><strong>Lösung:</strong> Training, Workshops, langsamer Rollout.</p>
 
             <h3>Fear: "Fehler passieren"</h3>
             <p><strong>Lösung:</strong> Human-in-Loop, Guardrails, schrittweise Autonomie.</p>
 
-            <p><strong>Best Practice:</strong> Early Adopters identifizieren → Champions machen → Rest folgt!</p>
+            <p><strong>Best Practice:</strong> Early Adopters identifizieren  Champions machen  Rest folgt!</p>
 
-            <h2>Die Zukunft: Boring AI</h2>
-            <p>2027-2028: AI wird langweilig. Wie E-Mail, Cloud, Mobile.</p>
+            <h2>Die Zukunft: Boring KI</h2>
+            <p>2027-2028: KI wird langweilig. Wie E-Mail, Cloud, Mobile.</p>
 
             <ul>
                 <li>Keine Schlagzeilen mehr</li>
@@ -248,21 +234,21 @@
 
             <p>Weiterlesen:</p>
             <ul>
-                <li><a href="ki-im-mittelstand-praktische-einsatzmoeglichkeiten">KI im Mittelstand: 5 praktische Einsatzmöglichkeiten</a></li>
-                <li><a href="welche-unternehmensprozesse-lassen-sich-mit-ki-automatisieren">Welche Prozesse lassen sich automatisieren?</a></li>
+                <li><a href="/blog/">KI im Mittelstand: 5 praktische Einsatzmöglichkeiten</a></li>
+                <li><a href="/blog/">Welche Prozesse lassen sich automatisieren?</a></li>
                 <li><a href="von-copilot-zu-agent-paradigmenwechsel-automatisierung">Von Copilot zu Agent: Der Paradigmenwechsel</a></li>
             </ul>
 
-        </section>
-
-        <div class="article-cta">
-            <h3>Pragmatische AI-Strategie entwickeln?</h3>
-            <p>Wir identifizieren Ihre profitabelsten Use Cases und bauen ROI-fokussierten Rollout-Plan. Kostenlose Strategie-Session.</p>
-            <a href="../kontakt" class="cta-button">Kostenlose AI-Strategie-Session</a>
-        </div>
-    </article>
-
-    <footer class="footer-minimal"><div class="footer-container"><div class="footer-main"><div class="footer-brand"><div class="footer-logo"><div class="logo-mark"></div><span>Vach Systems</span></div><p>Intelligente Softwaresysteme für moderne Unternehmen</p></div><div class="footer-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ueber-uns">Über uns</a><a href="../kontakt">Kontakt</a></div><div class="footer-contact"><a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a></div></div><div class="footer-legal"><span>© 2026 Vach Systems</span><a href="../impressum">Impressum</a><a href="../datenschutz">Datenschutz</a></div></div></footer>
-    <script src="../js/script.min.js" defer></script>
-</body>
-</html>
+        <section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: AI Risk Management Framework</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p></div><aside class="article-aside" aria-label="Artikelhinweise"><div class="article-aside-block"><small>Autor</small><p>Patrick Vach<br>Inhaber, vachsystems</p></div><div class="article-aside-block"><small>Stand</small><p>Geprüft am 28.08.2026</p></div><div class="article-aside-block"><small>Einordnung</small><p>Keine Rechts- oder Anlageberatung. Technische Entscheidungen immer am konkreten Einsatzfall prüfen.</p></div><div class="article-aside-block"><small>Zurück</small><a href="/blog/">Alle Einblicke</a></div></aside></div>
+</article><section class="cta-stage"><div class="cta-inner reveal"><p class="page-kicker">Ihr Vorhaben</p><h2>Passt das Thema zu einer konkreten Aufgabe in Ihrem Unternehmen?</h2><div class="cta-row"><p>Wir ordnen den Anwendungsfall gemeinsam ein und sagen offen, ob eine technische Umsetzung sinnvoll ist.</p><a class="button light" href="../kontakt"><span>Projekt besprechen</span><span aria-hidden="true">↗</span></a></div></div></section></main>
+<footer class="studio-footer">
+  <div class="studio-footer-main">
+    <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>
+    <div class="studio-footer-links"><span>Leistungen</span><a href="../leistungen">Websites</a><a href="../loesungen">Software</a><a href="../ki-automatisierung-unternehmen">Automatisierung</a><a href="../ki-workshop-unternehmen">KI-Workshop</a></div>
+    <div class="studio-footer-links"><span>vachsystems</span><a href="../projekte">Arbeiten</a><a href="../ueber-uns">Über uns</a><a href="../blog/">Einblicke</a><a href="../kontakt">Kontakt</a></div>
+  </div>
+  <div class="studio-footer-legal"><span>© 2026 vachsystems · Berlin · ohne Tracking</span><div><a href="../impressum">Impressum</a><a href="../datenschutz">Datenschutz</a></div></div>
+</footer>
+<script src="../js/studio-system.js?v=20260828-1" defer></script>
+<script src="../js/site-cleanup.js?v=20260828-1" defer></script>
+</body></html>

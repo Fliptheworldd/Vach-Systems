@@ -1,84 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Agentic Automation mit Guardrails: Wie Mittelständler AI sicher einsetzen. Human-in-Loop, Approval Workflows, Safety Constraints.">
-    <meta name="keywords" content="Agentic Automation, Guardrails, AI Safety, Human-in-Loop, Approval Workflows, Enterprise AI Security">
-    <title>Agentic Automation mit Guardrails: Wie Mittelständler AI sicher einsetzen | Vach Systems Blog</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="stylesheet" href="../css/style.min.css">
-    <style>
-        * { hyphens: none !important; -webkit-hyphens: none !important; word-break: normal !important; }
-        .article { max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem; }
-        .article-header { margin-bottom: 3rem; }
-        .article-meta { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-        .article-excerpt { font-size: 1.25rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem; }
-        .article-lead { font-size: 1.25rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem; }
-        .article-image { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 3rem; }
-        .article-content { font-size: 1.125rem; line-height: 1.8; color: var(--gray-900); }
-        .article-content h2 { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; line-height: 1.3; }
-        .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul, .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
-        .article-content li { margin-bottom: 0.75rem; }
-        .article-content strong { font-weight: 700; color: var(--gray-900); }
-        .highlight-box { background: #f8f9fa; border-left: 4px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
-        .highlight-box p:last-child { margin-bottom: 0; }
-        .blog-cta{margin:4rem 0;padding:3rem;background:linear-gradient(135deg,#000 0%,#1F2937 100%);border-radius:16px;text-align:center;color:#fff}.blog-cta h3{font-size:2rem;font-weight:800;margin-bottom:1rem;color:#fff}.blog-cta>p{font-size:1.125rem;margin-bottom:2rem;color:#fff!important;opacity:.95}.blog-cta a{display:inline-block;padding:1rem 2.5rem;background:#fff;color:var(--black);text-decoration:none;border-radius:8px;font-weight:700;margin-bottom:1rem}.blog-cta .email-alt{font-size:.9rem;color:rgba(255,255,255,.9)!important;margin:0;opacity:1!important}.blog-cta .email-alt a{display:inline;padding:0;background:0 0;color:#fff!important;text-decoration:underline;font-size:.9rem;margin:0}
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 2rem 0; }
-        .stat-box { text-align: center; padding: 2rem; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .stat-number { font-size: 3rem; font-weight: 900; color: var(--accent); margin-bottom: 0.5rem; }
-        .stat-label { font-size: 0.875rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.05em; }
-        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--accent); font-weight: 600; text-decoration: none; }
-        .back-link:hover { text-decoration: underline; }
-        .blog-article { max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem; }
-        .blog-article .article-header { margin-bottom: 3rem; }
-        .blog-article .article-meta { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; display: flex; gap: 1rem; }
-        .blog-article h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-        .blog-article .article-content { font-size: 1.125rem; line-height: 1.8; color: var(--gray-900); }
-        .blog-article .article-content h2 { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; line-height: 1.3; }
-        .blog-article .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
-        .blog-article .article-content ul, .blog-article .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
-        .blog-article .article-content li { margin-bottom: 0.75rem; }
-        @media (max-width: 768px) {
-            .article { padding: 4rem 1.5rem 3rem; }
-            .article-title { font-size: 2.25rem; }
-            h1 { font-size: 2.25rem; }
-            .article-image { height: 250px; }
-            .article-content { font-size: 1rem; }
-            .article-content h2 { font-size: 1.75rem; }
-            .stats-grid { grid-template-columns: 1fr; gap: 1rem; }
-        }
-    </style>
-</head>
-<body>
-    <nav class="nav-minimal"><div class="nav-container"><a href="../" class="logo-minimal"><div class="logo-mark"></div><span>Vach Systems</span></a><div class="nav-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div><div class="hamburger" id="hamburger"><span></span><span></span><span></span></div></div></nav>
-    <div class="menu-overlay" id="menuOverlay"></div>
-    <div class="mobile-menu" id="mobileMenu"><a href="../">Home</a><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div>
-
-    <article class="blog-article">
-        <header class="article-header">
-            <div class="article-meta">
-                <span class="article-date">18. Juli 2026</span>
-                <span class="article-reading-time">11 Min. Lesezeit</span>
-            </div>
-            <h1>Agentic Automation mit Guardrails: Wie Mittelständler AI sicher einsetzen</h1>
-            <p class="article-lead">AI Agents können viel – aber was wenn sie Fehler machen? Guardrails sind die Leitplanken die AI sicher halten. Der Praxis-Guide für sichere Automatisierung.</p>
-        <img srcset="../images/blog/1786288072952-1vulqrf-600w.webp 600w, ../images/blog/1786288072952-1vulqrf-1400w.webp 1400w" 
-             sizes="(max-width: 768px) 600px, 1400px"
-             src="../images/blog/1786288072952-1vulqrf-1400w.webp" 
-             alt="Agentic Automation Guardrails Mittelstand Sicher" 
-             class="article-image"
-             loading="lazy"
-             width="1400"
-             height="933">
-        </header>
-
-        <section class="article-content">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automatisierung mit klaren Leitplanken | vachsystems</title>
+  <meta name="description" content="Freigaben, Rollen, Protokolle und Rückfallwege für kontrollierte Agenten.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#050608">
+  <link rel="canonical" href="https://vachsystems.de/blog/agentic-automation-guardrails-mittelstand-sicher">
+  <link rel="icon" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/studio-system.css?v=20260828-1">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Automatisierung mit klaren Leitplanken | vachsystems">
+  <meta property="og:description" content="Freigaben, Rollen, Protokolle und Rückfallwege für kontrollierte Agenten.">
+  <meta property="og:url" content="https://vachsystems.de/blog/agentic-automation-guardrails-mittelstand-sicher">
+  <meta property="og:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Abstraktes digitales Objekt von vachsystems">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Automatisierung mit klaren Leitplanken | vachsystems">
+  <meta name="twitter:description" content="Freigaben, Rollen, Protokolle und Rückfallwege für kontrollierte Agenten.">
+  <meta name="twitter:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Automatisierung mit klaren Leitplanken",
+  "description": "Freigaben, Rollen, Protokolle und Rückfallwege für kontrollierte Agenten.",
+  "datePublished": "2026-07-18",
+  "dateModified": "2026-08-28",
+  "mainEntityOfPage": "https://vachsystems.de/blog/agentic-automation-guardrails-mittelstand-sicher",
+  "author": {
+    "@type": "Person",
+    "name": "Patrick Vach"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "vachsystems",
+    "url": "https://vachsystems.de/"
+  },
+  "image": "https://vachsystems.de/images/vachsystems-object-og.webp"
+}</script>
+  <link rel="stylesheet" href="../css/editorial-studio.css?v=20260828-1">
+</head><body class="article-shell">
+<a class="studio-skip" href="#main">Zum Inhalt springen</a>
+<header class="studio-header" data-header>
+  <nav class="studio-nav" aria-label="Hauptnavigation">
+    <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>
+    <div class="studio-links" id="studio-navigation" data-navigation>
+      <a href="../leistungen">Websites</a>
+      <a href="../loesungen">Software</a>
+      <a href="../ki-automatisierung-unternehmen">Automatisierung</a>
+      <a href="../projekte">Arbeiten</a>
+      <a href="../ueber-uns">Über uns</a>
+    </div>
+    <a class="studio-nav-cta" href="../kontakt">Projekt besprechen <span aria-hidden="true">↗</span></a>
+    <button class="studio-menu-button" type="button" aria-expanded="false" aria-controls="studio-navigation" aria-label="Menü öffnen" data-menu-button><span></span><span></span></button>
+  </nav>
+</header>
+<main id="main"><article>
+  <header class="article-masthead"><div class="article-masthead-inner"><div class="article-meta"><span>Sicherheit</span><time datetime="2026-07-18">18. Juli 2026</time><span>Zuletzt geprüft: 28. August 2026</span></div><h1>Automatisierung mit klaren Leitplanken</h1><p class="article-lead">Freigaben, Rollen, Protokolle und Rückfallwege für kontrollierte Agenten.</p><div class="article-byline"><span>Text & Einordnung: <strong>Patrick Vach</strong></span><span>Technische Angaben sind zeitabhängig und werden vor Projektentscheidungen neu geprüft.</span></div></div></header>
+  <div class="article-layout"><div class="article-content">
             <h2>Was sind Guardrails?</h2>
-            <p>Guardrails = Regeln die verhindern dass AI etwas Falsches tut.</p>
+            <p>Guardrails = Regeln die verhindern dass KI etwas Falsches tut.</p>
             
             <h3>Analogie: Fahrassistent</h3>
             <ul>
@@ -93,17 +79,17 @@
             <p><strong>Beispiel:</strong> Agent darf Rechnungen <1.000€ automatisch buchen, >1.000€ brauchen Approval.</p>
 
             <h3>2. Confidence Thresholds</h3>
-            <p>AI gibt Sicherheit an: >90% = Auto, 70-90% = Review, &lt;70% = Manuelle Bearbeitung</p>
+            <p>KI gibt Sicherheit an: >90% = Auto, 70-90% = Review, &lt;70% = Manuelle Bearbeitung</p>
 
             <h3>3. Action Whitelisting</h3>
             <p>Agent darf nur vordefinierte Actions ausführen.</p>
             <p><strong>Erlaubt:</strong> E-Mail senden, Datenbank-Read<br><strong>Verboten:</strong> Daten löschen, Geld überweisen</p>
 
             <h3>4. Rate Limiting</h3>
-            <p>Max. 100 API-Calls/Minute → verhindert Kosten-Explosion.</p>
+            <p>Max. 100 API-Calls/Minute  verhindert Kosten-Explosion.</p>
 
             <h3>5. Timeout Limits</h3>
-            <p>Agent darf max. 5 Minuten laufen → verhindert Endlos-Loops.</p>
+            <p>Agent darf max. 5 Minuten laufen  verhindert Endlos-Loops.</p>
 
             <h3>6. Audit Logging</h3>
             <p>Jede Action wird protokolliert: Wer, Was, Wann, Warum.</p>
@@ -111,51 +97,51 @@
             <h3>7. Rollback Capability</h3>
             <p>Agent-Fehler müssen rückgängig machbar sein.</p>
 
-            <p>Mehr zu Agents: <a href="agentic-ai-mittelstand-von-theorie-zur-praxis">Agentic AI im Mittelstand: Von der Theorie zur Praxis</a></p>
+            <p>Mehr zu Agents: <a href="/blog/">Agentic KI im Mittelstand: Von der Theorie zur Praxis</a></p>
 
             <h2>Guardrail-Level nach Risk</h2>
             
-            <table style="width:100%; border-collapse: collapse; margin: 2rem 0;">
-                <tr style="background: #f8fafc;">
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Risk Level</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Guardrails</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Beispiel</th>
+            <table>
+                <tr>
+                    <th>Risk Level</th>
+                    <th>Guardrails</th>
+                    <th>Beispiel</th>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Low Risk</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Logging, Timeout</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">E-Mail-Klassifikation</td>
+                    <td><strong>Low Risk</strong></td>
+                    <td>Logging, Timeout</td>
+                    <td>E-Mail-Klassifikation</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Medium Risk</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">+ Confidence Threshold</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Kundenservice Antworten</td>
+                    <td><strong>Medium Risk</strong></td>
+                    <td>+ Confidence Threshold</td>
+                    <td>Kundenservice Antworten</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>High Risk</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">+ Human-in-Loop</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Rechnungen buchen</td>
+                    <td><strong>High Risk</strong></td>
+                    <td>+ Human-in-Loop</td>
+                    <td>Rechnungen buchen</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Critical Risk</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">+ Approval Workflow</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Verträge unterschreiben</td>
+                    <td><strong>Critical Risk</strong></td>
+                    <td>+ Approval Workflow</td>
+                    <td>Verträge unterschreiben</td>
                 </tr>
             </table>
 
             <h2>Human-in-the-Loop: 3 Patterns</h2>
             
             <h3>Pattern 1: Full Human Review</h3>
-            <p>AI schlägt vor, Mensch entscheidet immer.</p>
-            <p><strong>Use Case:</strong> Strateg ische Entscheidungen, HR, Legal</p>
+            <p>KI schlägt vor, Mensch entscheidet immer.</p>
+            <p><strong>Anwendungsfall:</strong> Strateg ische Entscheidungen, HR, Legal</p>
 
             <h3>Pattern 2: Conditional Human Review</h3>
-            <p>AI entscheidet bei einfachen Fällen selbst, eskaliert komplexe.</p>
-            <p><strong>Use Case:</strong> Kundenservice (80% auto, 20% escalated)</p>
+            <p>KI entscheidet bei einfachen Fällen selbst, eskaliert komplexe.</p>
+            <p><strong>Anwendungsfall:</strong> Kundenservice (80% auto, 20% escalated)</p>
 
             <h3>Pattern 3: Post-Facto Review</h3>
-            <p>AI handelt selbstständig, Mensch prüft nachträglich (Stichproben).</p>
-            <p><strong>Use Case:</strong> Rechnungsverarbeitung (5% Random Sampling)</p>
+            <p>KI handelt selbstständig, Mensch prüft nachträglich (Stichproben).</p>
+            <p><strong>Anwendungsfall:</strong> Rechnungsverarbeitung (5% Random Sampling)</p>
 
             <h2>Confidence Thresholds in der Praxis</h2>
             
@@ -164,11 +150,11 @@
                 <li><strong>>95% Confidence:</strong> Automatisch klassifizieren</li>
                 <li><strong>85-95%:</strong> Klassifizieren + Flag für Review</li>
                 <li><strong>70-85%:</strong> Vorschlag an Mensch</li>
-                <li><strong>&lt;70%:</strong> "Nicht sicher" → manuelle Klassifikation</li>
+                <li><strong>&lt;70%:</strong> "Nicht sicher"  manuelle Klassifikation</li>
             </ul>
 
             <h3>Code-Beispiel:</h3>
-            <pre style="background: #f8fafc; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code>confidence = agent.classify(document)
+            <pre><code>confidence = agent.classify(document)
 if confidence > 0.95:
     auto_process()
 elif confidence > 0.85:
@@ -183,15 +169,15 @@ else:
 
             <h3>Whitelist-Beispiel:</h3>
             <ul>
-                <li>✅ <code>send_email(to, subject, body)</code></li>
-                <li>✅ <code>create_ticket(title, description)</code></li>
-                <li>✅ <code>read_database(table, filter)</code></li>
-                <li>❌ <code>delete_database(table)</code></li>
-                <li>❌ <code>transfer_money(amount, to)</code></li>
-                <li>❌ <code>execute_code(script)</code></li>
+                <li> <code>send_email(to, subject, body)</code></li>
+                <li> <code>create_ticket(title, description)</code></li>
+                <li> <code>read_database(table, filter)</code></li>
+                <li> <code>delete_database(table)</code></li>
+                <li> <code>transfer_money(amount, to)</code></li>
+                <li> <code>execute_code(script)</code></li>
             </ul>
 
-            <p><strong>Implementation:</strong> Agent-Framework prüft ob Action in Whitelist. Wenn nein → Error + Log.</p>
+            <p><strong>Implementation:</strong> Agent-Framework prüft ob Action in Whitelist. Wenn nein  Error + Log.</p>
 
             <h2>Audit Logging: Was muss geloggt werden?</h2>
             
@@ -202,29 +188,29 @@ else:
                 <li><strong>Action:</strong> Was wurde gemacht?</li>
                 <li><strong>Input:</strong> Welche Daten wurden verarbeitet?</li>
                 <li><strong>Output:</strong> Was war das Ergebnis?</li>
-                <li><strong>Confidence:</strong> Wie sicher war die AI?</li>
+                <li><strong>Confidence:</strong> Wie sicher war die KI?</li>
                 <li><strong>User (if any):</strong> Wer hat freigegeben?</li>
             </ul>
 
             <h3>Retention:</h3>
-            <p>DSGVO: Logs müssen nach X Monaten gelöscht werden (abhängig von Use Case).</p>
+            <p>DSGVO: Logs müssen nach X Monaten gelöscht werden (abhängig von Anwendungsfall).</p>
 
-            <p>Mehr zu Compliance: <a href="eu-ai-act-was-unternehmen-jetzt-wissen-muessen">EU AI Act: Was Unternehmen jetzt wissen müssen</a></p>
+            <p>Mehr zu Compliance: <a href="/blog/">EU KI Act: Was Unternehmen jetzt wissen müssen</a></p>
 
             <h2>Rollback: Fehler rückgängig machen</h2>
             
             <h3>3 Rollback-Strategien:</h3>
 
             <h3>1. Database Transactions</h3>
-            <p>Alle DB-Changes in Transaction → bei Fehler: Rollback.</p>
+            <p>Alle DB-Changes in Transaction  bei Fehler: Rollback.</p>
 
             <h3>2. Snapshots</h3>
             <p>Vor kritischer Action: Snapshot. Bei Fehler: Restore.</p>
 
             <h3>3. Compensation Actions</h3>
-            <p>Jede Action hat "Undo"-Action. Email gesendet → Recall Email. Rechnung gebucht → Storno-Buchung.</p>
+            <p>Jede Action hat "Undo"-Action. Email gesendet  Recall Email. Rechnung gebucht  Storno-Buchung.</p>
 
-            <h2>Real-World Case: E-Commerce mit Guardrails</h2>
+            <h2>Beispielhafte Case: E-Commerce mit Guardrails</h2>
             <p>Online-Shop nutzt Agent für Kundenservice.</p>
 
             <h3>Guardrails implementiert:</h3>
@@ -241,12 +227,12 @@ else:
                 <li>75% der Anfragen komplett automatisch</li>
                 <li>25% escalated zu Mensch</li>
                 <li>Fehlerrate: 0.8% (8 von 1000)</li>
-                <li>Alle Fehler durch Human Review erkannt → korrigiert</li>
+                <li>Alle Fehler durch Human Review erkannt  korrigiert</li>
             </ul>
 
             <h2>Tools für Guardrails</h2>
             
-            <h3>1. Guardrails AI (Open Source)</h3>
+            <h3>1. Guardrails KI (Open Source)</h3>
             <p>Framework speziell für LLM Guardrails. Output-Validation, Input-Sanitization.</p>
 
             <h3>2. LangChain Callbacks</h3>
@@ -258,37 +244,37 @@ else:
             <h2>Die 5 häufigsten Fehler bei Guardrails</h2>
             
             <h3>1. Zu wenig Guardrails</h3>
-            <p>"YOLO-Deployment" → Agent macht was er will → Chaos.</p>
+            <p>"YOLO-Deployment"  Agent macht was er will  Chaos.</p>
 
             <h3>2. Zu viele Guardrails</h3>
-            <p>Agent braucht für alles Approval → kein Effizienzgewinn.</p>
+            <p>Agent braucht für alles Approval  kein Effizienzgewinn.</p>
 
             <h3>3. Falsche Thresholds</h3>
-            <p>Confidence >50% = Auto → zu viele Fehler. >99% = Auto → kaum Automation.</p>
+            <p>Confidence >50% = Auto  zu viele Fehler. >99% = Auto  kaum Automation.</p>
 
             <h3>4. Logging vergessen</h3>
-            <p>Fehler passiert → keine Ahnung was schief ging.</p>
+            <p>Fehler passiert  keine Ahnung was schief ging.</p>
 
             <h3>5. Kein Testing</h3>
-            <p>Guardrails werden nicht getestet → funktionieren nicht wenn nötig.</p>
+            <p>Guardrails werden nicht getestet  funktionieren nicht wenn nötig.</p>
 
             <p>Weiterlesen:</p>
             <ul>
-                <li><a href="multi-agent-systems-ki-teams-komplexe-aufgaben">Multi-Agent Systems: Wie KI-Teams komplexe Aufgaben lösen</a></li>
-                <li><a href="ai-agents-4000-steps-komplexitaet-problem">AI Agents mit 4000 Steps: Wann Komplexität zum Problem wird</a></li>
+                <li><a href="/blog/">Multi-Agent Systems: Wie KI-Teams komplexe Aufgaben lösen</a></li>
+                <li><a href="ai-agents-4000-steps-komplexitaet-problem">KI-Agenten mit 4000 Steps: Wann Komplexität zum Problem wird</a></li>
                 <li><a href="von-copilot-zu-agent-paradigmenwechsel-automatisierung">Von Copilot zu Agent: Der Paradigmenwechsel in der Automatisierung</a></li>
             </ul>
 
-        </section>
-
-        <div class="article-cta">
-            <h3>Sichere AI Agents implementieren?</h3>
-            <p>Wir designen Guardrails für Ihre Use Cases und implementieren Human-in-Loop Workflows. Kostenlose Sicherheits-Analyse.</p>
-            <a href="../kontakt" class="cta-button">Kostenlose Guardrails-Beratung</a>
-        </div>
-    </article>
-
-    <footer class="footer-minimal"><div class="footer-container"><div class="footer-main"><div class="footer-brand"><div class="footer-logo"><div class="logo-mark"></div><span>Vach Systems</span></div><p>Intelligente Softwaresysteme für moderne Unternehmen</p></div><div class="footer-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ueber-uns">Über uns</a><a href="../kontakt">Kontakt</a></div><div class="footer-contact"><a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a></div></div><div class="footer-legal"><span>© 2026 Vach Systems</span><a href="../impressum">Impressum</a><a href="../datenschutz">Datenschutz</a></div></div></footer>
-    <script src="../js/script.min.js" defer></script>
-</body>
-</html>
+        <section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li><li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">Europäische Kommission: KI Act</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li><li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">Europäische Kommission: KI Act</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li><li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">Europäische Kommission: KI Act</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li><li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">Europäische Kommission: KI Act</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: AI Risk Management Framework</a></li><li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">Europäische Kommission: AI Act</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p></div><aside class="article-aside" aria-label="Artikelhinweise"><div class="article-aside-block"><small>Autor</small><p>Patrick Vach<br>Inhaber, vachsystems</p></div><div class="article-aside-block"><small>Stand</small><p>Geprüft am 28.08.2026</p></div><div class="article-aside-block"><small>Einordnung</small><p>Keine Rechts- oder Anlageberatung. Technische Entscheidungen immer am konkreten Einsatzfall prüfen.</p></div><div class="article-aside-block"><small>Zurück</small><a href="/blog/">Alle Einblicke</a></div></aside></div>
+</article><section class="cta-stage"><div class="cta-inner reveal"><p class="page-kicker">Ihr Vorhaben</p><h2>Passt das Thema zu einer konkreten Aufgabe in Ihrem Unternehmen?</h2><div class="cta-row"><p>Wir ordnen den Anwendungsfall gemeinsam ein und sagen offen, ob eine technische Umsetzung sinnvoll ist.</p><a class="button light" href="../kontakt"><span>Projekt besprechen</span><span aria-hidden="true">↗</span></a></div></div></section></main>
+<footer class="studio-footer">
+  <div class="studio-footer-main">
+    <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>
+    <div class="studio-footer-links"><span>Leistungen</span><a href="../leistungen">Websites</a><a href="../loesungen">Software</a><a href="../ki-automatisierung-unternehmen">Automatisierung</a><a href="../ki-workshop-unternehmen">KI-Workshop</a></div>
+    <div class="studio-footer-links"><span>vachsystems</span><a href="../projekte">Arbeiten</a><a href="../ueber-uns">Über uns</a><a href="../blog/">Einblicke</a><a href="../kontakt">Kontakt</a></div>
+  </div>
+  <div class="studio-footer-legal"><span>© 2026 vachsystems · Berlin · ohne Tracking</span><div><a href="../impressum">Impressum</a><a href="../datenschutz">Datenschutz</a></div></div>
+</footer>
+<script src="../js/studio-system.js?v=20260828-1" defer></script>
+<script src="../js/site-cleanup.js?v=20260828-1" defer></script>
+</body></html>

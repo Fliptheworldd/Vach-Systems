@@ -1,116 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Von Copilot zu Agent: Der Paradigmenwechsel in der Automatisierung. Assistenz vs. Autonomie – was bedeutet das für Ihr Unternehmen?">
-    <meta name="keywords" content="AI Copilot, AI Agent, Automation, Paradigm Shift, Autonomous AI, Enterprise Automation">
-    <title>Von Copilot zu Agent: Der Paradigmenwechsel in der Automatisierung | Vach Systems Blog</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="stylesheet" href="../css/style.min.css">
-    <style>
-        * { hyphens: none !important; -webkit-hyphens: none !important; word-break: normal !important; }
-        .article { max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem; }
-        .article-header { margin-bottom: 3rem; }
-        .article-meta { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-        .article-excerpt { font-size: 1.25rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem; }
-        .article-lead { font-size: 1.25rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem; }
-        .article-image { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 3rem; }
-        .article-content { font-size: 1.125rem; line-height: 1.8; color: var(--gray-900); }
-        .article-content h2 { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; line-height: 1.3; }
-        .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul, .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
-        .article-content li { margin-bottom: 0.75rem; }
-        .article-content strong { font-weight: 700; color: var(--gray-900); }
-        .highlight-box { background: #f8f9fa; border-left: 4px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
-        .highlight-box p:last-child { margin-bottom: 0; }
-        .blog-cta{margin:4rem 0;padding:3rem;background:linear-gradient(135deg,#000 0%,#1F2937 100%);border-radius:16px;text-align:center;color:#fff}.blog-cta h3{font-size:2rem;font-weight:800;margin-bottom:1rem;color:#fff}.blog-cta>p{font-size:1.125rem;margin-bottom:2rem;color:#fff!important;opacity:.95}.blog-cta a{display:inline-block;padding:1rem 2.5rem;background:#fff;color:var(--black);text-decoration:none;border-radius:8px;font-weight:700;margin-bottom:1rem}.blog-cta .email-alt{font-size:.9rem;color:rgba(255,255,255,.9)!important;margin:0;opacity:1!important}.blog-cta .email-alt a{display:inline;padding:0;background:0 0;color:#fff!important;text-decoration:underline;font-size:.9rem;margin:0}
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 2rem 0; }
-        .stat-box { text-align: center; padding: 2rem; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .stat-number { font-size: 3rem; font-weight: 900; color: var(--accent); margin-bottom: 0.5rem; }
-        .stat-label { font-size: 0.875rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.05em; }
-        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--accent); font-weight: 600; text-decoration: none; }
-        .back-link:hover { text-decoration: underline; }
-        .blog-article { max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem; }
-        .blog-article .article-header { margin-bottom: 3rem; }
-        .blog-article .article-meta { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; display: flex; gap: 1rem; }
-        .blog-article h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-        .blog-article .article-content { font-size: 1.125rem; line-height: 1.8; color: var(--gray-900); }
-        .blog-article .article-content h2 { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; line-height: 1.3; }
-        .blog-article .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
-        .blog-article .article-content ul, .blog-article .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
-        .blog-article .article-content li { margin-bottom: 0.75rem; }
-        @media (max-width: 768px) {
-            .article { padding: 4rem 1.5rem 3rem; }
-            .article-title { font-size: 2.25rem; }
-            h1 { font-size: 2.25rem; }
-            .article-image { height: 250px; }
-            .article-content { font-size: 1rem; }
-            .article-content h2 { font-size: 1.75rem; }
-            .stats-grid { grid-template-columns: 1fr; gap: 1rem; }
-        }
-    </style>
-</head>
-<body>
-    <nav class="nav-minimal"><div class="nav-container"><a href="../" class="logo-minimal"><div class="logo-mark"></div><span>Vach Systems</span></a><div class="nav-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div><div class="hamburger" id="hamburger"><span></span><span></span><span></span></div></div></nav>
-    <div class="menu-overlay" id="menuOverlay"></div>
-    <div class="mobile-menu" id="mobileMenu"><a href="../">Home</a><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div>
-
-    <article class="blog-article">
-        <header class="article-header">
-            <div class="article-meta">
-                <span class="article-date">18. Juni 2026</span>
-                <span class="article-reading-time">10 Min. Lesezeit</span>
-            </div>
-            <h1>Von Copilot zu Agent: Der Paradigmenwechsel in der Automatisierung</h1>
-            <p class="article-lead">2024 war das Jahr der Copilots. 2026 ist das Jahr der Agents. Der fundamentale Unterschied zwischen Assistenz und Autonomie – und was das für Automatisierung bedeutet.</p>
-        <img srcset="../images/blog/1786288092677-3qw0vg-600w.webp 600w, ../images/blog/1786288092677-3qw0vg-1400w.webp 1400w" 
-             sizes="(max-width: 768px) 600px, 1400px"
-             src="../images/blog/1786288092677-3qw0vg-1400w.webp" 
-             alt="Von Copilot Zu Agent Paradigmenwechsel Automatisierung" 
-             class="article-image"
-             loading="lazy"
-             width="1400"
-             height="933">
-        </header>
-
-        <section class="article-content">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Von Assistenz zu eigenständigen Abläufen | vachsystems</title>
+  <meta name="description" content="Wo die Grenze zwischen Copilot und Agent liegt und warum sie organisatorisch wichtig ist.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#050608">
+  <link rel="canonical" href="https://vachsystems.de/blog/von-copilot-zu-agent-paradigmenwechsel-automatisierung">
+  <link rel="icon" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/studio-system.css?v=20260828-1">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Von Assistenz zu eigenständigen Abläufen | vachsystems">
+  <meta property="og:description" content="Wo die Grenze zwischen Copilot und Agent liegt und warum sie organisatorisch wichtig ist.">
+  <meta property="og:url" content="https://vachsystems.de/blog/von-copilot-zu-agent-paradigmenwechsel-automatisierung">
+  <meta property="og:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Abstraktes digitales Objekt von vachsystems">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Von Assistenz zu eigenständigen Abläufen | vachsystems">
+  <meta name="twitter:description" content="Wo die Grenze zwischen Copilot und Agent liegt und warum sie organisatorisch wichtig ist.">
+  <meta name="twitter:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Von Assistenz zu eigenständigen Abläufen",
+  "description": "Wo die Grenze zwischen Copilot und Agent liegt und warum sie organisatorisch wichtig ist.",
+  "datePublished": "2026-06-18",
+  "dateModified": "2026-08-28",
+  "mainEntityOfPage": "https://vachsystems.de/blog/von-copilot-zu-agent-paradigmenwechsel-automatisierung",
+  "author": {
+    "@type": "Person",
+    "name": "Patrick Vach"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "vachsystems",
+    "url": "https://vachsystems.de/"
+  },
+  "image": "https://vachsystems.de/images/vachsystems-object-og.webp"
+}</script>
+  <link rel="stylesheet" href="../css/editorial-studio.css?v=20260828-1">
+</head><body class="article-shell">
+<a class="studio-skip" href="#main">Zum Inhalt springen</a>
+<header class="studio-header" data-header>
+  <nav class="studio-nav" aria-label="Hauptnavigation">
+    <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>
+    <div class="studio-links" id="studio-navigation" data-navigation>
+      <a href="../leistungen">Websites</a>
+      <a href="../loesungen">Software</a>
+      <a href="../ki-automatisierung-unternehmen">Automatisierung</a>
+      <a href="../projekte">Arbeiten</a>
+      <a href="../ueber-uns">Über uns</a>
+    </div>
+    <a class="studio-nav-cta" href="../kontakt">Projekt besprechen <span aria-hidden="true">↗</span></a>
+    <button class="studio-menu-button" type="button" aria-expanded="false" aria-controls="studio-navigation" aria-label="Menü öffnen" data-menu-button><span></span><span></span></button>
+  </nav>
+</header>
+<main id="main"><article>
+  <header class="article-masthead"><div class="article-masthead-inner"><div class="article-meta"><span>Automatisierung</span><time datetime="2026-06-18">18. Juni 2026</time><span>Zuletzt geprüft: 28. August 2026</span></div><h1>Von Assistenz zu eigenständigen Abläufen</h1><p class="article-lead">Wo die Grenze zwischen Copilot und Agent liegt und warum sie organisatorisch wichtig ist.</p><div class="article-byline"><span>Text & Einordnung: <strong>Patrick Vach</strong></span><span>Technische Angaben sind zeitabhängig und werden vor Projektentscheidungen neu geprüft.</span></div></div></header>
+  <div class="article-layout"><div class="article-content">
             <h2>Copilot vs. Agent: Der Kern-Unterschied</h2>
             
-            <table style="width:100%; border-collapse: collapse; margin: 2rem 0;">
-                <tr style="background: #f8fafc;">
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Aspekt</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Copilot (Assistenz)</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Agent (Autonomie)</th>
+            <table>
+                <tr>
+                    <th>Aspekt</th>
+                    <th>Copilot (Assistenz)</th>
+                    <th>Agent (Autonomie)</th>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Initiative</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Mensch fragt, AI antwortet</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">AI handelt selbstständig</td>
+                    <td><strong>Initiative</strong></td>
+                    <td>Mensch fragt, KI antwortet</td>
+                    <td>KI handelt selbstständig</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Kontrolle</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Mensch entscheidet immer</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">AI entscheidet in Grenzen</td>
+                    <td><strong>Kontrolle</strong></td>
+                    <td>Mensch entscheidet immer</td>
+                    <td>KI entscheidet in Grenzen</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Workflow</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Unterstützt bestehenden</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Ersetzt Teile des Workflows</td>
+                    <td><strong>Workflow</strong></td>
+                    <td>Unterstützt bestehenden</td>
+                    <td>Ersetzt Teile des Workflows</td>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;"><strong>Beispiel</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">GitHub Copilot schlägt Code vor</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Agent bearbeitet Rechnungen automatisch</td>
+                    <td><strong>Beispiel</strong></td>
+                    <td>GitHub Copilot schlägt Code vor</td>
+                    <td>Agent bearbeitet Rechnungen automatisch</td>
                 </tr>
             </table>
 
             <p><strong>Einfach gesagt:</strong> Copilot = Werkzeug. Agent = Mitarbeiter.</p>
 
             <h2>Die Copilot-Ära (2023-2025)</h2>
-            <p>Microsoft Copilot, GitHub Copilot, Google Duet AI – überall "Copilot".</p>
+            <p>Microsoft Copilot, GitHub Copilot, Google Duet KI – überall "Copilot".</p>
 
             <h3>Was Copilots gut können:</h3>
             <ul>
@@ -131,30 +117,30 @@
             <p><strong>Limitation:</strong> Mensch bleibt im Loop. Keine echte Automatisierung.</p>
 
             <h2>Die Agent-Ära (2026+)</h2>
-            <p>AI Agents arbeiten selbstständig, über mehrere Steps, mit Entscheidungsbefugnis.</p>
+            <p>KI-Agenten arbeiten selbstständig, über mehrere Steps, mit Entscheidungsbefugnis.</p>
 
             <h3>Was Agents können:</h3>
             <ul>
-                <li>Rechnung empfangen → prüfen → buchen → archivieren (ohne Mensch)</li>
-                <li>Kundenanfrage → recherchieren → antworten → nachfassen</li>
-                <li>Server-Problem → analysieren → fixen → dokumentieren</li>
-                <li>Lead kommt rein → qualifizieren → CRM → Vertrieb benachrichtigen</li>
+                <li>Rechnung empfangen  prüfen  buchen  archivieren (ohne Mensch)</li>
+                <li>Kundenanfrage  recherchieren  antworten  nachfassen</li>
+                <li>Server-Problem  analysieren  fixen  dokumentieren</li>
+                <li>Lead kommt rein  qualifizieren  CRM  Vertrieb benachrichtigen</li>
             </ul>
 
             <p><strong>Game-Changer:</strong> Mensch ist out of the loop (für Standardfälle). Echte Automatisierung!</p>
 
-            <p>Mehr zu Agents: <a href="agentic-ai-mittelstand-von-theorie-zur-praxis">Agentic AI im Mittelstand: Von der Theorie zur Praxis</a></p>
+            <p>Mehr zu Agents: <a href="/blog/">Agentic KI im Mittelstand: Von der Theorie zur Praxis</a></p>
 
             <h2>Warum der Wechsel jetzt passiert</h2>
             
             <h3>1. Modelle sind gut genug (2026)</h3>
-            <p>GPT-5.5, Claude Opus 5 → Erfolgsrate 85-95% bei strukturierten Tasks. Gut genug für Produktion.</p>
+            <p>GPT-5.5, Claude Opus 5  Erfolgsrate 85-95% bei strukturierten Tasks. Gut genug für Produktion.</p>
 
             <h3>2. Computer Use ist da</h3>
             <p>Agents können Legacy-Software bedienen. Keine APIs nötig.</p>
 
             <h3>3. Multi-Agent Frameworks sind reif</h3>
-            <p>LangGraph, AutoGen, CrewAI → Production-ready Tools.</p>
+            <p>LangGraph, AutoGen, CrewAI  Production-ready Tools.</p>
 
             <h3>4. ROI ist bewiesen</h3>
             <p>Unternehmen sehen 5-10× ROI. Nicht mehr experimentell.</p>
@@ -178,14 +164,14 @@
 
             <p><strong>Faustregel:</strong> Hoher Judgment = Copilot. Niedriger Judgment = Agent.</p>
 
-            <h2>Real-World Beispiel: Kundenservice</h2>
+            <h2>Beispielhafte Beispiel: Kundenservice</h2>
             
             <h3>2024: Copilot-Ansatz</h3>
             <p>Support-Mitarbeiter bekommt Ticket. Copilot schlägt Antwort vor. Mitarbeiter editiert, sendet.</p>
             <p><strong>Zeitersparnis:</strong> 30% (von 10 Min auf 7 Min)</p>
 
             <h3>2026: Agent-Ansatz</h3>
-            <p>Ticket kommt rein. Agent klassifiziert (simple/komplex). Simple → automatisch beantworten. Komplex → an Mensch mit Kontext.</p>
+            <p>Ticket kommt rein. Agent klassifiziert (simple/komplex). Simple  automatisch beantworten. Komplex  an Mensch mit Kontext.</p>
             <p><strong>Zeitersparnis:</strong> 60% (40% komplett automatisch, 20% effizienter bei Rest)</p>
 
             <p><strong>Unterschied:</strong> 2× mehr Effizienz durch Autonomie!</p>
@@ -193,37 +179,37 @@
             <h2>Die Kontroll-Frage: Wie viel Autonomie?</h2>
             
             <h3>Level 0: No Automation</h3>
-            <p>Mensch macht alles. AI wird nicht genutzt.</p>
+            <p>Mensch macht alles. KI wird nicht genutzt.</p>
 
             <h3>Level 1: Copilot (Assistance)</h3>
-            <p>AI schlägt vor, Mensch entscheidet.</p>
+            <p>KI schlägt vor, Mensch entscheidet.</p>
 
             <h3>Level 2: Supervised Agent</h3>
-            <p>AI handelt, aber Mensch muss freigeben.</p>
+            <p>KI handelt, aber Mensch muss freigeben.</p>
 
             <h3>Level 3: Conditional Agent</h3>
-            <p>AI handelt selbstständig bei einfachen Fällen, eskaliert komplexe.</p>
+            <p>KI handelt selbstständig bei einfachen Fällen, eskaliert komplexe.</p>
 
             <h3>Level 4: Full Agent</h3>
-            <p>AI handelt komplett selbstständig, informiert Mensch nur.</p>
+            <p>KI handelt komplett selbstständig, informiert Mensch nur.</p>
 
             <h3>Level 5: Autonomous System</h3>
-            <p>AI System läuft ohne menschliche Intervention.</p>
+            <p>KI System läuft ohne menschliche Intervention.</p>
 
             <p><strong>Empfehlung für Mittelstand:</strong> Start bei Level 1-2, evolve zu Level 3. Level 4-5 nur für unkritische Prozesse.</p>
 
-            <p>Mehr zu Kontrolle: <a href="ai-agents-4000-steps-komplexitaet-problem">AI Agents mit 4000 Steps: Wann Komplexität zum Problem wird</a></p>
+            <p>Mehr zu Kontrolle: <a href="ai-agents-4000-steps-komplexitaet-problem">KI-Agenten mit 4000 Steps: Wann Komplexität zum Problem wird</a></p>
 
             <h2>Migration: Von Copilot zu Agent</h2>
             
             <h3>Phase 1: Copilot einführen (1-3 Monate)</h3>
-            <p>Team gewöhnt sich an AI-Unterstützung. Prompts optimieren. Vertrauen aufbauen.</p>
+            <p>Team gewöhnt sich an KI-Unterstützung. Prompts optimieren. Vertrauen aufbauen.</p>
 
             <h3>Phase 2: Simple Agents (3-6 Monate)</h3>
             <p>Erste automatisierte Workflows (z.B. E-Mail-Routing). Supervised Mode.</p>
 
             <h3>Phase 3: Conditional Agents (6-12 Monate)</h3>
-            <p>Mehr Autonomie bei bewährten Use Cases. 80% automatisch, 20% escalated.</p>
+            <p>Mehr Autonomie bei bewährten Anwendungsfälle. 80% automatisch, 20% escalated.</p>
 
             <h3>Phase 4: Full Automation (12+ Monate)</h3>
             <p>Bewährte Prozesse komplett automatisiert. Human nur bei Exceptions.</p>
@@ -236,8 +222,8 @@
             <ul>
                 <li>GitHub Copilot (Code)</li>
                 <li>Microsoft 365 Copilot (Office)</li>
-                <li>Google Duet AI (Workspace)</li>
-                <li>Notion AI (Notizen)</li>
+                <li>Google Duet KI (Workspace)</li>
+                <li>Notion KI (Notizen)</li>
             </ul>
 
             <h3>Agent-Frameworks:</h3>
@@ -250,9 +236,9 @@
 
             <h3>No-Code Agent-Plattformen:</h3>
             <ul>
-                <li>n8n (Workflow Automation + AI)</li>
+                <li>n8n (Workflow Automation + KI)</li>
                 <li>Make (Integromat, Visual)</li>
-                <li>Zapier AI Actions (Limited)</li>
+                <li>Zapier KI Actions (Limited)</li>
             </ul>
 
             <h2>ROI-Vergleich: Copilot vs. Agent</h2>
@@ -279,7 +265,7 @@
 
             <h2>Wann bleibt Copilot die bessere Wahl?</h2>
             
-            <h3>✅ Copilot ist besser wenn:</h3>
+            <h3> Copilot ist besser wenn:</h3>
             <ul>
                 <li>Tasks sind sehr variabel (keine Standards)</li>
                 <li>Hoher Judgment nötig (Strategie, HR)</li>
@@ -288,7 +274,7 @@
                 <li>Team will Kontrolle behalten</li>
             </ul>
 
-            <h3>✅ Agent ist besser wenn:</h3>
+            <h3> Agent ist besser wenn:</h3>
             <ul>
                 <li>Prozess ist standardisiert</li>
                 <li>Hohe Volumina (>500 Tasks/Monat)</li>
@@ -299,34 +285,34 @@
             <h2>Die psychologische Barriere</h2>
             <p>Warum Teams zögern von Copilot zu Agent zu wechseln:</p>
 
-            <h3>Fear: "AI macht Fehler"</h3>
+            <h3>Fear: "KI macht Fehler"</h3>
             <p><strong>Realität:</strong> Supervised Mode + Guardrails = 95%+ Accuracy.</p>
 
             <h3>Fear: "Wir verlieren Kontrolle"</h3>
             <p><strong>Realität:</strong> Mehr Transparenz durch Logging. Mehr Kontrolle als bei Menschen!</p>
 
             <h3>Fear: "Jobs gehen verloren"</h3>
-            <p><strong>Realität:</strong> Repetitive Tasks weg → mehr Zeit für wertvolle Arbeit.</p>
+            <p><strong>Realität:</strong> Repetitive Tasks weg  mehr Zeit für wertvolle Arbeit.</p>
 
             <p><strong>Lösung:</strong> Start klein, messbare Erfolge zeigen, Team mitnehmen.</p>
 
             <p>Weiterlesen:</p>
             <ul>
-                <li><a href="ki-agenten-im-unternehmen-2026">KI-Agenten im Unternehmen 2026</a></li>
-                <li><a href="multi-agent-systems-ki-teams-komplexe-aufgaben">Multi-Agent Systems: Wie KI-Teams komplexe Aufgaben lösen</a></li>
-                <li><a href="welche-unternehmensprozesse-lassen-sich-mit-ki-automatisieren">Welche Prozesse lassen sich automatisieren?</a></li>
+                <li><a href="/blog/">KI-Agenten im Unternehmen 2026</a></li>
+                <li><a href="/blog/">Multi-Agent Systems: Wie KI-Teams komplexe Aufgaben lösen</a></li>
+                <li><a href="/blog/">Welche Prozesse lassen sich automatisieren?</a></li>
             </ul>
 
-        </section>
-
-        <div class="article-cta">
-            <h3>Von Copilot zu Agent wechseln?</h3>
-            <p>Wir analysieren wo Copilots nicht mehr ausreichen und Agents mehr Nutzen bringen. Kostenlose Prozess-Analyse mit Migrations-Roadmap.</p>
-            <a href="../kontakt" class="cta-button">Kostenlose Agent-Analyse</a>
-        </div>
-    </article>
-
-    <footer class="footer-minimal"><div class="footer-container"><div class="footer-main"><div class="footer-brand"><div class="footer-logo"><div class="logo-mark"></div><span>Vach Systems</span></div><p>Intelligente Softwaresysteme für moderne Unternehmen</p></div><div class="footer-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ueber-uns">Über uns</a><a href="../kontakt">Kontakt</a></div><div class="footer-contact"><a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a></div></div><div class="footer-legal"><span>© 2026 Vach Systems</span><a href="../impressum">Impressum</a><a href="../datenschutz">Datenschutz</a></div></div></footer>
-    <script src="../js/script.min.js" defer></script>
-</body>
-</html>
+        <section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection" target="_blank" rel="noopener noreferrer">Microsoft: Enterprise Data Protection in Copilot</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection" target="_blank" rel="noopener noreferrer">Microsoft: Enterprise Data Protection in Copilot</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection" target="_blank" rel="noopener noreferrer">Microsoft: Enterprise Data Protection in Copilot</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection" target="_blank" rel="noopener noreferrer">Microsoft: Enterprise Data Protection in Copilot</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection" target="_blank" rel="noopener noreferrer">Microsoft: Enterprise Data Protection in Copilot</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: AI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p></div><aside class="article-aside" aria-label="Artikelhinweise"><div class="article-aside-block"><small>Autor</small><p>Patrick Vach<br>Inhaber, vachsystems</p></div><div class="article-aside-block"><small>Stand</small><p>Geprüft am 28.08.2026</p></div><div class="article-aside-block"><small>Einordnung</small><p>Keine Rechts- oder Anlageberatung. Technische Entscheidungen immer am konkreten Einsatzfall prüfen.</p></div><div class="article-aside-block"><small>Zurück</small><a href="/blog/">Alle Einblicke</a></div></aside></div>
+</article><section class="cta-stage"><div class="cta-inner reveal"><p class="page-kicker">Ihr Vorhaben</p><h2>Passt das Thema zu einer konkreten Aufgabe in Ihrem Unternehmen?</h2><div class="cta-row"><p>Wir ordnen den Anwendungsfall gemeinsam ein und sagen offen, ob eine technische Umsetzung sinnvoll ist.</p><a class="button light" href="../kontakt"><span>Projekt besprechen</span><span aria-hidden="true">↗</span></a></div></div></section></main>
+<footer class="studio-footer">
+  <div class="studio-footer-main">
+    <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>
+    <div class="studio-footer-links"><span>Leistungen</span><a href="../leistungen">Websites</a><a href="../loesungen">Software</a><a href="../ki-automatisierung-unternehmen">Automatisierung</a><a href="../ki-workshop-unternehmen">KI-Workshop</a></div>
+    <div class="studio-footer-links"><span>vachsystems</span><a href="../projekte">Arbeiten</a><a href="../ueber-uns">Über uns</a><a href="../blog/">Einblicke</a><a href="../kontakt">Kontakt</a></div>
+  </div>
+  <div class="studio-footer-legal"><span>© 2026 vachsystems · Berlin · ohne Tracking</span><div><a href="../impressum">Impressum</a><a href="../datenschutz">Datenschutz</a></div></div>
+</footer>
+<script src="../js/studio-system.js?v=20260828-1" defer></script>
+<script src="../js/site-cleanup.js?v=20260828-1" defer></script>
+</body></html>

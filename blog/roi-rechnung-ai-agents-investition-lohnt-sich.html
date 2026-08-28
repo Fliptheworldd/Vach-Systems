@@ -1,333 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ROI-Rechnung für AI Agents: Wann lohnt sich die Investition? Kosten, Nutzen, Break-Even-Analyse für Mittelständler.">
-    <meta name="keywords" content="AI ROI, Agent ROI, AI Investment, Business Case AI, AI Kosten-Nutzen">
-    <title>ROI-Rechnung für AI Agents: Wann lohnt sich die Investition? | Vach Systems Blog</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="stylesheet" href="../css/style.min.css">
-    <style>
-        * { hyphens: none !important; -webkit-hyphens: none !important; word-break: normal !important; }
-        .article { max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem; }
-        .article-header { margin-bottom: 3rem; }
-        .article-meta { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; }
-        .article-title { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-        .article-excerpt { font-size: 1.25rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem; }
-        .article-lead { font-size: 1.25rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 2rem; }
-        .article-image { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 3rem; }
-        .article-content { font-size: 1.125rem; line-height: 1.8; color: var(--gray-900); }
-        .article-content h2 { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; line-height: 1.3; }
-        .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
-        .article-content p { margin-bottom: 1.5rem; }
-        .article-content ul, .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
-        .article-content li { margin-bottom: 0.75rem; }
-        .article-content strong { font-weight: 700; color: var(--gray-900); }
-        .highlight-box { background: #f8f9fa; border-left: 4px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
-        .highlight-box p:last-child { margin-bottom: 0; }
-        .blog-cta{margin:4rem 0;padding:3rem;background:linear-gradient(135deg,#000 0%,#1F2937 100%);border-radius:16px;text-align:center;color:#fff}.blog-cta h3{font-size:2rem;font-weight:800;margin-bottom:1rem;color:#fff}.blog-cta>p{font-size:1.125rem;margin-bottom:2rem;color:#fff!important;opacity:.95}.blog-cta a{display:inline-block;padding:1rem 2.5rem;background:#fff;color:var(--black);text-decoration:none;border-radius:8px;font-weight:700;margin-bottom:1rem}.blog-cta .email-alt{font-size:.9rem;color:rgba(255,255,255,.9)!important;margin:0;opacity:1!important}.blog-cta .email-alt a{display:inline;padding:0;background:0 0;color:#fff!important;text-decoration:underline;font-size:.9rem;margin:0}
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 2rem 0; }
-        .stat-box { text-align: center; padding: 2rem; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .stat-number { font-size: 3rem; font-weight: 900; color: var(--accent); margin-bottom: 0.5rem; }
-        .stat-label { font-size: 0.875rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.05em; }
-        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--accent); font-weight: 600; text-decoration: none; }
-        .back-link:hover { text-decoration: underline; }
-        .blog-article { max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem; }
-        .blog-article .article-header { margin-bottom: 3rem; }
-        .blog-article .article-meta { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1.5rem; display: flex; gap: 1rem; }
-        .blog-article h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-        .blog-article .article-content { font-size: 1.125rem; line-height: 1.8; color: var(--gray-900); }
-        .blog-article .article-content h2 { font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; line-height: 1.3; }
-        .blog-article .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
-        .blog-article .article-content ul, .blog-article .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
-        .blog-article .article-content li { margin-bottom: 0.75rem; }
-        @media (max-width: 768px) {
-            .article { padding: 4rem 1.5rem 3rem; }
-            .article-title { font-size: 2.25rem; }
-            h1 { font-size: 2.25rem; }
-            .article-image { height: 250px; }
-            .article-content { font-size: 1rem; }
-            .article-content h2 { font-size: 1.75rem; }
-            .stats-grid { grid-template-columns: 1fr; gap: 1rem; }
-        }
-    </style>
-</head>
-<body>
-    <nav class="nav-minimal"><div class="nav-container"><a href="../" class="logo-minimal"><div class="logo-mark"></div><span>Vach Systems</span></a><div class="nav-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div><div class="hamburger" id="hamburger"><span></span><span></span><span></span></div></div></nav>
-    <div class="menu-overlay" id="menuOverlay"></div>
-    <div class="mobile-menu" id="mobileMenu"><a href="../">Home</a><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ki-workshop-unternehmen">KI-Workshop</a><a href="../blog/">Blog</a><a href="../ueber-uns">Über uns</a><a href="../kontakt" class="nav-cta">Gespräch starten</a></div>
-
-    <article class="blog-article">
-        <header class="article-header">
-            <div class="article-meta">
-                <span class="article-date">20. August 2026</span>
-                <span class="article-reading-time">11 Min. Lesezeit</span>
-            </div>
-            <h1>ROI-Rechnung für AI Agents: Wann lohnt sich die Investition?</h1>
-            <p class="article-lead">CFO fragt: "Rechnet sich das?" Hier ist die ehrliche ROI-Rechnung für AI Agents. Mit echten Zahlen, Beispielen, Break-Even-Analysen.</p>
-        <img srcset="../images/blog/1786288089833-f1r8ql-600w.webp 600w, ../images/blog/1786288089833-f1r8ql-1400w.webp 1400w" 
-             sizes="(max-width: 768px) 600px, 1400px"
-             src="../images/blog/1786288089833-f1r8ql-1400w.webp" 
-             alt="Roi Rechnung Ai Agents Investition Lohnt Sich" 
-             class="article-image"
-             loading="lazy"
-             width="1400"
-             height="933">
-        </header>
-
-        <section class="article-content">
-            <h2>Die ROI-Formel</h2>
-            <p><strong>ROI = (Nutzen - Kosten) / Kosten × 100%</strong></p>
-
-            <h3>Beispiel:</h3>
-            <ul>
-                <li>Investition: 10.000€</li>
-                <li>Jährlicher Nutzen: 30.000€</li>
-                <li>ROI = (30.000 - 10.000) / 10.000 = 200%</li>
-            </ul>
-
-            <p><strong>Ziel:</strong> Minimum 100% ROI im ersten Jahr (Investment verdoppelt).</p>
-
-            <h2>Kosten-Komponenten</h2>
-            
-            <h3>Einmalige Kosten:</h3>
-            <ul>
-                <li><strong>Development:</strong> 3.000-20.000€ (je nach Komplexität)</li>
-                <li><strong>Integration:</strong> 1.000-5.000€</li>
-                <li><strong>Training:</strong> 500-2.000€</li>
-                <li><strong>Testing:</strong> 500-2.000€</li>
-            </ul>
-
-            <h3>Laufende Kosten (monatlich):</h3>
-            <ul>
-                <li><strong>API-Calls:</strong> 100-5.000€</li>
-                <li><strong>Hosting:</strong> 50-500€</li>
-                <li><strong>Maintenance:</strong> 200-1.000€</li>
-                <li><strong>Monitoring:</strong> 50-200€</li>
-            </ul>
-
-            <p><strong>Typischer Mittelständler:</strong> 10K€ Setup + 500€/Monat = 16K€ Jahr 1</p>
-
-            <h2>Nutzen-Komponenten</h2>
-            
-            <h3>1. Zeitersparnis</h3>
-            <p>Agent spart X Stunden/Woche → X × Stundensatz × 52 Wochen</p>
-
-            <h3>2. Fehler-Reduktion</h3>
-            <p>Weniger Fehler → weniger Nacharbeit → weniger Kosten</p>
-
-            <h3>3. Skalierung</h3>
-            <p>Mehr Volumen ohne mehr Personal</p>
-
-            <h3>4. Geschwindigkeit</h3>
-            <p>Schnellere Reaktionszeit → bessere Customer Experience → mehr Umsatz</p>
-
-            <h3>5. 24/7 Verfügbarkeit</h3>
-            <p>Agent arbeitet nachts/Wochenende → kein Overtime</p>
-
-            <p>Mehr zu Pragmatismus: <a href="ai-pragmatismus-2026-hype-zu-produktivitaet">AI-Pragmatismus 2026: Vom Hype zur messbaren Produktivität</a></p>
-
-            <h2>Real-World ROI: 5 Szenarien</h2>
-            
-            <h3>Szenario 1: E-Mail-Routing (Simple)</h3>
-            <p><strong>Use Case:</strong> 150 E-Mails/Tag klassifizieren</p>
-            <ul>
-                <li><strong>Setup:</strong> 2.000€</li>
-                <li><strong>Laufend:</strong> 50€/Monat</li>
-                <li><strong>Zeitersparnis:</strong> 1h/Tag = 250h/Jahr × 30€ = 7.500€</li>
-                <li><strong>ROI Jahr 1:</strong> (7.500 - 2.600) / 2.600 = 188%</li>
-                <li><strong>Break-Even:</strong> Monat 4</li>
-            </ul>
-
-            <h3>Szenario 2: Kundenservice (Medium)</h3>
-            <p><strong>Use Case:</strong> 40% der Support-Tickets automatisch</p>
-            <ul>
-                <li><strong>Setup:</strong> 8.000€</li>
-                <li><strong>Laufend:</strong> 400€/Monat</li>
-                <li><strong>Ersparnis:</strong> 0.6 FTE = 36.000€/Jahr</li>
-                <li><strong>ROI Jahr 1:</strong> (36.000 - 12.800) / 12.800 = 181%</li>
-                <li><strong>Break-Even:</strong> Monat 5</li>
-            </ul>
-
-            <h3>Szenario 3: Rechnungsverarbeitung (Medium)</h3>
-            <p><strong>Use Case:</strong> 500 Rechnungen/Monat automatisch</p>
-            <ul>
-                <li><strong>Setup:</strong> 5.000€</li>
-                <li><strong>Laufend:</strong> 200€/Monat</li>
-                <li><strong>Zeitersparnis:</strong> 50h/Monat × 30€ = 18.000€/Jahr</li>
-                <li><strong>ROI Jahr 1:</strong> (18.000 - 7.400) / 7.400 = 143%</li>
-                <li><strong>Break-Even:</strong> Monat 5</li>
-            </ul>
-
-            <h3>Szenario 4: Dokumenten-Analyse (Complex)</h3>
-            <p><strong>Use Case:</strong> Verträge automatisch prüfen</p>
-            <ul>
-                <li><strong>Setup:</strong> 15.000€</li>
-                <li><strong>Laufend:</strong> 800€/Monat</li>
-                <li><strong>Zeitersparnis:</strong> 120h/Monat × 50€ = 72.000€/Jahr</li>
-                <li><strong>ROI Jahr 1:</strong> (72.000 - 24.600) / 24.600 = 193%</li>
-                <li><strong>Break-Even:</strong> Monat 4</li>
-            </ul>
-
-            <h3>Szenario 5: Multi-Agent Workflow (Very Complex)</h3>
-            <p><strong>Use Case:</strong> End-to-End Auftragsverarbeitung</p>
-            <ul>
-                <li><strong>Setup:</strong> 40.000€</li>
-                <li><strong>Laufend:</strong> 2.000€/Monat</li>
-                <li><strong>Ersparnis:</strong> 2.5 FTE = 150.000€/Jahr</li>
-                <li><strong>ROI Jahr 1:</strong> (150.000 - 64.000) / 64.000 = 134%</li>
-                <li><strong>Break-Even:</strong> Monat 6</li>
-            </ul>
-
-            <p><strong>Erkenntnis:</strong> Selbst komplexe Setups ROI >100% im ersten Jahr!</p>
-
-            <h2>Die versteckten Kosten</h2>
-            
-            <h3>Change Management</h3>
-            <p>Team muss AI akzeptieren → Workshops, Training (2.000-5.000€)</p>
-
-            <h3>Failed Iterations</h3>
-            <p>Nicht jeder Versuch klappt. 30% Failure Rate einrechnen.</p>
-
-            <h3>Opportunity Cost</h3>
-            <p>Engineering-Zeit für AI = keine Zeit für andere Projekte.</p>
-
-            <h3>Technical Debt</h3>
-            <p>Quick & Dirty Prototypen müssen später refactored werden.</p>
-
-            <p><strong>Realistische Kosten:</strong> Geplante Kosten × 1.3-1.5</p>
-
-            <h2>Die versteckten Nutzen</h2>
-            
-            <h3>Employee Satisfaction</h3>
-            <p>Weniger Drudge Work → happier Team → weniger Turnover</p>
-
-            <h3>Scalability</h3>
-            <p>3× Wachstum ohne 3× Headcount</p>
-
-            <h3>Data Insights</h3>
-            <p>Agent-Logs zeigen Prozess-Probleme die vorher unsichtbar waren</p>
-
-            <h3>Competitive Advantage</h3>
-            <p>Schnellere Response Times → mehr Deals gewonnen</p>
-
-            <p><strong>Schwer messbar, aber real!</strong></p>
-
-            <h2>Break-Even-Analyse</h2>
-            
-            <table style="width:100%; border-collapse: collapse; margin: 2rem 0;">
-                <tr style="background: #f8fafc;">
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Setup Cost</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Monthly Savings</th>
-                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Break-Even</th>
-                </tr>
-                <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">5.000€</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">1.000€</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Monat 5</td>
-                </tr>
-                <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">10.000€</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">2.000€</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Monat 5</td>
-                </tr>
-                <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">20.000€</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">4.000€</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid #e2e8f0;">Monat 5</td>
-                </tr>
-            </table>
-
-            <p><strong>Pattern:</strong> Break-Even meist nach 4-6 Monaten!</p>
-
-            <h2>Wann lohnt sich AI Agent NICHT?</h2>
-            
-            <h3>❌ Use Cases die sich nicht lohnen:</h3>
-            <ul>
-                <li>Zu niedriges Volumen (&lt;50 Tasks/Monat)</li>
-                <li>Zu variabel (keine Standards)</li>
-                <li>Zu komplex (>200 Steps)</li>
-                <li>One-Time Tasks (keine Wiederholung)</li>
-                <li>Perfect Quality nötig (100% = unmöglich)</li>
-            </ul>
-
-            <h3>Faustregel:</h3>
-            <p>Wenn Zeitersparnis &lt;10h/Monat → wahrscheinlich nicht lohnenswert.</p>
-
-            <h2>ROI steigern: Optimization-Tipps</h2>
-            
-            <h3>1. Start Simple</h3>
-            <p>Simple Agent (80% Nutzen) kostet 1/5 von Complex Agent.</p>
-
-            <h3>2. Iterate Fast</h3>
-            <p>2 Wochen Pilot → messen → entscheiden. Nicht 6 Monate blind entwickeln.</p>
-
-            <h3>3. Reuse Components</h3>
-            <p>Einmal gebaute Agents für mehrere Use Cases nutzen.</p>
-
-            <h3>4. Multi-Model Strategy</h3>
-            <p>Günstiges Model für 80% der Tasks, teures nur für 20%.</p>
-
-            <h3>5. Measure Precisely</h3>
-            <p>Tracking: Vorher-Nachher-Vergleich mit echten Zahlen.</p>
-
-            <h2>CFO-Präsentation: Template</h2>
-            
-            <h3>Slide 1: Problem</h3>
-            <p>"Wir verschwenden 500h/Monat mit X. Kosten: 15.000€/Monat."</p>
-
-            <h3>Slide 2: Lösung</h3>
-            <p>"AI Agent automatisiert 70% davon. Spart 350h/Monat."</p>
-
-            <h3>Slide 3: Investment</h3>
-            <p>"Setup: 8.000€. Laufend: 400€/Monat. Jahr 1 total: 12.800€"</p>
-
-            <h3>Slide 4: Return</h3>
-            <p>"Ersparnis: 10.500€/Monat = 126.000€/Jahr"</p>
-
-            <h3>Slide 5: ROI</h3>
-            <p>"ROI Jahr 1: 885%. Break-Even: Monat 2."</p>
-
-            <h3>Slide 6: Timeline</h3>
-            <p>"Pilot: 2 Wochen. Rollout: 4 Wochen. Full Production: Woche 7."</p>
-
-            <h2>Fazit: Lohnt sich's?</h2>
-            <p><strong>Ja,</strong> wenn:</p>
-            <ul>
-                <li>Repetitiver Prozess (>100 Tasks/Monat)</li>
-                <li>Klare Regeln</li>
-                <li>Messbare Zeitersparnis >10h/Monat</li>
-                <li>Pragmatischer Ansatz (nicht Over-Engineering)</li>
-            </ul>
-
-            <p><strong>Nein,</strong> wenn:</p>
-            <ul>
-                <li>One-Off Tasks</li>
-                <li>Zu variabel/komplex</li>
-                <li>Perfect Quality nötig</li>
-                <li>Niedriges Volumen</li>
-            </ul>
-
-            <p><strong>Typischer Mittelständler:</strong> 3-5 AI Agents → 100-300K€ Ersparnis/Jahr bei 20-50K€ Investment.</p>
-
-            <p>Weiterlesen:</p>
-            <ul>
-                <li><a href="agentic-ai-mittelstand-von-theorie-zur-praxis">Agentic AI im Mittelstand: Von der Theorie zur Praxis</a></li>
-                <li><a href="welche-unternehmensprozesse-lassen-sich-mit-ki-automatisieren">Welche Prozesse lassen sich automatisieren?</a></li>
-                <li><a href="von-copilot-zu-agent-paradigmenwechsel-automatisierung">Von Copilot zu Agent: Der Paradigmenwechsel</a></li>
-            </ul>
-
-        </section>
-
-        <div class="article-cta">
-            <h3>ROI für Ihr Unternehmen berechnen?</h3>
-            <p>Wir analysieren Ihre Prozesse und erstellen detaillierte ROI-Rechnung mit Break-Even-Analyse. Kostenloses ROI-Assessment.</p>
-            <a href="../kontakt" class="cta-button">Kostenloses ROI-Assessment anfragen</a>
-        </div>
-    </article>
-
-    <footer class="footer-minimal"><div class="footer-container"><div class="footer-main"><div class="footer-brand"><div class="footer-logo"><div class="logo-mark"></div><span>Vach Systems</span></div><p>Intelligente Softwaresysteme für moderne Unternehmen</p></div><div class="footer-links"><a href="../leistungen">Leistungen</a><a href="../loesungen">Lösungen</a><a href="../ueber-uns">Über uns</a><a href="../kontakt">Kontakt</a></div><div class="footer-contact"><a href="mailto:contact@vachsystems.de">contact@vachsystems.de</a></div></div><div class="footer-legal"><span>© 2026 Vach Systems</span><a href="../impressum">Impressum</a><a href="../datenschutz">Datenschutz</a></div></div></footer>
-    <script src="../js/script.min.js" defer></script>
-</body>
-</html>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KI-Projekte wirtschaftlich bewerten | vachsystems</title>
+  <meta name="description" content="Welche Kosten, Risiken und Einsparungen in einen belastbaren Business Case gehören.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#050608">
+  <link rel="canonical" href="https://vachsystems.de/blog/roi-rechnung-ai-agents-investition-lohnt-sich">
+  <link rel="icon" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/studio-system.css?v=20260828-1">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="KI-Projekte wirtschaftlich bewerten | vachsystems">
+  <meta property="og:description" content="Welche Kosten, Risiken und Einsparungen in einen belastbaren Business Case gehören.">
+  <meta property="og:url" content="https://vachsystems.de/blog/roi-rechnung-ai-agents-investition-lohnt-sich">
+  <meta property="og:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Abstraktes digitales Objekt von vachsystems">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KI-Projekte wirtschaftlich bewerten | vachsystems">
+  <meta name="twitter:description" content="Welche Kosten, Risiken und Einsparungen in einen belastbaren Business Case gehören.">
+  <meta name="twitter:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "KI-Projekte wirtschaftlich bewerten",
+  "description": "Welche Kosten, Risiken und Einsparungen in einen belastbaren Business Case gehören.",
+  "datePublished": "2026-08-20",
+  "dateModified": "2026-08-28",
+  "mainEntityOfPage": "https://vachsystems.de/blog/roi-rechnung-ai-agents-investition-lohnt-sich",
+  "author": {
+    "@type": "Person",
+    "name": "Patrick Vach"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "vachsystems",
+    "url": "https://vachsystems.de/"
+  },
+  "image": "https://vachsystems.de/images/vachsystems-object-og.webp"
+}</script>
+  <link rel="stylesheet" href="../css/editorial-studio.css?v=20260828-1">
+</head><body class="article-shell">
+<a class="studio-skip" href="#main">Zum Inhalt springen</a>
+<header class="studio-header" data-header>
+  <nav class="studio-nav" aria-label="Hauptnavigation">
+    <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>
+    <div class="studio-links" id="studio-navigation" data-navigation>
+      <a href="../leistungen">Websites</a>
+      <a href="../loesungen">Software</a>
+      <a href="../ki-automatisierung-unternehmen">Automatisierung</a>
+      <a href="../projekte">Arbeiten</a>
+      <a href="../ueber-uns">Über uns</a>
+    </div>
+    <a class="studio-nav-cta" href="../kontakt">Projekt besprechen <span aria-hidden="true">↗</span></a>
+    <button class="studio-menu-button" type="button" aria-expanded="false" aria-controls="studio-navigation" aria-label="Menü öffnen" data-menu-button><span></span><span></span></button>
+  </nav>
+</header>
+<main id="main"><article>
+  <header class="article-masthead"><div class="article-masthead-inner"><div class="article-meta"><span>Wirtschaftlichkeit</span><time datetime="2026-08-20">20. August 2026</time><span>Zuletzt geprüft: 28. August 2026</span></div><h1>KI-Projekte wirtschaftlich bewerten</h1><p class="article-lead">Welche Kosten, Risiken und Einsparungen in einen belastbaren Business Case gehören.</p><div class="article-byline"><span>Text & Einordnung: <strong>Patrick Vach</strong></span><span>Technische Angaben sind zeitabhängig und werden vor Projektentscheidungen neu geprüft.</span></div></div></header>
+  <div class="article-layout"><div class="article-content"><div class="highlight-box"><p><strong>Transparenz:</strong> Sämtliche Beträge und Szenarien in diesem Beitrag sind Rechenbeispiele. Sie sind keine veröffentlichten Kundenergebnisse und müssen mit echten Prozessdaten validiert werden.</p></div><div class="highlight-box"><p><strong>Transparenz:</strong> Sämtliche Beträge und Szenarien in diesem Beitrag sind Rechenbeispiele. Sie sind keine veröffentlichten Kundenergebnisse und müssen mit echten Prozessdaten validiert werden.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: AI Risk Management Framework</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p></div><aside class="article-aside" aria-label="Artikelhinweise"><div class="article-aside-block"><small>Autor</small><p>Patrick Vach<br>Inhaber, vachsystems</p></div><div class="article-aside-block"><small>Stand</small><p>Geprüft am 28.08.2026</p></div><div class="article-aside-block"><small>Einordnung</small><p>Keine Rechts- oder Anlageberatung. Technische Entscheidungen immer am konkreten Einsatzfall prüfen.</p></div><div class="article-aside-block"><small>Zurück</small><a href="/blog/">Alle Einblicke</a></div></aside></div>
+</article><section class="cta-stage"><div class="cta-inner reveal"><p class="page-kicker">Ihr Vorhaben</p><h2>Passt das Thema zu einer konkreten Aufgabe in Ihrem Unternehmen?</h2><div class="cta-row"><p>Wir ordnen den Anwendungsfall gemeinsam ein und sagen offen, ob eine technische Umsetzung sinnvoll ist.</p><a class="button light" href="../kontakt"><span>Projekt besprechen</span><span aria-hidden="true">↗</span></a></div></div></section></main>
+<footer class="studio-footer">
+  <div class="studio-footer-main">
+    <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>
+    <div class="studio-footer-links"><span>Leistungen</span><a href="../leistungen">Websites</a><a href="../loesungen">Software</a><a href="../ki-automatisierung-unternehmen">Automatisierung</a><a href="../ki-workshop-unternehmen">KI-Workshop</a></div>
+    <div class="studio-footer-links"><span>vachsystems</span><a href="../projekte">Arbeiten</a><a href="../ueber-uns">Über uns</a><a href="../blog/">Einblicke</a><a href="../kontakt">Kontakt</a></div>
+  </div>
+  <div class="studio-footer-legal"><span>© 2026 vachsystems · Berlin · ohne Tracking</span><div><a href="../impressum">Impressum</a><a href="../datenschutz">Datenschutz</a></div></div>
+</footer>
+<script src="../js/studio-system.js?v=20260828-1" defer></script>
+<script src="../js/site-cleanup.js?v=20260828-1" defer></script>
+</body></html>
