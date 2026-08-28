@@ -1,14 +1,23 @@
-/* One header geometry for every public page. Loaded after page-specific CSS. */
+/* Verbindliche Kopfzeile für jede öffentliche Seite. Diese Datei wird zuletzt geladen. */
+.studio-header,
+.studio-header * { box-sizing: border-box; }
+
 .studio-header {
   position: fixed;
   z-index: 100;
   inset: 0 0 auto;
+  width: 100%;
   height: 76px;
+  margin: 0;
   color: #fff;
+  border: 0;
   border-bottom: 1px solid rgba(255, 255, 255, .1);
   background: rgba(5, 6, 8, .76);
   -webkit-backdrop-filter: blur(22px) saturate(125%);
   backdrop-filter: blur(22px) saturate(125%);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1;
   transition: background .25s ease, box-shadow .25s ease;
 }
 
@@ -19,25 +28,28 @@
   box-shadow: 0 12px 40px rgba(0, 0, 0, .16);
 }
 
-.studio-nav {
+.studio-header .studio-nav {
+  position: relative;
   width: min(100%, 1440px);
-  height: 100%;
-  min-height: 0;
+  height: 76px;
+  min-height: 76px;
   margin: 0 auto;
   padding: 0 clamp(22px, 4vw, 64px);
   display: flex;
+  grid-template-columns: none;
   align-items: center;
   gap: 38px;
-  border-bottom: 0;
+  border: 0;
 }
 
-.studio-brand {
+.studio-header .studio-brand {
   position: relative;
   display: inline-flex;
   flex: 0 0 auto;
   align-items: center;
   gap: 0;
   width: max-content;
+  margin: 0;
   padding: 7px 0 8px;
   color: #fff;
   font-size: 20px;
@@ -47,7 +59,7 @@
   text-decoration: none;
 }
 
-.studio-brand i {
+.studio-header .studio-brand i {
   position: absolute;
   right: 0;
   bottom: 3px;
@@ -60,7 +72,7 @@
   box-shadow: none;
 }
 
-.studio-brand i::after {
+.studio-header .studio-brand i::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -69,11 +81,15 @@
   transition: transform .35s cubic-bezier(.2, .7, .2, 1);
 }
 
-.studio-brand:hover i::after { transform: translateX(0); }
+.studio-header .studio-brand:hover i::after { transform: translateX(0); }
 
-.studio-links {
+.studio-header .studio-links {
   position: static;
-  margin-left: auto;
+  inset: auto;
+  z-index: auto;
+  width: auto;
+  min-height: 0;
+  margin: 0 0 0 auto;
   padding: 0;
   display: flex;
   flex-direction: row;
@@ -86,9 +102,11 @@
   transform: none;
 }
 
-.studio-links a {
+.studio-header .studio-links a {
   position: relative;
+  margin: 0;
   padding: 28px 0 25px;
+  border: 0;
   color: rgba(255, 255, 255, .67);
   font-size: 13px;
   font-weight: 570;
@@ -98,7 +116,7 @@
   transition: color .2s ease;
 }
 
-.studio-links a::after {
+.studio-header .studio-links a::after {
   content: "";
   position: absolute;
   right: 0;
@@ -111,22 +129,24 @@
   transition: transform .25s ease;
 }
 
-.studio-links a:hover,
-.studio-links a[aria-current="page"] { color: #fff; }
+.studio-header .studio-links a:hover,
+.studio-header .studio-links a[aria-current="page"] { color: #fff; }
 
-.studio-links a:hover::after,
-.studio-links a[aria-current="page"]::after {
+.studio-header .studio-links a:hover::after,
+.studio-header .studio-links a[aria-current="page"]::after {
   bottom: -1px;
+  display: block;
   transform: scaleX(1);
   transform-origin: left;
 }
 
-.studio-nav-cta {
+.studio-header .studio-nav-cta {
   justify-self: auto;
   display: inline-flex;
+  flex: 0 0 auto;
   align-items: center;
   gap: 18px;
-  margin-left: 6px;
+  margin: 0 0 0 6px;
   padding: 12px 17px;
   border: 1px solid #fff;
   color: #050608;
@@ -138,18 +158,19 @@
   transition: color .25s ease, background .25s ease, border-color .25s ease;
 }
 
-.studio-nav-cta:hover {
+.studio-header .studio-nav-cta:hover {
   color: #fff;
   background: transparent;
   border-color: rgba(255, 255, 255, .5);
 }
 
-.studio-menu-button {
+.studio-header .studio-menu-button {
+  justify-self: auto;
   display: none;
   flex: 0 0 auto;
   width: 44px;
   height: 44px;
-  margin-left: auto;
+  margin: 0 0 0 auto;
   padding: 0;
   border: 0;
   color: #fff;
@@ -157,7 +178,7 @@
   cursor: pointer;
 }
 
-.studio-menu-button span {
+.studio-header .studio-menu-button span {
   display: block;
   width: 23px;
   height: 1px;
@@ -166,16 +187,17 @@
   transition: transform .25s ease;
 }
 
-.studio-menu-button[aria-expanded="true"] span:first-child { transform: translateY(4px) rotate(45deg); }
-.studio-menu-button[aria-expanded="true"] span:last-child { transform: translateY(-4px) rotate(-45deg); }
+.studio-header .studio-menu-button[aria-expanded="true"] span:first-child { transform: translateY(4px) rotate(45deg); }
+.studio-header .studio-menu-button[aria-expanded="true"] span:last-child { transform: translateY(-4px) rotate(-45deg); }
 
 @media (max-width: 1040px) {
-  .studio-nav-cta { display: none; }
-  .studio-menu-button { display: block; }
-  .studio-links {
+  .studio-header .studio-nav-cta { display: none; }
+  .studio-header .studio-menu-button { display: block; }
+  .studio-header .studio-links {
     position: fixed;
     z-index: 99;
     inset: 76px 0 auto;
+    width: 100%;
     min-height: calc(100svh - 76px);
     margin: 0;
     padding: 36px clamp(22px, 4vw, 64px) 54px;
@@ -190,13 +212,15 @@
     transform: translateY(-12px);
     transition: opacity .25s ease, visibility .25s ease, transform .25s ease;
   }
-  .studio-links.open,
-  .studio-links.is-open {
+
+  .studio-header .studio-links.open,
+  .studio-header .studio-links.is-open {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
   }
-  .studio-links a {
+
+  .studio-header .studio-links a {
     padding: 21px 0;
     border-bottom: 1px solid rgba(255, 255, 255, .12);
     color: #fff;
@@ -205,15 +229,20 @@
     line-height: 1.1;
     letter-spacing: -.04em;
   }
-  .studio-links a::after { display: none; }
+
+  .studio-header .studio-links a::after { display: none; }
 }
 
 @media (max-width: 760px) {
   .studio-header { height: 68px; }
-  .studio-nav { gap: 16px; }
-  .studio-links {
+  .studio-header .studio-nav {
+    height: 68px;
+    min-height: 68px;
+    gap: 16px;
+  }
+  .studio-header .studio-links {
     top: 68px;
     min-height: calc(100svh - 68px);
   }
-  .studio-brand { font-size: 18px; }
+  .studio-header .studio-brand { font-size: 18px; }
 }

@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lokale KI und Cloud sinnvoll kombinieren | vachsystems</title>
-  <meta name="description" content="Eine nüchterne Entscheidungshilfe für Daten, Betrieb, Kosten und Skalierung.">
+  <meta name="description" content="Die passende Architektur folgt den Daten, dem Betriebsmodell und der geforderten Kontrolle – nicht einer pauschalen Technologieentscheidung.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#050608">
   <link rel="canonical" href="https://vachsystems.de/blog/hybrid-ai-systems-lokal-cloud-zukunft">
   <link rel="icon" href="../favicon.svg">
-  <link rel="stylesheet" href="../css/studio-system.css?v=20260828-4">
-  <link rel="stylesheet" href="../css/studio-header.css?v=20260828-3">
+  <link rel="stylesheet" href="../css/studio-system.css?v=20260828-5">
+  <link rel="stylesheet" href="../css/editorial-studio.css?v=20260828-2">
+  <link rel="stylesheet" href="../css/studio-header.css?v=20260828-5">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="de_DE">
   <meta property="og:title" content="Lokale KI und Cloud sinnvoll kombinieren | vachsystems">
-  <meta property="og:description" content="Eine nüchterne Entscheidungshilfe für Daten, Betrieb, Kosten und Skalierung.">
+  <meta property="og:description" content="Die passende Architektur folgt den Daten, dem Betriebsmodell und der geforderten Kontrolle – nicht einer pauschalen Technologieentscheidung.">
   <meta property="og:url" content="https://vachsystems.de/blog/hybrid-ai-systems-lokal-cloud-zukunft">
   <meta property="og:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
   <meta property="og:image:width" content="1200">
@@ -22,14 +23,14 @@
   <meta property="og:image:alt" content="Abstraktes digitales Objekt von vachsystems">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Lokale KI und Cloud sinnvoll kombinieren | vachsystems">
-  <meta name="twitter:description" content="Eine nüchterne Entscheidungshilfe für Daten, Betrieb, Kosten und Skalierung.">
+  <meta name="twitter:description" content="Die passende Architektur folgt den Daten, dem Betriebsmodell und der geforderten Kontrolle – nicht einer pauschalen Technologieentscheidung.">
   <meta name="twitter:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
   <script>document.documentElement.classList.add('js')</script>
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Lokale KI und Cloud sinnvoll kombinieren",
-  "description": "Eine nüchterne Entscheidungshilfe für Daten, Betrieb, Kosten und Skalierung.",
+  "description": "Die passende Architektur folgt den Daten, dem Betriebsmodell und der geforderten Kontrolle – nicht einer pauschalen Technologieentscheidung.",
   "datePublished": "2026-08-12",
   "dateModified": "2026-08-28",
   "mainEntityOfPage": "https://vachsystems.de/blog/hybrid-ai-systems-lokal-cloud-zukunft",
@@ -44,7 +45,6 @@
   },
   "image": "https://vachsystems.de/images/vachsystems-object-og.webp"
 }</script>
-  <link rel="stylesheet" href="../css/editorial-studio.css?v=20260828-1">
 </head><body class="article-shell">
 <a class="studio-skip" href="#main">Zum Inhalt springen</a>
 <header class="studio-header" data-header>
@@ -62,188 +62,21 @@
   </nav>
 </header>
 <main id="main"><article>
-  <header class="article-masthead"><div class="article-masthead-inner"><div class="article-meta"><span>Architektur</span><time datetime="2026-08-12">12. August 2026</time><span>Zuletzt geprüft: 28. August 2026</span></div><h1>Lokale KI und Cloud sinnvoll kombinieren</h1><p class="article-lead">Eine nüchterne Entscheidungshilfe für Daten, Betrieb, Kosten und Skalierung.</p><div class="article-byline"><span>Text & Einordnung: <strong>Patrick Vach</strong></span><span>Technische Angaben sind zeitabhängig und werden vor Projektentscheidungen neu geprüft.</span></div></div></header>
+  <header class="article-masthead"><div class="article-masthead-inner"><div class="article-meta"><span>Architektur</span><time datetime="2026-08-12">12. August 2026</time><span>Stand: 28. August 2026</span></div><h1>Lokale KI und Cloud sinnvoll kombinieren</h1><p class="article-lead">Die passende Architektur folgt den Daten, dem Betriebsmodell und der geforderten Kontrolle – nicht einer pauschalen Technologieentscheidung.</p><div class="article-byline"><span>Text & Einordnung: <strong>Patrick Vach</strong></span><span>Fachliche Einordnung für Entscheider und Projektverantwortliche.</span></div></div></header>
   <div class="article-layout"><div class="article-content">
-            <h2>Das Dilemma: Cloud vs. On-Premise</h2>
-            
-            <h3>Cloud-Only Probleme:</h3>
-            <ul>
-                <li>Sensible Daten gehen zu OpenAI/Anthropic</li>
-                <li>Hohe Kosten bei Skalierung</li>
-                <li>Vendor Lock-in</li>
-                <li>Latency für User-facing Apps</li>
-            </ul>
-
-            <h3>On-Premise-Only Probleme:</h3>
-            <ul>
-                <li>Hohe initiale Investition (GPUs, Infrastruktur)</li>
-                <li>Komplexes Setup & Wartung</li>
-                <li>Qualität schwächer als Top Cloud Models</li>
-                <li>Schwer skalierbar</li>
-            </ul>
-
-            <h3>Hybrid: Best of Both</h3>
-            <ul>
-                <li> Sensible Daten lokal</li>
-                <li> Komplexe Tasks in Cloud</li>
-                <li> Kosten-optimiert</li>
-                <li> Flexibel skalierbar</li>
-            </ul>
-
-            <h2>Hybrid Architecture Patterns</h2>
-            
-            <h3>Pattern 1: Data-Sensitive Routing</h3>
-            <p>Routing basierend auf Daten-Sensitivität:</p>
-            <ul>
-                <li><strong>Sensible Daten (Kunden, Finanzen):</strong> Lokales Llama 3.3</li>
-                <li><strong>Public Daten (Marketing, Blog):</strong> Cloud GPT-5.5</li>
-            </ul>
-
-            <h3>Pattern 2: Task-Based Routing</h3>
-            <p>Routing basierend auf Task-Komplexität:</p>
-            <ul>
-                <li><strong>Simple (Klassifikation):</strong> Lokales Phi-4</li>
-                <li><strong>Complex (Reasoning):</strong> Cloud Claude Opus 5</li>
-            </ul>
-
-            <h3>Pattern 3: Volume-Based Routing</h3>
-            <p>Routing basierend auf Volumina:</p>
-            <ul>
-                <li><strong>High Volume (>1M Requests/Monat):</strong> Lokal (günstiger)</li>
-                <li><strong>Low Volume (&lt;10K/Monat):</strong> Cloud (einfacher)</li>
-            </ul>
-
-            <p>Mehr zu Stack: <a href="enterprise-ai-stack-2026-richtige-architektur">Enterprise KI Stack 2026: Die richtige Architektur wählen</a></p>
-
-            <h2>Beispielhafte Hybrid Setup</h2>
-            <p>Finanzdienstleister (200 Mitarbeiter):</p>
-
-            <h3>Lokale Models (On-Premise):</h3>
-            <ul>
-                <li><strong>Llama 3.3 70B:</strong> Kundendaten-Analyse, Compliance-Checks</li>
-                <li><strong>Phi-4 14B:</strong> Dokumenten-Klassifikation</li>
-                <li><strong>Hosting:</strong> Eigene GPUs (4× A100)</li>
-                <li><strong>Kosten:</strong> 15K€ Setup + 2K€/Monat</li>
-            </ul>
-
-            <h3>Cloud APIs:</h3>
-            <ul>
-                <li><strong>GPT-5.5:</strong> Marktanalysen, Reports (non-sensitive)</li>
-                <li><strong>Claude Opus 5:</strong> Complex Reasoning Tasks</li>
-                <li><strong>Kosten:</strong> 1.500€/Monat</li>
-            </ul>
-
-            <h3>Routing-Logik:</h3>
-            <ul>
-                <li>Enthält PII  Lokal</li>
-                <li>Öffentliche Daten + komplex  Cloud</li>
-                <li>Öffentliche Daten + simple  Lokal (günstiger)</li>
-            </ul>
-
-            <p><strong>Resultat:</strong> Best Quality + DSGVO-konform + 40% günstiger als Pure Cloud!</p>
-
-            <h2>Technische Implementation</h2>
-            
-            <h3>Routing Layer:</h3>
-            <pre><code>def route_request(data, task):
-    if contains_pii(data):
-        return local_llama(data, task)
-    elif task.complexity == "high":
-        return cloud_gpt(data, task)
-    else:
-        return local_phi(data, task)</code></pre>
-
-            <h3>Load Balancing:</h3>
-            <ul>
-                <li>Lokal: nginx + multiple GPU instances</li>
-                <li>Cloud: Fallback wenn lokal überlastet</li>
-            </ul>
-
-            <h3>Monitoring:</h3>
-            <ul>
-                <li>Grafana Dashboard: Local vs. Cloud Usage</li>
-                <li>Cost Tracking: Wo läuft was</li>
-                <li>Quality Metrics: Performance Comparison</li>
-            </ul>
-
-            <h2>Kosten-Optimierung</h2>
-            
-            <table>
-                <tr>
-                    <th>Szenario</th>
-                    <th>Cloud-Only</th>
-                    <th>Hybrid</th>
-                    <th>Ersparnis</th>
-                </tr>
-                <tr>
-                    <td><strong>500K Requests/Monat</strong></td>
-                    <td>8.000€</td>
-                    <td>4.500€</td>
-                    <td>44%</td>
-                </tr>
-                <tr>
-                    <td><strong>2M Requests/Monat</strong></td>
-                    <td>32.000€</td>
-                    <td>8.000€</td>
-                    <td>75%</td>
-                </tr>
-            </table>
-
-            <p><strong>Break-Even:</strong> Hybrid lohnt sich ab ~200K Requests/Monat!</p>
-
-            <p>Mehr zu Kosten: <a href="llm-kosten-2026-kleinere-modelle-besser">LLM-Kosten 2026: Warum kleinere Modelle oft besser performen</a></p>
-
-            <h2>Security & Compliance</h2>
-            
-            <h3>Daten-Klassifikation:</h3>
-            <ul>
-                <li><strong>Tier 1 (Critical PII):</strong> Nur lokal, nie Cloud</li>
-                <li><strong>Tier 2 (Internal):</strong> Lokal bevorzugt, Cloud OK wenn anonymisiert</li>
-                <li><strong>Tier 3 (Public):</strong> Cloud OK</li>
-            </ul>
-
-            <h3>Compliance-Checks:</h3>
-            <ul>
-                <li>Automated PII Detection vor Cloud-Routing</li>
-                <li>Audit Logs für alle Cloud-Requests</li>
-                <li>Encryption in Transit & at Rest</li>
-            </ul>
-
-            <h2>Edge Computing: Die nächste Stufe</h2>
-            <p>2027-2028: Hybrid wird Edge.</p>
-
-            <h3>Edge KI:</h3>
-            <ul>
-                <li><strong>On-Device:</strong> Phi-4 läuft auf Laptop/Phone</li>
-                <li><strong>On-Premise:</strong> Llama für Backend</li>
-                <li><strong>Cloud:</strong> GPT-5.5 für Heavy Tasks</li>
-            </ul>
-
-            <p><strong>Anwendungsfall:</strong> Mobile App mit KI-Features  Edge für Privacy + Speed, Cloud für Komplexität.</p>
-
-            <h2>Best Practices</h2>
-            
-            <h3>1. Start Hybrid von Tag 1</h3>
-            <p>Nicht erst Cloud, dann migrieren. Von Anfang an beide Welten planen.</p>
-
-            <h3>2. Clear Routing Rules</h3>
-            <p>Dokumentieren: Was läuft wo, warum? Team muss verstehen.</p>
-
-            <h3>3. Monitor & Optimize</h3>
-            <p>Continuous Optimization: Sind Routing-Rules noch optimal?</p>
-
-            <h3>4. Test Failover</h3>
-            <p>Wenn lokal ausfällt  Cloud übernimmt? Testen!</p>
-
-            <p>Weiterlesen:</p>
-            <ul>
-                <li><a href="small-language-models-slm-fine-tuning-unternehmen">Small Language Models: Warum Fine-Tuned SLMs oft besser sind</a></li>
-                <li><a href="ai-vendor-lock-in-vermeiden-open-source-vs-proprietary">KI Vendor Lock-in vermeiden</a></li>
-                <li><a href="500-llm-modelle-richtiges-fuer-unternehmen-waehlen">500+ LLM-Modelle: Wie wählt man das richtige?</a></li>
-            </ul>
-
-        <section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: AI Risk Management Framework</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p></div><aside class="article-aside" aria-label="Artikelhinweise"><div class="article-aside-block"><small>Autor</small><p>Patrick Vach<br>Inhaber, vachsystems</p></div><div class="article-aside-block"><small>Stand</small><p>Geprüft am 28.08.2026</p></div><div class="article-aside-block"><small>Einordnung</small><p>Keine Rechts- oder Anlageberatung. Technische Entscheidungen immer am konkreten Einsatzfall prüfen.</p></div><div class="article-aside-block"><small>Zurück</small><a href="/blog/">Alle Einblicke</a></div></aside></div>
-</article><section class="cta-stage"><div class="cta-inner reveal"><p class="page-kicker">Ihr Vorhaben</p><h2>Passt das Thema zu einer konkreten Aufgabe in Ihrem Unternehmen?</h2><div class="cta-row"><p>Wir ordnen den Anwendungsfall gemeinsam ein und sagen offen, ob eine technische Umsetzung sinnvoll ist.</p><a class="button light" href="../kontakt"><span>Projekt besprechen</span><span aria-hidden="true">↗</span></a></div></div></section></main>
+    <p>Lokaler Betrieb und Cloud sind keine gegensätzlichen Weltanschauungen. Sie sind Betriebsmodelle mit unterschiedlichen Stärken. Eine tragfähige Architektur ordnet Daten und Aufgaben so zu, dass Schutzbedarf, Qualität, Geschwindigkeit und Verantwortung zusammenpassen.</p>
+    <h2>Die Entscheidung beginnt bei Daten und Verantwortung</h2>
+    <p>Welche Informationen verarbeitet werden, wer darauf zugreifen darf und welche Nachweise erforderlich sind, bestimmt den Lösungsraum. Vertrauliche Inhalte, personenbezogene Daten oder geschäftskritische Entscheidungen brauchen andere Leitplanken als öffentliches Marketingmaterial.</p>
+    <p>Ebenso wichtig ist die Betriebsverantwortung. Ein lokales Modell schafft nicht automatisch Kontrolle. Updates, Zugriffsrechte, Protokollierung, Kapazität und Sicherheitsmaßnahmen müssen auch dort professionell betrieben werden.</p>
+    <h2>Lokaler Betrieb schafft Nähe und Planbarkeit</h2>
+    <p>Lokale oder dedizierte Modelle können sinnvoll sein, wenn Daten das eigene Umfeld nicht verlassen sollen, geringe Netzabhängigkeit gefragt ist oder eine stabile, eng begrenzte Aufgabe häufig ausgeführt wird. Sie ermöglichen eine genaue Kontrolle über Versionen und Infrastruktur.</p>
+    <p>Dafür trägt das Unternehmen mehr technische Verantwortung. Hardware, Skalierung, Modellpflege und Überwachung werden Teil des eigenen Betriebs. Diese Kosten gehören in die Architekturentscheidung.</p>
+    <h2>Cloud-Dienste schaffen Zugriff auf Breite und Skalierung</h2>
+    <p>Cloud-Angebote erleichtern den Zugang zu leistungsfähigen Modellen, verwalteter Infrastruktur und neuen Funktionen. Sie können Last flexibel abfangen und den Einstieg beschleunigen. Gleichzeitig müssen Verträge, Datenverarbeitung, Regionen, Aufbewahrung und technische Abhängigkeiten geprüft werden.</p>
+    <h2>Eine klare Grenze macht das hybride System beherrschbar</h2>
+    <p>In einer hybriden Architektur bleibt nicht einfach ein Teil lokal und ein anderer in der Cloud. Entscheidend ist eine bewusst definierte Grenze: Welche Daten werden vorverarbeitet? Welche Informationen dürfen das System verlassen? Welcher Modelltyp bearbeitet welche Klasse von Aufgabe? Was geschieht bei einem Ausfall?</p>
+    <p>Diese Regeln gehören in die technische Umsetzung und in den Betrieb. Erst dann verbindet ein hybrides System die Vorteile beider Modelle, ohne Verantwortlichkeiten zu verwischen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: AI Risk Management Framework</a></li></ul></section><p class="editorial-note">Die genannten Rahmenwerke dienen der fachlichen Einordnung. Architektur, Datenschutz und Wirtschaftlichkeit müssen für den konkreten Einsatzfall geprüft werden.</p></div><aside class="article-aside" aria-label="Artikelhinweise"><div class="article-aside-block"><small>Autor</small><p>Patrick Vach<br>Inhaber, vachsystems</p></div><div class="article-aside-block"><small>Stand</small><p>28. August 2026</p></div><div class="article-aside-block"><small>Themen</small><p>Digitale Produkte, Automatisierung und verantwortbarer KI-Einsatz.</p></div><div class="article-aside-block"><small>Zurück</small><a href="/blog/">Alle Einblicke</a></div></aside></div>
+</article><section class="cta-stage"><div class="cta-inner reveal"><p class="page-kicker">Ihr Vorhaben</p><h2>Machen wir aus der Einordnung einen konkreten nächsten Schritt.</h2><div class="cta-row"><p>Wir betrachten Aufgabe, Daten und Verantwortlichkeiten gemeinsam und entwickeln daraus einen tragfähigen Lösungsweg.</p><a class="button light" href="../kontakt"><span>Projekt besprechen</span><span aria-hidden="true">↗</span></a></div></div></section></main>
 <footer class="studio-footer">
   <div class="studio-footer-main">
     <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>

@@ -3,49 +3,46 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wann agentische Abläufe zu komplex werden | vachsystems</title>
-  <meta name="description" content="Warum mehr Schritte nicht automatisch mehr Leistung bedeuten und wo Kontrolle verloren geht.">
-  <meta name="robots" content="index, follow, max-image-preview:large">
+  <title>Beitrag aktualisiert | vachsystems</title>
+  <meta name="description" content="Dieser ältere Beitrag wurde aus dem kuratierten Archiv genommen. Aktuelle, belastbare Einordnungen finden Sie unter Einblicke.">
+  <meta name="robots" content="noindex, follow">
   <meta name="theme-color" content="#050608">
-  <link rel="canonical" href="https://vachsystems.de/blog/ai-agents-4000-steps-komplexitaet-problem">
+  <link rel="canonical" href="https://vachsystems.de/blog/">
   <link rel="icon" href="../favicon.svg">
-  <link rel="stylesheet" href="../css/studio-system.css?v=20260828-4">
-  <link rel="stylesheet" href="../css/studio-header.css?v=20260828-3">
-  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../css/studio-system.css?v=20260828-5">
+  <link rel="stylesheet" href="../css/studio-header.css?v=20260828-5">
+  <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:title" content="Wann agentische Abläufe zu komplex werden | vachsystems">
-  <meta property="og:description" content="Warum mehr Schritte nicht automatisch mehr Leistung bedeuten und wo Kontrolle verloren geht.">
-  <meta property="og:url" content="https://vachsystems.de/blog/ai-agents-4000-steps-komplexitaet-problem">
+  <meta property="og:title" content="Beitrag aktualisiert | vachsystems">
+  <meta property="og:description" content="Dieser ältere Beitrag wurde aus dem kuratierten Archiv genommen. Aktuelle, belastbare Einordnungen finden Sie unter Einblicke.">
+  <meta property="og:url" content="https://vachsystems.de/blog/">
   <meta property="og:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Abstraktes digitales Objekt von vachsystems">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Wann agentische Abläufe zu komplex werden | vachsystems">
-  <meta name="twitter:description" content="Warum mehr Schritte nicht automatisch mehr Leistung bedeuten und wo Kontrolle verloren geht.">
+  <meta name="twitter:title" content="Beitrag aktualisiert | vachsystems">
+  <meta name="twitter:description" content="Dieser ältere Beitrag wurde aus dem kuratierten Archiv genommen. Aktuelle, belastbare Einordnungen finden Sie unter Einblicke.">
   <meta name="twitter:image" content="https://vachsystems.de/images/vachsystems-object-og.webp">
   <script>document.documentElement.classList.add('js')</script>
   <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Wann agentische Abläufe zu komplex werden",
-  "description": "Warum mehr Schritte nicht automatisch mehr Leistung bedeuten und wo Kontrolle verloren geht.",
-  "datePublished": "2026-05-28",
-  "dateModified": "2026-08-28",
-  "mainEntityOfPage": "https://vachsystems.de/blog/ai-agents-4000-steps-komplexitaet-problem",
-  "author": {
+  "@type": "ProfessionalService",
+  "name": "vachsystems",
+  "url": "https://vachsystems.de/",
+  "email": "contact@vachsystems.de",
+  "founder": {
     "@type": "Person",
     "name": "Patrick Vach"
   },
-  "publisher": {
-    "@type": "Organization",
-    "name": "vachsystems",
-    "url": "https://vachsystems.de/"
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Berlin",
+    "addressCountry": "DE"
   },
-  "image": "https://vachsystems.de/images/vachsystems-object-og.webp"
+  "areaServed": "DE"
 }</script>
-  <link rel="stylesheet" href="../css/editorial-studio.css?v=20260828-1">
-</head><body class="article-shell">
+</head><body>
 <a class="studio-skip" href="#main">Zum Inhalt springen</a>
 <header class="studio-header" data-header>
   <nav class="studio-nav" aria-label="Hauptnavigation">
@@ -61,287 +58,10 @@
     <button class="studio-menu-button" type="button" aria-expanded="false" aria-controls="studio-navigation" aria-label="Menü öffnen" data-menu-button><span></span><span></span></button>
   </nav>
 </header>
-<main id="main"><article>
-  <header class="article-masthead"><div class="article-masthead-inner"><div class="article-meta"><span>Agenten</span><time datetime="2026-05-28">28. Mai 2026</time><span>Zuletzt geprüft: 28. August 2026</span></div><h1>Wann agentische Abläufe zu komplex werden</h1><p class="article-lead">Warum mehr Schritte nicht automatisch mehr Leistung bedeuten und wo Kontrolle verloren geht.</p><div class="article-byline"><span>Text & Einordnung: <strong>Patrick Vach</strong></span><span>Technische Angaben sind zeitabhängig und werden vor Projektentscheidungen neu geprüft.</span></div></div></header>
-  <div class="article-layout"><div class="article-content">
-            <h2>Was sind "Steps" bei KI-Agenten?</h2>
-            <p>Ein Step ist eine einzelne Aktion die ein Agent ausführt:</p>
-            
-            <ul>
-                <li><strong>Step 1:</strong> Lese E-Mail</li>
-                <li><strong>Step 2:</strong> Extrahiere Rechnungsdaten</li>
-                <li><strong>Step 3:</strong> Prüfe Plausibilität</li>
-                <li><strong>Step 4:</strong> Buche in Buchhaltung</li>
-                <li><strong>Step 5:</strong> Sende Bestätigung</li>
-            </ul>
-
-            <p><strong>5 Steps = einfacher Agent. 4000 Steps = hochkomplexes Multi-Agent System.</strong></p>
-
-            <h2>Das Komplexitäts-Paradox</h2>
-            <p>Theorie: Mehr Steps = mehr Kapazität = bessere Ergebnisse.</p>
-            <p>Praxis: Ab ~100 Steps steigt Fehlerrate exponentiell.</p>
-
-            <table>
-                <tr>
-                    <th>Step-Range</th>
-                    <th>Erfolgsrate</th>
-                    <th>Durchschnittliche Zeit</th>
-                    <th>Kosten/Task</th>
-                </tr>
-                <tr>
-                    <td><strong>1-10 Steps</strong></td>
-                    <td>95%</td>
-                    <td>10-30 Sek</td>
-                    <td>0.05€</td>
-                </tr>
-                <tr>
-                    <td><strong>10-50 Steps</strong></td>
-                    <td>88%</td>
-                    <td>1-3 Min</td>
-                    <td>0.20€</td>
-                </tr>
-                <tr>
-                    <td><strong>50-200 Steps</strong></td>
-                    <td>76%</td>
-                    <td>5-15 Min</td>
-                    <td>0.80€</td>
-                </tr>
-                <tr>
-                    <td><strong>200-1000 Steps</strong></td>
-                    <td>61%</td>
-                    <td>15-45 Min</td>
-                    <td>3.50€</td>
-                </tr>
-                <tr>
-                    <td><strong>1000-4000 Steps</strong></td>
-                    <td>48%</td>
-                    <td>1-3 Stunden</td>
-                    <td>12.00€</td>
-                </tr>
-            </table>
-
-            <p><strong>Erkenntnis:</strong> Bei 4000 Steps nur noch 48% Erfolgsrate. Das ist ein Münzwurf!</p>
-
-            <h2>Warum scheitern komplexe Agents?</h2>
-            
-            <h3>1. Error Propagation (Fehler pflanzen sich fort)</h3>
-            <p>Bei Step 5 passiert ein kleiner Fehler. Step 100 baut darauf auf. Step 500 ist komplett falsch.</p>
-            <p><strong>Analogie:</strong> Stille Post mit 100 Personen. Am Ende ist die Message unkenntlich.</p>
-
-            <h3>2. Context Overflow</h3>
-            <p>Agent muss sich an 1000 vorherige Steps erinnern. LLM Kontext wird zu voll. Details gehen verloren.</p>
-
-            <h3>3. Koordinations-Overhead</h3>
-            <p>300 Sub-Agents müssen kommunizieren. Wer macht was wann? Warten auf andere Agents. Deadlocks.</p>
-
-            <h3>4. Debugging wird unmöglich</h3>
-            <p>"Warum ist das Ergebnis falsch?"  "Irgendwo bei Step 1-4000 ging was schief"  Nadel im Heuhaufen.</p>
-
-            <h3>5. Kosten explodieren</h3>
-            <p>4000 Steps × durchschnittlich 2K Tokens = 8M Tokens. Bei GPT-5.5: 120€ pro Task!</p>
-
-            <p>Mehr zu Komplexität: <a href="/blog/">Multi-Agent Systems: Wie KI-Teams komplexe Aufgaben lösen</a></p>
-
-            <h2>Beispielhafte Beispiel: Recherche-Agent</h2>
-            <p>Zwei Ansätze für gleiche Aufgabe: "Erstelle Marktanalyse für Produkt X"</p>
-
-            <h3>Ansatz 1: Simple Agent (25 Steps)</h3>
-            <ol>
-                <li>Google-Suche nach "Markt für Produkt X"</li>
-                <li>Top 10 Ergebnisse crawlen</li>
-                <li>Relevante Passagen extrahieren</li>
-                <li>Zusammenfassen</li>
-                <li>Report erstellen</li>
-            </ol>
-            <p><strong>Dauer:</strong> 5 Minuten</p>
-            <p><strong>Erfolgsrate:</strong> 85%</p>
-            <p><strong>Kosten:</strong> 0.50€</p>
-            <p><strong>Qualität:</strong> Gut für erste Übersicht</p>
-
-            <h3>Ansatz 2: Complex Agent (2000 Steps, wie Moonshot Kimi)</h3>
-            <ol>
-                <li>Zerlege in 50 Sub-Fragen</li>
-                <li>150 Agents recherchieren parallel verschiedene Quellen</li>
-                <li>Validiere jede Quelle auf Glaubwürdigkeit</li>
-                <li>Cross-Reference zwischen Quellen</li>
-                <li>Eliminate Widersprüche</li>
-                <li>Tiefenanalyse pro Sub-Thema</li>
-                <li>Synthesis zu Gesamt-Report</li>
-                <li>Quality-Check durch Supervisor</li>
-            </ol>
-            <p><strong>Dauer:</strong> 90 Minuten</p>
-            <p><strong>Erfolgsrate:</strong> 62%</p>
-            <p><strong>Kosten:</strong> 15.00€</p>
-            <p><strong>Qualität:</strong> Exzellent wenn erfolgreich, aber oft unvollständig</p>
-
-            <p><strong>Fazit:</strong> Complex Agent ist 30× teurer, 18× langsamer, und scheitert häufiger. Nur lohnenswert wenn höchste Qualität absolut kritisch ist.</p>
-
-            <h2>Die Sweet Spot Zone: 10-50 Steps</h2>
-            <p>Unsere Empfehlung für die meisten Enterprise Anwendungsfälle:</p>
-
-            <h3>Warum 10-50 Steps optimal sind:</h3>
-            <ul>
-                <li> Erfolgsrate 85-90% (zuverlässig)</li>
-                <li> Zeit 1-5 Min (akzeptabel)</li>
-                <li> Kosten 0.10-0.50€ (skalierbar)</li>
-                <li> Debuggable (man kann Fehler finden)</li>
-                <li> Vorhersagbar (Ergebnisse konsistent)</li>
-            </ul>
-
-            <h3>Praxis-Beispiele für 10-50 Step Agents:</h3>
-            <ul>
-                <li>Rechnungsverarbeitung: 15 Steps</li>
-                <li>Kundenservice E-Mail: 12 Steps</li>
-                <li>Dokumenten-Klassifikation: 8 Steps</li>
-                <li>Datenextraktion aus PDFs: 20 Steps</li>
-                <li>Angebotserstellung: 35 Steps</li>
-            </ul>
-
-            <h2>Wann sind >100 Steps gerechtfertigt?</h2>
-            <p>Es gibt Szenarien wo Komplexität nötig ist:</p>
-
-            <h3> Hochkomplexe Agents sinnvoll bei:</h3>
-            <ul>
-                <li><strong>Wissenschaftliche Recherche:</strong> Tiefe Literatur-Reviews</li>
-                <li><strong>Due Diligence:</strong> M&A Prüfungen (Millionen auf dem Spiel)</li>
-                <li><strong>Patent-Analysen:</strong> 1000e Patente cross-referenzieren</li>
-                <li><strong>Forensik:</strong> Komplexe Datenanalysen (Fraud Detection)</li>
-                <li><strong>Strategische Planung:</strong> Multi-Szenario-Analysen</li>
-            </ul>
-
-            <p><strong>Gemeinsam:</strong> Hoher Wert, niedrige Frequenz, menschliches Review eingebaut.</p>
-
-            <h3> Übertrieben für:</h3>
-            <ul>
-                <li>Standardprozesse (Rechnungen, E-Mails)</li>
-                <li>Hohe Volumina (>1000 Tasks/Tag)</li>
-                <li>Time-sensitive Tasks</li>
-                <li>Niedrige Stakes Entscheidungen</li>
-            </ul>
-
-            <h2>Komplexitäts-Management: Best Practices</h2>
-            
-            <h3>1. Hierarchische Decomposition</h3>
-            <p>Große Task in mehrere kleine Agents aufteilen statt einen Mega-Agent.</p>
-            <p><strong>Beispiel:</strong> Statt 1 Agent mit 500 Steps  5 Agents à 100 Steps die sequenziell arbeiten.</p>
-
-            <h3>2. Checkpoints einbauen</h3>
-            <p>Nach jedem 20-30 Steps: Human Review oder Validation-Agent prüft Zwischenergebnis.</p>
-
-            <h3>3. Fail-Fast Prinzip</h3>
-            <p>Wenn Confidence <70% bei Step 50  Abbrechen statt weitere 950 Steps verschwenden.</p>
-
-            <h3>4. Monitoring & Logging</h3>
-            <p>Jeder Step wird protokolliert. Bei Fehler: Genau nachvollziehbar wo es schief ging.</p>
-
-            <h3>5. Timeout Limits</h3>
-            <p>Agent darf max. X Minuten laufen. Verhindert endlose Loops.</p>
-
-            <p>Mehr zu Best Practices: <a href="/blog/">Agentic KI im Mittelstand: Von der Theorie zur Praxis</a></p>
-
-            <h2>Kosten-Nutzen-Rechnung: Lohnt sich Komplexität?</h2>
-            
-            <h3>Szenario: Marktforschung (100 Tasks/Jahr)</h3>
-
-            <h3>Option A: Simple Agent (25 Steps)</h3>
-            <ul>
-                <li>Kosten: 100 × 0.50€ = 50€/Jahr</li>
-                <li>Zeit: 100 × 5 Min = 8h</li>
-                <li>Erfolgsrate: 85%  15 manuelle Nacharbeiten à 2h = 30h</li>
-                <li><strong>Total: 50€ + 38h Arbeitszeit</strong></li>
-            </ul>
-
-            <h3>Option B: Complex Agent (2000 Steps)</h3>
-            <ul>
-                <li>Kosten: 100 × 15€ = 1.500€/Jahr</li>
-                <li>Zeit: 100 × 90 Min = 150h</li>
-                <li>Erfolgsrate: 62%  38 manuelle Nacharbeiten à 4h = 152h</li>
-                <li><strong>Total: 1.500€ + 302h Arbeitszeit</strong></li>
-            </ul>
-
-            <p><strong>Ergebnis:</strong> Complex Agent ist 30× teurer UND braucht 8× mehr Zeit! Simple Agent gewinnt klar.</p>
-
-            <h2>Die Debugging-Hölle</h2>
-            <p>Real Story: Ein Kunde baute Agent mit 800 Steps für Contract Analysis.</p>
-
-            <h3>Das Problem:</h3>
-            <ul>
-                <li>Agent liefert inkonsistente Ergebnisse</li>
-                <li>Manchmal exzellent (20%), manchmal komplett falsch (30%)</li>
-                <li>Debugging: 2 Wochen, 3 Engineers</li>
-                <li>Fehler gefunden bei Step 247: Falsche Referenz zu Step 89</li>
-            </ul>
-
-            <h3>Die Lösung:</h3>
-            <ul>
-                <li>Agent zerlegt in 8 Sub-Agents à 100 Steps</li>
-                <li>Jeder Sub-Agent hat klare Aufgabe</li>
-                <li>Zwischen Sub-Agents: Validation Steps</li>
-                <li><strong>Neue Erfolgsrate: 91%</strong></li>
-                <li><strong>Debugging: 2h statt 2 Wochen</strong></li>
-            </ul>
-
-            <p><strong>Lektion:</strong> Modularität > Monolith. Auch bei Agents!</p>
-
-            <h2>Tools für Komplexitäts-Management</h2>
-            
-            <h3>1. LangSmith (LangChain)</h3>
-            <p>Visualisiert Agent-Steps, zeigt Execution-Flow, hilft beim Debugging.</p>
-
-            <h3>2. Weights & Biases (W&B)</h3>
-            <p>Monitoring für KI-Agenten. Tracks Performance, Kosten, Erfolgsraten.</p>
-
-            <h3>3. Custom Dashboards (Grafana)</h3>
-            <p>Real-time Monitoring: Wie viele Steps pro Task? Wo scheitern Agents?</p>
-
-            <h3>4. Agent Playbooks (Dokumentation)</h3>
-            <p>Schriftlich festhalten: Jeder Agent macht WAS, WANN, WARUM. Onboarding + Debugging.</p>
-
-            <h2>Die Zukunft: Self-Optimizing Agents</h2>
-            <p>2027-2028 erwartet: Agents die sich selbst optimieren.</p>
-
-            <h3>Wie es funktionieren wird:</h3>
-            <ul>
-                <li>Agent startet mit 100 Steps</li>
-                <li>Analysiert welche Steps überflüssig sind</li>
-                <li>Reduziert auf 60 Steps ohne Qualitätsverlust</li>
-                <li>Learned Optimization: Wird über Zeit effizienter</li>
-            </ul>
-
-            <p><strong>Aber:</strong> Bis dahin  Manuelle Optimierung ist Pflicht!</p>
-
-            <h2>Empfehlungen nach Unternehmensgröße</h2>
-            
-            <h3>Kleine Unternehmen (10-50 Mitarbeiter):</h3>
-            <ul>
-                <li><strong>Max. 20 Steps pro Agent</strong></li>
-                <li>Fokus auf simple, zuverlässige Automation</li>
-                <li>SaaS-Tools nutzen (n8n, Make) statt Custom</li>
-            </ul>
-
-            <h3>Mittelstand (50-500 Mitarbeiter):</h3>
-            <ul>
-                <li><strong>Max. 50 Steps pro Agent</strong></li>
-                <li>Custom Agents für Kernprozesse</li>
-                <li>Modular aufbauen (mehrere kleine Agents)</li>
-            </ul>
-
-            <h3>Enterprise (500+ Mitarbeiter):</h3>
-            <ul>
-                <li><strong>Bis 200 Steps, aber nur wenn nötig</strong></li>
-                <li>Dedicated ML Team für Optimization</li>
-                <li>Comprehensive Monitoring & Logging</li>
-            </ul>
-
-            <p>Weiterlesen:</p>
-            <ul>
-                <li><a href="deepseek-v4-moonshot-kimi-chinesische-ki-modelle">DeepSeek V4 & Moonshot Kimi: Die chinesischen KI-Modelle kommen</a></li>
-                <li><a href="/blog/">Warum 95% der KI-Projekte scheitern</a></li>
-                <li><a href="/blog/">KI-Agenten im Unternehmen 2026</a></li>
-            </ul>
-
-        <section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: KI Risk Management Framework</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p><section class="sources"><h2>Quellen & Weiterführendes</h2><ul><li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: AI Risk Management Framework</a></li><li><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/KI/Generative_KI-Modelle.html" target="_blank" rel="noopener noreferrer">BSI: Chancen und Risiken generativer KI-Modelle</a></li></ul></section><p class="editorial-note">Redaktioneller Hinweis: Herstellerangaben und Modellstände werden als solche eingeordnet. Beispiele ersetzen keine Prüfung der eigenen Daten, Prozesse, Verträge und rechtlichen Anforderungen.</p></div><aside class="article-aside" aria-label="Artikelhinweise"><div class="article-aside-block"><small>Autor</small><p>Patrick Vach<br>Inhaber, vachsystems</p></div><div class="article-aside-block"><small>Stand</small><p>Geprüft am 28.08.2026</p></div><div class="article-aside-block"><small>Einordnung</small><p>Keine Rechts- oder Anlageberatung. Technische Entscheidungen immer am konkreten Einsatzfall prüfen.</p></div><div class="article-aside-block"><small>Zurück</small><a href="/blog/">Alle Einblicke</a></div></aside></div>
-</article><section class="cta-stage"><div class="cta-inner reveal"><p class="page-kicker">Ihr Vorhaben</p><h2>Passt das Thema zu einer konkreten Aufgabe in Ihrem Unternehmen?</h2><div class="cta-row"><p>Wir ordnen den Anwendungsfall gemeinsam ein und sagen offen, ob eine technische Umsetzung sinnvoll ist.</p><a class="button light" href="../kontakt"><span>Projekt besprechen</span><span aria-hidden="true">↗</span></a></div></div></section></main>
+<main id="main"><section class="page-hero"><div class="page-hero-inner">
+  <div class="reveal"><p class="page-kicker">Einblicke</p><h1>Dieser Beitrag wurde<br><span>neu eingeordnet.</span></h1></div>
+  <div class="page-hero-aside reveal"><p>Unser öffentliches Archiv konzentriert sich auf belastbare, dauerhaft relevante Fachbeiträge. Die aktuellen Einordnungen finden Sie gesammelt unter Einblicke.</p></div>
+</div></section><section class="section"><div class="section-inner"><a class="button" href="/blog/"><span>Zu den aktuellen Einblicken</span><span aria-hidden="true">↗</span></a></div></section></main>
 <footer class="studio-footer">
   <div class="studio-footer-main">
     <a class="studio-brand" href="../" aria-label="vachsystems Startseite"><span>vachsystems</span><i aria-hidden="true"></i></a>

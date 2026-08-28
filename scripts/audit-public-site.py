@@ -124,9 +124,25 @@ while queue:
         errors.append(f'{rel}: Meta-Description fehlt oder hat ungünstige Länge')
     if parser.jsonld < 1:
         errors.append(f'{rel}: strukturierte Daten fehlen')
+    if text.count('<header class="studio-header"') != 1:
+        errors.append(f'{rel}: gemeinsame Kopfzeile fehlt oder ist doppelt')
+    if not parser.styles or 'studio-header.css' not in parser.styles[-1]:
+        errors.append(f'{rel}: Kopfzeilen-CSS wird nicht als letzte Stildefinition geladen')
     missing_labels = set(parser.inputs) - set(parser.labels_for) - {'_subject'}
     if missing_labels:
         errors.append(f'{rel}: Formfelder ohne Label: {sorted(missing_labels)}')
+
+    if rel.startswith('blog/') and rel != 'blog/index.html':
+        if text.count('class="sources"') != 1:
+            errors.append(f'{rel}: Quellenbereich fehlt oder ist doppelt')
+        if text.count('class="editorial-note"') != 1:
+            errors.append(f'{rel}: redaktioneller Hinweis fehlt oder ist doppelt')
+        if text.count('href="/blog/"') != 1:
+            errors.append(f'{rel}: unerwartete oder fehlgeleitete Blog-Verlinkung')
+
+    for phrase in ('Beispielhafte Beispiel', 'Beispielhafte Test', 'Beispielhafte Case', 'Kill Bad Projects', 'Pragmatic KI Stack'):
+        if phrase.lower() in text.lower():
+            errors.append(f'{rel}: auffällige Formulierung „{phrase}“')
 
     for resource in parser.images + parser.scripts + parser.styles:
         target = to_file(page, resource.split('?', 1)[0])
@@ -142,7 +158,7 @@ while queue:
         elif target.suffix == '.html' and ROOT in target.parents and not any(part in EXCLUDED for part in target.parts):
             queue.append(target)
 
-expected = 28
+expected = (ROOT / 'sitemap.xml').read_text(encoding='utf-8').count('<loc>')
 if len(visited) != expected:
     errors.append(f'Öffentlich erreichbare HTML-Seiten: {len(visited)} statt {expected}')
 
