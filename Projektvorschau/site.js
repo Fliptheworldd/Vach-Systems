@@ -2,7 +2,7 @@
   'use strict';
 
   const ACCESS_KEY = 'denog-concept-access-v2';
-  const ACCESS_HASH = '0d78576b637eccd17d94e5c6e42c8b4b30b4ad482a35b7b09fcac54a8703cf0d';
+  const ACCESS_HASH = '2789c64f61f552e96f874a9082bcd2cfd663d000dfbbca78021f5352419484ef';
   const page = document.querySelector('.page-shell');
   const isEnglish = document.documentElement.lang === 'en';
 
