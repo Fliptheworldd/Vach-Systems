@@ -3,6 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="jointime-build" content="2026.08.30.1">
   <meta name="theme-color" content="#080a09">
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -73,6 +77,7 @@
 <script>
 (()=>{
 const API='https://jointime-preview.donpablo111.chatgpt.site/api/social';
+const BUILD='2026.08.30.1';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const inviteFromUrl=(new URLSearchParams(location.search).get('invite')||'').trim().toUpperCase();
 if(/^JT-[A-Z2-9]{7}$/.test(inviteFromUrl))localStorage.setItem('jt_pending_invite',inviteFromUrl);
@@ -85,6 +90,7 @@ function initials(name='?'){return name.trim().split(/\s+/).slice(0,2).map(x=>x[
 function toast(message){const el=$('#toast');el.textContent=message;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('show'),2300)}
 function saveAuth(){localStorage.setItem('jt_social_v1',JSON.stringify(auth))}
 function loadAuth(){try{auth=JSON.parse(localStorage.getItem('jt_social_v1')||'null')}catch(e){auth=null}}
+async function ensureLatest(){if(document.visibilityState!=='visible'||!navigator.onLine)return;try{const probe=new URL(location.href);probe.searchParams.set('_jointime_refresh',Date.now());const html=await fetch(probe,{cache:'no-store',headers:{'Cache-Control':'no-cache'}}).then(r=>r.ok?r.text():'');const latest=html.match(/<meta name="jointime-build" content="([^"]+)"/i)?.[1];if(latest&&latest!==BUILD){probe.searchParams.delete('_jointime_refresh');probe.searchParams.set('v',latest);location.replace(probe.toString())}}catch(e){}}
 async function request(action,payload={}){const response=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json',...(auth?.token?{Authorization:`Bearer ${auth.token}`}:{})},body:JSON.stringify({action,...payload})});const result=await response.json().catch(()=>({error:'Verbindung fehlgeschlagen'}));if(!response.ok)throw new Error(result.error||'Verbindung fehlgeschlagen');return result}
 async function describeInvite(){if(!pendingInvite)return;$('#invite-chip').classList.add('show');$('#login-eyebrow').textContent='DU WURDEST EINGELADEN';$('#login-title').innerHTML='Komm in<br>meinen Kreis.';$('#login-copy').textContent='Gib nur deinen Namen ein. Danach wirst du automatisch mit deinem Freund verbunden.';try{const result=await request('resolve_invite',{friendCode:pendingInvite});$('#invite-chip span').textContent=`${result.invite.displayName} lädt dich ein`;$('#login-copy').textContent=`${result.invite.displayName} möchte dich auf jointime hinzufügen. Ein Name reicht – danach seid ihr direkt verbunden.`}catch(e){}}
 function clearPendingInvite(){pendingInvite='';localStorage.removeItem('jt_pending_invite');const cleanUrl=new URL(location.href);cleanUrl.searchParams.delete('invite');history.replaceState({},'',cleanUrl.pathname+cleanUrl.search+cleanUrl.hash)}
@@ -120,6 +126,7 @@ async function openChat(id){const f=data.friends.find(x=>x.id===id);if(!f)return
 function renderMessages(){const box=$('#messages'),msgs=messagesFor(currentChat);box.innerHTML=msgs.length?msgs.map(m=>`<div class="bubble ${m.senderId===auth.user.id?'me':''}">${esc(m.body)}<time>${new Date(m.createdAt+'Z').toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'})}</time></div>`).join(''):'<div class="empty"><b>Noch keine Nachricht</b>Schreib einfach kurz los.</div>';setTimeout(()=>box.scrollTop=box.scrollHeight,20)}
 async function sendMessage(){const input=$('#message-input'),message=input.value.trim();if(!message||!currentChat)return;input.value='';try{const result=await request('send_message',{recipientId:currentChat,message});if(result.awarded)toast(`Im Gespräch geblieben · +${result.awarded} XP`);await sync(false);renderMessages()}catch(e){toast(e.message)}}
 loadAuth();initMap();describeInvite();
+setTimeout(ensureLatest,1800);setInterval(ensureLatest,60000);
 if(auth?.token&&auth?.user){$('#login').classList.add('hide');applyUser();sync(false).then(redeemInvite);syncId=setInterval(()=>{if(document.visibilityState==='visible')sync(true)},4000)}
 $('#login-form').onsubmit=async e=>{e.preventDefault();const name=$('#login-name').value.trim();if(name.length<2)return;try{const result=await request('register',{displayName:name});auth=result;saveAuth();$('#login').classList.add('hide');applyUser();await sync(false);syncId=setInterval(()=>{if(document.visibilityState==='visible')sync(true)},4000);if(pendingInvite)await redeemInvite();else toast(`Willkommen, ${name}`)}catch(err){toast(err.message)}};
 $$('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));$$('[data-close]').forEach(b=>b.onclick=()=>closeOverlay(b.dataset.close));choose('#visibility');choose('#location-mode');choose('#duration');choose('#method-choices');renderDevices('Joint');updateVisibility();
@@ -131,7 +138,7 @@ $('#add-friend').onclick=async()=>{const friendCode=$('#friend-input').value.tri
 $('#chat-back').onclick=()=>{$('#chat-view').classList.remove('open');currentChat=null};$('#send-message').onclick=sendMessage;$('#message-input').onkeydown=e=>{if(e.key==='Enter')sendMessage()};
 $('#report-user').onclick=async()=>{if(!currentChat)return;const reason=prompt('Was möchtest du melden?','Unangemessenes Verhalten');if(!reason)return;try{await request('report_user',{targetId:currentChat,reason});toast('Meldung wurde gespeichert')}catch(e){toast(e.message)}};
 $('#block-user').onclick=async()=>{if(!currentChat||!confirm('Diese Person blockieren und aus deinem Kreis entfernen?'))return;try{await request('block_user',{targetId:currentChat});$('#chat-view').classList.remove('open');currentChat=null;toast('Person blockiert');await sync(false)}catch(e){toast(e.message)}};
-document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')sync(true)});
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'){ensureLatest();sync(true)}});
 $('#delete-account').onclick=async()=>{if(!confirm('Testkonto, Freundschaften, Chats und Check-ins wirklich löschen?'))return;try{await fetch(API,{method:'DELETE',headers:{Authorization:`Bearer ${auth.token}`}})}catch(e){}localStorage.removeItem('jt_social_v1');location.reload()};
 })();
 </script>
