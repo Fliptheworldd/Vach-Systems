@@ -263,6 +263,10 @@ button { cursor: pointer; }
 .access-input-row button, .notice-continue { padding: 0 22px; border: 1px solid #12c9eb; color: #071016; background: #12c9eb; font-size: 10px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
 .access-input-row button:hover, .notice-continue:hover { border-color: #fff; background: #fff; }
 .access-error { min-height: 18px; margin: 11px 0 0; color: #ff7c68; font-size: 12px; font-weight: 700; }
+.access-privacy, .notice-tracking { color: #929ca8; font: 11px/1.55 Arial, sans-serif; }
+.access-privacy { margin: 18px 0 0; }
+.access-privacy a, .notice-tracking a { color: #c6ccd5; text-decoration: underline; text-underline-offset: 3px; }
+.access-privacy a:hover, .notice-tracking a:hover { color: #12c9eb; }
 .access-note { margin: 34px 0 0; color: #75808d; font-size: 8px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
 .notice-card { width: min(820px, 100%); }
 .notice-card h1 { max-width: 760px; font-size: clamp(48px, 7vw, 78px); }
@@ -271,6 +275,7 @@ button { cursor: pointer; }
 .notice-points p { min-height: 170px; margin: 0; padding: 20px; border-right: 1px solid rgba(255,255,255,.25); border-bottom: 1px solid rgba(255,255,255,.25); }
 .notice-points b { display: block; margin-bottom: 38px; color: #12c9eb; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; }
 .notice-points span { display: block; color: #c6ccd5; font: 13px/1.5 Georgia, serif; }
+.notice-tracking { max-width: 720px; margin: 18px 0 0; }
 .notice-continue { min-height: 52px; margin-top: 26px; }
 .noscript { position: fixed; z-index: 400; inset: 0; display: grid; place-items: center; padding: 30px; background: var(--paper); font: 20px/1.5 Georgia, serif; text-align: center; }
 

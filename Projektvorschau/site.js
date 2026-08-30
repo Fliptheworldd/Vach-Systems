@@ -4,8 +4,75 @@
   const ACCESS_KEY = 'vachsystems-project-access-v3';
   const NOTICE_KEY = 'vachsystems-project-notice-v1';
   const ACCESS_HASH = '2789c64f61f552e96f874a9082bcd2cfd663d000dfbbca78021f5352419484ef';
+  const TRACKING_ENDPOINT = 'https://api.web3forms.com/submit';
+  const TRACKING_ACCESS_KEY = '0a59ee17-54d5-41a3-b66b-72eb79e6689f';
+  const TRACKING_ID = 'denog-konzept-2026';
+  const pendingTrackingEvents = new Set();
   const page = document.querySelector('.page-shell');
   const isEnglish = document.documentElement.lang === 'en';
+
+  const trackingEvents = {
+    gate_interaction: {
+      subject: 'DENOG-Vorschau aktiv geöffnet',
+      label: 'Zugangsseite aktiv geöffnet'
+    },
+    password_success: {
+      subject: 'DENOG-Passwort erfolgreich eingegeben',
+      label: 'Passwort erfolgreich eingegeben'
+    }
+  };
+
+  function trackingWasSent(type) {
+    try {
+      return localStorage.getItem(`vachsystems-tracking-${TRACKING_ID}-${type}`) === 'sent';
+    } catch {
+      return false;
+    }
+  }
+
+  function rememberTrackingEvent(type) {
+    try {
+      localStorage.setItem(`vachsystems-tracking-${TRACKING_ID}-${type}`, 'sent');
+    } catch {
+      // The notification still works when browser storage is unavailable.
+    }
+  }
+
+  async function sendTrackingEvent(type) {
+    const details = trackingEvents[type];
+    if (!details || trackingWasSent(type) || pendingTrackingEvents.has(type)) return false;
+    pendingTrackingEvents.add(type);
+
+    try {
+      const timestamp = new Intl.DateTimeFormat('de-DE', {
+        dateStyle: 'medium',
+        timeStyle: 'medium',
+        timeZone: 'Europe/Berlin'
+      }).format(new Date());
+      const response = await fetch(TRACKING_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        keepalive: true,
+        body: JSON.stringify({
+          access_key: TRACKING_ACCESS_KEY,
+          from_name: 'vachsystems Projektvorschau',
+          subject: details.subject,
+          projekt: 'DENOG-Konzeptvorschau',
+          ereignis: details.label,
+          zeitpunkt: timestamp,
+          zugangskennung: TRACKING_ID,
+          seite: window.location.pathname
+        })
+      });
+      if (!response.ok) return false;
+      rememberTrackingEvent(type);
+      return true;
+    } catch {
+      return false;
+    } finally {
+      pendingTrackingEvents.delete(type);
+    }
+  }
 
   function unlock() {
     document.body.classList.remove('is-locked');
@@ -29,7 +96,8 @@
       placeholder: 'Enter password',
       button: 'Continue',
       error: 'That password is not correct. Please try again.',
-      note: 'vachsystems · confidential project area'
+      note: 'vachsystems · confidential project area',
+      privacy: 'Active access is logged to protect this area. Privacy information'
     } : {
       kicker: 'Nicht öffentlicher Bereich',
       title: 'Geschützter <i>Zugang.</i>',
@@ -38,7 +106,8 @@
       placeholder: 'Passwort eingeben',
       button: 'Weiter',
       error: 'Das Passwort ist nicht korrekt. Bitte erneut versuchen.',
-      note: 'vachsystems · vertraulicher Projektbereich'
+      note: 'vachsystems · vertraulicher Projektbereich',
+      privacy: 'Aktive Zugriffe werden zum Schutz dieses Bereichs protokolliert. Datenschutzinformationen'
     };
 
     const gate = document.createElement('main');
@@ -59,6 +128,7 @@
           </div>
           <p class="access-error" role="alert" aria-live="polite"></p>
         </form>
+        <p class="access-privacy">${copy.privacy}: <a href="/datenschutz" target="_blank" rel="noopener noreferrer">vachsystems.de/datenschutz ↗</a></p>
         <p class="access-note">${copy.note}</p>
       </section>`;
     document.body.prepend(gate);
@@ -69,6 +139,13 @@
     const error = gate.querySelector('.access-error');
     input.focus();
 
+    const trackGateInteraction = (event) => {
+      if (!event.isTrusted) return;
+      void sendTrackingEvent('gate_interaction');
+    };
+    gate.addEventListener('pointerdown', trackGateInteraction, { passive: true });
+    gate.addEventListener('keydown', trackGateInteraction);
+
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       button.disabled = true;
@@ -76,6 +153,7 @@
       try {
         if (await hash(input.value) === ACCESS_HASH) {
           sessionStorage.setItem(ACCESS_KEY, 'granted');
+          void sendTrackingEvent('password_success');
           showNotice();
           return;
         }
@@ -98,6 +176,7 @@
       adaptable: 'Content, functions, structure and visual design are proposals and can be fully adjusted.',
       scope: 'The final scope and implementation will be agreed and confirmed separately during the project process.',
       labels: ['Confidential', 'Adaptable', 'Planning status'],
+      tracking: 'To protect the confidential content, active openings and successful unlocks are logged with the time and an access identifier.',
       button: 'Open concept preview',
       note: 'vachsystems · confidential concept presentation'
     } : {
@@ -108,6 +187,7 @@
       adaptable: 'Inhalte, Funktionen, Struktur und Gestaltung sind Vorschläge und können vollständig angepasst werden.',
       scope: 'Der endgültige Leistungsumfang und die Umsetzung werden im weiteren Projektverlauf gesondert abgestimmt und festgelegt.',
       labels: ['Vertraulich', 'Anpassbar', 'Planungsstand'],
+      tracking: 'Zum Schutz der vertraulichen Inhalte werden aktive Öffnungen und erfolgreiche Freischaltungen mit Zeitpunkt und Zugangskennung protokolliert.',
       button: 'Konzeptvorschau öffnen',
       note: 'vachsystems · vertrauliche Konzeptpräsentation'
     };
@@ -127,6 +207,7 @@
           <p><b>02 · ${copy.labels[1]}</b><span>${copy.adaptable}</span></p>
           <p><b>03 · ${copy.labels[2]}</b><span>${copy.scope}</span></p>
         </div>
+        <p class="notice-tracking">${copy.tracking} <a href="/datenschutz" target="_blank" rel="noopener noreferrer">${isEnglish ? 'Privacy information' : 'Datenschutzinformationen'} ↗</a></p>
         <button class="notice-continue" type="button">${copy.button} →</button>
         <p class="access-note">${copy.note}</p>
       </section>`;
