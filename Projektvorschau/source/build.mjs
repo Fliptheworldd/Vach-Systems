@@ -91,31 +91,35 @@ function layout({ locale, key, title, description, content, app = false }) {
   const alternatePath = paired[`${locale}:${key}`];
   const canonical = `${ORIGIN}${href(route)}`;
   const alternateLocale = locale === 'de' ? 'en' : 'de';
+  const neutralTitle = locale === 'de' ? 'Geschützter Projektbereich | vachsystems' : 'Protected project area | vachsystems';
+  const neutralDescription = locale === 'de' ? 'Nicht öffentlicher Projektbereich von vachsystems.' : 'Non-public project area by vachsystems.';
+  const pageTitle = title.replaceAll('&', '&amp;').replaceAll('"', '&quot;');
+  const pageDescription = description.replaceAll('&', '&amp;').replaceAll('"', '&quot;');
   return `<!doctype html>
 <html lang="${locale}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f2f0e8">
-  <title>${title}</title>
-  <meta name="description" content="${description}">
+  <title>${neutralTitle}</title>
+  <meta name="description" content="${neutralDescription}">
   <meta name="robots" content="noindex, nofollow, nocache">
   <link rel="canonical" href="${canonical}">
   <link rel="alternate" hreflang="${locale}" href="${canonical}">
   <link rel="alternate" hreflang="${alternateLocale}" href="${ORIGIN}${href(alternatePath)}">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="${locale === 'de' ? 'de_DE' : 'en_GB'}">
-  <meta property="og:title" content="${title}">
-  <meta property="og:description" content="${description}">
+  <meta property="og:title" content="${neutralTitle}">
+  <meta property="og:description" content="${neutralDescription}">
   <meta property="og:url" content="${canonical}">
-  <meta property="og:image" content="${ORIGIN}${BASE}/denog-stage.jpg">
+  <meta property="og:image" content="${ORIGIN}/images/vachsystems-object-og.webp">
   <link rel="icon" href="${BASE}/favicon.svg">
   <link rel="stylesheet" href="${BASE}/site.css">
   <script src="${BASE}/site.js" defer></script>
 </head>
 <body class="is-locked">
   <noscript><div class="noscript">${locale === 'de' ? 'Für diese interaktive Konzeptansicht muss JavaScript aktiviert sein.' : 'JavaScript must be enabled for this interactive concept preview.'}</div></noscript>
-  <div class="page-shell${app ? ' app-preview' : ''}" hidden>
+  <div class="page-shell${app ? ' app-preview' : ''}" data-page-title="${pageTitle}" data-page-description="${pageDescription}" hidden>
     ${content.trim()}
   </div>
 </body>

@@ -246,21 +246,32 @@ button { cursor: pointer; }
 .concept-dock a { padding: 12px 13px; border-left: 1px solid var(--coal); font-size: 8px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
 .concept-dock a:hover { background: var(--acid); }
 
-.access-gate { position: fixed; z-index: 300; inset: 0; display: grid; place-items: center; min-height: 100svh; padding: 32px; overflow: auto; background: var(--paper); }
-.access-gate::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, transparent 49.9%, rgba(16,17,18,.08) 50%, transparent 50.1%), linear-gradient(rgba(16,17,18,.05) 1px, transparent 1px) 0 0/100% 48px; }
-.access-card { position: relative; width: min(680px, 100%); padding-top: 28px; border-top: 6px solid var(--coal); }
-.access-kicker { margin: 66px 0 18px; color: var(--blue); font-size: 10px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
-.access-card h1 { margin: 0; font: 400 clamp(58px, 9vw, 102px)/.79 Georgia, serif; letter-spacing: -.07em; }
-.access-card h1 i { color: var(--blue); font-weight: 400; }
-.access-copy { max-width: 590px; margin: 32px 0; font: 17px/1.5 Georgia, serif; }
-.access-card form { padding-top: 18px; border-top: 1px solid var(--coal); }
-.access-card label { display: block; margin-bottom: 9px; font-size: 9px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+.access-gate { position: fixed; z-index: 300; inset: 0; display: grid; place-items: center; min-height: 100svh; padding: 32px; overflow: auto; color: #f6f8fb; background: #090e15; }
+.access-gate::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 78% 18%, rgba(12,201,235,.11), transparent 31%), linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px) 0 0/100% 52px; }
+.access-card, .notice-card { position: relative; width: min(680px, 100%); padding-top: 26px; border-top: 2px solid #12c9eb; }
+.access-brand { display: inline-flex; align-items: center; gap: 11px; color: #fff; font-size: 17px; font-weight: 800; letter-spacing: -.04em; }
+.access-brand img { width: 30px; height: 30px; border-radius: 7px; }
+.access-kicker { margin: 64px 0 18px; color: #12c9eb; font-size: 9px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.access-card h1, .notice-card h1 { margin: 0; color: #fff; font: 400 clamp(56px, 8vw, 92px)/.83 Georgia, serif; letter-spacing: -.065em; }
+.access-card h1 i { color: #12c9eb; font-weight: 400; }
+.access-copy, .notice-intro { max-width: 590px; margin: 30px 0; color: #c6ccd5; font: 17px/1.55 Georgia, serif; }
+.access-card form { padding-top: 18px; border-top: 1px solid rgba(255,255,255,.24); }
+.access-card label { display: block; margin-bottom: 9px; color: #c6ccd5; font-size: 9px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
 .access-input-row { display: grid; grid-template-columns: 1fr auto; }
-.access-input-row input { min-width: 0; height: 56px; padding: 0 16px; border: 1px solid var(--coal); border-right: 0; background: rgba(255,255,255,.45); font: 18px Georgia, serif; }
-.access-input-row button { padding: 0 22px; border: 1px solid var(--coal); color: white; background: var(--coal); font-size: 10px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
-.access-input-row button:hover { background: var(--blue); }
-.access-error { min-height: 18px; margin: 11px 0 0; color: #b72415; font-size: 12px; font-weight: 700; }
-.access-note { margin: 36px 0 0; color: #686864; font-size: 8px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.access-input-row input { min-width: 0; height: 56px; padding: 0 16px; border: 1px solid rgba(255,255,255,.45); border-right: 0; color: #fff; background: rgba(255,255,255,.055); font: 18px Georgia, serif; }
+.access-input-row input::placeholder { color: #7d8794; }
+.access-input-row button, .notice-continue { padding: 0 22px; border: 1px solid #12c9eb; color: #071016; background: #12c9eb; font-size: 10px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.access-input-row button:hover, .notice-continue:hover { border-color: #fff; background: #fff; }
+.access-error { min-height: 18px; margin: 11px 0 0; color: #ff7c68; font-size: 12px; font-weight: 700; }
+.access-note { margin: 34px 0 0; color: #75808d; font-size: 8px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.notice-card { width: min(820px, 100%); }
+.notice-card h1 { max-width: 760px; font-size: clamp(48px, 7vw, 78px); }
+.notice-intro { max-width: 720px; margin-bottom: 38px; }
+.notice-points { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.25); border-left: 1px solid rgba(255,255,255,.25); }
+.notice-points p { min-height: 170px; margin: 0; padding: 20px; border-right: 1px solid rgba(255,255,255,.25); border-bottom: 1px solid rgba(255,255,255,.25); }
+.notice-points b { display: block; margin-bottom: 38px; color: #12c9eb; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; }
+.notice-points span { display: block; color: #c6ccd5; font: 13px/1.5 Georgia, serif; }
+.notice-continue { min-height: 52px; margin-top: 26px; }
 .noscript { position: fixed; z-index: 400; inset: 0; display: grid; place-items: center; padding: 30px; background: var(--paper); font: 20px/1.5 Georgia, serif; text-align: center; }
 
 @media (max-width: 1050px) {
@@ -357,6 +368,9 @@ button { cursor: pointer; }
   .access-input-row { grid-template-columns: 1fr; }
   .access-input-row input { border-right: 1px solid var(--coal); }
   .access-input-row button { height: 50px; }
+  .notice-points { grid-template-columns: 1fr; }
+  .notice-points p { min-height: 0; }
+  .notice-points b { margin-bottom: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

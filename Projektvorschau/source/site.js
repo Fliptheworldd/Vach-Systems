@@ -1,7 +1,8 @@
 (() => {
   'use strict';
 
-  const ACCESS_KEY = 'denog-concept-access-v2';
+  const ACCESS_KEY = 'vachsystems-project-access-v3';
+  const NOTICE_KEY = 'vachsystems-project-notice-v1';
   const ACCESS_HASH = '2789c64f61f552e96f874a9082bcd2cfd663d000dfbbca78021f5352419484ef';
   const page = document.querySelector('.page-shell');
   const isEnglish = document.documentElement.lang === 'en';
@@ -10,6 +11,7 @@
     document.body.classList.remove('is-locked');
     if (page) page.hidden = false;
     document.querySelector('.access-gate')?.remove();
+    if (page?.dataset.pageTitle) document.title = page.dataset.pageTitle;
   }
 
   async function hash(value) {
@@ -20,31 +22,31 @@
 
   function showGate() {
     const copy = isEnglish ? {
-      kicker: 'Interactive concept draft',
-      title: 'A new digital <i>home.</i>',
-      body: 'Concept for the next DENOG web presence — including the public website, member area and editorial system. Content and functionality provide a concrete basis for joint review.',
-      label: 'Presentation password',
+      kicker: 'Non-public area',
+      title: 'Protected <i>access.</i>',
+      body: 'Please enter the password that you received together with this link.',
+      label: 'Password',
       placeholder: 'Enter password',
-      button: 'Open concept',
+      button: 'Continue',
       error: 'That password is not correct. Please try again.',
-      note: 'Vachsystems · Concept presentation · August 2026'
+      note: 'vachsystems · confidential project area'
     } : {
-      kicker: 'Interaktiver Konzeptentwurf',
-      title: 'Eine neue digitale <i>Heimat.</i>',
-      body: 'Konzept für die Weiterentwicklung der DENOG-Webpräsenz – mit öffentlicher Website, Mitgliederbereich und Redaktionssystem. Inhalte und Funktionen dienen als konkrete Grundlage für die gemeinsame Abstimmung.',
-      label: 'Präsentationspasswort',
+      kicker: 'Nicht öffentlicher Bereich',
+      title: 'Geschützter <i>Zugang.</i>',
+      body: 'Bitte geben Sie das Passwort ein, das Sie zusammen mit diesem Link erhalten haben.',
+      label: 'Passwort',
       placeholder: 'Passwort eingeben',
-      button: 'Konzept öffnen',
+      button: 'Weiter',
       error: 'Das Passwort ist nicht korrekt. Bitte erneut versuchen.',
-      note: 'Vachsystems · Konzeptpräsentation · August 2026'
+      note: 'vachsystems · vertraulicher Projektbereich'
     };
 
     const gate = document.createElement('main');
     gate.className = 'access-gate';
     gate.innerHTML = `
       <section class="access-card" aria-labelledby="access-title">
-        <a class="brand" href="https://vachsystems.de" aria-label="Vachsystems">
-          <span>VACH</span><span>SYSTEMS</span><i>Digital Studio</i>
+        <a class="access-brand" href="https://vachsystems.de" aria-label="vachsystems">
+          <img src="/assets/logo.webp" alt=""><span>vachsystems</span>
         </a>
         <p class="access-kicker">${copy.kicker}</p>
         <h1 id="access-title">${copy.title}</h1>
@@ -74,8 +76,7 @@
       try {
         if (await hash(input.value) === ACCESS_HASH) {
           sessionStorage.setItem(ACCESS_KEY, 'granted');
-          unlock();
-          document.querySelector('h1')?.focus({ preventScroll: true });
+          showNotice();
           return;
         }
         error.textContent = copy.error;
@@ -87,8 +88,63 @@
     });
   }
 
+  function showNotice() {
+    document.querySelector('.access-gate')?.remove();
+    const copy = isEnglish ? {
+      kicker: 'Before you continue',
+      title: 'A note on this preview.',
+      intro: 'The following presentation is a non-binding concept draft intended solely as a basis for joint discussion.',
+      confidential: 'This link and its access details are intended only for the designated recipients and must not be shared.',
+      adaptable: 'Content, functions, structure and visual design are proposals and can be fully adjusted.',
+      scope: 'The final scope and implementation will be agreed and confirmed separately during the project process.',
+      labels: ['Confidential', 'Adaptable', 'Planning status'],
+      button: 'Open concept preview',
+      note: 'vachsystems · confidential concept presentation'
+    } : {
+      kicker: 'Vorab zur Einordnung',
+      title: 'Hinweis zur Konzeptvorschau.',
+      intro: 'Die folgende Darstellung ist ein unverbindlicher Konzeptentwurf und dient ausschließlich als Grundlage für die gemeinsame Abstimmung.',
+      confidential: 'Link und Zugangsdaten sind ausschließlich für die vorgesehenen Empfänger bestimmt und dürfen nicht weitergegeben werden.',
+      adaptable: 'Inhalte, Funktionen, Struktur und Gestaltung sind Vorschläge und können vollständig angepasst werden.',
+      scope: 'Der endgültige Leistungsumfang und die Umsetzung werden im weiteren Projektverlauf gesondert abgestimmt und festgelegt.',
+      labels: ['Vertraulich', 'Anpassbar', 'Planungsstand'],
+      button: 'Konzeptvorschau öffnen',
+      note: 'vachsystems · vertrauliche Konzeptpräsentation'
+    };
+
+    const notice = document.createElement('main');
+    notice.className = 'access-gate concept-notice';
+    notice.innerHTML = `
+      <section class="notice-card" aria-labelledby="notice-title">
+        <a class="access-brand" href="https://vachsystems.de" aria-label="vachsystems">
+          <img src="/assets/logo.webp" alt=""><span>vachsystems</span>
+        </a>
+        <p class="access-kicker">${copy.kicker}</p>
+        <h1 id="notice-title">${copy.title}</h1>
+        <p class="notice-intro">${copy.intro}</p>
+        <div class="notice-points">
+          <p><b>01 · ${copy.labels[0]}</b><span>${copy.confidential}</span></p>
+          <p><b>02 · ${copy.labels[1]}</b><span>${copy.adaptable}</span></p>
+          <p><b>03 · ${copy.labels[2]}</b><span>${copy.scope}</span></p>
+        </div>
+        <button class="notice-continue" type="button">${copy.button} →</button>
+        <p class="access-note">${copy.note}</p>
+      </section>`;
+    document.body.prepend(notice);
+    const button = notice.querySelector('.notice-continue');
+    button.addEventListener('click', () => {
+      sessionStorage.setItem(NOTICE_KEY, 'acknowledged');
+      unlock();
+      document.querySelector('.page-shell h1')?.focus({ preventScroll: true });
+    });
+    button.focus();
+  }
+
   try {
-    if (sessionStorage.getItem(ACCESS_KEY) === 'granted') unlock();
+    const granted = sessionStorage.getItem(ACCESS_KEY) === 'granted';
+    const acknowledged = sessionStorage.getItem(NOTICE_KEY) === 'acknowledged';
+    if (granted && acknowledged) unlock();
+    else if (granted) showNotice();
     else showGate();
   } catch {
     showGate();
