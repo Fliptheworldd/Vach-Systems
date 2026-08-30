@@ -1,0 +1,2 @@
+:HL["/Projektvorschau/_next/static/chunks/0~bwfiaxdy794.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"en","param":null,"prefetchHints":0,"slots":{"children":{"name":"knowledge","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"6WQX_ATUzWLgSQ0wAK0zS"}
