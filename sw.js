@@ -1,7 +1,7 @@
 // SERVICE WORKER - VACH SYSTEMS
 // Aggressive caching for static assets
 
-const CACHE_VERSION = 'v2026-03-19-9089';
+const CACHE_VERSION = 'v2026-08-31-kunds-final-1';
 const CACHE_NAME = `vachsystems-${CACHE_VERSION}`;
 
 // Assets to cache immediately on install (critical assets)
@@ -63,6 +63,13 @@ self.addEventListener('fetch', event => {
     return;
   }
   
+  // Protected previews must always use one coherent deployment.
+  // Never combine cached HTML with JavaScript from a different export.
+  if (url.pathname === '/kunds' || url.pathname.startsWith('/kunds/')) {
+    event.respondWith(fetch(request, { cache: 'no-store' }));
+    return;
+  }
+
   // Determine caching strategy based on file type
   const strategy = getCacheStrategy(url.pathname);
   
