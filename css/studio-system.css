@@ -679,6 +679,39 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .legal-copy ul { padding-left: 21px; }
 .legal-copy a { text-underline-offset: 3px; }
 
+.website-faq { background: var(--paper); }
+.faq-list { width: min(100%, 980px); margin-left: auto; border-top: 1px solid var(--line); }
+.faq-list details { border-bottom: 1px solid var(--line); }
+.faq-list summary {
+  position: relative;
+  padding: 28px 56px 28px 0;
+  color: var(--ink);
+  font-size: clamp(1.15rem, 1.7vw, 1.45rem);
+  font-weight: 630;
+  letter-spacing: -.025em;
+  list-style: none;
+  cursor: pointer;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  color: var(--cyan-deep);
+  font-size: 1.55rem;
+  font-weight: 420;
+  transform: translateY(-50%);
+}
+.faq-list details[open] summary::after { content: "−"; }
+.faq-list details p {
+  max-width: 790px;
+  margin: -2px 0 30px;
+  color: var(--muted-dark);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
 .cta-stage {
   position: relative;
   padding: var(--section) var(--pad);
