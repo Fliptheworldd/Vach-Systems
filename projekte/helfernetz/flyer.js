@@ -5,7 +5,7 @@
  const logo=new Image(); let photo=null, ready=false, revision=0;
  const ink='#202723', muted='#627067', accent='#925e3b';
  function text(value,x,y,size=30,bold=false,color=ink){ctx.font=`${bold?'700':'400'} ${size}px Arial`;ctx.fillStyle=color;ctx.fillText(value,x,y);}
- function lines(value,width,size,bold){ctx.font=`${bold?'700':'400'} ${size}px Arial`;const out=[];for(const paragraph of String(value).split('\n')){let line='';for(const char of paragraph){if(ctx.measureText(line+char).width>width && line){out.push(line);line='';}line+=char;}out.push(line);}return out;}
+ function lines(value,width,size,bold){ctx.font=`${bold?'700':'400'} ${size}px Arial`;const out=[];for(const paragraph of String(value).split('\n')){let line='';for(const word of paragraph.split(/\s+/)){const candidate=line?line+' '+word:word;if(ctx.measureText(candidate).width<=width){line=candidate;continue;}if(line){out.push(line);line='';}for(const char of word){if(ctx.measureText(line+char).width>width&&line){out.push(line);line='';}line+=char;}}out.push(line);}return out;}
  function fit(value,x,y,width,height,size=40,bold=false){let rows;do{rows=lines(value,width,size,bold);if(rows.length*size*1.3<=height)break;size-=1;}while(size>16);rows.forEach((line,i)=>text(line,x,y+i*size*1.3,size,bold));}
  function render(){ctx.fillStyle='#fff';ctx.fillRect(0,0,1654,2339);if(ready)ctx.drawImage(logo,105,75,170,170);
  text('KLEINES HELFERNETZ',310,120,30,true);text('Berlin-Brandenburg · Team Köpenick',310,165,27);text('Notfallkontakt: 030 81451625',310,211,29,true);
