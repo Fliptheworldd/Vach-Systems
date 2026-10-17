@@ -18,4 +18,13 @@ projekte/index.html leitet zur bestehenden projekte.html weiter. Damit verdräng
 
 ## Gestaltung
 
-Direkt sichtbare Navigation auch auf Mobilgeräten, keine Hamburger-Navigation. Anthrazit, Waldgrün und warme Kupferakzente, große Typografie, SVG-Icons, prominenter Notfallkontakt und mobile Kontaktleiste. Die Suchhinweise berücksichtigen: am Entlaufort beginnen; von außen nach innen ist nur eine mögliche weitere Taktik; gesichtete Katzen nicht verfolgen.
+Moderne modale Navigation über einen beschrifteten Menü-Button. Native Dialogfunktion mit Escape, Fokusführung und klaren Links für Hilfe, Wissen, Downloads, Team und Fragen. Anthrazit, Waldgrün und warme Kupferakzente, große Typografie, SVG-Icons, prominenter Notfallkontakt und mobile Kontaktleiste. Die Suchhinweise berücksichtigen: am Entlaufort beginnen; von außen nach innen ist nur eine mögliche weitere Taktik; gesichtete Katzen nicht verfolgen.
+
+
+## Navigation und Downloads (Revision 3)
+
+Vier A4-PDFs unter downloads/: Suchflyer mit sechs ausfüllbaren Textfeldern, Nacht-Suchhilfe, Heimwegschleppe und Futtergeruch. Das Foto-Feld des Suchflyers ist ein Platzhalter zum Aufkleben nach dem Druck. PDF-Erzeugung: tools/build_downloads.py (ReportLab, Pillow, DejaVu Sans).
+
+Keine Namen, Fotos oder Biografien von Teammitgliedern wurden erfunden. Bis diese vorliegen, stellt der Teambereich die vom Auftraggeber genannten Aufgaben vor.
+
+Logo: behutsame Bearbeitung des bereitgestellten Originals mit dem eingebauten Imagegen-Werkzeug. Original bleibt erhalten. Neues Asset: assets/helfernetz-emblem-matt.webp. Vorgabe: Komposition, Katzen, Ortsmotiv, Herzen, Pfoten und die Texte „Kleines Helfernetz Berlin-Brandenburg Team Köpenick“ erhalten; nur äußerer Cyan-Hintergrund neutral warmweiß, Himmel/Wasser zurückhaltender blaugrau und Glanz reduzieren; keine neue Telefonnummer oder anderen Elemente.
