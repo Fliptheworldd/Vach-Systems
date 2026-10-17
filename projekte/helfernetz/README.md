@@ -28,3 +28,6 @@ Vier A4-PDFs unter downloads/: Suchflyer mit sechs ausfüllbaren Textfeldern, Na
 Keine Namen, Fotos oder Biografien von Teammitgliedern wurden erfunden. Bis diese vorliegen, stellt der Teambereich die vom Auftraggeber genannten Aufgaben vor.
 
 Logo: behutsame Bearbeitung des bereitgestellten Originals mit dem eingebauten Imagegen-Werkzeug. Original bleibt erhalten. Neues Asset: assets/helfernetz-emblem-matt.webp. Vorgabe: Komposition, Katzen, Ortsmotiv, Herzen, Pfoten und die Texte „Kleines Helfernetz Berlin-Brandenburg Team Köpenick“ erhalten; nur äußerer Cyan-Hintergrund neutral warmweiß, Himmel/Wasser zurückhaltender blaugrau und Glanz reduzieren; keine neue Telefonnummer oder anderen Elemente.
+
+## Flyer generator (October 2026)
+`flyer.js` renders a 1654 × 2339 A4 canvas and exports it as a single-page JPEG-backed PDF. Photo and text stay in browser memory. JPG, PNG and WebP up to 15 MB; full image is contained without cropping. Required fields use native form validation; photo decoding and logo loading gate export. No external libraries or services. Confirmed team contact: 030 81451625. The scent guide has a second page with an original vector route schematic.

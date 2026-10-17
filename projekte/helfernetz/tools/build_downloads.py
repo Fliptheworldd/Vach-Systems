@@ -45,6 +45,7 @@ def header(c, category):
  c.drawImage(LOGO_PDF,M,H-86,56,56,mask='auto',preserveAspectRatio=True)
  text(c,'KLEINES HELFERNETZ',M+70,H-46,10,'Bold')
  text(c,'Berlin-Brandenburg · Team Köpenick',M+70,H-63,9,color=MUTED)
+ text(c,'Notfallkontakt: 030 81451625',M+70,H-80,9,'Bold')
  c.setStrokeColor(LINE);c.line(M,H-101,W-M,H-101)
  text(c,category,M,H-124,8,'Bold',ACCENT)
 
@@ -103,7 +104,31 @@ y=block(c,y,'Die Spur Richtung Zuhause legen','Nimm das T-Shirt erst am äußere
 y=block(c,y,'Optional: Urin der Bezugsperson','Das Infoblatt des Helfernetzes nennt optional Eigenurin, mit Wasser im Verhältnis 1:3 verdünnt: ein Teil Urin, drei Teile Wasser. T-Shirt nur leicht anfeuchten oder stellenweise sehr wenig auf geeigneten Boden geben. Nicht auf fremdem Eigentum verteilen. Methode vorher mit dem Helferteam abstimmen.')
 y=block(c,y,'Am Ziel beobachten','Wenn vor Ort sicher möglich, einen Zugang nach Hause ermöglichen. Besuche gegebenenfalls mit einer Wildkamera beobachten. Eine Erneuerung nach Regen abstimmen. Die aktive Suche beginnt weiterhin am Entlaufort.')
 y=para(c,'Grundlage: Suchhinweise und Infoblätter des Helfernetzes. Weitere Suchhinweise: tasso.net/Service/Wissensportal/Katze/Katze-entlaufen',M,y,size=8,color=MUTED)-8
-finish(c,y)
+footer(c);c.showPage()
+header(c,'HEIMWEGSCHLEPPE · SCHEMATISCHE ORIENTIERUNG')
+para(c,'Auf dem Rückweg<br/>die Spur legen.',M,H-142,size=27,leading=30)
+from math import sin, cos, radians
+cx,cy= W/2,415
+c.setFillColor(SOFT);c.circle(cx,cy,62,fill=1,stroke=0)
+text(c,'Zuhause',cx-35,cy+3,15,'Bold')
+text(c,'oder Entlaufort',cx-39,cy-17,10)
+def arrow(x1,y1,x2,y2,color,dashed=False):
+ c.setStrokeColor(color);c.setFillColor(color);c.setLineWidth(2)
+ c.setDash(5,4) if dashed else c.setDash()
+ c.line(x1,y1,x2,y2);c.setDash()
+ import math
+ a=math.atan2(y2-y1,x2-x1)
+ for offset in [-.5,.5]:c.line(x2,y2,x2-10*math.cos(a+offset),y2-10*math.sin(a+offset))
+for angle in [0,90,180,270]:
+ a=radians(angle);u,v=cos(a),sin(a);px,py=-v,u
+ arrow(cx+u*82+px*10,cy+v*82+py*10,cx+u*185+px*10,cy+v*185+py*10,MUTED,True)
+ arrow(cx+u*185-px*10,cy+v*185-py*10,cx+u*82-px*10,cy+v*82-py*10,colors.HexColor('#32664e'))
+arrow(M,181,M+50,181,MUTED,True)
+text(c,'Hinweg: Kleidungsstück in der Tüte',M+70,177,10)
+arrow(M,152,M+50,152,colors.HexColor('#32664e'))
+text(c,'Rückweg: Duftspur Richtung Zuhause',M+70,148,10,'Bold')
+para(c,'Keine Spur auf Fahrbahnen oder über Gleise legen. Sichere Wege und den passenden Zeitpunkt mit dem Helferteam abstimmen. Die Darstellung legt keinen Suchradius fest.',M,113,size=9.5)
+footer(c);c.showPage();c.save()
 
 c,y=doc('futtergeruch.pdf','Wenige Tropfen.<br/>Gezielt beobachten.','Futtergeruch mit Thunfischwasser und kontrollierte Futterstellen.')
 y=note(c,y,'Auch andere Tiere werden angelockt.','Stimme vorher mit dem Helferteam ab, ob eine Futtergeruchsspur vor Ort sinnvoll ist. Eine Spur ist keine Garantie und ersetzt die Suche in der direkten Umgebung nicht.')
